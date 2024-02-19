@@ -1,37 +1,39 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LifeComponent : MonoBehaviour
 {
-    #region properties
-    private Rigidbody2D rigid;
+    #region references
+    public Sprite fullHeart, halfHeart, noHeart;
     #endregion
+    Image heartImage;
 
-    #region parameters
-    [SerializeField] private float playerHealth;
-    [SerializeField] private float maxHealth;
-    #endregion
-    #region events
-    public static event Action OnPlayerDamaged;
-    public static event Action OnPlayerDeath;
-    #endregion
-    #region methods
-    public void TakeDamage(float amount)
+
+    private void Awake()
     {
-        playerHealth -= amount;
-        OnPlayerDamaged?.Invoke();
-        if (playerHealth <= 0)
+        heartImage = GetComponent<Image>();
+    }
+    public void SetHeartImage(HeartStatus status)
+    {
+        switch (status)
         {
-            playerHealth = 0;
-            OnPlayerDeath?.Invoke();
+            case HeartStatus.Empty:
+                heartImage.sprite = noHeart;
+                break;
+            case HeartStatus.Half:
+                heartImage.sprite = halfHeart;
+                break;
+            case HeartStatus.Full:
+                heartImage.sprite = fullHeart;
+                break;
         }
     }
-    
-    #endregion
-    void Start()
-    {
-        playerHealth = maxHealth;
-    }
+}
+public enum HeartStatus
+{
+    Empty=0,
+    Half=1, 
+    Full=2,
 }
