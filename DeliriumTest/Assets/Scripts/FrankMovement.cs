@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class FrankMovement : MonoBehaviour
@@ -20,6 +21,7 @@ public class FrankMovement : MonoBehaviour
     private float _yvalue;
     private Vector3 _directionVector;
     private Vector3 _movementVector;
+    private Vector3 _lastMovementVector;
     #endregion
 
     // Start is called before the first frame update
@@ -41,7 +43,13 @@ public class FrankMovement : MonoBehaviour
 
     public void Dash()
     {
-        transform.position = transform.position + (_dashforce * _directionVector);
+        if (_directionVector != Vector3.zero)
+        {
+            transform.position = transform.position + (_dashforce * _directionVector);
+        }
+        else
+        { transform.position = transform.position + (_dashforce * _lastMovementVector); }
+        StartCoroutine(DashCoolDown());
     }
 
     private void Awake()
@@ -55,6 +63,16 @@ public class FrankMovement : MonoBehaviour
         _directionVector = new Vector3(_xvalue, _yvalue);
         _movementVector = _directionVector * _speedValue;
         _rigiRigidbody.velocity = _movementVector;
+        if (_directionVector != Vector3.zero)
+        {
+            _lastMovementVector = _directionVector;
+        }
     }
-    
+    IEnumerator DashCoolDown()
+    {
+        _rigiRigidbody.velocity = Vector3.zero;
+        _frankInput.enabled = false;
+        yield return new WaitForSeconds(2f);
+        _frankInput.enabled = true;
+    }
 }
