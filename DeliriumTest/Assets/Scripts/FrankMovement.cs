@@ -6,21 +6,27 @@ public class FrankMovement : MonoBehaviour
     [SerializeField] private float _speedValue = 5f;
     [SerializeField] private float _dashforce = 5f;
     #endregion
+
     #region references
     private Rigidbody2D _rigiRigidbody;
-    private FrankMovement _frankInput;
+    private InputManager _frankInput;
+    [SerializeField]
+    private static GameObject player;
+    public static GameObject Player { get { return player; } }
     #endregion
+
     #region propiedades
     private float _xvalue;
     private float _yvalue;
     private Vector3 _directionVector;
     private Vector3 _movementVector;
     #endregion
+
     // Start is called before the first frame update
     void Start()
     {
         _rigiRigidbody = GetComponent<Rigidbody2D>();
-        _frankInput = GetComponent<FrankMovement>();
+        _frankInput = GetComponent<InputManager>();
     }
 
     public void RegisterX(float x)
@@ -38,16 +44,17 @@ public class FrankMovement : MonoBehaviour
         transform.position = transform.position + (_dashforce * _directionVector);
     }
 
-    
+    private void Awake()
+    {
+        if(player == null) player = this.gameObject;
+        else Destroy(gameObject);
+    }
+
     void FixedUpdate()
     {
         _directionVector = new Vector3(_xvalue, _yvalue);
         _movementVector = _directionVector * _speedValue;
         _rigiRigidbody.velocity = _movementVector;
     }
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+    
 }

@@ -2,18 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AttackComponent : MonoBehaviour
+public class Damage : MonoBehaviour
 {
     #region properties
     [SerializeField]
-    private int Attack;
+    private int Attack = 1;
     #endregion
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        FrankMovement player = collision.gameObject.GetComponent<FrankMovement>();
+        HealthComponent player = collision.gameObject.GetComponent<HealthComponent>();
         if (player != null)
         {
-            collision.gameObject.GetComponent<HealthComponent>().TakeDamage(Attack);
+           player.TakeDamage(Attack);
         }
     }
 }

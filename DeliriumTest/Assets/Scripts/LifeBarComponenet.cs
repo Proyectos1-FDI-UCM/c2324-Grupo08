@@ -7,32 +7,32 @@ public class LifeBarComponenet : MonoBehaviour
 {
     #region references
     public GameObject healthPrefab;
-    public PlayerHealth playerHealth;
+    public HealthComponent playerHealth;
     #endregion
     #region properties
-    List<LifeComponent> hearts= new List<LifeComponent> ();
+    List<LifeComponent> hearts = new List<LifeComponent> ();
     #endregion
     private void OnEnable()
     {
-         PlayerHealth.OnPlayerDamaged += DrawHearts;
+         HealthComponent.OnPlayerDamaged += DrawHearts;
 
     }
     private void OnDisable()
     {
-        PlayerHealth.OnPlayerDamaged -= DrawHearts;      
+        HealthComponent.OnPlayerDamaged -= DrawHearts;      
     }
     public void DrawHearts()
     {
         ClearHearts();
-        float maxHealthRemainder = playerHealth.maxHealth % 2;
-        int heartToMake = (int)(playerHealth.maxHealth / 2 + maxHealthRemainder);
+        float maxHealthRemainder = playerHealth.MaxHealth % 2;
+        int heartToMake = (int)(playerHealth.MaxHealth / 2 + maxHealthRemainder);
         for(int i = 0;i< heartToMake;i++) 
         {
             CreateEmptyHeart();
         }
         for(int i = 0; i< hearts.Count; i++)
         {
-            int heartStatusRemainder = (int)Mathf.Clamp(playerHealth.health-(i*2), 0, 2);
+            int heartStatusRemainder = (int)Mathf.Clamp(playerHealth.Health-(i*2), 0, 2);
             hearts[i].SetHeartImage((HeartStatus)heartStatusRemainder);
         }
     }
@@ -55,5 +55,7 @@ public class LifeBarComponenet : MonoBehaviour
     private void Start()
     {
         DrawHearts();
+        playerHealth = FrankMovement.Player.GetComponent<HealthComponent>();
+        if (playerHealth == null) Debug.LogError("No se encontró un componente de vida en el Jugador");
     }
 }

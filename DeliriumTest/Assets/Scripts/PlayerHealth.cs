@@ -3,22 +3,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerHealth : MonoBehaviour
+public class HealthComponent : MonoBehaviour
 {
     #region events
     public static event Action OnPlayerDamaged;
     #endregion
     #region parameters
-    public float health,maxHealth;
+    private float _health;
+    public float Health { get { return _health; } }
+    [SerializeField]
+    private float _maxHealth = 6;
+    public float MaxHealth { get { return _maxHealth; } }
     #endregion
 
-    private void Start()
+    private void Awake()
     {
-        health = maxHealth;
+        _health = _maxHealth;
     }
     public void TakeDamage(float amount)
     {
-        health -= amount;
+        _health -= amount;
         OnPlayerDamaged?.Invoke();
     }
 }
