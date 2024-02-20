@@ -1,4 +1,6 @@
 using System.Collections;
+using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class FrankMovement : MonoBehaviour
@@ -7,15 +9,11 @@ public class FrankMovement : MonoBehaviour
     [SerializeField] private float _speedValue = 5f;
     [SerializeField] private float _dashforce = 5f;
     #endregion
-
     #region references
     private Rigidbody2D _rigiRigidbody;
-    private InputManager _frankInput;
-    [SerializeField]
     private static GameObject player;
     public static GameObject Player { get { return player; } }
     #endregion
-
     #region propiedades
     private float _xvalue;
     private float _yvalue;
@@ -23,12 +21,11 @@ public class FrankMovement : MonoBehaviour
     private Vector3 _movementVector;
     private Vector3 _lastMovementVector;
     #endregion
-
     // Start is called before the first frame update
     void Start()
-    {
+    {       
         _rigiRigidbody = GetComponent<Rigidbody2D>();
-        _frankInput = GetComponent<InputManager>();
+        _lastMovementVector = Vector3.right;
     }
 
     public void RegisterX(float x)
@@ -43,6 +40,7 @@ public class FrankMovement : MonoBehaviour
 
     public void Dash()
     {
+
         if (_directionVector != Vector3.zero)
         {
             transform.position = transform.position + (_dashforce * _directionVector);
@@ -52,11 +50,6 @@ public class FrankMovement : MonoBehaviour
         StartCoroutine(DashCoolDown());
     }
 
-    private void Awake()
-    {
-        if(player == null) player = this.gameObject;
-        else Destroy(gameObject);
-    }
 
     void FixedUpdate()
     {
@@ -68,11 +61,17 @@ public class FrankMovement : MonoBehaviour
             _lastMovementVector = _directionVector;
         }
     }
+    // Update is called once per frame
+
     IEnumerator DashCoolDown()
     {
         _rigiRigidbody.velocity = Vector3.zero;
-        _frankInput.enabled = false;
+        this.enabled = false;
         yield return new WaitForSeconds(2f);
-        _frankInput.enabled = true;
+        this.enabled = true;
+    }
+    void Update()
+    {
+
     }
 }
