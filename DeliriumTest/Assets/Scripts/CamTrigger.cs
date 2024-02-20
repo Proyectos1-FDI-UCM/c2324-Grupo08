@@ -17,11 +17,11 @@ public class CamTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Borracho")
+        if (other.gameObject.tag == "Player")
         {
             _camControl.minPos += newCampos;
             _camControl.maxPos += newCampos;
-           
+            other.transform.position += newPlayerPos;
         }
     }
 }
