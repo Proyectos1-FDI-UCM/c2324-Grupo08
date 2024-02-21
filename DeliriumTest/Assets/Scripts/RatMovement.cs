@@ -6,8 +6,9 @@ using UnityEngine;
 public class RatMovement : MonoBehaviour
 {
     #region references
-    private Transform _mytransform;
+    private Transform _myTransform;
     private Transform _target;
+    [SerializeField] private LayerMask pared;
     #endregion
     #region properties
     private bool _characterClose; //compruba si el jugador esta cerca para cambiar su movimiento, 
@@ -38,7 +39,7 @@ public class RatMovement : MonoBehaviour
     }
     void Start()
     {
-        _mytransform = transform;
+        _myTransform = transform;
         _characterClose = false;
         _moveTime = 0;
         _stopTime = 0;
@@ -49,28 +50,35 @@ public class RatMovement : MonoBehaviour
     {
         if (_characterClose)
         {
-            _direction = (_target.position - _mytransform.position).normalized;
-            _mytransform.position += _direction * _speed * Time.deltaTime;
+            _direction = (_target.position - _myTransform.position).normalized;
+            _myTransform.position += _direction * _speed * Time.deltaTime;
         }
         else
         {
             if (_moveTime <= 0)
             {
-                if (_stopTime <= 0)
+                if (_stopTime <= 0) //Acabado el tiempo de parada, declara la nueva direccion
                 {
                     x = Random.Range(-4, 5);
                     y = Random.Range(-4, 5);
                     _direction = new Vector3(x, y, 0).normalized;
                     _moveTime = Random.Range(0, 3);
                     _stopTime = Random.Range(1, 3);
+
+                    Collider2D collider = Physics2D.OverlapCircle(_myTransform.position, 1f, pared);
+                    if (collider != null)
+                    {
+                        x = Random.Range(-45, 45);
+                        _direction = Quaternion.Euler(0f, 0f, x) * collider.gameObject.transform.up;
+                    }
                 }
-                else
+                else //Tiempo de parada
                 {
                     _stopTime -= Time.deltaTime;
                     _direction = Vector3.zero;
                 }
             }
-            _mytransform.position += _direction * _speed * Time.deltaTime;
+            _myTransform.position += _direction * _speed * Time.deltaTime;
             _moveTime -= Time.deltaTime;
         }
     }
