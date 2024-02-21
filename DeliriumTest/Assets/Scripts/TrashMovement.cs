@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Timers;
 using UnityEngine;
 
-public class RatMovement : MonoBehaviour
+public class TrashMovement : MonoBehaviour
 {
     #region references
     private Transform _myTransform;
@@ -23,7 +22,7 @@ public class RatMovement : MonoBehaviour
     // Start is called before the first frame update
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.GetComponent<FrankMovement>() != null) 
+        if (other.gameObject.GetComponent<FrankMovement>() != null)
         {
             _characterClose = true;
             _target = other.gameObject.transform;
@@ -35,7 +34,7 @@ public class RatMovement : MonoBehaviour
         {
             _characterClose = false;
             _moveTime = 0;
-            _stopTime = 0.5f;
+            _stopTime = 0;
         }
     }
     void Start()
@@ -51,28 +50,13 @@ public class RatMovement : MonoBehaviour
     {
         if (_characterClose)
         {
-            _direction = (_target.position - _myTransform.position).normalized;
-            _myTransform.position += _direction * _speed * Time.deltaTime;
-        }
-        else
-        {
             if (_moveTime <= 0)
             {
                 if (_stopTime <= 0) //Acabado el tiempo de parada, declara la nueva direccion
                 {
-                    x = Random.Range(-4, 5);
-                    y = Random.Range(-4, 5);
-                    _direction = new Vector3(x, y, 0).normalized;
-                    _moveTime = Random.Range(0, 3);
-                    _stopTime = Random.Range(1, 2);
-
-                    Collider2D collider = Physics2D.OverlapCircle(_myTransform.position, 1f, pared);
-                    if (collider != null)
-                    {
-                        Debug.Log("Aquí hay pared :p");
-                        x = Random.Range(-45, 45);
-                        _direction = Quaternion.Euler(0f, 0f, x) * collider.gameObject.transform.up;
-                    }
+                    _moveTime = 0.5f;
+                    _stopTime = 0.2f;
+                    _direction = (_target.position - _myTransform.position).normalized;
                 }
                 else //Tiempo de parada
                 {
