@@ -22,6 +22,14 @@ public class FrankMovement : MonoBehaviour
     private Vector3 _lastMovementVector;
     #endregion
     // Start is called before the first frame update
+    private void Awake()
+    {
+        if (player == null)
+        {
+            player = gameObject;
+        }
+        else Destroy(gameObject);
+    }
     void Start()
     {       
         _rigiRigidbody = GetComponent<Rigidbody2D>();
@@ -69,9 +77,5 @@ public class FrankMovement : MonoBehaviour
         this.enabled = false;
         yield return new WaitForSeconds(2f);
         this.enabled = true;
-    }
-    void Update()
-    {
-
     }
 }
