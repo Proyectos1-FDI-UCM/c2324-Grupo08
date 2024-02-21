@@ -12,6 +12,7 @@ public class FrankMovement : MonoBehaviour
     #region references
     private Rigidbody2D _rigiRigidbody;
     private static GameObject player;
+    [SerializeField] private VomitComponent _vomitComponent;
     public static GameObject Player { get { return player; } }
     #endregion
     #region propiedades
@@ -19,7 +20,7 @@ public class FrankMovement : MonoBehaviour
     private float _yvalue;
     private Vector3 _directionVector;
     private Vector3 _movementVector;
-    private Vector3 _lastMovementVector;
+    public Vector3 _lastMovementVector;
     #endregion
     // Start is called before the first frame update
     private void Awake()
@@ -51,10 +52,11 @@ public class FrankMovement : MonoBehaviour
 
         if (_directionVector != Vector3.zero)
         {
-            transform.position = transform.position + (_dashforce * _directionVector);
+            transform.position = transform.position + (_dashforce * _directionVector.normalized);
         }
         else
-        { transform.position = transform.position + (_dashforce * _lastMovementVector); }
+        { transform.position = transform.position + (_dashforce * _lastMovementVector.normalized); }
+        _vomitComponent.VomitDash();
         StartCoroutine(DashCoolDown());
     }
 
@@ -75,7 +77,7 @@ public class FrankMovement : MonoBehaviour
     {
         _rigiRigidbody.velocity = Vector3.zero;
         this.enabled = false;
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         this.enabled = true;
     }
 }
