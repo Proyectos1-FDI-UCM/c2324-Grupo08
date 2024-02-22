@@ -8,21 +8,44 @@ public class CamTrigger : MonoBehaviour
     public Vector3 newCampos;
     public Vector3 newPlayerPos;
     private CameraController _camControl;
+    private   GameObject _myObject;
+    private BoxCollider2D _transicion;
+    public static bool _estadotrans = false;
     #endregion
-
+    #region method
+    public static void TransitionAvaible(bool trans)
+    {
+        _estadotrans = trans;
+    }
+    
+    #endregion
     void Start()
     {
+        _myObject = GameObject.Find("Transicion");
         _camControl = Camera.main.GetComponent<CameraController>();
+        _transicion = _myObject.GetComponent<BoxCollider2D>();
+        _transicion.enabled = false;
+        
+
+    }
+    void update()
+    {
+        if (_estadotrans)
+        {
+            _transicion.enabled = true;
+        }
     }
 
-    private void OnTriggerExit2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player")
         {
             _camControl.minPos += newCampos;
             _camControl.maxPos += newCampos;
             other.transform.position += newPlayerPos;
+            _transicion.enabled=false;
         }
     }
+     
 }
 
