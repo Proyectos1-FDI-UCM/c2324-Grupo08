@@ -15,7 +15,12 @@ public class HealthComponent : MonoBehaviour
     private float _maxHealth = 6;
     public float MaxHealth { get { return _maxHealth; } }
     #endregion
-
+    #region methods
+    public void Healing(float healing )
+    {
+        _health += healing;
+    }
+    #endregion
     private void Awake()
     {
         _health = _maxHealth;
