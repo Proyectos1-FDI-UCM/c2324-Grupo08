@@ -16,7 +16,9 @@ public class LevelManager : MonoBehaviour
 
     public void EnterRoomEnable(bool state) 
     {
+        
     }
+    
     
     #endregion
     // Start is called before the first frame update
@@ -28,6 +30,7 @@ public class LevelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        enemies = GetComponents<EnemiesControler>().Length;
         if (enemies == 0) {
 
             CamTrigger.TransitionAvaible(_transTrue);

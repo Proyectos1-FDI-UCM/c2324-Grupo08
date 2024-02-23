@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Timers;
 using UnityEngine;
 
-public class RatMovement : MonoBehaviour
+public class RatMovement : MonoBehaviour, EnemiesControler
 {
     #region references
     private Transform _myTransform;

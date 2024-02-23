@@ -20,6 +20,7 @@ public class InputManager : MonoBehaviour
     {
         _frankMovement = GetComponent<FrankMovement>();
         _playerAttack = GetComponentInChildren<PlayerAttack>();
+        if(_playerAttack == null) Debug.LogError("Frank no tiene un ataque puesto. Revisa la escena de Janime para ver un ejemplo de implementación."); 
     }
 
     // Update is called once per frame

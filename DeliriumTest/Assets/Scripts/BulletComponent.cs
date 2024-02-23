@@ -25,16 +25,17 @@ public class BulletComponent : MonoBehaviour
         _speed = direction;
         
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.GetComponent<FrankMovement>() != null || collision.gameObject.GetComponent<EnemiesControler>() != null
+            || collision.gameObject.layer == 7) 
+            Destroy(gameObject);
+    }
 
     // Update is called once per frame
 
     void FixedUpdate()
     {
         _rigidBody.velocity = _speed * _bulletSpeed;
-    }
-    void Update()
-    {
-        
-        Debug.Log(_rigidBody.velocity);
     }
 }

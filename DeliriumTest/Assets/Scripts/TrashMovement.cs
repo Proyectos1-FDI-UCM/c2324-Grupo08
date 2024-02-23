@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TrashMovement : MonoBehaviour
+public class TrashMovement : MonoBehaviour, EnemiesControler
 {
     #region references
     private Transform _myTransform;
     private Transform _target;
+    private TrashAttack trashAttack;
     [SerializeField] private LayerMask pared;
     #endregion
     #region properties
@@ -39,6 +40,7 @@ public class TrashMovement : MonoBehaviour
     }
     void Start()
     {
+        trashAttack = GetComponent<TrashAttack>();
         _myTransform = transform;
         _characterClose = false;
         _moveTime = 0;
@@ -54,9 +56,11 @@ public class TrashMovement : MonoBehaviour
             {
                 if (_stopTime <= 0) //Acabado el tiempo de parada, declara la nueva direccion
                 {
+                    
                     _moveTime = 0.5f;
                     _stopTime = 0.2f;
                     _direction = (_target.position - _myTransform.position).normalized;
+                    StartCoroutine(trashAttack.Disparo(_direction));
                 }
                 else //Tiempo de parada
                 {

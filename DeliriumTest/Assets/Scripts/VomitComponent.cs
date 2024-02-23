@@ -57,7 +57,6 @@ public class VomitComponent : MonoBehaviour
     }
     IEnumerator StopPlayer()
     {
-        _shootComponent.Shoot();
         _vomitBar.value = 0;
         _stops = true;
         _frankMovement.enabled = false;
