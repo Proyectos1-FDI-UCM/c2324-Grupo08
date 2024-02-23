@@ -484,6 +484,7 @@ MonoBehaviour:
   _vomitDash: 4
   _frankMovement: {fileID: 1793569229}
   _targetRigidBody: {fileID: 1793569227}
+  _shootComponent: {fileID: 1793569230}
 --- !u!1 &1593234925
 GameObject:
   m_ObjectHideFlags: 0
@@ -691,6 +692,7 @@ GameObject:
   - component: {fileID: 1793569226}
   - component: {fileID: 1793569227}
   - component: {fileID: 1793569229}
+  - component: {fileID: 1793569230}
   m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
@@ -820,6 +822,20 @@ MonoBehaviour:
   _dashforce: 2
   _vomitComponent: {fileID: 1357438066}
   _lastMovementVector: {x: 0, y: 0, z: 0}
+--- !u!114 &1793569230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1793569222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 290b5724f4cc51644895a6c80ae1f445, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bulletPrefab: {fileID: 2751106817149992005, guid: 7e673385d903d9c45b5ff40a658248ab, type: 3}
+  _bulletComponent: {fileID: 556675371686986067, guid: 7e673385d903d9c45b5ff40a658248ab, type: 3}
 --- !u!1 &2123062449
 GameObject:
   m_ObjectHideFlags: 0

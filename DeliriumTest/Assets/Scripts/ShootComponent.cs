@@ -5,18 +5,21 @@ using UnityEngine;
 public class ShootComponent : MonoBehaviour
 {
     #region parameters
-    [SerializeField] private float _bulletSpeed;
-    [SerializeField] private GameObject _bulletPrefab;
-    [SerializeField] private Rigidbody2D _rigidBody;
+
     #endregion
     #region references
+    private FrankMovement _frankMovement; 
+    [SerializeField] private GameObject _bulletPrefab;
+    [SerializeField] private BulletComponent _bulletComponent;
     #endregion
     #region propiedades
     #endregion
     // Start is called before the first frame update
-    private FrankMovement _frankMovement;
+    
+    private Vector3 _shotDirection;
     void Start()
     {
+       _frankMovement = GetComponent<FrankMovement>();
     }
 
     // Update is called once per frame
@@ -27,11 +30,13 @@ public class ShootComponent : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _rigidBody.velocity = _frankMovement._lastMovementVector * _bulletSpeed;
+        
     }
 
-    void Shoot()
+    public void Shoot()
     {
-        Instantiate(_bulletPrefab, transform);
+        _shotDirection = _frankMovement._lastMovementVector;       
+        Instantiate(_bulletPrefab, transform.position, Quaternion.identity);
+        _bulletComponent.RegisterVector(_shotDirection);
     }
 }

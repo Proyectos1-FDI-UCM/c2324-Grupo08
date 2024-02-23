@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class VomitComponent : MonoBehaviour
 {
     #region parameters
-    [SerializeField]private float _timerspeed;
+    [SerializeField] private float _timerspeed;
     private float timer;
     [SerializeField] private float _maxvomit;
     [SerializeField] private float _vomitDash;
@@ -15,6 +15,7 @@ public class VomitComponent : MonoBehaviour
     private Slider _vomitBar;
     [SerializeField] private FrankMovement _frankMovement;
     [SerializeField] private Rigidbody2D _targetRigidBody;
+    [SerializeField] private ShootComponent _shootComponent;
     private bool _stops = false;
     #endregion
     #region propiedades
@@ -48,7 +49,7 @@ public class VomitComponent : MonoBehaviour
         }
         if(_vomitBar.value >= _maxvomit)
         {
-            
+            _shootComponent.Shoot();
             StartCoroutine(StopPlayer());
         }
 
