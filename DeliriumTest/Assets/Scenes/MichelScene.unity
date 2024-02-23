@@ -779,6 +779,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e989a5f82cb8d34eb3e2e8db0d640f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  offsetx: 0.7
+  offsety: 0.7
 --- !u!50 &1793569227
 Rigidbody2D:
   serializedVersion: 4
@@ -835,7 +837,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bulletPrefab: {fileID: 2751106817149992005, guid: 7e673385d903d9c45b5ff40a658248ab, type: 3}
-  _bulletComponent: {fileID: 556675371686986067, guid: 7e673385d903d9c45b5ff40a658248ab, type: 3}
 --- !u!1 &2123062449
 GameObject:
   m_ObjectHideFlags: 0

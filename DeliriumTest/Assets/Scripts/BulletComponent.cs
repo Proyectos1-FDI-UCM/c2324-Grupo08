@@ -34,6 +34,7 @@ public class BulletComponent : MonoBehaviour
     }
     void Update()
     {
+        
         Debug.Log(_rigidBody.velocity);
     }
 }
