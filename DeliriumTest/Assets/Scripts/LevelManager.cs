@@ -30,11 +30,12 @@ public class LevelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        enemies = 0;
-        //enemies = GetComponents<EnemiesControler>().Length;
-        if (enemies == 0) {
-
+        
+        enemies = GetComponents<EnemiesControler>().Length;
+        if (enemies== 0) {
+            
             CamTrigger.TransitionAvaible(_transTrue);
+            
         }
     }
 }
