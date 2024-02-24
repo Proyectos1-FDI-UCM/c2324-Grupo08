@@ -25,7 +25,6 @@ public class CamTrigger : MonoBehaviour
         _myObject = Camera.main.gameObject;
         _transicion = _myObject.GetComponent<BoxCollider2D>();
         _transicion.enabled = false;
-        
 
     }
     void Update()
@@ -33,6 +32,7 @@ public class CamTrigger : MonoBehaviour
         if (_estadotrans)
         {
             _transicion.enabled = true;
+
         }
     }
 
@@ -44,6 +44,7 @@ public class CamTrigger : MonoBehaviour
             _camControl.maxPos += newCampos;
             other.transform.position += newPlayerPos;
             _transicion.enabled=false;
+
         }
     }
      
