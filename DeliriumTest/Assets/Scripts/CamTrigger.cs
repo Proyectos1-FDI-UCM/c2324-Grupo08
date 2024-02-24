@@ -10,7 +10,7 @@ public class CamTrigger : MonoBehaviour
     private CameraController _camControl;
     private   GameObject _myObject;
     private BoxCollider2D _transicion;
-    public static bool _estadotrans = false;
+    public static bool _estadotrans;
     #endregion
     #region method
     public static void TransitionAvaible(bool trans)
@@ -21,8 +21,8 @@ public class CamTrigger : MonoBehaviour
     #endregion
     void Start()
     {
-        _myObject = GameObject.Find("Transicion");
         _camControl = Camera.main.GetComponent<CameraController>();
+        _myObject = Camera.main.gameObject;
         _transicion = _myObject.GetComponent<BoxCollider2D>();
         _transicion.enabled = false;
         
