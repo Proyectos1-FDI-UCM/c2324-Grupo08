@@ -72,4 +72,8 @@ public class TrashMovement : MonoBehaviour, EnemiesControler
             _moveTime -= Time.deltaTime;
         }
     }
+    private void OnDestroy()
+    {
+        LevelManager.EnemyDefeated(this);
+    }
 }

@@ -84,4 +84,8 @@ public class RatMovement : MonoBehaviour, EnemiesControler
             _moveTime -= Time.deltaTime;
         }
     }
+    private void OnDestroy()
+    {
+        LevelManager.EnemyDefeated(this);
+    }
 }
