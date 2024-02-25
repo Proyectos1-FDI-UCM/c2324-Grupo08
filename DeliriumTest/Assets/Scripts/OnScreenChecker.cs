@@ -23,6 +23,14 @@ public class OnScreenCheck : MonoBehaviour
 
         }
     }
+    private void Update()
+    {
+        for (int i = 0; i < _currentenemy.Length; i++)
+        {
+            if (_enemytransform[i] != null) EnemyCheck(_currentenemy[i], _enemytransform[i]);
+
+        }
+    }
     private void EnemyCheck(GameObject _currentEnemy, Transform _enemytransform)
     {
         Vector3 viewPos = _maincam.WorldToViewportPoint(_enemytransform.position);

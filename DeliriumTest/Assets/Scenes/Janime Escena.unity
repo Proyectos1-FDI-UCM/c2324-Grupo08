@@ -170,8 +170,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e989a5f82cb8d34eb3e2e8db0d640f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offsetx: 0.7
-  offsety: 0.7
+  offsetx: 1
+  offsety: 1
 --- !u!114 &83215408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -884,7 +884,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.7}
+  m_Size: {x: 0.7, y: 0.7}
   m_EdgeRadius: 0
 --- !u!114 &459871307
 MonoBehaviour:
