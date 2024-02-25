@@ -6,7 +6,7 @@ public class LevelManager : MonoBehaviour
 {
     #region properties
     static List<EnemiesControler> m_AllEnemies = new List<EnemiesControler>();
-    private  bool _transTrue = true;
+    
     #endregion
 
     #region methods
@@ -20,7 +20,7 @@ public class LevelManager : MonoBehaviour
             { 
                 if (!m_AllEnemies.Contains(allScripts[i] as EnemiesControler)) 
                 { 
-                    m_AllEnemies.Add(allScripts[i] as EnemiesControler); 
+                    m_AllEnemies.Add(allScripts[i] as EnemiesControler);
                 } 
             }
         }
@@ -31,19 +31,21 @@ public class LevelManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        RegisterEnemy();
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
+        RegisterEnemy();
+        Debug.Log(m_AllEnemies.Count);
         if (m_AllEnemies.Count == 0)
         {
-            CamTrigger.TransitionAvaible(_transTrue);
+            CamTrigger.TransitionAvaible(true);
         }
         else
         {
             CamTrigger.TransitionAvaible(false);
         }
     }
+    
 }

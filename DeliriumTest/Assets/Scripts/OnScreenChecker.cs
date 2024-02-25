@@ -14,27 +14,20 @@ public class OnScreenCheck : MonoBehaviour
 
     #endregion
 
-
-    private void EnemyCheck(GameObject _currentEnemy, Transform _enemytransform)
-    {
-        Vector3 viewPos = _maincam.WorldToViewportPoint(_enemytransform.position);
-        _currentEnemy.SetActive(viewPos.x >= 0 && viewPos.x <= 1 && viewPos.y >= 0 && viewPos.y <= 1);
-    }
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         _maincam = Camera.main;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
         for (int i = 0; i < _currentenemy.Length; i++)
         {
             if (_enemytransform[i] != null) EnemyCheck(_currentenemy[i], _enemytransform[i]);
 
         }
     }
+    private void EnemyCheck(GameObject _currentEnemy, Transform _enemytransform)
+    {
+        Vector3 viewPos = _maincam.WorldToViewportPoint(_enemytransform.position);
+        _currentEnemy.SetActive(viewPos.x >= 0 && viewPos.x <= 1 && viewPos.y >= 0 && viewPos.y <= 1);
+    }
+   
 
 }

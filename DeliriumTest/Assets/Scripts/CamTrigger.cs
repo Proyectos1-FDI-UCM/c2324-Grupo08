@@ -44,6 +44,7 @@ public class CamTrigger : MonoBehaviour
             _camControl.maxPos += newCampos;
             other.transform.position += newPlayerPos;
             _transicion.enabled=false;
+            transform.Translate(Vector2.right * 1);
 
         }
     }
