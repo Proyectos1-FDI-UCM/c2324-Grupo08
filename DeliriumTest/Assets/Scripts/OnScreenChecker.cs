@@ -11,7 +11,6 @@ public class OnScreenCheck : MonoBehaviour
     private GameObject[] _currentenemy;
     [SerializeField]
     private Transform[] _enemytransform;
-
     #endregion
 
     void Awake()
@@ -25,6 +24,7 @@ public class OnScreenCheck : MonoBehaviour
     }
     private void Update()
     {
+
         for (int i = 0; i < _currentenemy.Length; i++)
         {
             if (_enemytransform[i] != null) EnemyCheck(_currentenemy[i], _enemytransform[i]);

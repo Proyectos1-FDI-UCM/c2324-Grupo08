@@ -9,13 +9,13 @@ public class CamTrigger : MonoBehaviour
     public Vector3 newPlayerPos;
     private CameraController _camControl;
     private   GameObject _myObject;
-    private BoxCollider2D _transicion;
+    public static BoxCollider2D _transicion;
     public  static bool _estadotrans;
     #endregion
     #region method
     public static void TransitionAvaible(bool trans)
     {
-        _estadotrans = trans;
+        _transicion.enabled = trans;
     }
     
     #endregion
@@ -27,15 +27,7 @@ public class CamTrigger : MonoBehaviour
         _transicion.enabled = false;
 
     }
-    void Update()
-    {
-        Debug.Log(_estadotrans);
-        if (_estadotrans)
-        {
-            _transicion.enabled = true;
-
-        }
-    }
+    
 
     private void OnTriggerEnter2D(Collider2D other)
     {

@@ -34,7 +34,7 @@ public class LevelManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void LateUpdate()
+    void Update()
     {
         RegisterEnemy();
         Debug.Log(m_AllEnemies.Count);
@@ -42,7 +42,7 @@ public class LevelManager : MonoBehaviour
         {
             CamTrigger.TransitionAvaible(true);
         }
-        else
+        else if(m_AllEnemies.Count > 0) 
         {
             CamTrigger.TransitionAvaible(false);
         }
