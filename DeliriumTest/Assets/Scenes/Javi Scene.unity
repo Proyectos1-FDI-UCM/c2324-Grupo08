@@ -123,6 +123,32 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &278209314 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 482975409083832220, guid: ce1e39cce78f14d4f977acf5ef8d967f, type: 3}
+  m_PrefabInstance: {fileID: 6323619067589923932}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &278209321
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278209314}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ff07332a6b3090e47a00be8b8b6e2005, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1134,6 +1160,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e989a5f82cb8d34eb3e2e8db0d640f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  offsetx: 0.7
+  offsety: 0.7
 --- !u!1001 &6323619067589923932
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1146,9 +1174,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rata
       objectReference: {fileID: 0}
+    - target: {fileID: 1049787344942060873, guid: ce1e39cce78f14d4f977acf5ef8d967f, type: 3}
+      propertyPath: m_Size.x
+      value: 0.8773869
+      objectReference: {fileID: 0}
+    - target: {fileID: 1049787344942060873, guid: ce1e39cce78f14d4f977acf5ef8d967f, type: 3}
+      propertyPath: m_Size.y
+      value: 0.3842482
+      objectReference: {fileID: 0}
+    - target: {fileID: 1049787344942060873, guid: ce1e39cce78f14d4f977acf5ef8d967f, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.01226145
+      objectReference: {fileID: 0}
+    - target: {fileID: 1049787344942060873, guid: ce1e39cce78f14d4f977acf5ef8d967f, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.11342797
+      objectReference: {fileID: 0}
+    - target: {fileID: 1049787344942060873, guid: ce1e39cce78f14d4f977acf5ef8d967f, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 2739453169098588862, guid: ce1e39cce78f14d4f977acf5ef8d967f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.1008763
+      objectReference: {fileID: 0}
+    - target: {fileID: 2739453169098588862, guid: ce1e39cce78f14d4f977acf5ef8d967f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.1922742
+      objectReference: {fileID: 0}
+    - target: {fileID: 2739453169098588862, guid: ce1e39cce78f14d4f977acf5ef8d967f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.2406957
+      objectReference: {fileID: 0}
     - target: {fileID: 2739453169098588862, guid: ce1e39cce78f14d4f977acf5ef8d967f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.09
+      value: 3.02
       objectReference: {fileID: 0}
     - target: {fileID: 2739453169098588862, guid: ce1e39cce78f14d4f977acf5ef8d967f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1186,10 +1246,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2821320597886366253, guid: ce1e39cce78f14d4f977acf5ef8d967f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: dc62b0fe91737e44bbe30cca59a6802b, type: 3}
+    - target: {fileID: 3954528002781869318, guid: ce1e39cce78f14d4f977acf5ef8d967f, type: 3}
+      propertyPath: m_Radius
+      value: 1.8336613
+      objectReference: {fileID: 0}
+    - target: {fileID: 3954528002781869318, guid: ce1e39cce78f14d4f977acf5ef8d967f, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.038229432
+      objectReference: {fileID: 0}
+    - target: {fileID: 3954528002781869318, guid: ce1e39cce78f14d4f977acf5ef8d967f, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.06736287
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 482975409083832220, guid: ce1e39cce78f14d4f977acf5ef8d967f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 278209321}
   m_SourcePrefab: {fileID: 100100000, guid: ce1e39cce78f14d4f977acf5ef8d967f, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
