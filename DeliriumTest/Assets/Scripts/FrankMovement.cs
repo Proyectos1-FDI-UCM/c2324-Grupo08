@@ -10,6 +10,7 @@ public class FrankMovement : MonoBehaviour
     [SerializeField] private float _dashforce = 5f;
     #endregion
     #region references
+    private InputManager _frankInput;
     private Rigidbody2D _rigiRigidbody;
     private static GameObject player;
     [SerializeField] private VomitComponent _vomitComponent;
@@ -21,6 +22,7 @@ public class FrankMovement : MonoBehaviour
     private Vector3 _directionVector;
     private Vector3 _movementVector;
     public Vector3 _lastMovementVector;
+    [SerializeField] private RigidbodyConstraints2D _originalConstraints;
     #endregion
     // Start is called before the first frame update
     private void Awake()
@@ -33,6 +35,7 @@ public class FrankMovement : MonoBehaviour
     }
     void Start()
     {       
+        _frankInput = GetComponent<InputManager>();
         _rigiRigidbody = GetComponent<Rigidbody2D>();
         _lastMovementVector = Vector3.right;
     }
@@ -75,9 +78,14 @@ public class FrankMovement : MonoBehaviour
 
     IEnumerator DashCoolDown()
     {
+        
         _rigiRigidbody.velocity = Vector3.zero;
+        _frankInput.enabled = false;
+        _rigiRigidbody.constraints = RigidbodyConstraints2D.FreezeAll;       
         this.enabled = false;
         yield return new WaitForSeconds(1f);
+        _rigiRigidbody.constraints = _originalConstraints;
+        _frankInput.enabled = true;
         this.enabled = true;
     }
 }

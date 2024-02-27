@@ -14,8 +14,10 @@ public class VomitComponent : MonoBehaviour
     #region references
     private Slider _vomitBar;
     [SerializeField] private FrankMovement _frankMovement;
+    [SerializeField] private InputManager _frankInput;
     [SerializeField] private Rigidbody2D _targetRigidBody;
     [SerializeField] private ShootComponent _shootComponent;
+    [SerializeField] private RigidbodyConstraints2D _originalConstraints;
     private bool _stops = false;
     #endregion
     #region propiedades
@@ -49,6 +51,8 @@ public class VomitComponent : MonoBehaviour
         }
         if(_vomitBar.value >= _maxvomit)
         {
+            _frankInput.enabled = false;
+            _frankMovement.enabled = false;
             _shootComponent.Shoot();
             StartCoroutine(StopPlayer());
         }
@@ -59,9 +63,10 @@ public class VomitComponent : MonoBehaviour
     {
         _vomitBar.value = 0;
         _stops = true;
-        _frankMovement.enabled = false;
-        _targetRigidBody.velocity = Vector3.zero;
+        _targetRigidBody.constraints = RigidbodyConstraints2D.FreezeAll;
         yield return new WaitForSeconds(2f);
+        _targetRigidBody.constraints = _originalConstraints; 
+        _frankInput.enabled = true;
         _frankMovement.enabled = true;
         _stops = false;
     }
