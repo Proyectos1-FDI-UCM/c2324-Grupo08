@@ -8,7 +8,6 @@ public class TrashMovement : MonoBehaviour, EnemiesControler
     private Transform _myTransform;
     private Transform _target;
     private TrashAttack trashAttack;
-    [SerializeField] private LayerMask pared;
     #endregion
     #region properties
     private bool _characterClose; //compruba si el jugador esta cerca para cambiar su movimiento, 
