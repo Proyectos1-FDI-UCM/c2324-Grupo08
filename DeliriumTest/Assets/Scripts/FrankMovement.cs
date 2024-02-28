@@ -23,6 +23,7 @@ public class FrankMovement : MonoBehaviour
     private Vector3 _movementVector;
     public Vector3 _lastMovementVector;
     [SerializeField] private RigidbodyConstraints2D _originalConstraints;
+    private Vector3 _dashPosition;
     #endregion
     // Start is called before the first frame update
     private void Awake()
@@ -55,10 +56,13 @@ public class FrankMovement : MonoBehaviour
 
         if (_directionVector != Vector3.zero)
         {
-            transform.position = transform.position + (_dashforce * _directionVector.normalized);
+            _dashPosition = transform.position + (_dashforce * _directionVector.normalized);
+            
         }
         else
-        { transform.position = transform.position + (_dashforce * _lastMovementVector.normalized); }
+        { 
+            _dashPosition = transform.position + (_dashforce * _lastMovementVector.normalized); 
+        }
         _vomitComponent.VomitDash();
         StartCoroutine(DashCoolDown());
     }

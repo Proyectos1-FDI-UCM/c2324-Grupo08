@@ -17,7 +17,6 @@ public class VomitComponent : MonoBehaviour
     [SerializeField] private InputManager _frankInput;
     [SerializeField] private Rigidbody2D _targetRigidBody;
     [SerializeField] private ShootComponent _shootComponent;
-    [SerializeField] private RigidbodyConstraints2D _originalConstraints;
     private bool _stops = false;
     #endregion
     #region propiedades
@@ -65,7 +64,7 @@ public class VomitComponent : MonoBehaviour
         _stops = true;
         _targetRigidBody.constraints = RigidbodyConstraints2D.FreezeAll;
         yield return new WaitForSeconds(2f);
-        _targetRigidBody.constraints = _originalConstraints; 
+        _targetRigidBody.constraints = RigidbodyConstraints2D.FreezeRotation; 
         _frankInput.enabled = true;
         _frankMovement.enabled = true;
         _stops = false;
