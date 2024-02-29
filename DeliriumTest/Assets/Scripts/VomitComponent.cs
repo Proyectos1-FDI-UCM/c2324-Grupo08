@@ -52,7 +52,7 @@ public class VomitComponent : MonoBehaviour
         {
             _frankInput.enabled = false;
             _frankMovement.enabled = false;
-            _shootComponent.Shoot();
+            StartCoroutine(_shootComponent.Disparo(_frankMovement._lastMovementVector));
             StartCoroutine(StopPlayer());
         }
 

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6876590429686369423}
   - component: {fileID: 1049787344942060873}
   - component: {fileID: 6010669304553573181}
-  - component: {fileID: 6230165049603860048}
+  - component: {fileID: 580243117121630832}
   - component: {fileID: -969109232066029627}
   - component: {fileID: 4863645292897106561}
   m_Layer: 6
@@ -214,7 +214,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &6230165049603860048
+--- !u!114 &580243117121630832
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 482975409083832220}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1c9954c3a59927419a6655fd9bd67b6, type: 3}
+  m_Script: {fileID: 11500000, guid: a35e5d7fa4afeca4b870df5d994d2869, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Attack: 1
@@ -239,7 +239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6acc7242b87cbd549a665e24d042dfbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 2
+  _maxHealth: 4
 --- !u!95 &4863645292897106561
 Animator:
   serializedVersion: 5

@@ -7,7 +7,7 @@ public class TrashMovement : MonoBehaviour, EnemiesControler
     #region references
     private Transform _myTransform;
     private Transform _target;
-    private TrashAttack trashAttack;
+    private ShootComponent _shootComponent;
     #endregion
     #region properties
     private bool _characterClose; //compruba si el jugador esta cerca para cambiar su movimiento, 
@@ -39,7 +39,7 @@ public class TrashMovement : MonoBehaviour, EnemiesControler
     }
     void Start()
     {
-        trashAttack = GetComponent<TrashAttack>();
+        _shootComponent = GetComponent<ShootComponent>();
         _myTransform = transform;
         _characterClose = false;
         _moveTime = 0;
@@ -59,7 +59,7 @@ public class TrashMovement : MonoBehaviour, EnemiesControler
                     _moveTime = 0.5f;
                     _stopTime = 0.2f;
                     _direction = (_target.position - _myTransform.position).normalized;
-                    StartCoroutine(trashAttack.Disparo(_direction));
+                    StartCoroutine(_shootComponent.Disparo(_direction));
                 }
                 else //Tiempo de parada
                 {
