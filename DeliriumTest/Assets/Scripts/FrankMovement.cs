@@ -1,6 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class FrankMovement : MonoBehaviour
@@ -8,12 +6,19 @@ public class FrankMovement : MonoBehaviour
     #region parameters
     [SerializeField] private float _speedValue = 5f;
     [SerializeField] private float _dashforce = 5f;
+    [SerializeField] private float _boundOffset;
+
     #endregion
     #region references
     private InputManager _frankInput;
     private Rigidbody2D _rigiRigidbody;
     private static GameObject player;
     [SerializeField] private VomitComponent _vomitComponent;
+    [SerializeField] private Transform _LeftBound;
+    [SerializeField] private Transform _RightBound;
+    [SerializeField] private Transform _UpperBound;
+    [SerializeField] private Transform _LowerBound;
+    
     public static GameObject Player { get { return player; } }
     #endregion
     #region propiedades
@@ -35,7 +40,7 @@ public class FrankMovement : MonoBehaviour
         else Destroy(gameObject);
     }
     void Start()
-    {       
+    {
         _frankInput = GetComponent<InputManager>();
         _rigiRigidbody = GetComponent<Rigidbody2D>();
         _lastMovementVector = Vector3.right;
@@ -57,14 +62,20 @@ public class FrankMovement : MonoBehaviour
         if (_directionVector != Vector3.zero)
         {
             _dashPosition = transform.position + (_dashforce * _directionVector.normalized);
-            
         }
         else
-        { 
-            _dashPosition = transform.position + (_dashforce * _lastMovementVector.normalized); 
+        {
+            _dashPosition = transform.position + (_dashforce * _lastMovementVector.normalized);
         }
-        _vomitComponent.VomitDash();
-        StartCoroutine(DashCoolDown());
+        if ((_dashPosition.x > _LeftBound.position.x + _boundOffset) && (_dashPosition.x < _RightBound.position.x - _boundOffset) && (_dashPosition.y < _UpperBound.position.y - _boundOffset) && (_dashPosition.y > _LowerBound.position.y + _boundOffset))
+        {
+            transform.position = _dashPosition;
+            _vomitComponent.VomitDash();
+            StartCoroutine(DashCoolDown());
+        }
+
+
+
     }
 
 
@@ -82,14 +93,14 @@ public class FrankMovement : MonoBehaviour
 
     IEnumerator DashCoolDown()
     {
-        
+
         _rigiRigidbody.velocity = Vector3.zero;
         _frankInput.enabled = false;
-        _rigiRigidbody.constraints = RigidbodyConstraints2D.FreezeAll;       
-        this.enabled = false;
+        _rigiRigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
+        //this.enabled = false;
         yield return new WaitForSeconds(1f);
         _rigiRigidbody.constraints = _originalConstraints;
         _frankInput.enabled = true;
-        this.enabled = true;
+        //this.enabled = true;
     }
 }

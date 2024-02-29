@@ -11,6 +11,10 @@ public class CamTrigger : MonoBehaviour
     private   GameObject _myObject;
     public static BoxCollider2D _transicion;
     public  static bool _estadotrans;
+    [SerializeField] private Transform _RightboundTransform;
+    [SerializeField] private Transform _LeftboundsTransform;
+    [SerializeField] private float _displacementDistance;
+    private Vector3 _displacement;
     #endregion
     #region method
     public static void TransitionAvaible(bool trans)
@@ -25,7 +29,7 @@ public class CamTrigger : MonoBehaviour
         _myObject = gameObject;
         _transicion = _myObject.GetComponent<BoxCollider2D>();
         _transicion.enabled = false;
-
+        
     }
     
 
@@ -39,6 +43,9 @@ public class CamTrigger : MonoBehaviour
             _transicion.enabled=false;
             transform.Translate(Vector2.right * 16);
 
+            _displacement = new Vector3 (_displacementDistance, 0,0);
+            _LeftboundsTransform.position  = _LeftboundsTransform.position + _displacement;
+            _RightboundTransform.position = _RightboundTransform.position + _displacement;
         }
     }
      
