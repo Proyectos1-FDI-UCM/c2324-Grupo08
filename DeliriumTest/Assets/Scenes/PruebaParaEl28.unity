@@ -1194,6 +1194,7 @@ MonoBehaviour:
   _timerspeed: 0.5
   _maxvomit: 20
   _vomitDash: 4
+  _vomitcuantity: 0.3
   _frankMovement: {fileID: 1625726183}
   _frankInput: {fileID: 1625726182}
   _targetRigidBody: {fileID: 1625726186}

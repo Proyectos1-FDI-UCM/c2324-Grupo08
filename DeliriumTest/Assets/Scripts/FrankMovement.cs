@@ -1,4 +1,5 @@
 using System.Collections;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class FrankMovement : MonoBehaviour
@@ -25,6 +26,7 @@ public class FrankMovement : MonoBehaviour
     private float _xvalue;
     private float _yvalue;
     private Vector3 _directionVector;
+    public Vector3 Direction { get { return _directionVector; } }
     private Vector3 _movementVector;
     public Vector3 _lastMovementVector;
     [SerializeField] private RigidbodyConstraints2D _originalConstraints;
@@ -82,7 +84,7 @@ public class FrankMovement : MonoBehaviour
     void FixedUpdate()
     {
         _directionVector = new Vector3(_xvalue, _yvalue);
-        _movementVector = _directionVector * _speedValue;
+        _movementVector = _directionVector.normalized * _speedValue;
         _rigiRigidbody.velocity = _movementVector;
         if (_directionVector != Vector3.zero)
         {

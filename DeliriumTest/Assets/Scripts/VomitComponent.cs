@@ -10,6 +10,7 @@ public class VomitComponent : MonoBehaviour
     private float timer;
     [SerializeField] private float _maxvomit;
     [SerializeField] private float _vomitDash;
+    [SerializeField] private float _vomitcuantity;
     #endregion
     #region references
     private Slider _vomitBar;
@@ -31,7 +32,14 @@ public class VomitComponent : MonoBehaviour
 
     private void Addvomit()
     {
-        _vomitBar.value++;           
+        if(_frankMovement.Direction.magnitude == 0)
+        {
+            _vomitBar.value = _vomitBar.value + (_vomitcuantity *2);
+        }
+        else
+        {
+            _vomitBar.value = _vomitBar.value + _vomitcuantity;
+        }     
     }
 
     public void VomitDash()
