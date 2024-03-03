@@ -15,6 +15,7 @@ public class InputManager : MonoBehaviour
     [SerializeField]
     float offsety = 0.7f;
     float finaloffset;
+    public int objectID;
     #endregion
     void Start()
     {

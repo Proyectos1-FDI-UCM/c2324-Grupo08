@@ -6,7 +6,8 @@ public class Damage : MonoBehaviour
 {
     #region properties
     [SerializeField]
-    private int Attack = 1;
+    private int _Attack = 1;
+    public int Attack { get { return _Attack; } set { _Attack = value; } }
     #endregion
     private void OnCollisionEnter2D(Collision2D collision)
     {
