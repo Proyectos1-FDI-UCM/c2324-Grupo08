@@ -10,7 +10,7 @@ public class ThrowUpPickUP : MonoBehaviour
     #endregion
     #region parameters
     [SerializeField] private int substractAmount;
-    [SerializeField] private Slider _vomitBar;
+    public Slider _vomitBar;
     #endregion
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -28,9 +28,24 @@ public class ThrowUpPickUP : MonoBehaviour
             Debug.LogError("Object not found");
         }
     }
+
+    public void RegisterVomit(Slider vomit)
+    {
+        Debug.Log("Registrado");
+        _vomitBar = vomit;
+    }
+
+
+
     private void Start()
     {
         _vomit = GetComponent<VomitComponent>();
+    }
+
+
+    private void Awake()
+    {
+
     }
     private void SubstractVomit()
     {

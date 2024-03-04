@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class HealthPickUP : MonoBehaviour
 {
+
     public LifeBarComponenet lifeBar;
     [SerializeField] private float healing;
     private void OnTriggerEnter2D(Collider2D collision)
@@ -11,7 +12,7 @@ public class HealthPickUP : MonoBehaviour
         FrankMovement player = collision.gameObject.GetComponent<FrankMovement>();
         if (player != null)
         {
-            HealthComponent health=collision.gameObject.GetComponent<HealthComponent>();
+            HealthComponent health = collision.gameObject.GetComponent<HealthComponent>();
             if (health.Health != health.MaxHealth)
             {
                 health.Healing(healing);
@@ -21,4 +22,9 @@ public class HealthPickUP : MonoBehaviour
         }
 
     }
+    public void RegisterLifeBar(LifeBarComponenet lifeBarComponent)
+    { 
+        lifeBar = lifeBarComponent;
+    }
 }
+
