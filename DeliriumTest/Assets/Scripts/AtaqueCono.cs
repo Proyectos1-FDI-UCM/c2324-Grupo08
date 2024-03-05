@@ -49,6 +49,7 @@ public class Cono : MonoBehaviour
     }
     private void Start()
     {
+        ataqueCono.SetActive(false);
         _attack = GetComponent<PlayerAttack>();
         _damage = GetComponent<Damage>();
         Collider2D = GetComponent<BoxCollider2D>();
@@ -66,7 +67,6 @@ public class Cono : MonoBehaviour
             Setoffsety(finaloffset);
             StartCoroutine(AtaqueCono());
         }
-
         else if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow))
         {
             if (Input.GetKeyDown(KeyCode.LeftArrow)) finaloffset = -offsetx;
