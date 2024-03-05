@@ -31,23 +31,7 @@ public class PlayerAttack : MonoBehaviour
         for(int i = duraciondeataque; i > 0; i--) yield return new WaitForFixedUpdate();
         Collider2D.enabled = false;
         _spriteRenderer.enabled= false;
-        AtaqueBasico();
         StopCoroutine(Attack());
-    }
-    public void AtaqueCono()
-    {
-        attack.Attack = 4;
-        Collider2D.size = new Vector2(1.3f,1.5f);
-        offsetx = 1f;
-        offsety = 1f;
-        recogerObjetos.canBePicked = true;
-    }
-    public void AtaqueBasico()
-    {
-        attack.Attack = 2;
-        Collider2D.size = new Vector2(1f, 1f);
-        offsetx = 0.7f;
-        offsety = 0.7f;
     }
     void FixedUpdate()
     {

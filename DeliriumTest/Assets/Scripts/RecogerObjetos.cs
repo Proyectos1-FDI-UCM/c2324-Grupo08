@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class RecogerObjetos : MonoBehaviour
 {
-    private PlayerAttack _player;
+    [SerializeField] private Cono _cono;
+    [SerializeField] private GameObject _ataqueCono;
     public bool canBePicked;
     public void ObjectSellector(ObjectStatus status)
     {
@@ -20,14 +21,14 @@ public class RecogerObjetos : MonoBehaviour
                 if(canBePicked)
                 {
                     canBePicked=false;
-                    _player.AtaqueCono();
+                    _ataqueCono.SetActive(true);
+                    _cono.AtaqueCono();
                 }
                 break;
         }     
     }
     private void Start()
     {
-        _player = GetComponentInChildren<PlayerAttack>();
         canBePicked = true;
     }
 }
