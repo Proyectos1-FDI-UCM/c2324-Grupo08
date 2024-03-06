@@ -6,6 +6,8 @@ public class RecogerObjetos : MonoBehaviour
 {
     [SerializeField] private Cono _cono;
     [SerializeField] private GameObject _ataqueCono;
+    [SerializeField] private GameObject ataque;
+
     public bool canBePicked;
     public void ObjectSellector(ObjectStatus status)
     {
@@ -14,22 +16,27 @@ public class RecogerObjetos : MonoBehaviour
             case ObjectStatus.botella:
                 if (canBePicked)
                 {
-                    canBePicked=false;
+                    canBePicked = false;
                 }
                 break;
             case ObjectStatus.cono:
-                if(canBePicked)
+                if (canBePicked)
                 {
-                    canBePicked=false;
+                    canBePicked = false;
                     _ataqueCono.SetActive(true);
                     _cono.AtaqueCono();
                 }
                 break;
-        }     
+        }
     }
     private void Start()
     {
         canBePicked = true;
+    }
+    public void RegisterObject(int value)
+    {
+        ObjectSellector((ObjectStatus)value);
+        ataque.SetActive(false);
     }
 }
 public enum ObjectStatus
