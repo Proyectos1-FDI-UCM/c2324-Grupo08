@@ -14,6 +14,7 @@ public class FrankMovement : MonoBehaviour
     private InputManager _frankInput;
     private Rigidbody2D _rigiRigidbody;
     private static GameObject player;
+    private Animator animator;
     [SerializeField] private VomitComponent _vomitComponent;
     [SerializeField] private Transform _LeftBound;
     [SerializeField] private Transform _RightBound;
@@ -43,6 +44,7 @@ public class FrankMovement : MonoBehaviour
     }
     void Start()
     {
+        animator = GetComponent<Animator>();
         _frankInput = GetComponent<InputManager>();
         _rigiRigidbody = GetComponent<Rigidbody2D>();
         _lastMovementVector = Vector3.right;
