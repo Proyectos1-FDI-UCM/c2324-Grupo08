@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,19 +16,32 @@ public class GameManager : MonoBehaviour
     private Vector3 RoomOffsetVector;
     public Slider vomitSlider;
     public LifeBarComponenet lifepickupbar;
-
+    public List<int> _availableRooms;
+    int _currentRoom;
     void Awake()
     {
 
         RoomOffsetVector = new Vector3(RoomOffset, 0, 0);
         for (int i = 0; i < Rooms.Length; i++)
         {
-            randomRoom = Random.Range(0, Rooms.Length);
-            Room = Instantiate(Rooms[0], BuilderTransform.position, Quaternion.identity);
-            Room.GetComponentInChildren<ThrowUpPickUP>().RegisterVomit(vomitSlider);
-            Room.GetComponentInChildren<HealthPickUP>().RegisterLifeBar(lifepickupbar);
+            randomRoom = Random.Range(0, _availableRooms.Count);
+            Debug.Log("Randomnumber:" + randomRoom);
+            _currentRoom = _availableRooms[randomRoom];
+            Debug.Log("Current:" + _currentRoom);
+            Room = Instantiate(Rooms[_currentRoom], BuilderTransform.position, Quaternion.identity);
+            _availableRooms.Remove(_currentRoom);
+            if(Room.GetComponentInChildren<ThrowUpPickUP>() != null)
+            {
+                Room.GetComponentInChildren<ThrowUpPickUP>().RegisterVomit(vomitSlider);
+            }
+            if(Room.GetComponentInChildren<HealthPickUP>() != null)
+            {
+                Room.GetComponentInChildren<HealthPickUP>().RegisterLifeBar(lifepickupbar);
+            }
+            
             RoomPosition = RoomPosition + RoomOffsetVector;
             BuilderTransform.position = RoomPosition;
+            Debug.Log("Vueltas");
         }
 
     }

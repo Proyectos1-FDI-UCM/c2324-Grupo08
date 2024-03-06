@@ -22,9 +22,9 @@ public class HealthPickUP : MonoBehaviour
         }
 
     }
-    public void RegisterLifeBar(LifeBarComponenet lifeBarComponent)
+    /*public void RegisterLifeBar(LifeBarComponenet lifeBarComponent)
     { 
         lifeBar = lifeBarComponent;
-    }
+    }*/
 }
 

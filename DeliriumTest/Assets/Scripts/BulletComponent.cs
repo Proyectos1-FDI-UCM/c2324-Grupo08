@@ -30,6 +30,7 @@ public class BulletComponent : MonoBehaviour
         if(collision.gameObject.GetComponent<FrankMovement>() != null || collision.gameObject.GetComponent<EnemiesControler>() != null
             || collision.gameObject.layer == 7) 
             Destroy(gameObject);
+        
     }
 
     // Update is called once per frame
