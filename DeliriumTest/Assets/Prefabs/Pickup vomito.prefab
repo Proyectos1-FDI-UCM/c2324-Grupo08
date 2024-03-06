@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7248133977681697861}
   - component: {fileID: 429747606160356202}
   - component: {fileID: 8954796026959299605}
-  - component: {fileID: 2148550423344157115}
+  - component: {fileID: 2040483433996672261}
   m_Layer: 0
   m_Name: Pickup vomito
   m_TagString: Untagged
@@ -131,7 +131,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6, y: 0.9}
   m_EdgeRadius: 0
---- !u!114 &2148550423344157115
+--- !u!114 &2040483433996672261
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,5 +143,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 722f4938eda18074e93c8755dd0f8fbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  substractAmount: 3
+  substractAmount: 2
   _vomitBar: {fileID: 0}

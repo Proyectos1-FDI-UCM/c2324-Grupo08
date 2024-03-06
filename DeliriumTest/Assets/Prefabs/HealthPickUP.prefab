@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5021903183528127959}
   - component: {fileID: 522939971807226445}
   - component: {fileID: 8188917863357272400}
-  - component: {fileID: 1345266384490767574}
+  - component: {fileID: 1394838885201360130}
   m_Layer: 0
   m_Name: HealthPickUP
   m_TagString: Untagged
@@ -131,7 +131,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.7, y: 0.8}
   m_EdgeRadius: 0
---- !u!114 &1345266384490767574
+--- !u!114 &1394838885201360130
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -144,4 +144,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeBar: {fileID: 0}
-  healing: 1
+  healing: 2
