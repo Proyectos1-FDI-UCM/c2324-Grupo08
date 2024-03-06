@@ -16,11 +16,14 @@ public class LevelManager : MonoBehaviour
 
         for (int i = 0; i < allScripts.Length; i++)
         {
+            
             if (allScripts[i] is EnemiesControler)
-            { 
+            {
+
                 if (!m_AllEnemies.Contains(allScripts[i] as EnemiesControler)) 
-                { 
+                {
                     m_AllEnemies.Add(allScripts[i] as EnemiesControler);
+                    OnScreenCheck._currentenemy.Add(allScripts[i].gameObject);
                 } 
             }
         }
@@ -29,7 +32,7 @@ public class LevelManager : MonoBehaviour
 
     #endregion
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
     }
 

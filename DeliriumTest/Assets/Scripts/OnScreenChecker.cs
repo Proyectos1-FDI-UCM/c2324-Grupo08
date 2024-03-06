@@ -7,25 +7,43 @@ public class OnScreenCheck : MonoBehaviour
     #region references
     private UnityEngine.Camera _maincam;
 
-    [SerializeField]
-    private GameObject[] _currentenemy;
-    [SerializeField]
-    private Transform[] _enemytransform;
+    public static List<GameObject> _currentenemy = new List<GameObject>();
+    public static List<Transform> _enemytransform = new List<Transform>();
     #endregion
+    public static void RegisterEnemy()
+    {
+        MonoBehaviour[] allScripts = FindObjectsOfType<MonoBehaviour>();
 
+        for (int i = 0; i < allScripts.Length; i++)
+        {
+
+            if (allScripts[i] is EnemiesControler)
+            {
+
+                if (!_currentenemy.Contains(allScripts[i].gameObject))
+                {
+                    _currentenemy.Add(allScripts[i].gameObject);
+                }
+            }
+        }
+    }
     void Awake()
     {
-        _maincam = Camera.main;
-        for (int i = 0; i < _currentenemy.Length; i++)
+        _maincam = Camera.main; 
+        RegisterEnemy();
+        
+    }
+    private void Start()
+    {
+        for (int i = 0; i < _currentenemy.Count; i++) { _enemytransform.Add(_currentenemy[i].transform); }
+        for (int i = 0; i < _currentenemy.Count; i++)
         {
             if (_enemytransform[i] != null) EnemyCheck(_currentenemy[i], _enemytransform[i]);
-
         }
     }
     private void Update()
     {
-
-        for (int i = 0; i < _currentenemy.Length; i++)
+        for (int i = 0; i < _enemytransform.Count; i++)
         {
             if (_enemytransform[i] != null) EnemyCheck(_currentenemy[i], _enemytransform[i]);
 
