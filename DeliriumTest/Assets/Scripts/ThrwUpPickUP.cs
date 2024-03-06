@@ -29,11 +29,11 @@ public class ThrowUpPickUP : MonoBehaviour
         }
     }
 
-    public void RegisterVomit(Slider vomit)
+    /*public void RegisterVomit(Slider vomit)
     {
         Debug.Log("Registrado");
         _vomitBar = vomit;
-    }
+    }*/
 
 
 

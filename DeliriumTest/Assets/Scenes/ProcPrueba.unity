@@ -603,6 +603,7 @@ MonoBehaviour:
   BuilderTransform: {fileID: 1297066627}
   vomitSlider: {fileID: 1075200001}
   lifepickupbar: {fileID: 314316747}
+  _availableRooms: 000000000100000002000000
 --- !u!4 &828475418
 Transform:
   m_ObjectHideFlags: 0
@@ -1061,22 +1062,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ef89d5f8a6d4be488f6377150651884, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentenemy:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  _enemytransform:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!114 &1367502162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1622,6 +1607,10 @@ PrefabInstance:
     - target: {fileID: 5726116090277671307, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6066087677126643270, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
+      propertyPath: m_Constraints
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
