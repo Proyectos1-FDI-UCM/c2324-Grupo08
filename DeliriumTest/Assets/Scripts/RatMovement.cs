@@ -69,9 +69,8 @@ public class RatMovement : MonoBehaviour, EnemiesControler
                     Collider2D collider = Physics2D.OverlapCircle(_myTransform.position, 1f, pared);
                     if (collider != null)
                     {
-                        Debug.Log("Aquí hay pared :p");
                         x = Random.Range(-45, 45);
-                        _direction = Quaternion.Euler(0f, 0f, x) * collider.gameObject.transform.up;
+                        _direction = Quaternion.Euler(0f, 0f, x) * (-collider.gameObject.transform.up);
                     }
                 }
                 else //Tiempo de parada

@@ -12,7 +12,7 @@ public class ThrowUpPickUP : MonoBehaviour
     [SerializeField] private int substractAmount;
     public Slider _vomitBar;
     #endregion
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         FrankMovement player = collision.gameObject.GetComponent<FrankMovement>();
         if (player != null)
@@ -25,7 +25,7 @@ public class ThrowUpPickUP : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Object not found");
+            Debug.Log("Object not found");
         }
     }
 

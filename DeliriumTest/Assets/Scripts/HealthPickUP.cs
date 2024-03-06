@@ -7,7 +7,7 @@ public class HealthPickUP : MonoBehaviour
 
     public LifeBarComponenet lifeBar;
     [SerializeField] private float healing;
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         FrankMovement player = collision.gameObject.GetComponent<FrankMovement>();
         if (player != null)
