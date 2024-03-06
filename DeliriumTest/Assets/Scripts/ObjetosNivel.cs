@@ -6,14 +6,39 @@ public class Objetorecojible : MonoBehaviour
 {
     [SerializeField] ObjetoRecojible objetoRecojible;
     [SerializeField] private RecogerObjetos recogerObjetos;
-    [SerializeField] private GameObject ataque;
+    [SerializeField] private GameObject objeto;
+    public bool picked = true;
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        FrankMovement player = collision.GetComponent<FrankMovement>();
+        if (player != null)
+        {
+            picked = true;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        FrankMovement player = collision.GetComponent<FrankMovement>();
+        if (player != null)
+        {
+            picked = false;
+        }
+    }
+    private void ObjetoRecogido()
+    {
+        recogerObjetos.RegisterObject(objetoRecojible.ObjectID);
+        Destroy(objeto);
+    }
+    
+    private void Start()
+    {
+        picked = false;
+    }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyUp(KeyCode.E) && picked && recogerObjetos.canBePicked)
         {
-            recogerObjetos.ObjectSellector((ObjectStatus)objetoRecojible.ObjectID);
-            ataque.SetActive(false);
-            Destroy(this.gameObject);
+            ObjetoRecogido();
         }
     }
 }

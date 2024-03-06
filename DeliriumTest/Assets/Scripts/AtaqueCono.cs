@@ -37,6 +37,7 @@ public class Cono : MonoBehaviour
         _spriteRenderer.enabled = false;
         ataqueCono.SetActive(false);
         ataque.SetActive(true);
+        _recogerObjetos.canBePicked = true;
         StopCoroutine(AtaqueCono());
     }
     public void Setoffsetx(float value)
