@@ -57,7 +57,7 @@ public class TrashMovement : MonoBehaviour, EnemiesControler
                 {
                     
                     _moveTime = 0.5f;
-                    _stopTime = 0.2f;
+                    _stopTime = 0.5f;
                     _direction = (_target.position - _myTransform.position).normalized;
                     StartCoroutine(_shootComponent.Disparo(_direction));
                 }

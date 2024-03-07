@@ -29,6 +29,6 @@ public class HealthComponent : MonoBehaviour
     {
         _health -= amount;
         OnPlayerDamaged?.Invoke();
-        if(Mathf.Approximately(_health,0f)) Destroy(gameObject);
+        if(Mathf.Approximately(_health,0f) || _health < 0f) Destroy(gameObject);
     }
 }

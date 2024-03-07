@@ -12,7 +12,6 @@ public class ShootComponent : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         GameObject _bullet = Instantiate(_bulletPrefab, transform.position, Quaternion.identity);
         _bullet.GetComponent<BulletComponent>().RegisterVector(_shotDirection);
-        yield return new WaitForSeconds(1f);
     }
 
 }
