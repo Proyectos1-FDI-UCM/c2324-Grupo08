@@ -1374,7 +1374,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.13900001, y: 0.88100004}
   m_AnchorMax: {x: 0.13900001, y: 0.88100004}
-  m_AnchoredPosition: {x: 296, y: -0.0000076294}
+  m_AnchoredPosition: {x: 296, y: -0.000015258789}
   m_SizeDelta: {x: 355.8171, y: 92.3465}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &314316747
@@ -4236,7 +4236,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -468863205
   m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingOrder: -100
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -8015,8 +8015,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -5.044998, y: 10}
-  m_SizeDelta: {x: -10.09, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -0.0000009536743, y: 0.00000011920929}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2115367873
 GameObject:
@@ -8325,6 +8325,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 506101669}
     - target: {fileID: 4623649835832064220, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
+      propertyPath: _dashforce
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4623649835832064220, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
       propertyPath: _LowerBound
       value: 
       objectReference: {fileID: 1255215746}
@@ -8336,6 +8340,10 @@ PrefabInstance:
       propertyPath: _UpperBound
       value: 
       objectReference: {fileID: 243003704}
+    - target: {fileID: 4623649835832064220, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
+      propertyPath: _speedValue
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4623649835832064220, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
       propertyPath: _vomitComponent
       value: 
