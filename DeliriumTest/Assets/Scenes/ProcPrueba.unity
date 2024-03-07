@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &143811884 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6010307990909652271, guid: 8ebd7ae5fcc44ff4eaf82f6f06d8ee27, type: 3}
+  m_PrefabInstance: {fileID: 1729016439}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &314316745
 GameObject:
   m_ObjectHideFlags: 0
@@ -595,15 +600,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19cdf883d78f01447b4c7bf86ec4f809, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Rooms:
-  - {fileID: 2118596358983314602, guid: b6a2b71cea78e7e429da1a08635c863b, type: 3}
-  - {fileID: 1788602623724743451, guid: e4bc15fb15e87274a8b5c4c141874ce7, type: 3}
-  - {fileID: 5441964427984817920, guid: 75a63a2a08364c643b49755a732b6dbb, type: 3}
-  RoomOffset: 16
-  BuilderTransform: {fileID: 1297066627}
-  vomitSlider: {fileID: 1075200001}
-  lifepickupbar: {fileID: 314316747}
-  _availableRooms: 000000000100000002000000
 --- !u!4 &828475418
 Transform:
   m_ObjectHideFlags: 0
@@ -969,9 +965,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   newCampos: {x: 16, y: 0, z: 0}
   newPlayerPos: {x: 1.5, y: 0, z: 0}
-  _RightboundTransform: {fileID: 953489579}
-  _LeftboundsTransform: {fileID: 506101669}
-  _displacementDistance: 16
+  _leftBound: {fileID: 143811884}
 --- !u!61 &1302031219
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1089,11 +1083,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1625726181 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5726116090277671307, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
-  m_PrefabInstance: {fileID: 8660912941805569815}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1625726182 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 427278207932773805, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
@@ -1315,7 +1304,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _camVelocity: 0.02
-  player: {fileID: 1625726181}
   minPos: {x: 0, y: 0, z: -10}
   maxPos: {x: 0, y: 0, z: -10}
 --- !u!81 &1943516378
@@ -1547,6 +1535,10 @@ PrefabInstance:
     - target: {fileID: 1347014803689699083, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
       propertyPath: m_Name
       value: Paco
+      objectReference: {fileID: 0}
+    - target: {fileID: 3218452739342893488, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4623649835832064220, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
       propertyPath: _LeftBound
