@@ -8,7 +8,7 @@ public class OnScreenCheck : MonoBehaviour
     private UnityEngine.Camera _maincam;
 
     public static List<GameObject> _currentenemy = new List<GameObject>();
-    public static List<Transform> _enemytransform = new List<Transform>();
+    private static List<Transform> _enemytransform = new List<Transform>();
     #endregion
     public static void RegisterEnemy()
     {
@@ -52,7 +52,9 @@ public class OnScreenCheck : MonoBehaviour
     private void EnemyCheck(GameObject _currentEnemy, Transform _enemytransform)
     {
         Vector3 viewPos = _maincam.WorldToViewportPoint(_enemytransform.position);
-        _currentEnemy.SetActive(viewPos.x >= 0 && viewPos.x <= 1 && viewPos.y >= 0 && viewPos.y <= 1);
+        bool inScreen = viewPos.x >= 0 && viewPos.x <= 1 && viewPos.y >= 0 && viewPos.y <= 1;
+        _currentEnemy.SetActive(inScreen);
+        if (inScreen) { LevelManager.RegisterEnemy(_currentEnemy); }
     }
    
 

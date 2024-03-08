@@ -4,7 +4,7 @@ using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
-/*
+
 public class GameManager : MonoBehaviour
 {
     public GameObject[] Rooms;
@@ -30,15 +30,15 @@ public class GameManager : MonoBehaviour
             Debug.Log("Current:" + _currentRoom);
             Room = Instantiate(Rooms[_currentRoom], BuilderTransform.position, Quaternion.identity);
             _availableRooms.Remove(_currentRoom);
-            if(Room.GetComponentInChildren<ThrowUpPickUP>() != null)
-            {
-                Room.GetComponentInChildren<ThrowUpPickUP>().RegisterVomit(vomitSlider);
-            }
-            if(Room.GetComponentInChildren<HealthPickUP>() != null)
-            {
-                Room.GetComponentInChildren<HealthPickUP>().RegisterLifeBar(lifepickupbar);
-            }
-            
+            //if (Room.GetComponentInChildren<ThrowUpPickUP>() != null)
+            //{
+            //    Room.GetComponentInChildren<ThrowUpPickUP>().RegisterVomit(vomitSlider);
+            //}
+            //if (Room.GetComponentInChildren<HealthPickUP>() != null)
+            //{
+            //    Room.GetComponentInChildren<HealthPickUP>().RegisterLifeBar(lifepickupbar);
+            //}
+
             RoomPosition = RoomPosition + RoomOffsetVector;
             BuilderTransform.position = RoomPosition;
             Debug.Log("Vueltas");
@@ -56,4 +56,4 @@ public class GameManager : MonoBehaviour
     {
 
     }
-}*/
+}

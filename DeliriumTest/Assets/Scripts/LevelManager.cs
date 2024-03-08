@@ -10,23 +10,16 @@ public class LevelManager : MonoBehaviour
     #endregion
 
     #region methods
-    public static void RegisterEnemy() 
+    public static void RegisterEnemy(GameObject enemy) 
     {
-        MonoBehaviour[] allScripts = FindObjectsOfType<MonoBehaviour>();
-
-        for (int i = 0; i < allScripts.Length; i++)
-        {
-            
-            if (allScripts[i] is EnemiesControler)
+        EnemiesControler enemiesControler = enemy.GetComponent<EnemiesControler>();
+            if (enemiesControler != null)
             {
-
-                if (!m_AllEnemies.Contains(allScripts[i] as EnemiesControler)) 
+                if (!m_AllEnemies.Contains(enemiesControler)) 
                 {
-                    m_AllEnemies.Add(allScripts[i] as EnemiesControler);
-                    OnScreenCheck._currentenemy.Add(allScripts[i].gameObject);
+                    m_AllEnemies.Add(enemiesControler);
                 } 
             }
-        }
     }
     public static void EnemyDefeated(EnemiesControler enemy) { m_AllEnemies.Remove(enemy); }
 
@@ -39,7 +32,6 @@ public class LevelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RegisterEnemy();
         Debug.Log(m_AllEnemies.Count);
         if (m_AllEnemies.Count == 0)
         {
