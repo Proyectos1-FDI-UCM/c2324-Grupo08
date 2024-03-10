@@ -13,7 +13,7 @@ public class FrankMovement : MonoBehaviour
     private InputManager _frankInput;
     private Rigidbody2D _rigiRigidbody;
     private static GameObject player;
-    private Animator animator;
+    private Animator _animator;
     [SerializeField] private VomitComponent _vomitComponent;
     [SerializeField] private Transform _LeftBound;
     [SerializeField] private Transform _RightBound;
@@ -43,7 +43,7 @@ public class FrankMovement : MonoBehaviour
     }
     void Start()
     {
-        animator = GetComponent<Animator>();
+        _animator = GetComponent<Animator>();
         _frankInput = GetComponent<InputManager>();
         _rigiRigidbody = GetComponent<Rigidbody2D>();
         _lastMovementVector = Vector3.right;
@@ -90,17 +90,17 @@ public class FrankMovement : MonoBehaviour
         if (_directionVector != Vector3.zero)
         {
             _lastMovementVector = _directionVector;
-            animator.SetFloat("MovimientoX", _xvalue);
-            animator.SetFloat("MovimientoY", _yvalue) ;
-            animator.SetBool("Rascadita", false);
-            animator.SetBool("Andando", true);
+            _animator.SetFloat("MovimientoX", _xvalue);
+            _animator.SetFloat("MovimientoY", _yvalue) ;
+            _animator.SetBool("Rascadita", false);
+            _animator.SetBool("Andando", true);
            
             
         }
         else
         {
-            animator.SetBool("Andando", false);
-            animator.SetBool("Rascadita", true);
+            _animator.SetBool("Andando", false);
+            _animator.SetBool("Rascadita", true);
         }
     }
     // Update is called once per frame
