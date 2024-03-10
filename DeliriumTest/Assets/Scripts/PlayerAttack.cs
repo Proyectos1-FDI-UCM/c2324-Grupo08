@@ -13,6 +13,7 @@ public class PlayerAttack : MonoBehaviour
     float offsety;
     Damage attack;
     private RecogerObjetos recogerObjetos;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +32,7 @@ public class PlayerAttack : MonoBehaviour
         for(int i = duraciondeataque; i > 0; i--) yield return new WaitForFixedUpdate();
         Collider2D.enabled = false;
         _spriteRenderer.enabled= false;
+
         StopCoroutine(Attack());
     }
     void FixedUpdate()

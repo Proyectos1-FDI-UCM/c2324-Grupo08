@@ -8,6 +8,8 @@ public class InputManager : MonoBehaviour
     #region references
     private FrankMovement _frankMovement;
     private PlayerAttack _playerAttack;
+    private Animator _animator;
+
     #endregion
     #region properties
     [SerializeField]
@@ -16,8 +18,10 @@ public class InputManager : MonoBehaviour
     float offsety = 0.7f;
     float finaloffset;
     #endregion
+   
     void Start()
     {
+        _animator = GetComponent<Animator>();
         _frankMovement = GetComponent<FrankMovement>();
         _playerAttack = GetComponentInChildren<PlayerAttack>();
         if(_playerAttack == null) Debug.LogError("Frank no tiene un ataque puesto. Revisa la escena de Janime para ver un ejemplo de implementación."); 
@@ -33,6 +37,8 @@ public class InputManager : MonoBehaviour
 
         else if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow))
         {
+            _animator.SetBool("Attack", true);
+            _animator.SetBool("Rascadita", false);
             _playerAttack.Setoffsetx(0);
             if (Input.GetKeyDown(KeyCode.DownArrow)) finaloffset = -offsety;
             else finaloffset = offsety;
@@ -42,6 +48,9 @@ public class InputManager : MonoBehaviour
 
         else if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow))
         {
+            _animator.SetBool("Attack", true);
+            _animator.SetBool("Rascadita", false);
+
             if (Input.GetKeyDown(KeyCode.LeftArrow)) finaloffset = -offsetx;
             else finaloffset = offsetx;
             _playerAttack.Setoffsetx(finaloffset);
@@ -51,4 +60,5 @@ public class InputManager : MonoBehaviour
         _frankMovement.RegisterX(Input.GetAxisRaw("Horizontal"));
         _frankMovement.RegisterY(Input.GetAxisRaw("Vertical"));
     }
+   
 }
