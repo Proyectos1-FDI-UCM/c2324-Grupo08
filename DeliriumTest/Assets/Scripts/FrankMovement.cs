@@ -90,6 +90,17 @@ public class FrankMovement : MonoBehaviour
         if (_directionVector != Vector3.zero)
         {
             _lastMovementVector = _directionVector;
+            animator.SetFloat("MovimientoX", _xvalue);
+            animator.SetFloat("MovimientoY", _yvalue) ;
+            animator.SetBool("Rascadita", false);
+            animator.SetBool("Andando", true);
+           
+            
+        }
+        else
+        {
+            animator.SetBool("Andando", false);
+            animator.SetBool("Rascadita", true);
         }
     }
     // Update is called once per frame

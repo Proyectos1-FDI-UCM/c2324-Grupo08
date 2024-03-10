@@ -1,0 +1,1765 @@
+fileFormatVersion: 2
+guid: 069c5bd925a631d4d9dac3e859288558
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 354
+        width: 40
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c579c33642ee9342862e28db8ff85c0
+      internalID: 1936109390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_1
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 354
+        width: 40
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f7a44530884de14dafc4d07c24fd40b
+      internalID: -126761373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_2
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 354
+        width: 40
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 790d6e1a299943a429e2b2ba315066d2
+      internalID: -375340392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_3
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 354
+        width: 40
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80aea8bf72bdc1944b2c944ead3bfd58
+      internalID: 271423889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_4
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 354
+        width: 40
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9de8d869bc2621469e0e93eb4734a18
+      internalID: -377821419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_5
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 354
+        width: 40
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 160131f2ba1da6341a4c1c7bee574ce5
+      internalID: 492467341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_6
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 354
+        width: 40
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 231ebca89b16abf4bad20bdf633762d5
+      internalID: -756123206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_7
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 354
+        width: 40
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9492ab3249bb4349a35f75a38394870
+      internalID: -1864480602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_8
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 354
+        width: 40
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e9802846ec25084389c390e088341bf
+      internalID: -830747229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_9
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 354
+        width: 40
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fee5d02e2de217346a068eddc2b3bc85
+      internalID: 1272906355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_10
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 354
+        width: 40
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41719d72fd7742a499d77b73968a13cc
+      internalID: -1069887961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_11
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 354
+        width: 40
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4764fc65ae5b3f64d9de956029b21652
+      internalID: 1226632509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_12
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 353
+        width: 9
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4048d5e20c9a6845a04828b07862728
+      internalID: -1880309385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_13
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 353
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64b52a51060bce14ca1419b03cc2957f
+      internalID: -1648578127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_14
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 353
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5681bcace37be7b4d8f2e50afd7c00fd
+      internalID: -447111335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_15
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 353
+        width: 19
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa11a810296b45c4d8004afde2d16770
+      internalID: 1081849950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_16
+      rect:
+        serializedVersion: 2
+        x: 573
+        y: 353
+        width: 19
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 680511ba4e616da4dbf0e0f8614b6711
+      internalID: 873574277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_17
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 353
+        width: 19
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff466e6e7f027344087a51c40b0f8891
+      internalID: -2147207148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_18
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 353
+        width: 19
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91904362a98c1fc4c9ad31b885bb816e
+      internalID: 1353427547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_19
+      rect:
+        serializedVersion: 2
+        x: 633
+        y: 353
+        width: 19
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a22287d6e6706614aa09fc0ec03dc6e6
+      internalID: -987889422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_20
+      rect:
+        serializedVersion: 2
+        x: 653
+        y: 353
+        width: 19
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6142f0f5f72c34c4daeaccfcb7dcac2d
+      internalID: -506306373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_21
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 353
+        width: 19
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea5a96036168a364488be05da956df7e
+      internalID: -1250264082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_22
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 353
+        width: 19
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b63b26efd53ac54d84d90ab0348f71c
+      internalID: -1138994363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_23
+      rect:
+        serializedVersion: 2
+        x: 713
+        y: 353
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a15a3535ae7aab4cbe8c0ea1017c959
+      internalID: 1509060184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_24
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 353
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b296ba42c7c48ef428a193eafde3514f
+      internalID: 1974688366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_25
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 335
+        width: 63
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 41, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d22291786a5ca7146834f3b5fe3c97e8
+      internalID: 964983566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_26
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 300
+        width: 39
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbe952d6e06c85645934b094fee8deba
+      internalID: -481215117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_27
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 300
+        width: 39
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d9b0c29bf561d74c8b58ba24d5f6f93
+      internalID: 1410529629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_28
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 300
+        width: 42
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9b479410a6b9fc4890794bfe628df47
+      internalID: 254589357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_29
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 300
+        width: 41
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52c3d8b5ed21e5a4eb3623d357ae1ccb
+      internalID: 2130272476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_30
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 300
+        width: 39
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ff65effd905b934198801d511ed769b
+      internalID: -655303772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_31
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 300
+        width: 39
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c7bcb1f6e10e1742af3eb8f50772df4
+      internalID: -1114262937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_32
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 300
+        width: 42
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dc0905852658e040a83a22c4752605e
+      internalID: 1394430828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_33
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 300
+        width: 41
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a0a9c8a1f2ef2744bd8a435e68debf5
+      internalID: 336360912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_34
+      rect:
+        serializedVersion: 2
+        x: 713
+        y: 343
+        width: 10
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a777d155f1ba141469f0c7337a634b01
+      internalID: 1778601204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_35
+      rect:
+        serializedVersion: 2
+        x: 713
+        y: 335
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3094156e23ba024693a1c5293beb2c6
+      internalID: -1241926945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_36
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 245
+        width: 47
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efcd5699c668fc44fb9940364555e876
+      internalID: -1015915443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_37
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 245
+        width: 47
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf5dfe435bbb8ac4eb88df9b774253fd
+      internalID: -1241568517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_38
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 245
+        width: 57
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac91c3433a8c5d449ad52465023e04fa
+      internalID: 2054907732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_39
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 245
+        width: 57
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb5446fd3734b584f8f772de1236f614
+      internalID: 1115392237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_40
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 245
+        width: 57
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c249d51ab0b3906448651c27dc8e63a8
+      internalID: 1827249102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_41
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 245
+        width: 58
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24e906a121489884bb65ed104b05ffa1
+      internalID: -1725441341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_42
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 245
+        width: 47
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 649d29f08a31a174288198cb08501917
+      internalID: -477665540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_43
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 245
+        width: 45
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19d121cc958494c4693f88e92cea438c
+      internalID: 425355384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_44
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 191
+        width: 40
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 164b66f26343e214e9457dfda5e98e75
+      internalID: -2118226601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_45
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 191
+        width: 46
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7be95d1426b8141478955be77208deac
+      internalID: 1418731341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_46
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 192
+        width: 51
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bba604a62321e014cbe907f9d5c70fc1
+      internalID: -989181044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_47
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 192
+        width: 52
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3ac42e7a4319474e97af439d0e114a3
+      internalID: -910845065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_48
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 192
+        width: 53
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 579b722614ea09344b2850e399184d25
+      internalID: 1707551341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_49
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 194
+        width: 53
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20d4e8c9060afd241808cfccb233171f
+      internalID: 1868327356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_50
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 197
+        width: 53
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e327f466d8599f64dad8ab7f089fd21a
+      internalID: 934723354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_51
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 133
+        width: 41
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6143a5e539d45c54d9824b484a8db971
+      internalID: -264518400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_52
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 132
+        width: 41
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8cd3f2f951f9ae46b54bfac660c0410
+      internalID: -1670849107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_53
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 132
+        width: 41
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf95746e0c6cd7042bac44d5f84a86a0
+      internalID: -1285566270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_54
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 132
+        width: 41
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 874e57c23473c144894a31d2c03b65cf
+      internalID: -906765225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_55
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 132
+        width: 37
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ff2c1936ac102243a2c2bf5a4a6f622
+      internalID: 1462401286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_56
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 132
+        width: 37
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04a79c29c0b693d4aa4cb9181190343f
+      internalID: 1595031791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_57
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 132
+        width: 37
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae454f6078d7a644a8d8cb64e0df7bab
+      internalID: 1239020961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_58
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 132
+        width: 85
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9713b3f100544ba4aa7df5bd61466700
+      internalID: 72569689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_59
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 132
+        width: 48
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cc44f549a6153c468fdb18fe1469544
+      internalID: 1053090434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_60
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 132
+        width: 48
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93c35df964684bb4aaa5e35cc146f70c
+      internalID: 937244053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_61
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 77
+        width: 47
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd1a5304826e94941b21cd7284b2a30d
+      internalID: 1411620105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_62
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 77
+        width: 47
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b6df6f0d669aca40a7a66ff2d926a55
+      internalID: 1144147876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_63
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 77
+        width: 46
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9caf8c3d3e6d733419753c7746387b81
+      internalID: 1634789223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_64
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 77
+        width: 44
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5913bce30051bb4fb602b500aa3e84c
+      internalID: -2127121469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_65
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 77
+        width: 42
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c2cbc45dc5352b4b8052d092d303378
+      internalID: -653371847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_66
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 77
+        width: 42
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13ad1f3bc9d493948b624a70edbc0fcb
+      internalID: 994787727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_67
+      rect:
+        serializedVersion: 2
+        x: 740
+        y: 83
+        width: 39
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06e9165cbe8316640b8b16ed858e9c31
+      internalID: -752281749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_78
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 8
+        width: 47
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a43785e614025884db181ea4d4473a3d
+      internalID: 295038879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_79
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 8
+        width: 47
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 619d9368c1185d04fbe0d3043816573d
+      internalID: -579726494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_80
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 8
+        width: 46
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90fa908dacc27b54e97ad454dbcd0c09
+      internalID: 1194736500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_81
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 8
+        width: 44
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 647b318d6f1a01c4db0bbffd10fc63f4
+      internalID: 903940320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_82
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 8
+        width: 42
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d96731d761a80d4a8fd44820e8fc99f
+      internalID: 1102030776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Dan The Man - Drunk Man_83
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 8
+        width: 42
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99abe2dfc5ca8c54e9726f7676b2e5f3
+      internalID: -1663716232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Mobile - Dan The Man - Drunk Man_0: 1936109390
+      Mobile - Dan The Man - Drunk Man_1: -126761373
+      Mobile - Dan The Man - Drunk Man_10: -1069887961
+      Mobile - Dan The Man - Drunk Man_11: 1226632509
+      Mobile - Dan The Man - Drunk Man_12: -1880309385
+      Mobile - Dan The Man - Drunk Man_13: -1648578127
+      Mobile - Dan The Man - Drunk Man_14: -447111335
+      Mobile - Dan The Man - Drunk Man_15: 1081849950
+      Mobile - Dan The Man - Drunk Man_16: 873574277
+      Mobile - Dan The Man - Drunk Man_17: -2147207148
+      Mobile - Dan The Man - Drunk Man_18: 1353427547
+      Mobile - Dan The Man - Drunk Man_19: -987889422
+      Mobile - Dan The Man - Drunk Man_2: -375340392
+      Mobile - Dan The Man - Drunk Man_20: -506306373
+      Mobile - Dan The Man - Drunk Man_21: -1250264082
+      Mobile - Dan The Man - Drunk Man_22: -1138994363
+      Mobile - Dan The Man - Drunk Man_23: 1509060184
+      Mobile - Dan The Man - Drunk Man_24: 1974688366
+      Mobile - Dan The Man - Drunk Man_25: 964983566
+      Mobile - Dan The Man - Drunk Man_26: -481215117
+      Mobile - Dan The Man - Drunk Man_27: 1410529629
+      Mobile - Dan The Man - Drunk Man_28: 254589357
+      Mobile - Dan The Man - Drunk Man_29: 2130272476
+      Mobile - Dan The Man - Drunk Man_3: 271423889
+      Mobile - Dan The Man - Drunk Man_30: -655303772
+      Mobile - Dan The Man - Drunk Man_31: -1114262937
+      Mobile - Dan The Man - Drunk Man_32: 1394430828
+      Mobile - Dan The Man - Drunk Man_33: 336360912
+      Mobile - Dan The Man - Drunk Man_34: 1778601204
+      Mobile - Dan The Man - Drunk Man_35: -1241926945
+      Mobile - Dan The Man - Drunk Man_36: -1015915443
+      Mobile - Dan The Man - Drunk Man_37: -1241568517
+      Mobile - Dan The Man - Drunk Man_38: 2054907732
+      Mobile - Dan The Man - Drunk Man_39: 1115392237
+      Mobile - Dan The Man - Drunk Man_4: -377821419
+      Mobile - Dan The Man - Drunk Man_40: 1827249102
+      Mobile - Dan The Man - Drunk Man_41: -1725441341
+      Mobile - Dan The Man - Drunk Man_42: -477665540
+      Mobile - Dan The Man - Drunk Man_43: 425355384
+      Mobile - Dan The Man - Drunk Man_44: -2118226601
+      Mobile - Dan The Man - Drunk Man_45: 1418731341
+      Mobile - Dan The Man - Drunk Man_46: -989181044
+      Mobile - Dan The Man - Drunk Man_47: -910845065
+      Mobile - Dan The Man - Drunk Man_48: 1707551341
+      Mobile - Dan The Man - Drunk Man_49: 1868327356
+      Mobile - Dan The Man - Drunk Man_5: 492467341
+      Mobile - Dan The Man - Drunk Man_50: 934723354
+      Mobile - Dan The Man - Drunk Man_51: -264518400
+      Mobile - Dan The Man - Drunk Man_52: -1670849107
+      Mobile - Dan The Man - Drunk Man_53: -1285566270
+      Mobile - Dan The Man - Drunk Man_54: -906765225
+      Mobile - Dan The Man - Drunk Man_55: 1462401286
+      Mobile - Dan The Man - Drunk Man_56: 1595031791
+      Mobile - Dan The Man - Drunk Man_57: 1239020961
+      Mobile - Dan The Man - Drunk Man_58: 72569689
+      Mobile - Dan The Man - Drunk Man_59: 1053090434
+      Mobile - Dan The Man - Drunk Man_6: -756123206
+      Mobile - Dan The Man - Drunk Man_60: 937244053
+      Mobile - Dan The Man - Drunk Man_61: 1411620105
+      Mobile - Dan The Man - Drunk Man_62: 1144147876
+      Mobile - Dan The Man - Drunk Man_63: 1634789223
+      Mobile - Dan The Man - Drunk Man_64: -2127121469
+      Mobile - Dan The Man - Drunk Man_65: -653371847
+      Mobile - Dan The Man - Drunk Man_66: 994787727
+      Mobile - Dan The Man - Drunk Man_67: -752281749
+      Mobile - Dan The Man - Drunk Man_68: -5875374
+      Mobile - Dan The Man - Drunk Man_69: 1147244573
+      Mobile - Dan The Man - Drunk Man_7: -1864480602
+      Mobile - Dan The Man - Drunk Man_70: -1563452742
+      Mobile - Dan The Man - Drunk Man_71: 754422
+      Mobile - Dan The Man - Drunk Man_72: 1404482489
+      Mobile - Dan The Man - Drunk Man_73: 2003503387
+      Mobile - Dan The Man - Drunk Man_74: 1100100887
+      Mobile - Dan The Man - Drunk Man_75: -1149193237
+      Mobile - Dan The Man - Drunk Man_76: 1482365409
+      Mobile - Dan The Man - Drunk Man_77: 1730962254
+      Mobile - Dan The Man - Drunk Man_78: 295038879
+      Mobile - Dan The Man - Drunk Man_79: -579726494
+      Mobile - Dan The Man - Drunk Man_8: -830747229
+      Mobile - Dan The Man - Drunk Man_80: 1194736500
+      Mobile - Dan The Man - Drunk Man_81: 903940320
+      Mobile - Dan The Man - Drunk Man_82: 1102030776
+      Mobile - Dan The Man - Drunk Man_83: -1663716232
+      Mobile - Dan The Man - Drunk Man_9: 1272906355
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
