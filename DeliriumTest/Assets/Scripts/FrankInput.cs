@@ -18,13 +18,13 @@ public class InputManager : MonoBehaviour
     float offsety = 0.7f;
     float finaloffset;
     #endregion
-   
+
     void Start()
     {
         _animator = GetComponent<Animator>();
         _frankMovement = GetComponent<FrankMovement>();
         _playerAttack = GetComponentInChildren<PlayerAttack>();
-        if(_playerAttack == null) Debug.LogError("Frank no tiene un ataque puesto. Revisa la escena de Janime para ver un ejemplo de implementación."); 
+        if (_playerAttack == null) Debug.LogError("Frank no tiene un ataque puesto. Revisa la escena de Janime para ver un ejemplo de implementación.");
     }
 
     // Update is called once per frame
@@ -43,6 +43,7 @@ public class InputManager : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.DownArrow)) finaloffset = -offsety;
             else finaloffset = offsety;
             _playerAttack.Setoffsety(finaloffset);
+            StartCoroutine(AnimAtck());
             StartCoroutine(_playerAttack.Attack());
         }
 
@@ -55,10 +56,17 @@ public class InputManager : MonoBehaviour
             else finaloffset = offsetx;
             _playerAttack.Setoffsetx(finaloffset);
             _playerAttack.Setoffsety(0);
+            StartCoroutine(AnimAtck());
             StartCoroutine(_playerAttack.Attack());
         }
         _frankMovement.RegisterX(Input.GetAxisRaw("Horizontal"));
         _frankMovement.RegisterY(Input.GetAxisRaw("Vertical"));
     }
-   
+    private IEnumerator AnimAtck()
+    {
+        _animator.SetBool("Attack", true);
+        yield return null;
+        _animator.SetBool("Attack", false);
+        yield return new WaitForSeconds(.1f);
+    }
 }
