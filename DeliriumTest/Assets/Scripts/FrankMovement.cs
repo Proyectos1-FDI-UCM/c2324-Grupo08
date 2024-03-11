@@ -76,9 +76,6 @@ public class FrankMovement : MonoBehaviour
             _vomitComponent.VomitDash();
             StartCoroutine(DashCoolDown());
         }
-
-
-
     }
 
 

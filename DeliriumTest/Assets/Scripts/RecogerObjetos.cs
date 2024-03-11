@@ -6,6 +6,7 @@ public class RecogerObjetos : MonoBehaviour
 {
     [SerializeField] private Cono _cono;
     [SerializeField] private GameObject _ataqueCono;
+    [SerializeField] private GameObject _ataqueBotella;
     [SerializeField] private GameObject ataque;
 
     public bool canBePicked;
@@ -17,6 +18,7 @@ public class RecogerObjetos : MonoBehaviour
                 if (canBePicked)
                 {
                     canBePicked = false;
+                    _ataqueBotella.SetActive(true);
                 }
                 break;
             case ObjectStatus.cono:
