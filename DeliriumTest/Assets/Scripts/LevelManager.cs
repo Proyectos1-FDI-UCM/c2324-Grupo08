@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
+    #region references
+    [SerializeField]
+    GameObject Arrow;
+    #endregion
     #region properties
     static List<EnemiesControler> m_AllEnemies = new List<EnemiesControler>();
     
@@ -36,10 +40,12 @@ public class LevelManager : MonoBehaviour
         if (m_AllEnemies.Count == 0)
         {
             CamTrigger.TransitionAvaible(true);
+            Arrow.SetActive(true);
         }
         else if(m_AllEnemies.Count > 0) 
         {
             CamTrigger.TransitionAvaible(false);
+            Arrow.SetActive(false);
         }
     }
     
