@@ -144,9 +144,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b753a02a983a3f4ea97da009b013c67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedValue: 4
-  _dashforce: 0.5
+  _speedValue: 5
+  _dashforce: 1
   _boundOffset: 0.5
+  _DashStun: 0.5
+  _DashCooldown: 2.5
+  _NewDashCooldown: 1
   _vomitComponent: {fileID: 0}
   _LeftBound: {fileID: 0}
   _RightBound: {fileID: 0}

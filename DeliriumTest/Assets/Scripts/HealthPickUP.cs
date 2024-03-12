@@ -20,7 +20,6 @@ public class HealthPickUP : MonoBehaviour
                 Destroy(this.gameObject);
             }
         }
-
     }
     /*public void RegisterLifeBar(LifeBarComponenet lifeBarComponent)
     { 
