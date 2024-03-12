@@ -43,8 +43,8 @@ public class InputManager : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.DownArrow)) finaloffset = -offsety;
             else finaloffset = offsety;
             _playerAttack.Setoffsety(finaloffset);
-            StartCoroutine(AnimAtck());
-            StartCoroutine(_playerAttack.Attack());
+     
+            StartCoroutine(_playerAttack.Attack(_animator));
         }
 
         else if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow))
@@ -56,17 +56,10 @@ public class InputManager : MonoBehaviour
             else finaloffset = offsetx;
             _playerAttack.Setoffsetx(finaloffset);
             _playerAttack.Setoffsety(0);
-            StartCoroutine(AnimAtck());
-            StartCoroutine(_playerAttack.Attack());
+            StartCoroutine(_playerAttack.Attack(_animator));
         }
         _frankMovement.RegisterX(Input.GetAxisRaw("Horizontal"));
         _frankMovement.RegisterY(Input.GetAxisRaw("Vertical"));
     }
-    private IEnumerator AnimAtck()
-    {
-        _animator.SetBool("Attack", true);
-        yield return null;
-        _animator.SetBool("Attack", false);
-        yield return new WaitForSeconds(.1f);
-    }
+   
 }
