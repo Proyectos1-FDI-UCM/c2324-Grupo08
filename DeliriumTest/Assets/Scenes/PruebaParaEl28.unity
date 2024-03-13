@@ -7040,6 +7040,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _camVelocity: 2
+  cameraHorizontalBounds: 0
+  leftCamBound: 0
+  rightCamBound: 0
   minPos: {x: 0, y: 0, z: -10}
   maxPos: {x: 0, y: 0, z: -10}
 --- !u!81 &1943516378
