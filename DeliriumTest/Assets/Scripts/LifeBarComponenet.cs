@@ -8,6 +8,7 @@ public class LifeBarComponenet : MonoBehaviour
     #region references
     public GameObject healthPrefab;
     public HealthComponent playerHealth;
+    [SerializeField] private HealthComponent healthComponent;
     #endregion
     #region properties
     List<LifeComponent> hearts = new List<LifeComponent> ();
@@ -51,6 +52,12 @@ public class LifeBarComponenet : MonoBehaviour
             Destroy(t.gameObject);
         }
         hearts= new List<LifeComponent>();
+    }
+    public void HealthUp()
+    {
+        healthComponent.Health += 2;
+        healthComponent.MaxHealth += 2;
+        DrawHearts();
     }
     private void Start()
     {

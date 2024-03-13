@@ -23,10 +23,6 @@ public class ThrowUpPickUP : MonoBehaviour
                 Destroy(this.gameObject);
             }
         }
-        else
-        {
-            Debug.Log("Object not found");
-        }
     }
 
     /*public void RegisterVomit(Slider vomit)
@@ -34,9 +30,6 @@ public class ThrowUpPickUP : MonoBehaviour
         Debug.Log("Registrado");
         _vomitBar = vomit;
     }*/
-
-
-
     private void Start()
     {
         _vomit = GetComponent<VomitComponent>();
