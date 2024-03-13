@@ -21,6 +21,7 @@ public class VomitComponent : MonoBehaviour
     private bool _stops = false;
     #endregion
     #region propiedades
+    [SerializeField] private float vomitReduce;
     #endregion
 
     // Start is called before the first frame update
@@ -42,6 +43,10 @@ public class VomitComponent : MonoBehaviour
         }     
     }
 
+    private void ReduceVomit()
+    {
+        _vomitBar.value = _vomitBar.value - vomitReduce;
+    }
     public void VomitDash()
     {
         _vomitBar.value = _vomitBar.value + _vomitDash;

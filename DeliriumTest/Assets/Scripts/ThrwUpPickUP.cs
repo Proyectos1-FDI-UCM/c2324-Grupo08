@@ -21,6 +21,7 @@ public class ThrowUpPickUP : MonoBehaviour
             {
                 SubstractVomit();
                 Destroy(this.gameObject);
+                //Llamar a recogida
             }
         }
         else

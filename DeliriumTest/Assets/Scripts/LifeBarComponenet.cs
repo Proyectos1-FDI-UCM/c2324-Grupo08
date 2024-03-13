@@ -52,6 +52,8 @@ public class LifeBarComponenet : MonoBehaviour
         }
         hearts= new List<LifeComponent>();
     }
+
+    
     private void Start()
     {
         DrawHearts();

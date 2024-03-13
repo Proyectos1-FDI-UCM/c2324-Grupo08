@@ -9,6 +9,7 @@ public class HealthComponent : MonoBehaviour
     public static event Action OnPlayerDamaged;
     #endregion
     #region parameters
+    [SerializeField] private LifeBarComponenet lifebar;
     private float _health;
     public float Health { get { return _health; } }
     [SerializeField]
@@ -17,8 +18,9 @@ public class HealthComponent : MonoBehaviour
     #endregion
     #region methods
     public void Healing(float healing )
-    {
+    {       
         _health += healing;
+        lifebar.DrawHearts();
     }
     #endregion
     private void Awake()

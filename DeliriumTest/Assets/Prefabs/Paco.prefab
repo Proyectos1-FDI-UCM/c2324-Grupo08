@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 3038442859292797404}
   - component: {fileID: 6343877665699465447}
   - component: {fileID: 7550986018599597843}
+  - component: {fileID: 5860481732802851230}
   m_Layer: 3
   m_Name: Paco
   m_TagString: Player
@@ -131,6 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6acc7242b87cbd549a665e24d042dfbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lifebar: {fileID: 0}
   _maxHealth: 6
 --- !u!114 &4623649835832064220
 MonoBehaviour:
@@ -171,6 +173,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offsetx: 0.7
   offsety: 0.7
+  _cooldown: 0.24
 --- !u!114 &3038442859292797404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,6 +253,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5860481732802851230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1347014803689699083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 628d6d7bbc2c7c345bc44bde67e439e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vomitBar: {fileID: 0}
+  ReduceVomit: 5
+  lifebar: {fileID: 0}
+  healing: 2
 --- !u!1 &1762682776426379245
 GameObject:
   m_ObjectHideFlags: 0
