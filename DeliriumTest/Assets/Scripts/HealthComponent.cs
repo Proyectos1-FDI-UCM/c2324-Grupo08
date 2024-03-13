@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class HealthComponent : MonoBehaviour
 {
+    #region references
+    private Drops _drops;
+    #endregion
     #region events
     public static event Action OnPlayerDamaged;
     #endregion
@@ -27,10 +30,15 @@ public class HealthComponent : MonoBehaviour
     {
         _health = _maxHealth;
     }
+
+     void Start()
+    {
+        _drops = GetComponent<Drops>();
+    }
     public void TakeDamage(float amount)
     {
         _health -= amount;
         OnPlayerDamaged?.Invoke();
-        if(Mathf.Approximately(_health,0f) || _health < 0f) Destroy(gameObject);
+        _drops.Drop();
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Objetorecojible : MonoBehaviour
 {
     [SerializeField] ObjetoRecojible objetoRecojible;
-    [SerializeField] private RecogerObjetos recogerObjetos;
+    private RecogerObjetos recogerObjetosP;
     [SerializeField] private GameObject objeto;
     public bool picked = true;
     private void OnTriggerEnter2D(Collider2D collision)
@@ -26,17 +26,22 @@ public class Objetorecojible : MonoBehaviour
     }
     private void ObjetoRecogido()
     {
-        recogerObjetos.RegisterObject(objetoRecojible.ObjectID);
-        Destroy(objeto);
+        recogerObjetosP.RegisterObject(objetoRecojible.ObjectID);
+        Destroy(gameObject);
     }
     
+    public void RegisterPaco(RecogerObjetos recogerObjetos)
+    {
+        recogerObjetosP = recogerObjetos;
+    }
     private void Start()
     {
+      
         picked = false;
     }
     private void Update()
     {
-        if (Input.GetKeyUp(KeyCode.E) && picked && recogerObjetos.canBePicked)
+        if (Input.GetKeyUp(KeyCode.E) && picked && recogerObjetosP.canBePicked)
         {
             ObjetoRecogido();
         }

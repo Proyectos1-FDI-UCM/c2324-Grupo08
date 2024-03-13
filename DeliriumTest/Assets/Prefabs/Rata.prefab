@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 580243117121630832}
   - component: {fileID: -969109232066029627}
   - component: {fileID: 4863645292897106561}
+  - component: {fileID: -8207987142704335058}
   m_Layer: 6
   m_Name: Rata
   m_TagString: Untagged
@@ -239,6 +240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6acc7242b87cbd549a665e24d042dfbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lifebar: {fileID: 0}
   _maxHealth: 4
 --- !u!95 &4863645292897106561
 Animator:
@@ -261,3 +263,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-8207987142704335058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 482975409083832220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 681113ba01dbb914c9129344abc5105e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drops:
+  - {fileID: 2165671926666286908, guid: 8161613964c52474fb64a7f2b0927f6e, type: 3}
+  - {fileID: 7343358916856752952, guid: a6b336a0c6ee0604ca0ee603418194d0, type: 3}

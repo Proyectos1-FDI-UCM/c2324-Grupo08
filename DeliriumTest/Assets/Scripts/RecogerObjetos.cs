@@ -8,6 +8,9 @@ public class RecogerObjetos : MonoBehaviour
     [SerializeField] private GameObject _ataqueCono;
     [SerializeField] private GameObject _ataqueBotella;
     [SerializeField] private GameObject ataque;
+    [SerializeField] private Objetorecojible objetoRecojibleCono;
+    [SerializeField] private Objetorecojible objetoRecojibleBotella;
+
 
     public bool canBePicked;
     public void ObjectSellector(ObjectStatus status)
@@ -35,11 +38,19 @@ public class RecogerObjetos : MonoBehaviour
     {
         canBePicked = true;
     }
+
+    private void Awake()
+    {
+        objetoRecojibleCono.RegisterPaco(this);
+        objetoRecojibleBotella.RegisterPaco(this);
+    }
     public void RegisterObject(int value)
     {
         ObjectSellector((ObjectStatus)value);
         ataque.SetActive(false);
     }
+
+    
 }
 public enum ObjectStatus
 {

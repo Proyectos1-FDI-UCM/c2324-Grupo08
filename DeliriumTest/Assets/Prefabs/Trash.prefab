@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 5472654322814519876}
   - component: {fileID: 4365962603598970528}
   - component: {fileID: -6090581488647443294}
+  - component: {fileID: 6625168000123189625}
   m_Layer: 6
   m_Name: Trash
   m_TagString: Enemy
@@ -236,6 +237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6acc7242b87cbd549a665e24d042dfbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lifebar: {fileID: 0}
   _maxHealth: 3
 --- !u!95 &-6090581488647443294
 Animator:
@@ -258,3 +260,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6625168000123189625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6348566019189785445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 681113ba01dbb914c9129344abc5105e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drops:
+  - {fileID: 2165671926666286908, guid: 8161613964c52474fb64a7f2b0927f6e, type: 3}
+  - {fileID: 7343358916856752952, guid: a6b336a0c6ee0604ca0ee603418194d0, type: 3}
