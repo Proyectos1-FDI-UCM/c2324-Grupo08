@@ -7,6 +7,10 @@ public class CameraController : MonoBehaviour
     #region parameters
     [SerializeField]
     private float _camVelocity;
+    public float cameraHorizontalBounds;
+    private Camera _camera;
+    public float leftCamBound;
+    public float rightCamBound;
     #endregion
     #region references
     private Transform _player;
@@ -16,7 +20,18 @@ public class CameraController : MonoBehaviour
     #endregion
     private void Start()
     {
+        _camera = Camera.main;      
+        CalculateCameraBounds(); 
         _player = FrankMovement.Player.gameObject.GetComponent<Transform>();
+    }
+
+    private void CalculateCameraBounds()
+    {
+        float cameraWidth = _camera.aspect * _camera.orthographicSize;
+        float CamPosx = _camera.transform.position.x;
+        leftCamBound = CamPosx - cameraWidth/2;
+        rightCamBound = CamPosx + cameraWidth/2;
+        
     }
     void LateUpdate()
     {
@@ -31,6 +46,9 @@ public class CameraController : MonoBehaviour
 
             _newPos = Vector3.Lerp(transform.position, camEdges, _camVelocity * Time.deltaTime);
             transform.position = _newPos;
+            CalculateCameraBounds ();
         }
     }
+
+    
 }

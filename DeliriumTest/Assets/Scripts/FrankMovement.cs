@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class FrankMovement : MonoBehaviour
@@ -19,11 +20,11 @@ public class FrankMovement : MonoBehaviour
     private static GameObject player;
     private Animator _animator;
     [SerializeField] private VomitComponent _vomitComponent;
-    [SerializeField] private Transform _LeftBound;
-    [SerializeField] private Transform _RightBound;
+    [SerializeField] private CameraController _camController;
     [SerializeField] private Transform _UpperBound;
     [SerializeField] private Transform _LowerBound;
-    
+
+
     public static GameObject Player { get { return player; } }
     #endregion
     #region propiedades
@@ -67,8 +68,9 @@ public class FrankMovement : MonoBehaviour
     }
 
     public void Dash()
-    { 
-        if (_elapsedTime <= 0)
+    {
+        Debug.Log("Llama");
+        if (_elapsedTime >= _DashCooldown)
         {
             if (_directionVector != Vector3.zero)
             {
@@ -78,12 +80,12 @@ public class FrankMovement : MonoBehaviour
             {
                 _dashPosition = transform.position + (_dashforce * _lastMovementVector.normalized);
             }
-            if ((_dashPosition.x > _LeftBound.position.x + _boundOffset) && (_dashPosition.x < _RightBound.position.x - _boundOffset) && (_dashPosition.y < _UpperBound.position.y - _boundOffset) && (_dashPosition.y > _LowerBound.position.y + _boundOffset))
+            if ((_dashPosition.x > _camController.leftCamBound + _boundOffset) && (_dashPosition.x < _camController.rightCamBound - _boundOffset) && (_dashPosition.y < _UpperBound.position.y - _boundOffset) && (_dashPosition.y > _LowerBound.position.y + _boundOffset))
             {
                 transform.position = _dashPosition;
                 _vomitComponent.VomitDash();
                 StartCoroutine(DashCoolDown());
-                _elapsedTime = _DashCooldown;
+                _elapsedTime = 0;
             }
         }
     }
@@ -105,7 +107,12 @@ public class FrankMovement : MonoBehaviour
             _animator.SetBool("Andando", false);
             _animator.SetBool("Rascadita", true);
         }
-        _elapsedTime -= Time.deltaTime;
+        
+    }
+
+    private void Update()
+    {
+        _elapsedTime += Time.deltaTime;
     }
     // Update is called once per frame
 

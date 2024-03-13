@@ -39,6 +39,10 @@ public class HealthComponent : MonoBehaviour
     {
         _health -= amount;
         OnPlayerDamaged?.Invoke();
-        _drops.Drop();
+        if(this.gameObject.GetComponent<EnemiesControler>() != null ) 
+        {
+            _drops.Drop();
+        }
+        
     }
 }
