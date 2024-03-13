@@ -48,9 +48,18 @@ public class InputManager : MonoBehaviour
         {
             _animator.SetBool("Rascadita", false);
             _playerAttack.Setoffsetx(0);
-            if (Input.GetKeyDown(KeyCode.DownArrow)) finaloffset = -offsety;
-            else finaloffset = offsety;
+            if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                finaloffset = -offsety;
+            }
+            else
+            {
+
+                finaloffset = offsety;
+            }
             _playerAttack.Setoffsety(finaloffset);
+            _animator.SetFloat("AtaqueY", finaloffset);
+
 
             if (_canAttack)
             {
@@ -63,9 +72,19 @@ public class InputManager : MonoBehaviour
         {
             _animator.SetBool("Rascadita", false);
 
-            if (Input.GetKeyDown(KeyCode.LeftArrow)) finaloffset = -offsetx;
-            else finaloffset = offsetx;
+            if (Input.GetKeyDown(KeyCode.LeftArrow))
+            {
+
+                finaloffset = -offsetx;
+            }
+
+            else {
+                
+
+                finaloffset = offsetx; 
+            }
             _playerAttack.Setoffsetx(finaloffset);
+            _animator.SetFloat("AtaqueX", finaloffset);
             _playerAttack.Setoffsety(0);
             if (_canAttack)
             {
