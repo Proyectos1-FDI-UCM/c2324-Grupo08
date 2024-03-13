@@ -26,6 +26,7 @@ public class PlayerAttack : MonoBehaviour
     }
     public IEnumerator Attack(Animator _animator)
     {
+        
         transform.position = FrankMovement.Player.transform.position + new Vector3(offsetx, offsety);
         _animator.SetBool("Attack", true);
         Collider2D.enabled = true;
@@ -33,6 +34,7 @@ public class PlayerAttack : MonoBehaviour
         for(int i = duraciondeataque; i > 0; i--) yield return new WaitForFixedUpdate();
         _animator.SetBool("Attack", false);
         Collider2D.enabled = false;
+        AudioManager.Instance.Punch();
         _spriteRenderer.enabled = false;
     }
     void FixedUpdate()
