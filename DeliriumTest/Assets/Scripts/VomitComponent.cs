@@ -10,7 +10,7 @@ public class VomitComponent : MonoBehaviour
     private float timer;
     [SerializeField] private float _maxvomit;
     [SerializeField] private float _vomitDash;
-    [SerializeField] private float _vomitcuantity;
+    public float _vomitcuantity;
     #endregion
     #region references
     private Slider _vomitBar;
