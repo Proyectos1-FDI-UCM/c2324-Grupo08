@@ -52,7 +52,12 @@ public class LifeBarComponenet : MonoBehaviour
         }
         hearts= new List<LifeComponent>();
     }
-
+    public void HealthUP()
+    {
+        playerHealth.Health += 2;
+        playerHealth.MaxHealth += 2;
+        DrawHearts();
+    }
     
     private void Start()
     {

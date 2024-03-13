@@ -14,7 +14,7 @@ public class Kebab : MonoBehaviour
         FrankMovement player = collision.GetComponent<FrankMovement>();
         if(player != null)
         {
-            lifeBarComponent.HealthUp();
+            lifeBarComponent.HealthUP();
             vomitComponent._vomitcuantity = cambioVomito;
             Destroy(this.gameObject);
         }
