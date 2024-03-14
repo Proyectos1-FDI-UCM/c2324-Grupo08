@@ -46,19 +46,25 @@ public class InputManager : MonoBehaviour
 
         else if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow))
         {
+           
             _animator.SetBool("Rascadita", false);
             _playerAttack.Setoffsetx(0);
+           
             if (Input.GetKeyDown(KeyCode.DownArrow))
             {
                 finaloffset = -offsety;
+                _animator.SetFloat("AtaqueX", -1);
+                _animator.SetFloat("AtaqueY", 0);
             }
             else
             {
 
                 finaloffset = offsety;
+                _animator.SetFloat("AtaqueX", 1);
+                _animator.SetFloat("AtaqueY", 0);
             }
             _playerAttack.Setoffsety(finaloffset);
-            _animator.SetFloat("AtaqueY", finaloffset);
+            
 
 
             if (_canAttack)
@@ -72,19 +78,25 @@ public class InputManager : MonoBehaviour
         {
             _animator.SetBool("Rascadita", false);
 
+
             if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
 
                 finaloffset = -offsetx;
+                _animator.SetFloat("AtaqueX", 0);
+                _animator.SetFloat("AtaqueY", -1);
+
             }
 
             else {
                 
 
-                finaloffset = offsetx; 
+                finaloffset = offsetx;
+                _animator.SetFloat("AtaqueX", 0);
+                _animator.SetFloat("AtaqueY", 1);
+
             }
             _playerAttack.Setoffsetx(finaloffset);
-            _animator.SetFloat("AtaqueX", finaloffset);
             _playerAttack.Setoffsety(0);
             if (_canAttack)
             {
