@@ -212,6 +212,7 @@ MonoBehaviour:
   _frankInput: {fileID: 0}
   _targetRigidBody: {fileID: 0}
   _shootComponent: {fileID: 0}
+  vomitReduce: 0
 --- !u!1 &1031706121193132335
 GameObject:
   m_ObjectHideFlags: 0
@@ -247,11 +248,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 5251166442011830964}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.7002052, y: 0.8861283}
-  m_AnchorMax: {x: 0.7002052, y: 0.8861283}
-  m_AnchoredPosition: {x: -262, y: 4}
-  m_SizeDelta: {x: 355.8171, y: 92.3465}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 348, y: -56}
+  m_SizeDelta: {x: 800, y: 108.8232}
+  m_Pivot: {x: 0.45365912, y: 0.678425}
 --- !u!222 &6121331425698400615
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -310,7 +311,7 @@ MonoBehaviour:
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 100, y: 100}
+  m_CellSize: {x: 150, y: 150}
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
