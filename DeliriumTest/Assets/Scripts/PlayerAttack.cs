@@ -34,8 +34,10 @@ public class PlayerAttack : MonoBehaviour
         for(int i = duraciondeataque; i > 0; i--) yield return new WaitForFixedUpdate();
         _animator.SetBool("Attack", false);
         Collider2D.enabled = false;
-        AudioManager.Instance.Punch();
         _spriteRenderer.enabled = false;
+        yield return new WaitForSeconds(0.1f);
+        AudioManager.Instance.Punch();
+        
     }
     void FixedUpdate()
     {
