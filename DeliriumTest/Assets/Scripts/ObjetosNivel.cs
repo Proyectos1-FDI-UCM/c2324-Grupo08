@@ -5,8 +5,7 @@ using UnityEngine;
 public class Objetorecojible : MonoBehaviour
 {
     [SerializeField] ObjetoRecojible objetoRecojible;
-    private RecogerObjetos recogerObjetosP;
-    [SerializeField] private GameObject objeto;
+    [SerializeField] private RecogerObjetos recogerObjetosP;
     public bool picked = true;
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -29,14 +28,13 @@ public class Objetorecojible : MonoBehaviour
         recogerObjetosP.RegisterObject(objetoRecojible.ObjectID);
         Destroy(gameObject);
     }
-    
     public void RegisterPaco(RecogerObjetos recogerObjetos)
     {
         recogerObjetosP = recogerObjetos;
+        Debug.Log("Información del prefab recogido");
     }
     private void Start()
     {
-      
         picked = false;
     }
     private void Update()

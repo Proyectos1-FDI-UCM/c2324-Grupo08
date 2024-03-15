@@ -38,19 +38,16 @@ public class RecogerObjetos : MonoBehaviour
     {
         canBePicked = true;
     }
-
     private void Awake()
     {
-        objetoRecojibleCono.RegisterPaco(this);
+        objetoRecojibleBotella.RegisterPaco(this);
         objetoRecojibleBotella.RegisterPaco(this);
     }
     public void RegisterObject(int value)
     {
         ObjectSellector((ObjectStatus)value);
         ataque.SetActive(false);
-    }
-
-    
+    }    
 }
 public enum ObjectStatus
 {

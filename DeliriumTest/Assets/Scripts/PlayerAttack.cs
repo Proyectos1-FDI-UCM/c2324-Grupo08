@@ -36,7 +36,6 @@ public class PlayerAttack : MonoBehaviour
         Collider2D.enabled = false;
         _spriteRenderer.enabled = false;
         yield return new WaitForSeconds(0.1f);
-        AudioManager.Instance.Punch();
         
     }
     void FixedUpdate()
