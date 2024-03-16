@@ -7,7 +7,6 @@ public class Cono : MonoBehaviour
 {
     #region referneces
     [SerializeField] private GameObject ataque;
-    [SerializeField] private GameObject ataqueCono;
     private PlayerAttack _attack;
     [SerializeField] private RecogerObjetos _recogerObjetos;
     Damage _damage;
@@ -31,16 +30,23 @@ public class Cono : MonoBehaviour
     public IEnumerator AtaqueCono()
     {
         transform.position = FrankMovement.Player.transform.position + new Vector3(offsetx, offsety);
+        animacionCono.SetBool("Atack",true); 
         Collider2D.enabled = true;
         _spriteRenderer.enabled = true;
         for (int i = duraciondeataque; i > 0; i--) yield return new WaitForFixedUpdate();
+        animacionCono.SetBool("Atack", false);
         Collider2D.enabled = false;
-        _spriteRenderer.enabled = false;
-        ataqueCono.SetActive(false);
         ataque.SetActive(true);
         _recogerObjetos.canBePicked = true;
-        animacionCono.SetBool("CambioAtaque", false);
         StopCoroutine(AtaqueCono());
+    }
+    public void DesapareceCono()
+    {
+        //gameObject.SetActive(false);
+    }
+    public void ApareceCono()
+    {
+        _spriteRenderer.enabled = true;
     }
     public void Setoffsetx(float value)
     {
@@ -56,7 +62,6 @@ public class Cono : MonoBehaviour
     }
     private void Start()
     {
-        ataqueCono.SetActive(false);
         _attack = GetComponent<PlayerAttack>();
         _damage = GetComponent<Damage>();
         Collider2D = GetComponent<BoxCollider2D>();
