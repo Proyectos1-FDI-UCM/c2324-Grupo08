@@ -11,7 +11,10 @@ public class RecogerObjeto : MonoBehaviour
     [SerializeField] private LifeBarComponenet lifebar;
     private HealthComponent _healthComponent;
     [SerializeField] private float healing;
-   
+    [SerializeField] private LifeBarComponenet lifeBarComponent;
+    [SerializeField] private VomitComponent vomitCuantity;
+    private float cambioVomito = 0.5f;
+
     void Start()
     {
         _healthComponent = GetComponent<HealthComponent>(); 
@@ -35,9 +38,15 @@ public class RecogerObjeto : MonoBehaviour
                 Destroy(pickedObj);
             }           
         }
+        else if( ObjID == 3)
+        {
+            lifeBarComponent.HealthUP();
+            vomitCuantity._vomitcuantity = cambioVomito;
+            Destroy(pickedObj);
+        }
     }
 
-    
+
 
     // Update is called once per frame
     void Update()

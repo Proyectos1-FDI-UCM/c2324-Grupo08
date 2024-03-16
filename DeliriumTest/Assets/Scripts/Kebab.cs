@@ -7,7 +7,7 @@ public class Kebab : MonoBehaviour
     #region references
     [SerializeField] private LifeBarComponenet lifeBarComponent;
     [SerializeField] private VomitComponent vomitComponent;
-    [SerializeField] private float cambioVomito;
+    private float cambioVomito = 0.5f;
     #endregion
     private void OnTriggerEnter2D(Collider2D collision)
     {

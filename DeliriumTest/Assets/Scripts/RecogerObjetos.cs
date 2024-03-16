@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RecogerObjetos : MonoBehaviour
 {
-    [SerializeField] private Cono _ataqueCono;
+    [SerializeField] private GameObject _ataqueCono;
     [SerializeField] private GameObject _ataqueBotella;
     [SerializeField] private GameObject ataque;
     [SerializeField] private Objetorecojible objetoRecojibleCono;
@@ -26,7 +26,7 @@ public class RecogerObjetos : MonoBehaviour
                 if (canBePicked)
                 {
                     canBePicked = false;
-                    _ataqueCono.enabled = true;
+                    _ataqueCono.SetActive(true);
                     ataqueCono.SetBool("Attack", true);
                 }
                 break;

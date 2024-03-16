@@ -30,11 +30,11 @@ public class Cono : MonoBehaviour
     public IEnumerator AtaqueCono()
     {
         transform.position = FrankMovement.Player.transform.position + new Vector3(offsetx, offsety);
-        animacionCono.SetBool("Atack",true); 
+        animacionCono.SetBool("Attack",true); 
         Collider2D.enabled = true;
         _spriteRenderer.enabled = true;
         for (int i = duraciondeataque; i > 0; i--) yield return new WaitForFixedUpdate();
-        animacionCono.SetBool("Atack", false);
+        animacionCono.SetBool("Attack", false);
         Collider2D.enabled = false;
         ataque.SetActive(true);
         _recogerObjetos.canBePicked = true;
@@ -78,9 +78,6 @@ public class Cono : MonoBehaviour
             else finaloffset = offsety;
             Setoffsety(finaloffset);
             StartCoroutine(AtaqueCono());
-            animacionCono.SetFloat("X", 0);
-            if (finaloffset < 0) animacionCono.SetFloat("Y", -1);
-            else animacionCono.SetFloat("Y", 1);
         }
         else if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow))
         {
@@ -89,9 +86,6 @@ public class Cono : MonoBehaviour
             Setoffsetx(finaloffset);
             Setoffsety(0);
             StartCoroutine(AtaqueCono());
-            animacionCono.SetFloat("Y", 0);
-            if (finaloffset < 0) animacionCono.SetFloat("X", -1);
-            else animacionCono.SetFloat("X", 1);
         }
     }
 }

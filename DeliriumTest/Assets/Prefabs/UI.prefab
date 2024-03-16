@@ -212,6 +212,7 @@ MonoBehaviour:
   _frankInput: {fileID: 0}
   _targetRigidBody: {fileID: 0}
   _shootComponent: {fileID: 0}
+  _kebab: {fileID: 0}
   vomitReduce: 0
 --- !u!1 &1031706121193132335
 GameObject:
@@ -349,6 +350,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthPrefab: {fileID: 3100012846619626855, guid: 1c1cab0639cd86c43a7bab35c2d789cd, type: 3}
   playerHealth: {fileID: 0}
+  _kebab: {fileID: 0}
 --- !u!1 &1723670788848623612
 GameObject:
   m_ObjectHideFlags: 0
@@ -453,8 +455,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2216156670544008921}
   - {fileID: 5251166442011830964}
+  - {fileID: 2216156670544008921}
   - {fileID: 302044458945755825}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

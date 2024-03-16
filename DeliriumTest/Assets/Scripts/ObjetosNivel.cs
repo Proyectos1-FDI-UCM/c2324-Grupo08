@@ -5,7 +5,7 @@ using UnityEngine;
 public class Objetorecojible : MonoBehaviour
 {
     [SerializeField] ObjetoRecojible objetoRecojible;
-    [SerializeField] private RecogerObjetos recogerObjetosP;
+    private RecogerObjetos recogerObjetosP;
     public bool picked = true;
     private void OnTriggerEnter2D(Collider2D collision)
     {
