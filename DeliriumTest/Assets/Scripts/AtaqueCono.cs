@@ -5,14 +5,15 @@ using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class Cono : MonoBehaviour
 {
-    #region parameters
+    #region referneces
     [SerializeField] private GameObject ataque;
     [SerializeField] private GameObject ataqueCono;
     private PlayerAttack _attack;
     [SerializeField] private RecogerObjetos _recogerObjetos;
     Damage _damage;
+    private Animator animacionCono;
     #endregion
-    #region referneces
+    #region parameters
     [SerializeField]
     float offsetx = 0.7f;
     [SerializeField]
@@ -38,6 +39,7 @@ public class Cono : MonoBehaviour
         ataqueCono.SetActive(false);
         ataque.SetActive(true);
         _recogerObjetos.canBePicked = true;
+        animacionCono.SetBool("CambioAtaque", false);
         StopCoroutine(AtaqueCono());
     }
     public void Setoffsetx(float value)
@@ -47,6 +49,10 @@ public class Cono : MonoBehaviour
     public void Setoffsety(float value)
     {
         offsety = value;
+    }
+    private void Awake()
+    {
+        animacionCono = GetComponentInParent<Animator>();
     }
     private void Start()
     {
@@ -67,6 +73,9 @@ public class Cono : MonoBehaviour
             else finaloffset = offsety;
             Setoffsety(finaloffset);
             StartCoroutine(AtaqueCono());
+            animacionCono.SetFloat("X", 0);
+            if (finaloffset < 0) animacionCono.SetFloat("Y", -1);
+            else animacionCono.SetFloat("Y", 1);
         }
         else if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow))
         {
@@ -75,6 +84,9 @@ public class Cono : MonoBehaviour
             Setoffsetx(finaloffset);
             Setoffsety(0);
             StartCoroutine(AtaqueCono());
+            animacionCono.SetFloat("Y", 0);
+            if (finaloffset < 0) animacionCono.SetFloat("X", -1);
+            else animacionCono.SetFloat("X", 1);
         }
     }
 }

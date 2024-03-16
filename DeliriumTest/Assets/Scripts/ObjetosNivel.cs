@@ -42,6 +42,7 @@ public class Objetorecojible : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.E) && picked && recogerObjetosP.canBePicked)
         {
             ObjetoRecogido();
+            Debug.Log("Objeto Recogido");
         }
     }
 }

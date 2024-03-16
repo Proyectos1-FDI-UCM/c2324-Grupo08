@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class RecogerObjetos : MonoBehaviour
 {
-    [SerializeField] private Cono _cono;
     [SerializeField] private GameObject _ataqueCono;
     [SerializeField] private GameObject _ataqueBotella;
     [SerializeField] private GameObject ataque;
     [SerializeField] private Objetorecojible objetoRecojibleCono;
     [SerializeField] private Objetorecojible objetoRecojibleBotella;
-
-
-    public bool canBePicked;
+    private Animator ataqueCono;
+    public bool canBePicked = true;
     public void ObjectSellector(ObjectStatus status)
     {
         switch (status)
@@ -29,19 +27,20 @@ public class RecogerObjetos : MonoBehaviour
                 {
                     canBePicked = false;
                     _ataqueCono.SetActive(true);
-                    _cono.AtaqueCono();
+                    ataqueCono.SetBool("Attack", true);
                 }
                 break;
         }
     }
+    private void Awake()
+    {
+        objetoRecojibleCono.RegisterPaco(this);
+        objetoRecojibleBotella.RegisterPaco(this);
+        ataqueCono = GetComponent<Animator>();
+    }
     private void Start()
     {
         canBePicked = true;
-    }
-    private void Awake()
-    {
-        objetoRecojibleBotella.RegisterPaco(this);
-        objetoRecojibleBotella.RegisterPaco(this);
     }
     public void RegisterObject(int value)
     {

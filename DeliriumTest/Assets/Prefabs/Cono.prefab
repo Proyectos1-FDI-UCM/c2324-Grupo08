@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9114754368712618487}
+  - component: {fileID: 2049347893360118237}
   - component: {fileID: -8290495174017181496}
-  - component: {fileID: 3640950061298167663}
   - component: {fileID: 6617018546931524750}
   m_Layer: 0
   m_Name: Cono
@@ -28,12 +28,27 @@ Transform:
   m_GameObject: {fileID: 9070939954684309588}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.1565, z: 0}
-  m_LocalScale: {x: 1.937115, y: 4.599453, z: 1}
+  m_LocalPosition: {x: 0, y: 0.1921, z: 0}
+  m_LocalScale: {x: 2, y: 3.1298, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2049347893360118237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9070939954684309588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36dc17cd4285e7a44ac2d8eb364fc83a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objetoRecojible: {fileID: 11400000, guid: a81662e8246eb0b469c44a416972502b, type: 2}
+  recogerObjetosP: {fileID: -1995343283732993655, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
+  picked: 1
 --- !u!212 &-8290495174017181496
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -86,20 +101,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3640950061298167663
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9070939954684309588}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36dc17cd4285e7a44ac2d8eb364fc83a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objetoRecojible: {fileID: 11400000, guid: a81662e8246eb0b469c44a416972502b, type: 2}
-  picked: 1
 --- !u!61 &6617018546931524750
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -132,7 +133,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0052173436, y: -0.024447292}
+  m_Offset: {x: -0.0009997338, y: -0.0076104403}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -143,5 +144,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.37912756, y: 0.32841462}
+  m_Size: {x: 0.35497156, y: 0.34393585}
   m_EdgeRadius: 0
