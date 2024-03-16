@@ -111,7 +111,7 @@ BlendTree:
     m_DirectBlendParameter: MovimientoX
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: c632e75c738762d459601bcd42e33484, type: 2}
+    m_Motion: {fileID: 7400000, guid: c8aaf5e3905a77b498e22ce9afb9a067, type: 2}
     m_Threshold: 1
     m_Position: {x: -1, y: 0}
     m_TimeScale: 1
@@ -139,19 +139,13 @@ AnimatorStateMachine:
     m_Position: {x: 460, y: 10, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1435504515927373656}
-    m_Position: {x: 190, y: -30, z: 0}
+    m_Position: {x: 190, y: 30, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 3090287330738056961}
     m_Position: {x: 632.74133, y: -136.01794, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 3997457578380824214}
-    m_Position: {x: 110, y: -150, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 87416199637545594}
-    m_Position: {x: 145, y: -85, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 1374831697448702044}
-    m_Position: {x: 180, y: -20, z: 0}
+    m_Position: {x: 100, y: -140, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: 3407527542066225054}
@@ -252,32 +246,6 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
---- !u!1102 &87416199637545594
-AnimatorState:
-  serializedVersion: 6
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: ataqueArriba
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: c632e75c738762d459601bcd42e33484, type: 2}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
 --- !u!206 &648766104941690845
 BlendTree:
   m_ObjectHideFlags: 1
@@ -394,32 +362,6 @@ AnimatorState:
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 5461986590200597491}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
---- !u!1102 &1374831697448702044
-AnimatorState:
-  serializedVersion: 6
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Brindis
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: b44e70f442e08fd4ab0b2b493e8b1504, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
