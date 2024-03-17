@@ -12,6 +12,7 @@ public class CamTrigger : MonoBehaviour
     public static BoxCollider2D _transicion;
     public static bool _estadotrans;
     public GameObject _leftBound;
+    public Transform _rightBound;
     #endregion
     #region method
     public static void TransitionAvaible(bool trans)
@@ -36,6 +37,7 @@ public class CamTrigger : MonoBehaviour
             _transicion.enabled = false;
             _leftBound.transform.position += (Vector3.right * 16);
             transform.Translate(Vector2.right * 16);
+            _rightBound.position = new Vector3(_rightBound.position.x + 16, _rightBound.position.y, _rightBound.position.z);
         }
     }
 }

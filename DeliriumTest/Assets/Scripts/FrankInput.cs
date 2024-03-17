@@ -21,6 +21,7 @@ public class InputManager : MonoBehaviour
     float _cooldown = 0.24f;
     float _time;
     bool _canAttack;
+    public bool AddsInertia = false;
     #endregion
 
     void Start()
@@ -104,8 +105,11 @@ public class InputManager : MonoBehaviour
                 _canAttack = false;
             }
         }
-        _frankMovement.RegisterX(Input.GetAxisRaw("Horizontal"));
-        _frankMovement.RegisterY(Input.GetAxisRaw("Vertical"));
+      
+            _frankMovement.RegisterX(Input.GetAxisRaw("Horizontal"));
+            _frankMovement.RegisterY(Input.GetAxisRaw("Vertical"));
+
+        
     }
    
 }

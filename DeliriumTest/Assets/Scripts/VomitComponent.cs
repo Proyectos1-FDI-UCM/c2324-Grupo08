@@ -65,11 +65,24 @@ public class VomitComponent : MonoBehaviour
         {
             _frankInput.enabled = false;
             _frankMovement.enabled = false;
+            _frankInput.AddsInertia = false;
+            _frankMovement.Inertia = 0f;
             StartCoroutine(_shootComponent.Disparo(_frankMovement._lastMovementVector));
             StartCoroutine(StopPlayer());
         }
-
-       
+        if(_vomitBar.value >= _maxvomit/3)
+        {
+            _frankInput.AddsInertia = true;
+            _frankMovement.Inertia = _frankMovement.FirstInertia;
+        }
+        else if (_vomitBar.value >= _maxvomit/2)
+        {
+            _frankMovement.Inertia = _frankMovement.SecondInertia;
+        }
+        else
+        {
+            _frankInput.AddsInertia = false;
+        }
     }
     IEnumerator StopPlayer()
     {

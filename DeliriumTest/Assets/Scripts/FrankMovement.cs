@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -7,12 +8,24 @@ public class FrankMovement : MonoBehaviour
     #region parameters
     [SerializeField] private float _speedValue = 5f;
     [SerializeField] private float _dashforce = 5f;
-    [SerializeField] private float _boundOffset;
-
+    [SerializeField] private float _boundOffset;    
+    [SerializeField] private float _firstInertia;
+    public float FirstInertia
+    { get { return _firstInertia; } }
+    [SerializeField] private float _secondInertia;
+    public float SecondInertia
+    {
+        get { return _secondInertia; }
+    }
+    [SerializeField] private float _maxImpulse;
     [SerializeField] private float _DashStun = 0.5f;
     [SerializeField] private float _DashCooldown = 1.0f;
     [SerializeField] private float _NewDashCooldown = 0.5f;
     private float _elapsedTime;
+    private float _inertia;
+    public float Inertia { get { return _inertia; } set { _inertia = value; } }
+    
+   
     #endregion
     #region references
     private InputManager _frankInput;
@@ -54,6 +67,8 @@ public class FrankMovement : MonoBehaviour
         _lastMovementVector = Vector3.right;
         _elapsedTime = 0;
     }
+
+    
     public void DashUpgrade()
     {
         _DashCooldown = _NewDashCooldown;
@@ -93,7 +108,22 @@ public class FrankMovement : MonoBehaviour
     {
         _directionVector = new Vector3(_xvalue, _yvalue);
         _movementVector = _directionVector.normalized * _speedValue;
-        _rigiRigidbody.velocity = _movementVector;
+
+        if (_frankInput.AddsInertia)
+        {          
+            
+            
+            _rigiRigidbody.AddForce(_directionVector * _inertia);
+            _rigiRigidbody.velocity = Vector2.ClampMagnitude(_rigiRigidbody.velocity, _maxImpulse);
+        }
+
+        else
+        {
+            _rigiRigidbody.velocity = _movementVector;
+        }
+        
+        
+        
         if (_directionVector != Vector3.zero)
         {
             _lastMovementVector = _directionVector;
