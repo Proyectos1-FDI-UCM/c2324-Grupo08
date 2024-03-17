@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    private HealthComponent healthComponent;
+
     public GameObject[] EasyRooms;
     public GameObject[] HardRooms;
     private Vector3 RoomPosition;
@@ -23,7 +25,6 @@ public class GameManager : MonoBehaviour
     int _currentRoom;
     void Awake()
     {
-
         RoomOffsetVector = new Vector3(RoomOffset, 0, 0);
         for (int i = 0; i < EasyRooms.Length; i++)
         {
@@ -44,17 +45,11 @@ public class GameManager : MonoBehaviour
             BuilderTransform.position = RoomPosition;
             Debug.Log("Vueltas");
         }
-
     }
-
-    void Start()
-    {
-
-    }
-
     // Update is called once per frame
     void Update()
     {
-
+        if (FrankMovement.Player.gameObject.GetComponent<HealthComponent>().Health <= 0) 
+            UIManager.UI.Dead();
     }
 }

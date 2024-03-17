@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class InputManager : MonoBehaviour
@@ -40,17 +38,17 @@ public class InputManager : MonoBehaviour
         {
             
         }
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             _frankMovement.Dash();
         }
-
         else if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow))
         {
-           
+
             _animator.SetBool("Rascadita", false);
             _playerAttack.Setoffsetx(0);
-           
+
             if (Input.GetKeyDown(KeyCode.DownArrow))
             {
                 finaloffset = -offsety;
@@ -59,13 +57,12 @@ public class InputManager : MonoBehaviour
             }
             else
             {
-
                 finaloffset = offsety;
                 _animator.SetFloat("AtaqueX", 1);
                 _animator.SetFloat("AtaqueY", 0);
             }
             _playerAttack.Setoffsety(finaloffset);
-            
+
 
 
             if (_canAttack)
@@ -89,8 +86,9 @@ public class InputManager : MonoBehaviour
 
             }
 
-            else {
-                
+            else
+            {
+
 
                 finaloffset = offsetx;
                 _animator.SetFloat("AtaqueX", 0);
@@ -105,11 +103,8 @@ public class InputManager : MonoBehaviour
                 _canAttack = false;
             }
         }
-      
-            _frankMovement.RegisterX(Input.GetAxisRaw("Horizontal"));
-            _frankMovement.RegisterY(Input.GetAxisRaw("Vertical"));
-
-        
+        _frankMovement.RegisterX(Input.GetAxisRaw("Horizontal"));
+        _frankMovement.RegisterY(Input.GetAxisRaw("Vertical"));
     }
-   
+
 }

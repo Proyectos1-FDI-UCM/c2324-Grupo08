@@ -12,7 +12,7 @@ public class PlayerAttack : MonoBehaviour
     float offsetx;
     float offsety;
     Damage attack;
-    private RecogerObjetos recogerObjetos;
+    private RecogerArmas recogerObjetos;
 
     // Start is called before the first frame update
     void Start()

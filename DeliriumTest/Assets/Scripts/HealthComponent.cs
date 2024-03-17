@@ -11,9 +11,9 @@ public class HealthComponent : MonoBehaviour
     #region events
     public static event Action OnPlayerDamaged;
     #endregion
-    #region parameters
+    #region parameters[SerializedField]
     [SerializeField] private LifeBarComponenet lifebar;
-    private float _health;
+    [SerializeField]private float _health;
     public float Health { get { return _health; } set { _health = value; } }
     [SerializeField]
     private float _maxHealth = 6;
@@ -43,6 +43,5 @@ public class HealthComponent : MonoBehaviour
         {
             _drops.Drop();
         }
-        
     }
 }

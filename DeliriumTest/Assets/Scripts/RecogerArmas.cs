@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RecogerObjetos : MonoBehaviour
+public class RecogerArmas : MonoBehaviour
 {
     [SerializeField] private GameObject _ataqueCono;
     [SerializeField] private GameObject _ataqueBotella;

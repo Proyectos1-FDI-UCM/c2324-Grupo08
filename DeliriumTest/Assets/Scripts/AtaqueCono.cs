@@ -8,7 +8,7 @@ public class Cono : MonoBehaviour
     #region referneces
     [SerializeField] private GameObject ataque;
     private PlayerAttack _attack;
-    [SerializeField] private RecogerObjetos _recogerObjetos;
+    [SerializeField] private RecogerArmas _recogerObjetos;
     Damage _damage;
     private Animator animacionCono;
     #endregion

@@ -109,7 +109,7 @@ public class FrankMovement : MonoBehaviour
         _directionVector = new Vector3(_xvalue, _yvalue);
         _movementVector = _directionVector.normalized * _speedValue;
 
-        if (_frankInput.AddsInertia)
+        /*if (_frankInput.AddsInertia)
         {          
             
             
@@ -118,9 +118,9 @@ public class FrankMovement : MonoBehaviour
         }
 
         else
-        {
+        {*/
             _rigiRigidbody.velocity = _movementVector;
-        }
+        //}
         
         
         

@@ -10,7 +10,6 @@ public class LifeComponent : MonoBehaviour
     #endregion
     Image heartImage;
 
-
     private void Awake()
     {
         heartImage = GetComponent<Image>();

@@ -159,6 +159,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 84
       objectReference: {fileID: 0}
+    - target: {fileID: 3292903105686797865, guid: c80aee6341d6bb44686830b5dbef00e4, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1943516379}
     - target: {fileID: 4044130168317915433, guid: c80aee6341d6bb44686830b5dbef00e4, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.60224
@@ -256,11 +260,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c80aee6341d6bb44686830b5dbef00e4, type: 3}
---- !u!1 &143811884 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6010307990909652271, guid: 8ebd7ae5fcc44ff4eaf82f6f06d8ee27, type: 3}
-  m_PrefabInstance: {fileID: 1729016439}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &359893978
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -676,7 +675,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   newCampos: {x: 16, y: 0, z: 0}
   newPlayerPos: {x: 1.5, y: 0, z: 0}
-  _leftBound: {fileID: 143811884}
   _rightBound: {fileID: 2076203259}
 --- !u!61 &1302031219
 BoxCollider2D:
@@ -1164,10 +1162,6 @@ PrefabInstance:
       propertyPath: _vomitComponent
       value: 
       objectReference: {fileID: 2007699805}
-    - target: {fileID: 5403849486592660370, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
-      propertyPath: m_Mass
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5437001834342468782, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
       propertyPath: lifebar
       value: 

@@ -7,7 +7,7 @@ public class BotellaLanzable : MonoBehaviour
     [SerializeField] private GameObject _bulletPrefab;
     [SerializeField] private GameObject ataque;
     [SerializeField] private GameObject ataqueBotella;
-    [SerializeField] private RecogerObjetos _recogerObjetos;
+    [SerializeField] private RecogerArmas _recogerObjetos;
     public float BottleOffsetinx;
     public float BottleOffsetiny;
     Damage _damage;
