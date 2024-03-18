@@ -9,6 +9,7 @@ public class RecogerArmas : MonoBehaviour
     [SerializeField] private GameObject ataque;
     [SerializeField] private Objetorecojible objetoRecojibleCono;
     [SerializeField] private Objetorecojible objetoRecojibleBotella;
+    [SerializeField] private UI _uiManager;
     private Animator ataqueCono;
     public bool canBePicked = true;
     public void ObjectSellector(ObjectStatus status)
@@ -45,6 +46,7 @@ public class RecogerArmas : MonoBehaviour
     public void RegisterObject(int value)
     {
         ObjectSellector((ObjectStatus)value);
+        _uiManager.PonerSprite(value);
         ataque.SetActive(false);
     }    
 }
