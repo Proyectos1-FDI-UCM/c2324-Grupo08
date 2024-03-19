@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -2575113686676944666}
   - component: {fileID: 1565623794818561238}
   - component: {fileID: 8173202621657689216}
-  - component: {fileID: 4284550215284299483}
+  - component: {fileID: 5615296398355450537}
   m_Layer: 8
   m_Name: BotellaProyectil
   m_TagString: Untagged
@@ -177,7 +177,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.296875
---- !u!95 &4284550215284299483
+--- !u!95 &5615296398355450537
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
