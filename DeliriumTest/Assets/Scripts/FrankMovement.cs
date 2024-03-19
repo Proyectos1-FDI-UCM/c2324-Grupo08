@@ -25,7 +25,6 @@ public class FrankMovement : MonoBehaviour
     private float _inertia;
     public float Inertia { get { return _inertia; } set { _inertia = value; } }
     
-   
     #endregion
     #region references
     private InputManager _frankInput;
@@ -33,10 +32,6 @@ public class FrankMovement : MonoBehaviour
     private static GameObject player;
     private Animator _animator;
     [SerializeField] private VomitComponent _vomitComponent;
-    [SerializeField] private CameraController _camController;
-    [SerializeField] private Transform _UpperBound;
-    [SerializeField] private Transform _LowerBound;
-
 
     public static GameObject Player { get { return player; } }
     #endregion
@@ -49,26 +44,9 @@ public class FrankMovement : MonoBehaviour
     public Vector3 _lastMovementVector;
     [SerializeField] private RigidbodyConstraints2D _originalConstraints;
     private Vector3 _dashPosition;
+    private Vector3 _cameraPosition;
     #endregion
     // Start is called before the first frame update
-    private void Awake()
-    {
-        if (player == null)
-        {
-            player = gameObject;
-        }
-        else Destroy(gameObject);
-    }
-    void Start()
-    {
-        _animator = GetComponent<Animator>();
-        _frankInput = GetComponent<InputManager>();
-        _rigiRigidbody = GetComponent<Rigidbody2D>();
-        _lastMovementVector = Vector3.right;
-        _elapsedTime = 0;
-    }
-
-    
     public void DashUpgrade()
     {
         _DashCooldown = _NewDashCooldown;
@@ -84,7 +62,6 @@ public class FrankMovement : MonoBehaviour
 
     public void Dash()
     {
-        Debug.Log("Llama");
         if (_elapsedTime >= _DashCooldown)
         {
             if (_directionVector != Vector3.zero)
@@ -95,7 +72,8 @@ public class FrankMovement : MonoBehaviour
             {
                 _dashPosition = transform.position + (_dashforce * _lastMovementVector.normalized);
             }
-            if ((_dashPosition.x > _camController.leftCamBound + _boundOffset) && (_dashPosition.x < _camController.rightCamBound - _boundOffset) && (_dashPosition.y < _UpperBound.position.y - _boundOffset) && (_dashPosition.y > _LowerBound.position.y + _boundOffset))
+            //if ((_dashPosition.x > _camController.leftCamBound + _boundOffset) && (_dashPosition.x < _camController.rightCamBound - _boundOffset) && (_dashPosition.y < _UpperBound.position.y - _boundOffset) && (_dashPosition.y > _LowerBound.position.y + _boundOffset))
+            if (_dashPosition.x > (_cameraPosition - Vector3.right * 8).x && _dashPosition.x < (_cameraPosition + Vector3.right * 8).x && _dashPosition.y > (_cameraPosition - Vector3.up * 5).y && _dashPosition.y < (_cameraPosition + Vector3.up * 3).y)
             {
                 transform.position = _dashPosition;
                 _vomitComponent.VomitDash();
@@ -103,6 +81,23 @@ public class FrankMovement : MonoBehaviour
                 _elapsedTime = 0;
             }
         }
+    }
+    private void Awake()
+    {
+        if (player == null)
+        {
+            player = gameObject;
+        }
+        else Destroy(gameObject);
+    }
+    void Start()
+    {
+        _animator = GetComponent<Animator>();
+        _frankInput = GetComponent<InputManager>();
+        _rigiRigidbody = GetComponent<Rigidbody2D>();
+        _cameraPosition = Camera.main.transform.position;
+        _lastMovementVector = Vector3.right;
+        _elapsedTime = 0;
     }
     void FixedUpdate()
     {

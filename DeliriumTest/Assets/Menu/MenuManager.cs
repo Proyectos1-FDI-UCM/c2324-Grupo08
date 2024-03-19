@@ -1,17 +1,17 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class UIManager : MonoBehaviour
+public class MenuManager : MonoBehaviour
 {
-    private static UIManager ui;
-    public static UIManager UI { get { return ui; } }
+    private static MenuManager menu;
+    public static MenuManager Menu { get { return menu; } }
     public void Exit()
     {
         Application.Quit();
     }
     public void Enter()
     {
-        SceneManager.LoadScene("PruebaParaEl28");
+        SceneManager.LoadScene("ProcPrueba");
     }
     public void Dead()
     {
@@ -27,9 +27,9 @@ public class UIManager : MonoBehaviour
     }
     private void Awake()
     {
-        if (ui == null)
+        if (menu == null)
         {
-            ui = this;
+            menu = this;
             DontDestroyOnLoad(gameObject);
         }
         else Destroy(gameObject);

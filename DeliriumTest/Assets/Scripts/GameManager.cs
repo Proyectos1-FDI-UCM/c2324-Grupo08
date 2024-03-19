@@ -50,6 +50,6 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         if (FrankMovement.Player.gameObject.GetComponent<HealthComponent>().Health <= 0) 
-            UIManager.UI.Dead();
+            MenuManager.Menu.Dead();
     }
 }

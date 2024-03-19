@@ -10,13 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 5726116090277671307}
   - component: {fileID: 2951310309232272005}
+  - component: {fileID: 6343877665699465447}
   - component: {fileID: 5403849486592660370}
   - component: {fileID: 5437001834342468782}
   - component: {fileID: 4623649835832064220}
   - component: {fileID: 427278207932773805}
   - component: {fileID: 3038442859292797404}
   - component: {fileID: -1995343283732993655}
-  - component: {fileID: 6343877665699465447}
   - component: {fileID: 7550986018599597843}
   - component: {fileID: 5860481732802851230}
   m_Layer: 3
@@ -96,6 +96,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &6343877665699465447
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1347014803689699083}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.1, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.46875, y: 1.5}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.5}
+  m_EdgeRadius: 0
 --- !u!50 &5403849486592660370
 Rigidbody2D:
   serializedVersion: 4
@@ -136,6 +181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifebar: {fileID: 0}
+  _health: 0
   _maxHealth: 6
 --- !u!114 &4623649835832064220
 MonoBehaviour:
@@ -210,52 +256,8 @@ MonoBehaviour:
   ataque: {fileID: 1762682776426379245}
   objetoRecojibleCono: {fileID: 2049347893360118237, guid: 7e613e63deb92da4ca84ecc5989e3a85, type: 3}
   objetoRecojibleBotella: {fileID: 3640950061298167663, guid: f9c24f95463147942933b8642bafad18, type: 3}
+  _uiManager: {fileID: 0}
   canBePicked: 0
---- !u!61 &6343877665699465447
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1347014803689699083}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.46875, y: 1.5}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!95 &7550986018599597843
 Animator:
   serializedVersion: 5
@@ -544,6 +546,8 @@ MonoBehaviour:
   ataque: {fileID: 1762682776426379245}
   ataqueBotella: {fileID: 2251650741291014258}
   _recogerObjetos: {fileID: -1995343283732993655}
+  imgBotella: {fileID: 0}
+  _uiManager: {fileID: 0}
   BottleOffsetinx: 0
   BottleOffsetiny: 0
   offsetx: 2
@@ -670,6 +674,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ataque: {fileID: 1762682776426379245}
   _recogerObjetos: {fileID: -1995343283732993655}
+  _uiManager: {fileID: 0}
+  imgCono: {fileID: 0}
   offsetx: 0.7
   offsety: 0.7
   duraciondeataque: 2

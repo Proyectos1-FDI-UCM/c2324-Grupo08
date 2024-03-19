@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/IvanScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/PruebaParaEl28.unity
     guid: 467184b543f64944cb1b58473918edd0
   m_configObjects: {}
