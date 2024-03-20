@@ -10,6 +10,7 @@ public class PlayerAttack : MonoBehaviour
     SpriteRenderer _spriteRenderer;
     Damage attack;
     Recolector_de_Armas _recolector;
+    Movement _movement;
     #endregion
 
     #region Properties
@@ -140,6 +141,7 @@ public class PlayerAttack : MonoBehaviour
         _recolector = GetComponentInParent<Recolector_de_Armas>();
         attack = GetComponent<Damage>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
+        _movement = GetComponent<Movement>();
 
         //Deshabilitación de los componentes pertientes para evitar errores al inicio
         _spriteRenderer.enabled = false;

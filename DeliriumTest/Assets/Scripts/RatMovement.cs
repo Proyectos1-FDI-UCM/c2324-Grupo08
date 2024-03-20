@@ -11,7 +11,8 @@ public class RatMovement : MonoBehaviour, EnemiesControler
     [SerializeField] private LayerMask pared;
     #endregion
     #region properties
-    private bool _characterClose; //compruba si el jugador esta cerca para cambiar su movimiento, 
+    private bool _characterClose; //compruba si el jugador esta cerca para cambiar su movimiento
+    bool hit;
     private Vector3 _direction;
     #endregion
     #region parameter
@@ -21,6 +22,14 @@ public class RatMovement : MonoBehaviour, EnemiesControler
     #endregion
 
     // Start is called before the first frame update
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        hit = true;
+    }
+    private void OnCollisionExit2D()
+    {
+       hit = false;
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.GetComponent<FrankMovement>() != null) 
@@ -42,6 +51,7 @@ public class RatMovement : MonoBehaviour, EnemiesControler
     {
         _myTransform = transform;
         _characterClose = false;
+        hit = false;
         _moveTime = 0;
         _stopTime = 0;
     }
@@ -49,7 +59,7 @@ public class RatMovement : MonoBehaviour, EnemiesControler
     // Update is called once per frame
     void Update()
     {
-        if (_characterClose)
+        if (_characterClose && !hit)
         {
             _direction = (_target.position - _myTransform.position).normalized;
             _myTransform.position += _direction * _speed * Time.deltaTime;
