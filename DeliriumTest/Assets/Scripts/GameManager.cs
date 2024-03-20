@@ -11,6 +11,9 @@ public class GameManager : MonoBehaviour
 
     public GameObject[] EasyRooms;
     public GameObject[] HardRooms;
+    public GameObject Tutorial;
+    public GameObject Secreta;
+    public GameObject BossFight;
     private Vector3 RoomPosition;
     public float RoomOffset = 0f;
     private int randomRoom;
@@ -26,6 +29,9 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         RoomOffsetVector = new Vector3(RoomOffset, 0, 0);
+        Instantiate(Tutorial, BuilderTransform.position, Quaternion.identity);     
+        RoomPosition = RoomPosition + RoomOffsetVector;
+        BuilderTransform.position = RoomPosition;      
         for (int i = 0; i < EasyRooms.Length; i++)
         {
             randomRoom = Random.Range(0, _availableEasyRooms.Count);
@@ -35,6 +41,9 @@ public class GameManager : MonoBehaviour
             RoomPosition = RoomPosition + RoomOffsetVector;
             BuilderTransform.position = RoomPosition;
         }
+        Instantiate(Secreta, BuilderTransform.position, Quaternion.identity);
+        RoomPosition = RoomPosition + RoomOffsetVector;
+        BuilderTransform.position = RoomPosition;
         for (int i = 0; i < HardRooms.Length; i++)
         {
             randomRoom = Random.Range(0, _availableHardRooms.Count);
@@ -44,6 +53,9 @@ public class GameManager : MonoBehaviour
             RoomPosition = RoomPosition + RoomOffsetVector;
             BuilderTransform.position = RoomPosition;
         }
+        Instantiate(BossFight, BuilderTransform.position, Quaternion.identity);
+        RoomPosition = RoomPosition + RoomOffsetVector;
+        BuilderTransform.position = RoomPosition;
     }
     // Update is called once per frame
     void Update()
