@@ -42,6 +42,7 @@ public class FrankMovement : MonoBehaviour
     public Vector3 Direction { get { return _directionVector; } }
     private Vector3 _movementVector;
     public Vector3 _lastMovementVector;
+    public Vector3 _vomitShootVector;
     [SerializeField] private RigidbodyConstraints2D _originalConstraints;
     private Vector3 _dashPosition;
     private Vector3 _cameraPosition;
