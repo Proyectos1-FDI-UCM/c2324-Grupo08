@@ -79,6 +79,7 @@ public class PlayerAttack : MonoBehaviour
     #region Couroutines
     public IEnumerator Attack(Animator _animator)
     {
+        
         //Inicio de la animación de ataque
         _animator.SetBool("Attack", true);
 
@@ -88,6 +89,9 @@ public class PlayerAttack : MonoBehaviour
         //Activación de la colisión y el render para ver el área de efecto, aademás de golpear
         Collider2D.enabled = true;
         _spriteRenderer.enabled = true;
+
+        //Se ejecuta el efecto de sonido
+        AudioManager.Instance.Punch();
 
         //Bucle destinado a esperar un número de FixedUpdates para deshabilitar nuevamente el ataque
         for (int i = duraciondeataque; i > 0; i--) yield return new WaitForFixedUpdate();

@@ -393,6 +393,9 @@ MonoBehaviour:
   - {fileID: 2118596358983314602, guid: 744d6e1fdca174448bebe65e759fd7d3, type: 3}
   - {fileID: 2118596358983314602, guid: 49cb5f0a8f8cba84ea3d1ac3db117195, type: 3}
   - {fileID: 2118596358983314602, guid: 1f84326b43efa534abc3276aa2a64421, type: 3}
+  Tutorial: {fileID: 2118596358983314602, guid: d930654232a9c5145b194a41e9bf45f7, type: 3}
+  Secreta: {fileID: 2118596358983314602, guid: b16264b00a8fafd43819f76cdbd8bffd, type: 3}
+  BossFight: {fileID: 2118596358983314602, guid: 929fc9a11ae06c945bda85d9d3869f4f, type: 3}
   RoomOffset: 16
   BuilderTransform: {fileID: 1297066627}
   vomitSlider: {fileID: 645422124}
@@ -981,6 +984,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
+    - target: {fileID: 4400946979536132396, guid: 7f9fb38224566d14988edcbc656e0941, type: 3}
+      propertyPath: patataPickup
+      value: 
+      objectReference: {fileID: 8300000, guid: ec75d1b70a21c3a4c84d2cacff445971, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

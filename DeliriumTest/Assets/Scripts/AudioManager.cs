@@ -8,6 +8,7 @@ public class AudioManager : MonoBehaviour
     public static AudioManager Instance
     {get { return instance;}}
     [SerializeField] private AudioClip punch;
+    [SerializeField] private AudioClip patataPickup;
     [SerializeField] private AudioSource Music;
     [SerializeField] private AudioSource SFX;
     
@@ -32,8 +33,12 @@ public class AudioManager : MonoBehaviour
     }
     public void Punch()
     {
-        Debug.Log("Suena");
         SFX.clip = punch; SFX.Play();
+    }
+
+    public void PatataPickup()
+    {
+        SFX.clip = patataPickup; SFX.Play();
     }
     // Update is called once per frame
     void Update()

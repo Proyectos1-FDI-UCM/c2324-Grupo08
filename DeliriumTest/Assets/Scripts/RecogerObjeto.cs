@@ -47,6 +47,7 @@ public class RecogerObjeto : MonoBehaviour
             {
                 _healthComponent.Healing(healing);
                 lifebar.DrawHearts();
+                AudioManager.Instance.PatataPickup();
                 Destroy(pickedObj);
             }           
         }
