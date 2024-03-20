@@ -42,9 +42,7 @@ public class FrankMovement : MonoBehaviour
     public Vector3 Direction { get { return _directionVector; } }
     private Vector3 _movementVector;
     public Vector3 _lastMovementVector;
-    private Vector3 _vomitShootVector;
-    public Vector3 VomitShoot
-    {get { return _vomitShootVector; } }
+    public Vector3 _vomitShootVector;
     [SerializeField] private RigidbodyConstraints2D _originalConstraints;
     private Vector3 _dashPosition;
     private Vector3 _cameraPosition;
@@ -120,10 +118,7 @@ public class FrankMovement : MonoBehaviour
             _rigiRigidbody.velocity = _movementVector;
         //}
         
-        if(_directionVector.x == 0 || _directionVector.y == 0)
-        {
-            _vomitShootVector = _directionVector;
-        }
+        
         
         if (_directionVector != Vector3.zero)
         {
