@@ -12,8 +12,6 @@ public class Cono : MonoBehaviour
     [SerializeField] private RecogerArmas _recogerObjetos;
     Damage _damage;
     private Animator animacionCono;
-    [SerializeField] private UI _uiManager;
-    [SerializeField] private Image imgCono;
     #endregion
     #region parameters
     [SerializeField]
@@ -41,7 +39,7 @@ public class Cono : MonoBehaviour
         Collider2D.enabled = false;
         ataque.SetActive(true);
         _recogerObjetos.canBePicked = true;
-        _uiManager.QuitarSprite(imgCono);
+        UIManager.UiManager.QuitarSpriteCono();
         StopCoroutine(AtaqueCono());
     }
     public void DesapareceCono()

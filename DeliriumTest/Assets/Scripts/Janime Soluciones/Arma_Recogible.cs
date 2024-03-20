@@ -2,11 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Objetorecojible : MonoBehaviour
+public class Arma_Recogible : MonoBehaviour
 {
-    [SerializeField] ObjetoRecojible objetoRecojible;
-    [SerializeField] private RecogerArmas recogerObjetosP;
-    private UIManager _uiManager;
+    //ATENCIÓN CON ESTE CAMPO:
+    [SerializeField] int ID;
+    /* CONSIDERACIONES IMPORTANTES 
+     * PARA EL USO CORRECTO DE ESTE COMPONENTE:
+     * 1º El Id de los objetos tiene el siguiente orden:
+     * { 
+     *  Botella = 0;
+     *  Cono = 1;
+     * } 
+     */
+    public int RecogibleID { get { return ID; } }
+    Recolector_de_Armas recogerObjetosP;
     public bool picked = true;
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -26,10 +35,9 @@ public class Objetorecojible : MonoBehaviour
     }
     private void ObjetoRecogido()
     {
-        recogerObjetosP.RegisterObject(objetoRecojible.ObjectID);
-        Destroy(gameObject);
+        recogerObjetosP.RegisterObject(this);
     }
-    public void RegisterPaco(RecogerArmas recogerObjetos)
+    public void RegisterPaco(Recolector_de_Armas recogerObjetos)
     {
         recogerObjetosP = recogerObjetos;
         Debug.Log("Información del prefab recogido");
@@ -37,6 +45,7 @@ public class Objetorecojible : MonoBehaviour
     private void Start()
     {
         picked = false;
+        recogerObjetosP = FrankMovement.Player.GetComponent<Recolector_de_Armas>();
     }
     private void Update()
     {

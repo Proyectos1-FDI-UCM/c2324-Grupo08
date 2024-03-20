@@ -43,7 +43,6 @@ public class GameManager : MonoBehaviour
             _availableHardRooms.Remove(_currentRoom);
             RoomPosition = RoomPosition + RoomOffsetVector;
             BuilderTransform.position = RoomPosition;
-            Debug.Log("Vueltas");
         }
     }
     // Update is called once per frame

@@ -29,6 +29,14 @@ public class InputManager : MonoBehaviour
         _playerAttack = GetComponentInChildren<PlayerAttack>();
         if (_playerAttack == null) Debug.LogError("Frank no tiene un ataque puesto. Revisa la escena de Janime para ver un ejemplo de implementación.");
     }
+    public void DisableCooldown()
+    {
+        _cooldown = 0.5f;
+    }
+    public void EnableCooldown()
+    {
+        _cooldown = 1f;
+    }
 
     // Update is called once per frame
     void Update()
@@ -36,7 +44,7 @@ public class InputManager : MonoBehaviour
         if (!_canAttack) { _time += Time.deltaTime; }
         if (_time >= _cooldown) { _time = 0; _canAttack = true; }
         {
-            
+
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
@@ -45,8 +53,6 @@ public class InputManager : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow))
         {
-
-            _animator.SetBool("Rascadita", false);
             _playerAttack.Setoffsetx(0);
 
             if (Input.GetKeyDown(KeyCode.DownArrow))
@@ -55,6 +61,7 @@ public class InputManager : MonoBehaviour
                 _animator.SetFloat("AtaqueX", -1);
                 _animator.SetFloat("AtaqueY", 0);
             }
+
             else
             {
                 finaloffset = offsety;
@@ -63,10 +70,9 @@ public class InputManager : MonoBehaviour
             }
             _playerAttack.Setoffsety(finaloffset);
 
-
-
             if (_canAttack)
             {
+                _animator.SetBool("Rascadita", false);
                 StartCoroutine(_playerAttack.Attack(_animator));
                 _canAttack = false;
             }
@@ -74,8 +80,7 @@ public class InputManager : MonoBehaviour
 
         else if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow))
         {
-            _animator.SetBool("Rascadita", false);
-
+            _playerAttack.Setoffsety(0);
 
             if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
@@ -88,17 +93,16 @@ public class InputManager : MonoBehaviour
 
             else
             {
-
-
                 finaloffset = offsetx;
                 _animator.SetFloat("AtaqueX", 0);
                 _animator.SetFloat("AtaqueY", 1);
 
             }
             _playerAttack.Setoffsetx(finaloffset);
-            _playerAttack.Setoffsety(0);
+            
             if (_canAttack)
             {
+                _animator.SetBool("Rascadita", false);
                 StartCoroutine(_playerAttack.Attack(_animator));
                 _canAttack = false;
             }

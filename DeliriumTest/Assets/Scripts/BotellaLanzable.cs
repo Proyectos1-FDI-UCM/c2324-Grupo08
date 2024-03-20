@@ -9,8 +9,6 @@ public class BotellaLanzable : MonoBehaviour
     [SerializeField] private GameObject ataque;
     [SerializeField] private GameObject ataqueBotella;
     [SerializeField] private RecogerArmas _recogerObjetos;
-    [SerializeField] private Image imgBotella;
-    [SerializeField] private UI _uiManager;
     public float BottleOffsetinx;
     public float BottleOffsetiny;
     Damage _damage;
@@ -30,7 +28,7 @@ public class BotellaLanzable : MonoBehaviour
         ataqueBotella.SetActive(false);
         ataque.SetActive(true);
         _recogerObjetos.canBePicked = true;
-        _uiManager.QuitarSprite(imgBotella);
+        UIManager.UiManager.QuitarSpriteBotella();
     }
     private void Awake()
     {
