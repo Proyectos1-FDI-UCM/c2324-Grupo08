@@ -36,11 +36,14 @@ public class LevelManager : MonoBehaviour
         Debug.Log(m_AllEnemies.Count);
         if (m_AllEnemies.Count == 0)
         {
+            CamTriggerSecreta.TransitionAvaible(true);
             CamTrigger.TransitionAvaible(true);
             Arrow.SetActive(true);
         }
         else if(m_AllEnemies.Count > 0) 
         {
+            CamTriggerSecreta.TransitionAvaible(false);
+
             CamTrigger.TransitionAvaible(false);
             Arrow.SetActive(false);
         }
