@@ -30,7 +30,6 @@ public class MenuManager : MonoBehaviour
         if (menu == null)
         {
             menu = this;
-            DontDestroyOnLoad(gameObject);
         }
         else Destroy(gameObject);
     }

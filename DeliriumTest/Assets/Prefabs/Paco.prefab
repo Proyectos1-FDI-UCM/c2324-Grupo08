@@ -468,7 +468,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1860397859
   m_SortingLayer: 3
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 0.8745099, b: 0.6, a: 1}
   m_FlipX: 0
@@ -543,8 +543,6 @@ MonoBehaviour:
   ataque: {fileID: 1762682776426379245}
   ataqueBotella: {fileID: 2251650741291014258}
   _recogerObjetos: {fileID: -1995343283732993655}
-  imgBotella: {fileID: 0}
-  _uiManager: {fileID: 0}
   BottleOffsetinx: 0
   BottleOffsetiny: 0
   offsetx: 2
@@ -671,8 +669,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ataque: {fileID: 1762682776426379245}
   _recogerObjetos: {fileID: -1995343283732993655}
-  _uiManager: {fileID: 0}
-  imgCono: {fileID: 0}
   offsetx: 0.7
   offsety: 0.7
   duraciondeataque: 2
