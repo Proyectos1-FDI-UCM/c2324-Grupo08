@@ -5,9 +5,8 @@ using UnityEngine;
 public class Recolector_de_Armas : MonoBehaviour
 {
     PlayerAttack _playerAttack;
-    [SerializeField] private GameObject _ataqueBotella;
     [SerializeField] private Arma_Recogible objetoRecojibleCono;
-    [SerializeField] private Objetorecojible objetoRecojibleBotella;
+    [SerializeField] private Arma_Recogible objetoRecojibleBotella;
     [SerializeField] private UIManager _uiManager;
     public bool canBePicked;
     public void ObjectSellector(Armas status)
@@ -18,7 +17,7 @@ public class Recolector_de_Armas : MonoBehaviour
                 if (canBePicked)
                 {
                     canBePicked = false;
-                    _ataqueBotella.SetActive(true);
+                    _playerAttack.Botella();
                 }
                 break;
             case Armas.cono:

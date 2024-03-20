@@ -257,17 +257,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 2}
   m_Direction: 0
---- !u!114 &278945768 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6082738700392638416, guid: c80aee6341d6bb44686830b5dbef00e4, type: 3}
-  m_PrefabInstance: {fileID: 2113954327}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &589987395
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -399,11 +388,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2605212177013216507, guid: 8ebd7ae5fcc44ff4eaf82f6f06d8ee27, type: 3}
   m_PrefabInstance: {fileID: 679927495}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &788250222 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2251650741291014258, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
-  m_PrefabInstance: {fileID: 1337492466}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &803390224
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -461,6 +445,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6baa9aee851a3c44fa4f1579711d2d4f, type: 3}
+--- !u!114 &843914280 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3786951372719159857, guid: f9c24f95463147942933b8642bafad18, type: 3}
+  m_PrefabInstance: {fileID: 888229036}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb1782af8da719742ba5630733891146, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &888229036
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -653,22 +648,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1087902149 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1347014803689699083, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
-  m_PrefabInstance: {fileID: 1337492466}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1128453546 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2180505496205086302, guid: c80aee6341d6bb44686830b5dbef00e4, type: 3}
-  m_PrefabInstance: {fileID: 2113954327}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1214381877
 GameObject:
   m_ObjectHideFlags: 0
@@ -905,46 +884,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -1995343283732993655, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
+    - target: {fileID: 1182988118148648162, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
       propertyPath: _uiManager
       value: 
       objectReference: {fileID: 1714835999}
-    - target: {fileID: -1995343283732993655, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
-      propertyPath: _ataqueCono
+    - target: {fileID: 1182988118148648162, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
+      propertyPath: objetoRecojibleBotella
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 843914280}
     - target: {fileID: 1347014803689699083, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
       propertyPath: m_Name
       value: Paco
       objectReference: {fileID: 0}
-    - target: {fileID: 1824435449716671007, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
-      propertyPath: _uiManager
-      value: 
-      objectReference: {fileID: 1714835999}
-    - target: {fileID: 1824435449716671007, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
-      propertyPath: imgBotella
-      value: 
-      objectReference: {fileID: 1128453546}
-    - target: {fileID: 1824435449716671007, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
-      propertyPath: _recogerObjetos
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3353275219551251363, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
-      propertyPath: imgCono
-      value: 
-      objectReference: {fileID: 278945768}
-    - target: {fileID: 3353275219551251363, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
-      propertyPath: _uiManager
-      value: 
-      objectReference: {fileID: 1714835999}
     - target: {fileID: 4623649835832064220, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
       propertyPath: _vomitComponent
       value: 
       objectReference: {fileID: 2113954328}
-    - target: {fileID: 5403849486592660370, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
-      propertyPath: m_Simulated
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5437001834342468782, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
       propertyPath: lifebar
       value: 
@@ -1005,23 +960,17 @@ PrefabInstance:
       propertyPath: lifeBarComponent
       value: 
       objectReference: {fileID: 2113954330}
-    m_RemovedComponents:
-    - {fileID: 3353275219551251363, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
-    - {fileID: -1995343283732993655, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
-    m_RemovedGameObjects:
-    - {fileID: 6860114535254056688, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1347014803689699083, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
-      insertIndex: 9
-      addedObject: {fileID: 1337492478}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
 --- !u!114 &1337492467 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3038442859292797404, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
   m_PrefabInstance: {fileID: 1337492466}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1087902149}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 290b5724f4cc51644895a6c80ae1f445, type: 3}
@@ -1032,7 +981,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 427278207932773805, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
   m_PrefabInstance: {fileID: 1337492466}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1087902149}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0e989a5f82cb8d34eb3e2e8db0d640f0, type: 3}
@@ -1043,7 +992,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4623649835832064220, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
   m_PrefabInstance: {fileID: 1337492466}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1087902149}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7b753a02a983a3f4ea97da009b013c67, type: 3}
@@ -1054,7 +1003,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5437001834342468782, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
   m_PrefabInstance: {fileID: 1337492466}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1087902149}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6acc7242b87cbd549a665e24d042dfbc, type: 3}
@@ -1065,23 +1014,6 @@ Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 5403849486592660370, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
   m_PrefabInstance: {fileID: 1337492466}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1337492478
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1087902149}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b436447d8b0832842a23e9414fdb2357, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _ataqueBotella: {fileID: 788250222}
-  objetoRecojibleCono: {fileID: 970167484645963708, guid: 6baa9aee851a3c44fa4f1579711d2d4f, type: 3}
-  objetoRecojibleBotella: {fileID: 3640950061298167663, guid: f9c24f95463147942933b8642bafad18, type: 3}
-  _uiManager: {fileID: 1714835999}
-  canBePicked: 1
 --- !u!1 &1452236824
 GameObject:
   m_ObjectHideFlags: 0

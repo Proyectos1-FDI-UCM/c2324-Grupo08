@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 9114754368712618487}
   - component: {fileID: -8290495174017181496}
-  - component: {fileID: 3640950061298167663}
   - component: {fileID: 6617018546931524750}
+  - component: {fileID: 3786951372719159857}
   m_Layer: 0
   m_Name: Botella
   m_TagString: Untagged
@@ -72,8 +72,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -468863205
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -1880309385, guid: 069c5bd925a631d4d9dac3e859288558, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -86,21 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3640950061298167663
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9070939954684309588}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36dc17cd4285e7a44ac2d8eb364fc83a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objetoRecojible: {fileID: 11400000, guid: 450758b18f91d794f921a0a9a4f40bd7, type: 2}
-  recogerObjetosP: {fileID: -1995343283732993655, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
-  picked: 1
 --- !u!61 &6617018546931524750
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -146,3 +131,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.37051502, y: 0.7213733}
   m_EdgeRadius: 0
+--- !u!114 &3786951372719159857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9070939954684309588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb1782af8da719742ba5630733891146, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 0
+  picked: 1
