@@ -14,8 +14,8 @@ public class RecogerObjeto : MonoBehaviour
     private PlayerAttack _playerAttack;
     private InputManager _inputManager;
     [SerializeField] private float healing;
-    [SerializeField] private LifeBarComponenet lifeBarComponent;
-    [SerializeField] private VomitComponent vomitCuantity;
+    [SerializeField] private LifeBarComponenet _lifeBarComponent;
+    [SerializeField] private VomitComponent _vomitCuantity;
     private float cambioVomito = 0.5f;
     /* 
     * 1 = Bolsa de Patatas
@@ -53,8 +53,8 @@ public class RecogerObjeto : MonoBehaviour
         }
         else if( ObjID == 3)
         {
-            lifeBarComponent.HealthUP();
-            vomitCuantity._vomitcuantity = cambioVomito;
+            _lifeBarComponent.HealthUP();
+            _vomitCuantity._vomitcuantity = cambioVomito;
             Destroy(pickedObj);
         }
         else if(ObjID == 5)

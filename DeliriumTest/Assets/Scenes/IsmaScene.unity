@@ -533,11 +533,15 @@ PrefabInstance:
     - target: {fileID: -1995343283732993655, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
       propertyPath: _ataqueCono
       value: 
-      objectReference: {fileID: 1572396314}
+      objectReference: {fileID: 0}
     - target: {fileID: -1995343283732993655, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
       propertyPath: objetoRecojibleCono
       value: 
       objectReference: {fileID: 2049347893360118237, guid: 7e613e63deb92da4ca84ecc5989e3a85, type: 3}
+    - target: {fileID: 1182988118148648162, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
+      propertyPath: objetoRecojibleBotella
+      value: 
+      objectReference: {fileID: 3786951372719159857, guid: f9c24f95463147942933b8642bafad18, type: 3}
     - target: {fileID: 1347014803689699083, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
       propertyPath: m_Name
       value: Paco
@@ -605,10 +609,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6860114535254056688, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1572396318}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
 --- !u!1 &440703867
 GameObject:
@@ -1357,43 +1358,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a76e24bb65194d43b47a4c3898939cd, type: 3}
---- !u!1 &1572396310 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6860114535254056688, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
-  m_PrefabInstance: {fileID: 356559448}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1572396314 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3353275219551251363, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
-  m_PrefabInstance: {fileID: 356559448}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1572396310}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b563e1b80b2f8243bc288e70002c31e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!95 &1572396318
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1572396310}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 133b79cf5844007498f0682bc4adc2e4, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1760345089
 GameObject:
   m_ObjectHideFlags: 0

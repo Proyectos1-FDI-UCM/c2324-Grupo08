@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5967317704523144796}
   - component: {fileID: 7272931226376992553}
   - component: {fileID: -6208910958496930830}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Kebab
   m_TagString: Untagged
   m_Icon: {fileID: 0}

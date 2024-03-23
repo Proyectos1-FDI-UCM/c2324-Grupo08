@@ -89,13 +89,18 @@ public class PlayerAttack : MonoBehaviour
     #region Coroutines
     public IEnumerator Attack(Animator _animator)
     {
-        bool basico = !_mejorado && !_cono && !_botella;
+
 
         //Inicio de la animación de ataque
-        if (basico) _animator.SetBool("Attack", true);
+        if (_cono == true) _animator.SetBool("AtaqueCono", true);
+        else _animator.SetBool("Attack", true);
 
         //Retardo para permitir cuadrar el frame de golpe con la activación de la colisión 
         yield return new WaitForSeconds(0.2f);
+
+        //Fin de la animación de ataque
+        if (_cono == true) _animator.SetBool("AtaqueCono", false);
+        else _animator.SetBool("Attack", false);
 
         //Comprobación del tipo de ataque para preparar el lanzamiento de la botella
         //uno físico (Cono, Cubo de chapas, Básico)
@@ -106,13 +111,10 @@ public class PlayerAttack : MonoBehaviour
             _spriteRenderer.enabled = true;
 
             //Se ejecuta el efecto de sonido
-            if (basico) AudioManager.Instance.Punch();
+            AudioManager.Instance.Punch();
 
             //Bucle destinado a esperar un número de FixedUpdates para deshabilitar nuevamente el ataque
             for (int i = duraciondeataque; i > 0; i--) yield return new WaitForFixedUpdate();
-
-            //Fin de la animación de ataque
-            if(basico) _animator.SetBool("Attack", false);
 
             //Deshabilitación de las colisiones y render para
             //evitar problemas con otras colisiones o molestias visuales
