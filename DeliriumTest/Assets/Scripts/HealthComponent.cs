@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HealthComponent : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class HealthComponent : MonoBehaviour
     #region events
     public static event Action OnPlayerDamaged;
     #endregion
-    #region parameters[SerializedField]
+    #region parameters
     [SerializeField] private LifeBarComponenet lifebar;
     [SerializeField]private float _health;
     public float Health { get { return _health; } set { _health = value; } }
