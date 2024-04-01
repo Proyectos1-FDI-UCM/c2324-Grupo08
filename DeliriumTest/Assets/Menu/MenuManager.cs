@@ -27,11 +27,6 @@ public class MenuManager : MonoBehaviour
     }
     private void Awake()
     {
-        if (menu == null)
-        {
             menu = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else Destroy(gameObject);
     }
 }

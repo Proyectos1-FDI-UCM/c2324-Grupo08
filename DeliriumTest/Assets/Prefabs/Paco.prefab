@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5403849486592660370}
   - component: {fileID: 5437001834342468782}
   - component: {fileID: 4623649835832064220}
+  - component: {fileID: 8338194921720802218}
   - component: {fileID: 427278207932773805}
   - component: {fileID: 3038442859292797404}
   - component: {fileID: 7550986018599597843}
@@ -194,17 +195,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedValue: 5
-  _dashforce: 1
-  _boundOffset: 0.5
   _firstInertia: 3
   _secondInertia: 15
   _maxImpulse: 3
-  _DashStun: 0.5
-  _DashCooldown: 2.5
-  _NewDashCooldown: 1
   _vomitComponent: {fileID: 0}
   _lastMovementVector: {x: 0, y: 0, z: 0}
   _vomitShootVector: {x: 0, y: 0, z: 0}
+--- !u!114 &8338194921720802218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1347014803689699083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d53f9c89eddc374d866db8cb900f049, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _vomitComponent: {fileID: 0}
+  _dashforce: 5
+  _DashStun: 0.5
+  _DashCooldown: 1
+  _NewDashCooldown: 0.5
   _originalConstraints: 4
 --- !u!114 &427278207932773805
 MonoBehaviour:
@@ -288,8 +301,8 @@ MonoBehaviour:
   ReduceVomit: 5
   lifebar: {fileID: 0}
   healing: 2
-  lifeBarComponent: {fileID: 0}
-  vomitCuantity: {fileID: 0}
+  _lifeBarComponent: {fileID: 0}
+  _vomitCuantity: {fileID: 0}
 --- !u!1 &1762682776426379245
 GameObject:
   m_ObjectHideFlags: 0

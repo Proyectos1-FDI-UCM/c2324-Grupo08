@@ -184,6 +184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   punch: {fileID: 8300000, guid: c9e3f53e85a85244db2e42b2128f63d6, type: 3}
+  patataPickup: {fileID: 8300000, guid: ec75d1b70a21c3a4c84d2cacff445971, type: 3}
   Music: {fileID: 9031179413056283798}
   SFX: {fileID: 3088265648676689091}
 --- !u!1 &7039141202912338604
