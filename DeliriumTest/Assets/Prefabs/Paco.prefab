@@ -214,11 +214,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _vomitComponent: {fileID: 0}
+  _dashIndicator: {fileID: 0}
   _dashforce: 5
   _DashStun: 0.5
   _DashCooldown: 1
   _NewDashCooldown: 0.5
-  _originalConstraints: 4
 --- !u!114 &427278207932773805
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -282,7 +282,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objetoRecojibleCono: {fileID: 970167484645963708, guid: 6baa9aee851a3c44fa4f1579711d2d4f, type: 3}
-  objetoRecojibleBotella: {fileID: 0}
+  objetoRecojibleBotella: {fileID: 3786951372719159857, guid: f9c24f95463147942933b8642bafad18, type: 3}
   _uiManager: {fileID: 0}
   canBePicked: 1
 --- !u!114 &5860481732802851230
