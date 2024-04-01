@@ -40,6 +40,11 @@ public class FrankMovement : MonoBehaviour
     public Vector3 _vomitShootVector;
     #endregion
     // Start is called before the first frame update
+    public Animator GetAnimator()
+    {
+        _animator = GetComponent<Animator>();
+        return _animator;
+    }
     public void DashUpgrade()
     {
         _dash.DashUpgrade();

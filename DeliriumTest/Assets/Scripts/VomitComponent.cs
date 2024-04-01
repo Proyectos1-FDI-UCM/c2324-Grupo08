@@ -19,6 +19,7 @@ public class VomitComponent : MonoBehaviour
     [SerializeField] private Rigidbody2D _targetRigidBody;
     [SerializeField] private ShootComponent _shootComponent;
     private bool _stops = false;
+    private Animator _animator;
     #endregion
     #region propiedades
     [SerializeField] private float vomitReduce;
@@ -27,6 +28,10 @@ public class VomitComponent : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _animator = _frankMovement.GetAnimator();
+        if (_animator == null ) {
+            Debug.Log("_animator roro");
+        }
         _vomitBar = GetComponent<Slider>();
         _vomitBar.value = 0;
     }
@@ -67,6 +72,7 @@ public class VomitComponent : MonoBehaviour
             _frankMovement.enabled = false;
             _frankInput.AddsInertia = false;
             _frankMovement.Inertia = 0f;
+            StartCoroutine(AnimVomit());
             StartCoroutine(_shootComponent.Disparo(_frankMovement._lastMovementVector));
             StartCoroutine(StopPlayer());
         }
@@ -84,8 +90,16 @@ public class VomitComponent : MonoBehaviour
             _frankInput.AddsInertia = false;
         }
     }
+    IEnumerator AnimVomit()
+    {
+        _animator.SetBool("Vomito", true);
+        yield return new WaitForSeconds(2f);
+        _animator.SetBool("Vomito", false);
+
+    }
     IEnumerator StopPlayer()
     {
+       
         _vomitBar.value = 0;
         _stops = true;
         _targetRigidBody.constraints = RigidbodyConstraints2D.FreezeAll;
@@ -94,5 +108,6 @@ public class VomitComponent : MonoBehaviour
         _frankInput.enabled = true;
         _frankMovement.enabled = true;
         _stops = false;
+
     }
 }

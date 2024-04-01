@@ -16,6 +16,8 @@ public class DashCompnent : MonoBehaviour
     [SerializeField] private float _DashCooldown = 1.0f;
     [SerializeField] private float _NewDashCooldown = 0.5f;
     private float _elapsedTime;
+    private Animator _animator;
+
     #endregion
     #region properties
     private Vector3 _dashPosition;
@@ -50,16 +52,20 @@ public class DashCompnent : MonoBehaviour
     }
     IEnumerator DashCoolDown()
     {
+        _animator.SetBool("Dash", true);
         _rigiRigidbody.velocity = Vector3.zero;
         _frankInput.enabled = false;
         //this.enabled = false;
         yield return new WaitForSeconds(_DashStun);
+        _animator.SetBool("Dash", false);
+
         _frankInput.enabled = true;
         //this.enabled = true;
     }
     // Start is called before the first frame update
     void Start()
     {
+        _animator = GetComponent<Animator>();
         _elapsedTime = _DashCooldown;
         _cameraPosition = Camera.main.transform.position;
         _rigiRigidbody = GetComponent<Rigidbody2D>();
