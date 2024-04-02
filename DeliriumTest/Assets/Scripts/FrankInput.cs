@@ -62,15 +62,31 @@ public class InputManager : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.DownArrow))
             {
                 finaloffset = -offsety;
-                _animator.SetFloat("AtaqueX", -1);
-                _animator.SetFloat("AtaqueY", 0);
+                if (_playerAttack._cono)
+                {
+                    _animator.SetFloat("ConoX", 0);
+                    _animator.SetFloat("ConoY", -1);
+                }
+                else
+                {
+                    _animator.SetFloat("AtaqueX", 0);
+                    _animator.SetFloat("AtaqueY", -1);
+                }
             }
-
             else
             {
                 finaloffset = offsety;
-                _animator.SetFloat("AtaqueX", 1);
-                _animator.SetFloat("AtaqueY", 0);
+
+                if (_playerAttack._cono)
+                {
+                    _animator.SetFloat("ConoX", 0);
+                    _animator.SetFloat("ConoY", 1);
+                }
+                else
+                {
+                    _animator.SetFloat("AtaqueX", 0);
+                    _animator.SetFloat("AtaqueY", 1);
+                }
             }
             _playerAttack.Setoffsety(finaloffset);
 
@@ -90,16 +106,31 @@ public class InputManager : MonoBehaviour
             {
 
                 finaloffset = -offsetx;
-                _animator.SetFloat("AtaqueX", 0);
-                _animator.SetFloat("AtaqueY", -1);
-
+                if (_playerAttack._cono)
+                {
+                    _animator.SetFloat("ConoX", -1);
+                    _animator.SetFloat("ConoY", 0);
+                }
+                else
+                {
+                    _animator.SetFloat("AtaqueX", -1);
+                    _animator.SetFloat("AtaqueY", 0);
+                }
             }
 
             else
             {
                 finaloffset = offsetx;
-                _animator.SetFloat("AtaqueX", 0);
-                _animator.SetFloat("AtaqueY", 1);
+                if (_playerAttack._cono)
+                {
+                    _animator.SetFloat("ConoX", 1);
+                    _animator.SetFloat("ConoY", 0);
+                }
+                else
+                {
+                    _animator.SetFloat("AtaqueX", 1);
+                    _animator.SetFloat("AtaqueY", 0);
+                }
 
             }
             _playerAttack.Setoffsetx(finaloffset);

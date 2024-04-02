@@ -28,7 +28,7 @@ public class PlayerAttack : MonoBehaviour
     //Mejora (Cubo de Chapas)
     bool _mejorado;
     //Cono
-    bool _cono;
+    public bool _cono;
     //Botella
     bool _botella;
     #endregion
