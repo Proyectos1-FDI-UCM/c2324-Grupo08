@@ -64,13 +64,13 @@ public class InputManager : MonoBehaviour
                 finaloffset = -offsety;
                 if (_playerAttack._cono)
                 {
-                    _animator.SetFloat("ConoX", 0);
-                    _animator.SetFloat("ConoY", -1);
+                    _animator.SetFloat("ConoX", -1);
+                    _animator.SetFloat("ConoY", 0);
                 }
                 else
                 {
-                    _animator.SetFloat("AtaqueX", 0);
-                    _animator.SetFloat("AtaqueY", -1);
+                    _animator.SetFloat("AtaqueX", -1);
+                    _animator.SetFloat("AtaqueY", 0);
                 }
             }
             else
@@ -79,13 +79,13 @@ public class InputManager : MonoBehaviour
 
                 if (_playerAttack._cono)
                 {
-                    _animator.SetFloat("ConoX", 0);
-                    _animator.SetFloat("ConoY", 1);
+                    _animator.SetFloat("ConoX", 1);
+                    _animator.SetFloat("ConoY", 0);
                 }
                 else
                 {
-                    _animator.SetFloat("AtaqueX", 0);
-                    _animator.SetFloat("AtaqueY", 1);
+                    _animator.SetFloat("AtaqueX", 1);
+                    _animator.SetFloat("AtaqueY", 0);
                 }
             }
             _playerAttack.Setoffsety(finaloffset);
@@ -108,13 +108,13 @@ public class InputManager : MonoBehaviour
                 finaloffset = -offsetx;
                 if (_playerAttack._cono)
                 {
-                    _animator.SetFloat("ConoX", -1);
-                    _animator.SetFloat("ConoY", 0);
+                    _animator.SetFloat("ConoX", 0);
+                    _animator.SetFloat("ConoY", -1);
                 }
                 else
                 {
-                    _animator.SetFloat("AtaqueX", -1);
-                    _animator.SetFloat("AtaqueY", 0);
+                    _animator.SetFloat("AtaqueX", 0);
+                    _animator.SetFloat("AtaqueY", -1);
                 }
             }
 
@@ -123,13 +123,13 @@ public class InputManager : MonoBehaviour
                 finaloffset = offsetx;
                 if (_playerAttack._cono)
                 {
-                    _animator.SetFloat("ConoX", 1);
-                    _animator.SetFloat("ConoY", 0);
+                    _animator.SetFloat("ConoX", 0);
+                    _animator.SetFloat("ConoY", 1);
                 }
                 else
                 {
-                    _animator.SetFloat("AtaqueX", 1);
-                    _animator.SetFloat("AtaqueY", 0);
+                    _animator.SetFloat("AtaqueX", 0);
+                    _animator.SetFloat("AtaqueY", 1);
                 }
 
             }
