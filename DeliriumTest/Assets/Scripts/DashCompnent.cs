@@ -67,7 +67,6 @@ public class DashCompnent : MonoBehaviour
     {
         _animator = GetComponent<Animator>();
         _elapsedTime = _DashCooldown;
-        _cameraPosition = Camera.main.transform.position;
         _rigiRigidbody = GetComponent<Rigidbody2D>();
         _frankInput = GetComponent<InputManager>();
     }
@@ -75,6 +74,7 @@ public class DashCompnent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        _cameraPosition = Camera.main.transform.position;
         _elapsedTime += Time.deltaTime;
         if (_elapsedTime >= _DashCooldown) _dashIndicator.SetActive(true);
     }

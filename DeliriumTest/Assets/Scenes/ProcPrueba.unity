@@ -2357,6 +2357,10 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8338194921720802218, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
+      propertyPath: _dashforce
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8338194921720802218, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
       propertyPath: _dashIndicator
       value: 
       objectReference: {fileID: 1411515254}
