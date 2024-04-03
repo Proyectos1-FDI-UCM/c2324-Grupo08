@@ -29,8 +29,12 @@ public class InputManager : MonoBehaviour
         _playerAttack = GetComponentInChildren<PlayerAttack>();
         if (_playerAttack == null) Debug.LogError("Frank no tiene un ataque puesto. Revisa la escena de Janime para ver un ejemplo de implementación.");
     }
+    private bool atrapado = false;
+    public void Atrapado(bool a)
+    {
+        atrapado = a;
+    }
 
-   
 
     public void DisableCooldown()
     {
@@ -50,7 +54,7 @@ public class InputManager : MonoBehaviour
 
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space)&& !atrapado)
         {
         
             _frankMovement.Dash();

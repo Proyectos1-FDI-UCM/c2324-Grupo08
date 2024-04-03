@@ -34,12 +34,20 @@ public class FrankMovement : MonoBehaviour
     private float _xvalue;
     private float _yvalue;
     private Vector3 _directionVector;
+    private Vector3 _atractionDirection;
     public Vector3 Direction { get { return _directionVector; } }
     private Vector3 _movementVector;
     public Vector3 _lastMovementVector;
     public Vector3 _vomitShootVector;
     #endregion
     // Start is called before the first frame update
+
+    /// <param name="attractionToAdd"> speed to be add when collision </param>
+    public void AddSpeed(Vector3 speedToAdd)
+    {
+        _atractionDirection = _speedValue * (_atractionDirection + speedToAdd).normalized;
+
+    }
     public Animator GetAnimator()
     {
         _animator = GetComponent<Animator>();
@@ -77,10 +85,11 @@ public class FrankMovement : MonoBehaviour
         _dash = GetComponent<DashCompnent>();
         _lastMovementVector = Vector3.right;
     }
+    public Vector2 atraccion;
     void FixedUpdate()
     {
         _directionVector = new Vector3(_xvalue, _yvalue);
-        _movementVector = _directionVector.normalized * _speedValue;
+        _movementVector = _directionVector.normalized * _speedValue + new Vector3(atraccion.x, atraccion.y); ;
 
         /*if (_frankInput.AddsInertia)
         {          
