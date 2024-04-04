@@ -9,7 +9,7 @@ public class LevelManager : MonoBehaviour
     GameObject Arrow;
     #endregion
     #region properties
-    static List<EnemiesControler> m_AllEnemies = new List<EnemiesControler>();
+    static List<EnemiesControler> m_AllEnemies;
     
     #endregion
 
@@ -28,12 +28,15 @@ public class LevelManager : MonoBehaviour
     public static void EnemyDefeated(EnemiesControler enemy) { m_AllEnemies.Remove(enemy); }
 
     #endregion
-    // Start is called before the first frame update
+    private void Awake()
+    {
+        m_AllEnemies = new List<EnemiesControler>();
+    }
 
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(m_AllEnemies.Count);
+        Debug.Log(m_AllEnemies.Count);
         if (m_AllEnemies.Count == 0)
         {
             CamTriggerSecreta.TransitionAvaible(true);

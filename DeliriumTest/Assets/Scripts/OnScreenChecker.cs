@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -29,9 +28,11 @@ public class OnScreenCheck : MonoBehaviour
     }
     void Awake()
     {
-        _maincam = Camera.main; 
+        _currentenemy = new List<GameObject>();
+        _enemytransform = new List<Transform>();
+        _maincam = Camera.main;
         RegisterEnemy();
-        
+
     }
     private void Start()
     {
@@ -56,6 +57,6 @@ public class OnScreenCheck : MonoBehaviour
         _currentEnemy.SetActive(inScreen);
         if (inScreen) { LevelManager.RegisterEnemy(_currentEnemy); }
     }
-   
+
 
 }
