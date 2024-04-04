@@ -39,51 +39,51 @@ public class PlayerAttack : MonoBehaviour
     #region Set type of Attack
 
     public void Chapas()
-        {
-            //Activación del comprobante de la mejora (Cubo de Chapas)
-            _mejorado = true;
+    {
+        //Activación del comprobante de la mejora (Cubo de Chapas)
+        _mejorado = true;
 
-            //Cambio de propiedades acordes al uso de la mejora (Cubo de Chapas)
-            attack.Attack = 1; //Daño realizado
-        }
+        //Cambio de propiedades acordes al uso de la mejora (Cubo de Chapas)
+        attack.Attack = 1; //Daño realizado
+    }
 
-        public void Basico()
-        {
-            //Cambio de propiedades acordes al ataque por defecto (Básico)
-            attack.Attack = 2; //Daño realizado
-        }
+    public void Basico()
+    {
+        //Cambio de propiedades acordes al ataque por defecto (Básico)
+        attack.Attack = 2; //Daño realizado
+    }
 
-        public void Cono()
-        {
-            //Activación del comprobante del uso del cono
-            _cono = true;
+    public void Cono()
+    {
+        //Activación del comprobante del uso del cono
+        _cono = true;
 
-            //Cambio de propiedades acordes al cono
-            attack.Attack = 4;//Daño realizado
-        }
-        public void Botella() 
-        {
-            //Activación del comprobante de la botella
-            _botella = true;
+        //Cambio de propiedades acordes al cono
+        attack.Attack = 4;//Daño realizado
+    }
+    public void Botella()
+    {
+        //Activación del comprobante de la botella
+        _botella = true;
 
-            //Cambio de propiedades acordes al cono
-            attack.Attack = 3;//Daño realizado
-        }
-        #endregion
+        //Cambio de propiedades acordes al cono
+        attack.Attack = 3;//Daño realizado
+    }
+    #endregion
 
-        //Métodos que asignan el valor de la dirección de ataque
-        #region Set direction of attack
+    //Métodos que asignan el valor de la dirección de ataque
+    #region Set direction of attack
 
-        public void Setoffsetx(float value)
-        {
-            offsetx = value;
-        }
+    public void Setoffsetx(float value)
+    {
+        offsetx = value;
+    }
 
-        public void Setoffsety(float value)
-        {
-            offsety = value;
-        }
-        #endregion
+    public void Setoffsety(float value)
+    {
+        offsety = value;
+    }
+    #endregion
     #endregion
 
     #region Coroutines
@@ -118,7 +118,7 @@ public class PlayerAttack : MonoBehaviour
             Collider2D.enabled = false;
             _spriteRenderer.enabled = false;
         }
-        else 
+        else
         {
             StartCoroutine(_shootComponent.Disparo(new Vector3(offsetx, offsety)));
         }
@@ -137,7 +137,7 @@ public class PlayerAttack : MonoBehaviour
                 //Recuperación del ataque básico tras el uso del cono
                 Basico();
             }
-            
+
             //Desactivación del comprobante del cono y el de la botella
             //al finalizar el ataque
             _cono = false;
@@ -158,7 +158,7 @@ public class PlayerAttack : MonoBehaviour
     {
         //Setting de la comprobación de mejora
         _mejorado = false;
-        
+
         //Setting de la comprobación del cono
         _cono = false;
 

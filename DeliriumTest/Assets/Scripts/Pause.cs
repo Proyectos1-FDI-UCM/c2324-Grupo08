@@ -21,10 +21,10 @@ public class Pause : MonoBehaviour
         MonoBehaviour[] allScripts = FindObjectsOfType<MonoBehaviour>();
         for (int i = 0; i < allScripts.Length; i++)
         {
-            if (!(allScripts[i] as Pause) && !(allScripts[i] as Image)) allScripts[i].enabled = !pause;
+            if (!(allScripts[i] as Pause) && !(allScripts[i] as Image) && !(allScripts[i] as Text) && !(allScripts[i] as Button)) allScripts[i].enabled = !pause;
         }
 
-        FrankMovement.Player.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+        if(pause) FrankMovement.Player.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
     }
 
     IEnumerator Rellenar()
