@@ -2295,9 +2295,17 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4623649835832064220, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
+      propertyPath: _firstInertia
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4623649835832064220, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
       propertyPath: _camController
       value: 
       objectReference: {fileID: 1943516377}
+    - target: {fileID: 4623649835832064220, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
+      propertyPath: _secondInertia
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4623649835832064220, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
       propertyPath: _vomitComponent
       value: 
@@ -2365,10 +2373,6 @@ PrefabInstance:
     - target: {fileID: 6066087677126643270, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
       propertyPath: m_Constraints
       value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8338194921720802218, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
-      propertyPath: _dashforce
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8338194921720802218, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
       propertyPath: _dashIndicator

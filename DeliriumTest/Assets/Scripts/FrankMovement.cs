@@ -23,7 +23,7 @@ public class FrankMovement : MonoBehaviour
     #region references
     private InputManager _frankInput;
     private DashCompnent _dash;
-    private Rigidbody2D _rigiRigidbody;
+    private Rigidbody2D _rigidBody;
     private static GameObject player;
     private Animator _animator;
     [SerializeField] private VomitComponent _vomitComponent;
@@ -57,6 +57,10 @@ public class FrankMovement : MonoBehaviour
     {
         _dash.DashUpgrade();
     }
+    public void Dash()
+    {
+        _dash.Dash(_directionVector, _lastMovementVector);
+    }
     public void RegisterX(float x)
     {
         _xvalue = x;
@@ -64,10 +68,6 @@ public class FrankMovement : MonoBehaviour
     public void RegisterY(float y)
     {
         _yvalue = y;
-    }
-    public void Dash()
-    {
-        _dash.Dash(_directionVector, _lastMovementVector);
     }
     private void Awake()
     {
@@ -81,7 +81,7 @@ public class FrankMovement : MonoBehaviour
     {
         _animator = GetComponent<Animator>();
         _frankInput = GetComponent<InputManager>();
-        _rigiRigidbody = GetComponent<Rigidbody2D>();
+        _rigidBody = GetComponent<Rigidbody2D>();
         _dash = GetComponent<DashCompnent>();
         _lastMovementVector = Vector3.right;
     }
@@ -93,18 +93,14 @@ public class FrankMovement : MonoBehaviour
 
         if (_frankInput.AddsInertia)
         {          
-            _rigiRigidbody.AddForce(_directionVector * _inertia);
-            Vector2.ClampMagnitude(_rigiRigidbody.velocity, _maxImpulse);
+            _rigidBody.AddForce(_directionVector * _inertia);
+            Vector2.ClampMagnitude(Vector2.zero, _maxImpulse);
 
         }
-
         else
         {
-            _rigiRigidbody.velocity = _movementVector;
+            _rigidBody.velocity = _movementVector;
         }
-
-
-
         if (_directionVector != Vector3.zero)
         {
             _lastMovementVector = _directionVector;

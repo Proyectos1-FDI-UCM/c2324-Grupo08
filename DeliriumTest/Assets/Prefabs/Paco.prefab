@@ -195,12 +195,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedValue: 5
-  _firstInertia: 3
-  _secondInertia: 15
+  _firstInertia: 2
+  _secondInertia: 5
   _maxImpulse: 3
   _vomitComponent: {fileID: 0}
   _lastMovementVector: {x: 0, y: 0, z: 0}
   _vomitShootVector: {x: 0, y: 0, z: 0}
+  atraccion: {x: 0, y: 0}
 --- !u!114 &8338194921720802218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,7 +216,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _vomitComponent: {fileID: 0}
   _dashIndicator: {fileID: 0}
-  _dashforce: 5
+  _dashforce: 2
   _DashStun: 0.5
   _DashCooldown: 1
   _NewDashCooldown: 0.5
@@ -353,6 +354,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duraciondeataque: 2
+  _cono: 0
 --- !u!114 &3516986607448316989
 MonoBehaviour:
   m_ObjectHideFlags: 0

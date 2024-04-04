@@ -59,11 +59,11 @@ public class DashCompnent : MonoBehaviour
     }
     private void OnDisable()
     {
-        _dashIndicator.SetActive(false);
+        if (_dashIndicator != null) _dashIndicator.SetActive(false);
     }
     private void OnEnable()
     {
-        _dashIndicator.SetActive(true);
+        if (_dashIndicator != null) _dashIndicator.SetActive(true);
     }
     // Start is called before the first frame update
     void Start()
