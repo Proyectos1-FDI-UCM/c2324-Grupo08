@@ -24,8 +24,7 @@ public class AtracttionComponent : MonoBehaviour
         {
             Vector2 _directionVector = _attractionTransform.position - collision.transform.position;
             A.atraccion = _attraction * _directionVector.normalized;
-            collision.GetComponent<InputManager>().Atrapado(true);
-
+            collision.GetComponent<DashCompnent>().enabled = false;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -34,7 +33,7 @@ public class AtracttionComponent : MonoBehaviour
         if (A != null)
         {
             A.atraccion = Vector2.zero;
-            collision.GetComponent<InputManager>().Atrapado(false);
+            collision.GetComponent<DashCompnent>().enabled = true;
         }
     }
     void Start()

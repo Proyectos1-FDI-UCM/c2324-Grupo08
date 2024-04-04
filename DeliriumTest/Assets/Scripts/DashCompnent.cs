@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DashCompnent : MonoBehaviour
@@ -39,7 +38,6 @@ public class DashCompnent : MonoBehaviour
             {
                 _dashPosition = transform.position + (_dashforce * _lastMovementVector.normalized);
             }
-            //if ((_dashPosition.x > _camController.leftCamBound + _boundOffset) && (_dashPosition.x < _camController.rightCamBound - _boundOffset) && (_dashPosition.y < _UpperBound.position.y - _boundOffset) && (_dashPosition.y > _LowerBound.position.y + _boundOffset))
             if (_dashPosition.x > (_cameraPosition - Vector3.right * 8).x && _dashPosition.x < (_cameraPosition + Vector3.right * 8).x && _dashPosition.y > (_cameraPosition - Vector3.up * 5).y && _dashPosition.y < (_cameraPosition + Vector3.up * 3).y)
             {
                 transform.position = _dashPosition;
@@ -55,12 +53,17 @@ public class DashCompnent : MonoBehaviour
         _animator.SetBool("Dash", true);
         _rigiRigidbody.velocity = Vector3.zero;
         _frankInput.enabled = false;
-        //this.enabled = false;
         yield return new WaitForSeconds(_DashStun);
         _animator.SetBool("Dash", false);
-
         _frankInput.enabled = true;
-        //this.enabled = true;
+    }
+    private void OnDisable()
+    {
+        _dashIndicator.SetActive(false);
+    }
+    private void OnEnable()
+    {
+        _dashIndicator.SetActive(true);
     }
     // Start is called before the first frame update
     void Start()
