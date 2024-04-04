@@ -95,6 +95,8 @@ public class PlayerAttack : MonoBehaviour
 
         //Retardo para permitir cuadrar el frame de golpe con la activación de la colisión 
         yield return new WaitForSeconds(0.2f);
+        //Se reproduce el efecto de sonido
+        AudioManager.Instance.Punch();
 
         //Fin de la animación de ataque
         if (_cono == true) _animator.SetBool("AtaqueCono", false);

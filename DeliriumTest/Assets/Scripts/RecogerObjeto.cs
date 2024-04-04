@@ -38,6 +38,7 @@ public class RecogerObjeto : MonoBehaviour
         if(ObjID == 1) 
         { 
             vomitBar.value = vomitBar.value - ReduceVomit;
+            AudioManager.Instance.AguaPickup();
             Destroy(pickedObj);
         }
 

@@ -9,6 +9,7 @@ public class AudioManager : MonoBehaviour
     {get { return instance;}}
     [SerializeField] private AudioClip punch;
     [SerializeField] private AudioClip patataPickup;
+    [SerializeField] private AudioClip botellaPickup;
     [SerializeField] private AudioSource Music;
     [SerializeField] private AudioSource SFX;
     
@@ -39,6 +40,11 @@ public class AudioManager : MonoBehaviour
     public void PatataPickup()
     {
         SFX.clip = patataPickup; SFX.Play();
+    }
+
+    public void AguaPickup()
+    {
+        SFX.clip = botellaPickup; SFX.Play();
     }
     // Update is called once per frame
     void Update()

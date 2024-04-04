@@ -21,11 +21,18 @@ public class GameManager : MonoBehaviour
     public LifeBarComponenet lifepickupbar;
     public List<int> _availableEasyRooms;
     public List<int> _availableHardRooms;
-    
+    [SerializeField] private GameObject Tutorial;
+    [SerializeField] private GameObject BossFight;
+
     int _currentRoom;
     void Awake()
     {
         RoomOffsetVector = new Vector3(RoomOffset, 0, 0);
+
+        Room = Instantiate(Tutorial, new Vector3(-1,2,0), Quaternion.identity);
+        RoomPosition = RoomPosition + RoomOffsetVector;
+        BuilderTransform.position = RoomPosition;
+
         for (int i = 0; i < EasyRooms.Length; i++)
         {
             randomRoom = Random.Range(0, _availableEasyRooms.Count);

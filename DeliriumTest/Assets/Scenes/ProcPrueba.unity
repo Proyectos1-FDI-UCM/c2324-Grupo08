@@ -915,6 +915,8 @@ MonoBehaviour:
   lifepickupbar: {fileID: 214793671}
   _availableEasyRooms: 000000000100000002000000
   _availableHardRooms: 000000000100000002000000
+  Tutorial: {fileID: 7106646153860901829, guid: 03a608b7e57cd7a429d4107b7a297285, type: 3}
+  BossFight: {fileID: 0}
 --- !u!4 &828475418
 Transform:
   m_ObjectHideFlags: 0
@@ -2231,6 +2233,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
+    - target: {fileID: 4400946979536132396, guid: 7f9fb38224566d14988edcbc656e0941, type: 3}
+      propertyPath: patataPickup
+      value: 
+      objectReference: {fileID: 8300000, guid: c8eb52cfb8e4b494488b49a8452b546b, type: 3}
+    - target: {fileID: 4400946979536132396, guid: 7f9fb38224566d14988edcbc656e0941, type: 3}
+      propertyPath: botellaPickup
+      value: 
+      objectReference: {fileID: 8300000, guid: cea67bf7680e07041809a3d17290cc91, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -91,18 +91,17 @@ public class FrankMovement : MonoBehaviour
         _directionVector = new Vector3(_xvalue, _yvalue);
         _movementVector = _directionVector.normalized * _speedValue + new Vector3(atraccion.x, atraccion.y); ;
 
-        /*if (_frankInput.AddsInertia)
+        if (_frankInput.AddsInertia)
         {          
-            
-            
             _rigiRigidbody.AddForce(_directionVector * _inertia);
-            _rigiRigidbody.velocity = Vector2.ClampMagnitude(_rigiRigidbody.velocity, _maxImpulse);
+            Vector2.ClampMagnitude(_rigiRigidbody.velocity, _maxImpulse);
+
         }
 
         else
-        {*/
-        _rigiRigidbody.velocity = _movementVector;
-        //}
+        {
+            _rigiRigidbody.velocity = _movementVector;
+        }
 
 
 
