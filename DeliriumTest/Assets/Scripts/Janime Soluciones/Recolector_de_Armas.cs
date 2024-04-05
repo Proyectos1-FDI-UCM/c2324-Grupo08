@@ -29,11 +29,6 @@ public class Recolector_de_Armas : MonoBehaviour
                 break;
         }
     }
-    private void Awake()
-    {
-
-       
-    }
     private void Start()
     {
         canBePicked = true;

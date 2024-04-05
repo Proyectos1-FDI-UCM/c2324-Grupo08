@@ -144,4 +144,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ID: 0
+  normal: {fileID: -1880309385, guid: 069c5bd925a631d4d9dac3e859288558, type: 3}
+  highlight: {fileID: 21300000, guid: f5e85455789544343b4875fbb107f96b, type: 3}
   picked: 1

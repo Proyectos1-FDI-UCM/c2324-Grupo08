@@ -141,7 +141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pared:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 640
   SecondsToWaitAfterHit: 1.5
   _speed: 3
 --- !u!61 &1049787344942060873

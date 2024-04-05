@@ -14,6 +14,9 @@ public class Arma_Recogible : MonoBehaviour
      *  Cono = 1;
      * } 
      */
+    [SerializeField] private Sprite normal;
+    [SerializeField] private Sprite highlight;
+    private SpriteRenderer spriteRenderer;
     public int RecogibleID { get { return ID; } }
     Recolector_de_Armas recogerObjetosP;
     public bool picked = true;
@@ -22,6 +25,7 @@ public class Arma_Recogible : MonoBehaviour
         FrankMovement player = collision.GetComponent<FrankMovement>();
         if (player != null)
         {
+            if (recogerObjetosP.canBePicked) spriteRenderer.sprite = highlight;
             picked = true;
         }
     }
@@ -30,6 +34,7 @@ public class Arma_Recogible : MonoBehaviour
         FrankMovement player = collision.GetComponent<FrankMovement>();
         if (player != null)
         {
+            spriteRenderer.sprite = normal;
             picked = false;
         }
     }
@@ -44,7 +49,9 @@ public class Arma_Recogible : MonoBehaviour
     }
     private void Start()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
         picked = false;
+        spriteRenderer.sprite = normal;
         recogerObjetosP = FrankMovement.Player.GetComponent<Recolector_de_Armas>();
     }
     private void Update()
