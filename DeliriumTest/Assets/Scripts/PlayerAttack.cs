@@ -15,12 +15,16 @@ public class PlayerAttack : MonoBehaviour
 
     #region Properties
 
-    //El número de FixedUpdates que esperará la corutina
-    //antes de deshabilitar el ataque
+    /// <summary>
+    /// El número de FixedUpdates que esperará la corutina
+    ///antes de deshabilitar el ataque
+    ///</summary>
     [SerializeField] int duraciondeataque;
 
-    //Floats que contienen las componentes del Vector Offset
-    //que marca la dirección del ataque:
+    /// <summary>
+    ///Floats que contienen las componentes del Vector Offset 
+    /// que marca la dirección del ataque:
+    /// </summary>
     float offsetx;
     float offsety;
 
@@ -51,6 +55,7 @@ public class PlayerAttack : MonoBehaviour
     {
         //Cambio de propiedades acordes al ataque por defecto (Básico)
         attack.Attack = 2; //Daño realizado
+        Collider2D.size = new Vector2(1, 1); //Tamaño por defecto del collider
     }
 
     public void Cono()
@@ -59,7 +64,8 @@ public class PlayerAttack : MonoBehaviour
         _cono = true;
 
         //Cambio de propiedades acordes al cono
-        attack.Attack = 4;//Daño realizado
+        attack.Attack = 4; //Daño realizado
+        Collider2D.size = new Vector2(1, 1); //Tamaño del collider para el cono
     }
     public void Botella()
     {
@@ -108,9 +114,15 @@ public class PlayerAttack : MonoBehaviour
         {
             //Activación de la colisión y el render para ver el área de efecto, además de golpear
             Collider2D.enabled = true;
+
+            //Ajuste del ataque a la distancia y dirección correcta si está el ataque mejorado (cubo de chapas)
+            if (_mejorado) 
+            {
+                offsetx *= 2;
+                offsety *= 2;
+                Collider2D.size = new Vector2( 1f + Mathf.Abs(offsetx) / 2, 1f +  Mathf.Abs(offsety) / 2);
+            }
             _spriteRenderer.enabled = true;
-
-
 
             //Bucle destinado a esperar un número de FixedUpdates para deshabilitar nuevamente el ataque
             for (int i = duraciondeataque; i > 0; i--) yield return new WaitForFixedUpdate();
