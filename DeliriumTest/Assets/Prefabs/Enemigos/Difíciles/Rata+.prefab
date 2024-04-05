@@ -243,7 +243,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifebar: {fileID: 0}
   _health: 0
-  _maxHealth: 3
+  _maxHealth: 2
 --- !u!95 &4863645292897106561
 Animator:
   serializedVersion: 5
