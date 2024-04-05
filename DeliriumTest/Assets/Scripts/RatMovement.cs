@@ -1,6 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using System.Timers;
 using UnityEngine;
 
 public class RatMovement : MonoBehaviour, EnemiesControler
@@ -8,11 +6,17 @@ public class RatMovement : MonoBehaviour, EnemiesControler
     #region references
     private Transform _myTransform;
     private Transform _target;
+    Rigidbody2D _rigidbody2d;
     [SerializeField] private LayerMask pared;
     #endregion
     #region properties
     private bool _characterClose; //compruba si el jugador esta cerca para cambiar su movimiento
+    
     bool hit;
+    
+    [SerializeField]
+    float SecondsToWaitAfterHit;
+
     private Vector3 _direction;
     #endregion
     #region parameter
@@ -24,15 +28,15 @@ public class RatMovement : MonoBehaviour, EnemiesControler
     // Start is called before the first frame update
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        hit = true;
+        if (collision.gameObject.GetComponent<FrankMovement>() != null) 
+        {
+            hit = true; 
+        }
     }
-    private void OnCollisionExit2D()
-    {
-       hit = false;
-    }
+   
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.GetComponent<FrankMovement>() != null) 
+        if (other.gameObject.GetComponent<FrankMovement>() != null)
         {
             _characterClose = true;
             _target = other.gameObject.transform;
@@ -49,6 +53,7 @@ public class RatMovement : MonoBehaviour, EnemiesControler
     }
     void Start()
     {
+        _rigidbody2d = GetComponent<Rigidbody2D>();
         _myTransform = transform;
         _characterClose = false;
         hit = false;
@@ -57,44 +62,65 @@ public class RatMovement : MonoBehaviour, EnemiesControler
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        if (_characterClose && !hit)
+        if (hit)
         {
-            _direction = (_target.position - _myTransform.position).normalized;
-            _myTransform.position += _direction * _speed * Time.deltaTime;
+            StartCoroutine(StopAttack());
         }
         else
         {
-            if (_moveTime <= 0)
+            StartCoroutine(Move());
+        }
+    }
+    IEnumerator Move()
+    {
+        
+        if (_characterClose)
+        {
+            _direction = (_target.position - _myTransform.position).normalized;
+            _rigidbody2d.velocity = _direction * 1.5f * _speed * Time.fixedDeltaTime;
+        }
+        else
+        {
+            
+           if(_moveTime <= 0) 
             {
-                if (_stopTime <= 0) //Acabado el tiempo de parada, declara la nueva direccion
+                _direction = Vector3.zero;
+                _stopTime -= Time.fixedDeltaTime;
+                if (_stopTime <= 0)
                 {
                     x = Random.Range(-4, 5);
                     y = Random.Range(-4, 5);
                     _direction = new Vector3(x, y, 0).normalized;
                     _moveTime = Random.Range(0, 3);
                     _stopTime = Random.Range(1, 2);
-
-                    Collider2D collider = Physics2D.OverlapCircle(_myTransform.position, 1f, pared);
-                    if (collider != null)
-                    {
-                        x = Random.Range(-45, 45);
-                        _direction = Quaternion.Euler(0f, 0f, x) * (-collider.gameObject.transform.up);
-                    }
                 }
-                else //Tiempo de parada
+                Collider2D collider = Physics2D.OverlapCircle(_myTransform.position, 1f, pared);
+                if (collider != null)
                 {
-                    _stopTime -= Time.deltaTime;
-                    _direction = Vector3.zero;
+                    x = Random.Range(-45, 45);
+                    _direction = Quaternion.Euler(0f, 0f, x) * (-collider.gameObject.transform.up);
                 }
             }
-            _myTransform.position += _direction * _speed * Time.deltaTime;
-            _moveTime -= Time.deltaTime;
+            _moveTime -= Time.fixedDeltaTime;
+            _rigidbody2d.velocity = _direction * _speed * Time.fixedDeltaTime;
+            yield return new WaitForEndOfFrame();
         }
     }
     private void OnDestroy()
     {
         LevelManager.EnemyDefeated(this);
+    }
+
+    public IEnumerator StopAttack()
+    {
+        StopCoroutine(Move());
+        _rigidbody2d.velocity = Vector2.zero;
+        _rigidbody2d.velocity = (-1.5f * _speed * _direction * Time.fixedDeltaTime);
+        yield return new WaitForSeconds(SecondsToWaitAfterHit);
+        _rigidbody2d.velocity = Vector2.zero;
+        hit = false;
+       
     }
 }

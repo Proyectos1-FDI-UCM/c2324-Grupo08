@@ -75,4 +75,9 @@ public class TrashMovement : MonoBehaviour, EnemiesControler
     {
         LevelManager.EnemyDefeated(this);
     }
+
+    public IEnumerator StopAttack()
+    {
+        throw new System.NotImplementedException();
+    }
 }

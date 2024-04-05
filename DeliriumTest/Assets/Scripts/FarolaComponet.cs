@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FarolaComponet : MonoBehaviour, EnemiesControler
+public class FarolaComponet : MonoBehaviour
 {
     #region references
     private Transform _myTransform;
@@ -61,9 +61,5 @@ public class FarolaComponet : MonoBehaviour, EnemiesControler
         }
 
 
-    }
-    private void OnDestroy()
-    {
-        LevelManager.EnemyDefeated(this);
     }
 }
