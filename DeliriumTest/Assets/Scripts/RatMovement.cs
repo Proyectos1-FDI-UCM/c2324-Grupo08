@@ -120,7 +120,8 @@ public class RatMovement : MonoBehaviour, EnemiesControler
         _rigidbody2d.velocity = (-1.5f * _speed * _direction * Time.fixedDeltaTime);
         yield return new WaitForSeconds(SecondsToWaitAfterHit);
         _rigidbody2d.velocity = Vector2.zero;
-        hit = false;
-       
+        hit = false;       
     }
+
+    
 }

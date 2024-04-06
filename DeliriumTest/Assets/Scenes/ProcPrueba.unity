@@ -2892,7 +2892,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 895
+    m_Bits: 1919
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -3271,6 +3271,66 @@ PrefabInstance:
     - target: {fileID: 5437001834342468782, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
       propertyPath: lifebar
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5437001834342468782, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
+      propertyPath: _damageTime
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5437001834342468782, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
+      propertyPath: _hitColor.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5437001834342468782, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
+      propertyPath: _hitColor.b
+      value: 0.21960786
+      objectReference: {fileID: 0}
+    - target: {fileID: 5437001834342468782, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
+      propertyPath: _hitColor.g
+      value: 0.21960786
+      objectReference: {fileID: 0}
+    - target: {fileID: 5437001834342468782, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
+      propertyPath: _hitColor.r
+      value: 0.21960786
+      objectReference: {fileID: 0}
+    - target: {fileID: 5437001834342468782, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
+      propertyPath: _hitInterval
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5437001834342468782, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
+      propertyPath: _twitchEffect
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5437001834342468782, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
+      propertyPath: _initialColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5437001834342468782, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
+      propertyPath: _initialColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5437001834342468782, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
+      propertyPath: _initialColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5437001834342468782, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
+      propertyPath: _hitreturnColor.a
+      value: 0.9137255
+      objectReference: {fileID: 0}
+    - target: {fileID: 5437001834342468782, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
+      propertyPath: _hitreturnColor.b
+      value: 0.6509434
+      objectReference: {fileID: 0}
+    - target: {fileID: 5437001834342468782, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
+      propertyPath: _hitreturnColor.g
+      value: 0.6509434
+      objectReference: {fileID: 0}
+    - target: {fileID: 5437001834342468782, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
+      propertyPath: _hitreturnColor.r
+      value: 0.6509434
+      objectReference: {fileID: 0}
+    - target: {fileID: 5437001834342468782, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
+      propertyPath: Invencibility.m_Bits
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5726116090277671307, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
       propertyPath: m_LocalPosition.x

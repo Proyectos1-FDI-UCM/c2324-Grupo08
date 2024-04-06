@@ -1,5 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class Damage : MonoBehaviour
@@ -7,14 +7,19 @@ public class Damage : MonoBehaviour
     #region properties
     [SerializeField]
     private int _Attack = 1;
+    [SerializeField] private LayerMask PacoLayer;
     public int Attack { get { return _Attack; } set { _Attack = value; } }
     #endregion
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        HealthComponent player = collision.gameObject.GetComponent<HealthComponent>();
-        if (player != null)
+        HealthComponent target = collision.gameObject.GetComponent<HealthComponent>();
+        if (target != null)
         {
-           player.TakeDamage(Attack);
+            target.TakeDamage(Attack);
+            if (this.gameObject.GetComponent<RatMovement>() != null && collision.gameObject.GetComponent<FrankMovement>() != null)
+            {
+                gameObject.GetComponent<RatMovement>().StopAttack();
+            }
         }
     }
 }
