@@ -19,12 +19,15 @@ public class DashCompnent : MonoBehaviour
 
     #endregion
     #region properties
+    public bool dashMejorado;
     private Vector3 _dashPosition;
     private Vector3 _cameraPosition;
     #endregion
     public void DashUpgrade()
     {
         _DashCooldown = _NewDashCooldown;
+        dashMejorado = true;
+
     }
     public void Dash(Vector3 _directionVector, Vector3 _lastMovementVector)
     {
@@ -68,6 +71,7 @@ public class DashCompnent : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        dashMejorado = false;
         _animator = GetComponent<Animator>();
         _elapsedTime = _DashCooldown;
         _rigiRigidbody = GetComponent<Rigidbody2D>();

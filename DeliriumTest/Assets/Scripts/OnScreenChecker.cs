@@ -4,8 +4,9 @@ using UnityEngine;
 public class OnScreenCheck : MonoBehaviour
 {
     #region references
-    private UnityEngine.Camera _maincam;
-
+    private Camera _maincam;
+    #endregion
+    #region Parameters
     public static List<GameObject> _currentenemy = new List<GameObject>();
     private static List<Transform> _enemytransform = new List<Transform>();
     #endregion
@@ -31,12 +32,11 @@ public class OnScreenCheck : MonoBehaviour
         _currentenemy = new List<GameObject>();
         _enemytransform = new List<Transform>();
         _maincam = Camera.main;
-        RegisterEnemy();
-
     }
     private void Start()
     {
-        for (int i = 0; i < _currentenemy.Count; i++) { _enemytransform.Add(_currentenemy[i].transform); }
+        RegisterEnemy();
+        for (int i = 0; i < _currentenemy.Count; i++) { _enemytransform.Add(_currentenemy[i].transform);}
         for (int i = 0; i < _currentenemy.Count; i++)
         {
             if (_enemytransform[i] != null) EnemyCheck(_currentenemy[i], _enemytransform[i]);
@@ -44,11 +44,12 @@ public class OnScreenCheck : MonoBehaviour
     }
     private void Update()
     {
+        Debug.Log(_currentenemy.Count);
         for (int i = 0; i < _enemytransform.Count; i++)
         {
             if (_enemytransform[i] != null) EnemyCheck(_currentenemy[i], _enemytransform[i]);
-
         }
+
     }
     private void EnemyCheck(GameObject _currentEnemy, Transform _enemytransform)
     {
@@ -57,6 +58,5 @@ public class OnScreenCheck : MonoBehaviour
         _currentEnemy.SetActive(inScreen);
         if (inScreen) { LevelManager.RegisterEnemy(_currentEnemy); }
     }
-
 
 }

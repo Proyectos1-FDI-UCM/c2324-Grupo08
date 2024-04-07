@@ -36,6 +36,7 @@ public class CamTrigger : MonoBehaviour
             _transicion.enabled = false;
             transform.Translate(Vector2.right * 16);
             _rightBound.position = new Vector3(_rightBound.position.x + 16, _rightBound.position.y, _rightBound.position.z);
+            GameManager.ActiveRoom++;
         }
     }
 }

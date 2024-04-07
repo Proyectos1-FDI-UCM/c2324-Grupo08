@@ -30,11 +30,17 @@ public class PlayerAttack : MonoBehaviour
 
     //Comprobación de los tipos de ataque:
     //Mejora (Cubo de Chapas)
+<<<<<<< Updated upstream
+=======
+    [HideInInspector]
+>>>>>>> Stashed changes
     public bool _mejorado;
     //Cono
+    [HideInInspector]
     public bool _cono;
     //Botella
-    bool _botella;
+    [HideInInspector]
+    public bool _botella;
     #endregion
 
     #region Methods
@@ -49,12 +55,14 @@ public class PlayerAttack : MonoBehaviour
 
         //Cambio de propiedades acordes al uso de la mejora (Cubo de Chapas)
         attack.Attack = 1; //Daño realizado
+        duraciondeataque = 2; //Duración del ataque
     }
 
     public void Basico()
     {
         //Cambio de propiedades acordes al ataque por defecto (Básico)
         attack.Attack = 2; //Daño realizado
+        duraciondeataque = 2; //Duración del ataque
         Collider2D.size = new Vector2(1, 1); //Tamaño por defecto del collider
     }
 
@@ -65,15 +73,16 @@ public class PlayerAttack : MonoBehaviour
 
         //Cambio de propiedades acordes al cono
         attack.Attack = 4; //Daño realizado
-        Collider2D.size = new Vector2(1, 1); //Tamaño del collider para el cono
+        duraciondeataque = 3; //Duración del ataque
+        Collider2D.size = new Vector2(1.5f, 1.5f); //Tamaño del collider para el cono
     }
     public void Botella()
     {
         //Activación del comprobante de la botella
         _botella = true;
 
-        //Cambio de propiedades acordes al cono
-        attack.Attack = 3;//Daño realizado
+        //Cambio de propiedades acordes al botella
+        attack.Attack = 3; //Daño realizado
     }
     #endregion
 
@@ -82,12 +91,40 @@ public class PlayerAttack : MonoBehaviour
 
     public void Setoffsetx(float value)
     {
+        //Set básico de la distancia del ataque
         offsetx = value;
+
+        //Ajuste de la distancia de ataque para los diferentes ataques:
+        //Mejora(Cubo de Chapas)
+        if (_mejorado)
+        {
+            offsetx *= 2;
+        }
+
+        //Cono
+        else if (_cono)
+        {
+            offsetx += 0.3f;
+        }
     }
 
     public void Setoffsety(float value)
     {
+        //Set básico de la distancia del ataque
         offsety = value;
+
+        //Ajuste de la distancia de ataque para los diferentes ataques:
+        //Mejora(Cubo de Chapas)
+        if (_mejorado)
+        {
+            offsety *= 2;
+        }
+
+        //Cono
+        else if (_cono)
+        {
+            offsety += 0.3f;
+        }
     }
     #endregion
     #endregion
@@ -140,6 +177,7 @@ public class PlayerAttack : MonoBehaviour
         {
             //Activación de la colisión y el render para ver el área de efecto, además de golpear
             Collider2D.enabled = true;
+<<<<<<< Updated upstream
 
             //Ajuste del ataque a la distancia y dirección correcta si está el ataque mejorado (cubo de chapas)
             if (_mejorado) 
@@ -149,7 +187,15 @@ public class PlayerAttack : MonoBehaviour
                 offsety *= 2;
                 Collider2D.size = new Vector2( 1f + Mathf.Abs(offsetx) / 2, 1f +  Mathf.Abs(offsety) / 2);
             }
+=======
+>>>>>>> Stashed changes
             _spriteRenderer.enabled = true;
+
+            //Ajuste del tamaño del ataque si está el ataque mejorado (cubo de chapas)
+            if (_mejorado)
+            {
+                Collider2D.size = new Vector2(1f + Mathf.Abs(offsetx) / 2, 1f + Mathf.Abs(offsety) / 2);
+            }
 
             //Bucle destinado a esperar un número de FixedUpdates para deshabilitar nuevamente el ataque
             for (int i = duraciondeataque; i > 0; i--)
