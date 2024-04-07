@@ -30,10 +30,7 @@ public class PlayerAttack : MonoBehaviour
 
     //Comprobación de los tipos de ataque:
     //Mejora (Cubo de Chapas)
-<<<<<<< Updated upstream
-=======
     [HideInInspector]
->>>>>>> Stashed changes
     public bool _mejorado;
     //Cono
     [HideInInspector]
@@ -132,7 +129,7 @@ public class PlayerAttack : MonoBehaviour
     #region Coroutines
     public IEnumerator Attack(Animator _animator)
     {
-        /// Compruebo qu tipo de ataque esta haciendo el personaje y dependiendo de cada uno, hace una animacion o otra. Además en el puñetazo hace el sonido
+        ///Compruebo que tipo de ataque esta haciendo el personaje y dependiendo de cada uno, hace una animacion o otra. Además en el puñetazo hace el sonido
         if (_cono) {
             _animator.SetBool("AtaqueCono", true);
             _animator.SetBool("Attack", false);
@@ -158,18 +155,6 @@ public class PlayerAttack : MonoBehaviour
             AudioManager.Instance.Punch();
             _animator.SetBool("Attack", false);
         }
-        //Inicio de la animación de ataque ************** Te dejo todo esto comentado Isma, por si en algun momento va mal lo de arriba********************
-       /* if (_cono == true) _animator.SetBool("AtaqueCono", true);
-        else _animator.SetBool("Attack", true);
-
-        //Retardo para permitir cuadrar el frame de golpe con la activación de la colisión 
-        yield return new WaitForSeconds(0.2f);
-        //Se reproduce el efecto de sonido
-        AudioManager.Instance.Punch();
-
-        //Fin de la animación de ataque
-        if (_cono == true) _animator.SetBool("AtaqueCono", false);
-        else _animator.SetBool("Attack", false);*/
 
         //Comprobación del tipo de ataque para preparar el lanzamiento de la botella
         //uno físico (Cono, Cubo de chapas, Básico)
@@ -177,18 +162,12 @@ public class PlayerAttack : MonoBehaviour
         {
             //Activación de la colisión y el render para ver el área de efecto, además de golpear
             Collider2D.enabled = true;
-<<<<<<< Updated upstream
 
             //Ajuste del ataque a la distancia y dirección correcta si está el ataque mejorado (cubo de chapas)
             if (_mejorado) 
             {
-                
-                offsetx *= 2;
-                offsety *= 2;
                 Collider2D.size = new Vector2( 1f + Mathf.Abs(offsetx) / 2, 1f +  Mathf.Abs(offsety) / 2);
             }
-=======
->>>>>>> Stashed changes
             _spriteRenderer.enabled = true;
 
             //Ajuste del tamaño del ataque si está el ataque mejorado (cubo de chapas)
