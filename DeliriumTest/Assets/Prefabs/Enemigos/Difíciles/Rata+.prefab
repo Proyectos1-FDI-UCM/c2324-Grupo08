@@ -142,8 +142,8 @@ MonoBehaviour:
   pared:
     serializedVersion: 2
     m_Bits: 640
-  SecondsToWaitAfterHit: 1.5
-  _speed: 3
+  SecondsToWaitAfterHit: 0.5
+  _speed: 45
 --- !u!61 &1049787344942060873
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -250,8 +250,6 @@ MonoBehaviour:
   _damageTime: 0
   _twitchEffect: 0
   _hitInterval: 0
-  _hitColor: {r: 0, g: 0, b: 0, a: 0}
-  _hitreturnColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!95 &4863645292897106561
 Animator:
   serializedVersion: 5

@@ -182,6 +182,14 @@ MonoBehaviour:
   lifebar: {fileID: 0}
   _health: 0
   _maxHealth: 6
+  _damageTime: 10
+  _twitchEffect: 0.1
+  _hitInterval: 0.1
+  _hitColor: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 0}
+  _hitreturnColor: {r: 0.6509434, g: 0.6509434, b: 0.6509434, a: 0.9137255}
+  Invencibility:
+    serializedVersion: 2
+    m_Bits: 1
 --- !u!114 &4623649835832064220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,6 +228,7 @@ MonoBehaviour:
   _DashStun: 0.5
   _DashCooldown: 1
   _NewDashCooldown: 0.5
+  dashMejorado: 0
 --- !u!114 &427278207932773805
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -354,7 +363,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duraciondeataque: 2
+  _mejorado: 0
   _cono: 0
+  _botella: 0
 --- !u!114 &3516986607448316989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -368,6 +379,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _Attack: 2
+  PacoLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!61 &7605351779883268846
 BoxCollider2D:
   m_ObjectHideFlags: 0

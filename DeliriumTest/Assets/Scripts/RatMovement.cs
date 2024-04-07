@@ -28,7 +28,7 @@ public class RatMovement : MonoBehaviour, EnemiesControler
     // Start is called before the first frame update
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.GetComponent<FrankMovement>() != null) 
+        if (collision.gameObject.GetComponent<FrankMovement>() != null || collision.gameObject.GetComponent<PlayerAttack>() != null) 
         {
             hit = true; 
         }

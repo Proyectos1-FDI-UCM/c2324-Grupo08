@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b65032c2e1bf464fb7b6395e3c27462, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bulletSpeed: 10
+  _bulletSpeed: 40
 --- !u!114 &-2575113686676944666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,6 +115,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _Attack: 4
+  PacoLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!50 &1565623794818561238
 Rigidbody2D:
   serializedVersion: 4

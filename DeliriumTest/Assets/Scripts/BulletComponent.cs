@@ -27,15 +27,23 @@ public class BulletComponent : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.GetComponent<FrankMovement>() != null || collision.gameObject.GetComponent<EnemiesControler>() != null || collision.gameObject.layer == 7) Destroy(this.gameObject);
-         
+        if (collision.gameObject.GetComponent<FrankMovement>() != null || collision.gameObject.GetComponent<EnemiesControler>() != null || collision.gameObject.layer == 7) Destroy(gameObject);
         
+    }
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (_rigidBody.velocity.Equals((Vector3.zero)))
+        {
+            Destroy(gameObject);
+        }
     }
 
     // Update is called once per frame
 
     void FixedUpdate()
     {
-        _rigidBody.velocity = _speed * _bulletSpeed;
+        
+        _rigidBody.velocity = _speed * 10f *_bulletSpeed * Time.fixedDeltaTime;
+        
     }
 }

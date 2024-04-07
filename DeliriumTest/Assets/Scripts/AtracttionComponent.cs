@@ -23,8 +23,15 @@ public class AtracttionComponent : MonoBehaviour
         if (A != null)
         {
             Vector2 _directionVector = _attractionTransform.position - collision.transform.position;
-            A.atraccion = _attraction * _directionVector.normalized;
             collision.GetComponent<DashCompnent>().enabled = false;
+            if (_directionVector.sqrMagnitude > 0.01f)
+            {
+                A.atraccion = _attraction * _directionVector.normalized;
+            } 
+            else 
+            {
+                A.atraccion = Vector2.zero;
+            }
         }
     }
     private void OnTriggerExit2D(Collider2D collision)

@@ -15,7 +15,9 @@ public class LevelManager : MonoBehaviour
     #region parameters
     static List<EnemiesControler> m_AllEnemies;
     static List<GameObject> _mejoras;
-
+    #endregion
+    
+    #region properties
     [SerializeField]
     GameObject chapas;
     [SerializeField]
@@ -75,10 +77,12 @@ public class LevelManager : MonoBehaviour
         }
 
         m_AllEnemies = new List<EnemiesControler>();
-        _mejoras = new List<GameObject>();
-        _mejoras.Add(chapas);
-        _mejoras.Add(kebab);
-        _mejoras.Add(energetica);
+        _mejoras = new List<GameObject>
+        {
+            chapas,
+            kebab,
+            energetica
+        };
         gameManager = GetComponent<GameManager>();
     }
 

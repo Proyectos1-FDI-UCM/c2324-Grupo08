@@ -26,13 +26,11 @@ public class HealthComponent : MonoBehaviour
 
     [SerializeField] private float _twitchEffect;
     [SerializeField] private float _hitInterval;
-   
 
-    private Color _initialColor;
-    [SerializeField] private Color _hitColor;
-    [SerializeField] private Color _hitreturnColor;
 
-    [SerializeField] private LayerMask Invencibility;
+    Color _initialColor;
+    Color _hitColor;
+    Color _hitreturnColor;
     private LayerMask _originalLayer;
     #endregion
     #region methods
@@ -45,6 +43,11 @@ public class HealthComponent : MonoBehaviour
     private void Awake()
     {
         _health = _maxHealth;
+        _damageTime = 10;
+        _twitchEffect = 0.1f;
+        _hitInterval = 0.1f;
+        _hitColor = new Color(56,56,56,0);
+        _hitreturnColor = new Color(166, 166, 166, 233);
     }
 
     void Start()
@@ -57,15 +60,13 @@ public class HealthComponent : MonoBehaviour
     public void TakeDamage(float amount)
     {
         _health -= amount;
+        StartCoroutine(RepeatHitEffect());
         OnPlayerDamaged?.Invoke();
-        if (this.gameObject.GetComponent<EnemiesControler>() != null)
+        if (gameObject.GetComponent<EnemiesControler>() != null)
         {
             _drops.Drop();
         }
-        if (this.gameObject.GetComponent<FrankMovement>() != null)
-        {
-            StartCoroutine(RepeatHitEffect());
-        }
+        
     }
 
     private IEnumerator RepeatHitEffect()
