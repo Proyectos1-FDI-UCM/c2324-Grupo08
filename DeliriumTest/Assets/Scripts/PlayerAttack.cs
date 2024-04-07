@@ -100,6 +100,7 @@ public class PlayerAttack : MonoBehaviour
             _animator.SetBool("AtaqueCono", true);
             _animator.SetBool("Attack", false);
             yield return new WaitForSeconds(0.2f);
+            AudioManager.Instance.Punch();
             _animator.SetBool("AtaqueCono", false);
         }
         else if (_mejorado)
@@ -107,6 +108,7 @@ public class PlayerAttack : MonoBehaviour
             _animator.SetBool("AtaqueChapa", true);
             _animator.SetBool("Attack", false);
             yield return new WaitForSeconds(0.2f);
+            AudioManager.Instance.Punch();
             _animator.SetBool("AtaqueChapa", false);
 
 
