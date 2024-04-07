@@ -150,13 +150,12 @@ public class PlayerAttack : MonoBehaviour
         else
         {
             _animator.SetBool("Attack", true);
-            
             yield return new WaitForSeconds(0.2f);
             AudioManager.Instance.Punch();
             _animator.SetBool("Attack", false);
         }
 
-        //Comprobación del tipo de ataque para preparar el lanzamiento de la botella
+        //Comprobación del tipo de ataque para preparar el lanzamiento de la botella o
         //uno físico (Cono, Cubo de chapas, Básico)
         if (!_botella)
         {

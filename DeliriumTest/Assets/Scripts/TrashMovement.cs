@@ -73,7 +73,7 @@ public class TrashMovement : MonoBehaviour, EnemiesControler
     }
     private void OnDestroy()
     {
-        LevelManager.EnemyDefeated(this);
+        LevelManager.levelManager.EnemyDefeated(this);
     }
 
     public IEnumerator StopAttack()

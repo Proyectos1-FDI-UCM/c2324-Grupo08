@@ -7,12 +7,21 @@ public class LevelManager : MonoBehaviour
     #region references
     [SerializeField]
     static GameObject Arrow;
-    GameManager gameManager;
+    static GameManager gameManager;
+    private static LevelManager instance;
+    public static LevelManager levelManager { get { return instance; } set { instance = value; } }
     #endregion
 
     #region parameters
     static List<EnemiesControler> m_AllEnemies;
-    public List<GameObject> _mejoras;
+    static List<GameObject> _mejoras;
+
+    [SerializeField]
+    GameObject chapas;
+    [SerializeField]
+    GameObject kebab;
+    [SerializeField]
+    GameObject energetica;
     #endregion
 
     #region methods
@@ -20,7 +29,7 @@ public class LevelManager : MonoBehaviour
     {
         if(Arrow == null) Arrow = arrow;
     }
-    public static void RegisterEnemy(GameObject enemy)
+    public void RegisterEnemy(GameObject enemy)
     {
         EnemiesControler enemiesControler = enemy.GetComponent<EnemiesControler>();
         if (enemiesControler != null)
@@ -33,12 +42,11 @@ public class LevelManager : MonoBehaviour
         if (m_AllEnemies.Count > 0)
         {
             CamTriggerSecreta.TransitionAvaible(false);
-
             CamTrigger.TransitionAvaible(false);
             Arrow.SetActive(false);
         }
     }
-    public static void EnemyDefeated(EnemiesControler enemy)
+    public void EnemyDefeated(EnemiesControler enemy)
     {
         if (m_AllEnemies.Contains(enemy))
         {
@@ -49,6 +57,7 @@ public class LevelManager : MonoBehaviour
         {
             CamTriggerSecreta.TransitionAvaible(true);
             CamTrigger.TransitionAvaible(true);
+            DropUpgrade();
             Arrow.SetActive(true);
         }
     }
@@ -56,8 +65,20 @@ public class LevelManager : MonoBehaviour
     #endregion
     private void Awake()
     {
+        if(instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
         m_AllEnemies = new List<EnemiesControler>();
-        //_mejoras = new List<GameObject>();
+        _mejoras = new List<GameObject>();
+        _mejoras.Add(chapas);
+        _mejoras.Add(kebab);
+        _mejoras.Add(energetica);
         gameManager = GetComponent<GameManager>();
     }
 
@@ -75,20 +96,20 @@ public class LevelManager : MonoBehaviour
     }
     void CheckUpgrades()
     {
-        bool chapas = FrankMovement.Player.GetComponentInChildren<PlayerAttack>()._mejorado;
-        bool kebab = Mathf.Approximately(FrankMovement.Player.GetComponent<HealthComponent>().MaxHealth, 8f);
-        bool energetica = FrankMovement.Player.GetComponent<DashCompnent>().dashMejorado;
-        if (chapas) { _mejoras.Remove(_mejoras[0]); }
-        if (kebab) { _mejoras.Remove(_mejoras[1]); }
-        if (energetica) { _mejoras.Remove(_mejoras[2]); }
+        bool Chapas = FrankMovement.Player.GetComponentInChildren<PlayerAttack>()._mejorado;
+        bool Kebab = Mathf.Approximately(FrankMovement.Player.GetComponent<HealthComponent>().MaxHealth, 8f);
+        bool Energetica = FrankMovement.Player.GetComponent<DashCompnent>().dashMejorado;
+        if (Chapas) { _mejoras.Remove(chapas); }
+        if (Kebab) { _mejoras.Remove(kebab); }
+        if (Energetica) { _mejoras.Remove(energetica); }
     }
-    void DropUpgrade() 
+    void DropUpgrade()
     {
         int room = GameManager.ActiveRoom;
         CheckUpgrades();
         if (room % 2 == 0)
         {
-            Instantiate(_mejoras[Random.Range(0,_mejoras.Count)],gameManager.Map[room].transform.position, Quaternion.identity);
+            Instantiate(_mejoras[Random.Range(0, _mejoras.Count)], gameManager.Map[room - 1].transform.position, Quaternion.identity);
         }
     }
     // Update is called once per frame
@@ -96,10 +117,6 @@ public class LevelManager : MonoBehaviour
     {
         Debug.Log(m_AllEnemies.Count);
         Debug.Log("Active Room " + GameManager.ActiveRoom);
-        if (m_AllEnemies.Count == 0 && GameManager.ActiveRoom > 0)
-        {
-            DropUpgrade();  
-        }
     }
 
 }

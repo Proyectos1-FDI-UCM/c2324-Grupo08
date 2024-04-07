@@ -1356,10 +1356,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87978c76981697e4189b6412d45b56fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mejoras:
-  - {fileID: 4601169436654983355, guid: 8ead7f76a9d45f44493dba858c02dd86, type: 3}
-  - {fileID: 8854965878747412021, guid: 3a76e24bb65194d43b47a4c3898939cd, type: 3}
-  - {fileID: 7288655054274534137, guid: ff1a6705f4a31054b8d1f12067e0deaf, type: 3}
+  chapas: {fileID: 4601169436654983355, guid: 8ead7f76a9d45f44493dba858c02dd86, type: 3}
+  kebab: {fileID: 8854965878747412021, guid: 3a76e24bb65194d43b47a4c3898939cd, type: 3}
+  energetica: {fileID: 7288655054274534137, guid: ff1a6705f4a31054b8d1f12067e0deaf, type: 3}
 --- !u!1 &885782566
 GameObject:
   m_ObjectHideFlags: 0

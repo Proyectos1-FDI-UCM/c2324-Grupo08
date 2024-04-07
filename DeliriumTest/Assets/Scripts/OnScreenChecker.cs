@@ -5,6 +5,7 @@ public class OnScreenCheck : MonoBehaviour
 {
     #region references
     private Camera _maincam;
+    private LevelManager _levelManager;
     #endregion
     #region Parameters
     public static List<GameObject> _currentenemy = new List<GameObject>();
@@ -31,6 +32,7 @@ public class OnScreenCheck : MonoBehaviour
     {
         _currentenemy = new List<GameObject>();
         _enemytransform = new List<Transform>();
+        _levelManager = GetComponent<LevelManager>();
         _maincam = Camera.main;
     }
     private void Start()
@@ -56,7 +58,7 @@ public class OnScreenCheck : MonoBehaviour
         Vector3 viewPos = _maincam.WorldToViewportPoint(_enemytransform.position);
         bool inScreen = viewPos.x >= 0 && viewPos.x <= 1 && viewPos.y >= 0 && viewPos.y <= 1;
         _currentEnemy.SetActive(inScreen);
-        if (inScreen) { LevelManager.RegisterEnemy(_currentEnemy); }
+        if (inScreen) { _levelManager.RegisterEnemy(_currentEnemy); }
     }
 
 }
