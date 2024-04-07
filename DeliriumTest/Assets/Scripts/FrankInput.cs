@@ -7,6 +7,7 @@ public class InputManager : MonoBehaviour
     private FrankMovement _frankMovement;
     private PlayerAttack _playerAttack;
     private Animator _animator;
+    private AnimationManager _animationManager;
 
     #endregion
     #region properties
@@ -64,6 +65,11 @@ public class InputManager : MonoBehaviour
                 {
                     _animator.SetFloat("ConoX", 0);
                     _animator.SetFloat("ConoY", -1);
+                }else if (_playerAttack._mejorado)
+                {
+                    
+                    _animator.SetFloat("AtaqueChapaX", 0);
+                    _animator.SetFloat("AtaqueChapaY", -1);
                 }
                 else
                 {
@@ -79,6 +85,11 @@ public class InputManager : MonoBehaviour
                 {
                     _animator.SetFloat("ConoX", 0);
                     _animator.SetFloat("ConoY", 1);
+                }
+                else if (_playerAttack._mejorado)
+                {
+                    _animator.SetFloat("AtaqueChapaX", 0);
+                    _animator.SetFloat("AtaqueChapaY", 1);
                 }
                 else
                 {
@@ -109,6 +120,11 @@ public class InputManager : MonoBehaviour
                     _animator.SetFloat("ConoX", -1);
                     _animator.SetFloat("ConoY", 0);
                 }
+                else if (_playerAttack._mejorado)
+                {
+                    _animator.SetFloat("AtaqueChapaX", -1);
+                    _animator.SetFloat("AtaqueChapaY", 0);
+                }
                 else
                 {
                     _animator.SetFloat("AtaqueX", -1);
@@ -123,6 +139,11 @@ public class InputManager : MonoBehaviour
                 {
                     _animator.SetFloat("ConoX", 1);
                     _animator.SetFloat("ConoY", 0);
+                }
+                else if (_playerAttack._mejorado)
+                {
+                    _animator.SetFloat("AtaqueChapaX", 1);
+                    _animator.SetFloat("AtaqueChapaY", 0);
                 }
                 else
                 {

@@ -1,0 +1,1513 @@
+fileFormatVersion: 2
+guid: 15f636096578f114c8ee4dfa25e1116f
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: AtaqueChapa_0
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 306
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0859e47d51eaf14d8d714f1ad8a0a37
+      internalID: -644718891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtaqueChapa_1
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 300
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16254362f40150941b8c50c99a3896db
+      internalID: 2099916454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtaqueChapa_2
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 300
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4fe64b1a80edfd4f976c241721232c4
+      internalID: -492012129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtaqueChapa_3
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 294
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b566865d0c380e14c8a3d283790765a8
+      internalID: 100061892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtaqueChapa_4
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 287
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52cb9f432a1ef274eba5c7f9291ea201
+      internalID: 593176855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtaqueChapa_5
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 287
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 223f54518230fb547bf3f7746d0eff83
+      internalID: -729012369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtaqueChapa_6
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 286
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b88916d7766b9f4daaa275c951e6a7e
+      internalID: -867370833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtaqueChapa_7
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 241
+        width: 27
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18b69100094a0e147b37b51e3a9b0179
+      internalID: -2034844203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtaqueChapa_8
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 240
+        width: 27
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32c65ebaecbb57245a94f1b33a91d96f
+      internalID: 2063784755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtaqueChapa_9
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 240
+        width: 28
+        height: 52
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c64e56b3bf4938428895bcb319fa715
+      internalID: 192181334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtaqueChapa_10
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 240
+        width: 27
+        height: 52
+      alignment: 9
+      pivot: {x: 0.5165021, y: 0.4}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1a9039641f957d42b54fa26a62c330e
+      internalID: 1594689224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtaqueChapa_11
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 240
+        width: 27
+        height: 65
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a8439df3630b294db634b1c83878106
+      internalID: -1798606496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtaqueChapa_12
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 240
+        width: 27
+        height: 71
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c3a95de1d96b5e489480f87f6874be7
+      internalID: 1127170080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtaqueChapa_13
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 239
+        width: 27
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82b0a0da927895244b13c3d5cf861722
+      internalID: -1443624519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtaqueChapa_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 186
+        width: 31
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee496a74526cd3548a3e8ceb1a039963
+      internalID: 2035440018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtaqueChapa_15
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 186
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a44582208eeeda40b9a5093577f1f53
+      internalID: 1081321765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtaqueChapa_16
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 180
+        width: 32
+        height: 54
+      alignment: 9
+      pivot: {x: 0.53, y: 0.56}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09b1b86bd773757418ac532efb3d165a
+      internalID: 1524681751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtaqueChapa_17
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 174
+        width: 32
+        height: 60
+      alignment: 9
+      pivot: {x: 0.5, y: 0.59900993}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0359ea5c2d5fed42a1ee5c40198e206
+      internalID: -144594147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtaqueChapa_18
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 163
+        width: 32
+        height: 71
+      alignment: 9
+      pivot: {x: 0.5, y: 0.64014727}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e0bcae6da033a74e80cb65fbbba22c4
+      internalID: 630218091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtaqueChapa_19
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 149
+        width: 32
+        height: 85
+      alignment: 9
+      pivot: {x: 0.5, y: 0.7026784}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a9d8dca259006445a6c631b388d25e2
+      internalID: 1101666931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtaqueChapa_20
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 186
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adcdcb4ef641e6f41bfab3af5f892a50
+      internalID: 254354877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtaqueChapa_21
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 180
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfb0fabe1cfc4744fb199512014104e7
+      internalID: -933025906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtaqueChapa_22
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 180
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aeeca678d2e9fe540a7724c3c9e39b96
+      internalID: -941641125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtaqueChapa_23
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 174
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e37b57854e3a15478b5a9fe9e451242
+      internalID: -841451717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtaqueChapa_24
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 169
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42859435f43174949bf696186a2a480b
+      internalID: 1758820616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtaqueChapa_25
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 169
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eaa9d7925542de846bc5f9502d5f0c3c
+      internalID: -1587623153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtaqueChapa_26
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 163
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8371903f6f57aa41856d46e381f73b4
+      internalID: -1703435721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtaqueChapa_27
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 155
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a64237c21bc2b048bd7e87043d980ab
+      internalID: 2021234826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtaqueChapa_28
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 149
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1637c0f7f2d280642a48711556477635
+      internalID: -1892102403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtaqueChapa_29
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 94
+        width: 39
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a01f5878dba25d46b54da2c6d3a084f
+      internalID: -1906068147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtaqueChapa_30
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 94
+        width: 86
+        height: 48
+      alignment: 9
+      pivot: {x: 0.2255076, y: 0.50451165}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61b213c7c227a5b4b998629477ce0463
+      internalID: -1593082070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtaqueChapa_31
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 112
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5da321bce501b2540a3f242b943cff40
+      internalID: 1917731662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtaqueChapa_32
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 113
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 824199c3c96a9924d85d8ae82d4de6ac
+      internalID: -1494278873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtaqueChapa_33
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 94
+        width: 72
+        height: 48
+      alignment: 9
+      pivot: {x: 0.26237214, y: 0.49999985}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bccf83fcf373864bab877e15d1978a0
+      internalID: -1490731900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtaqueChapa_34
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 112
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b821a1e92e7f0b4d8ccf59dd3646818
+      internalID: 1689245750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtaqueChapa_35
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 113
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a38ffb982e00ad449becc0010f03f9a
+      internalID: -1310741933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtaqueChapa_36
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 94
+        width: 61
+        height: 48
+      alignment: 9
+      pivot: {x: 0.31183112, y: 0.52255934}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b45a043859d5b0843b2c00774e2de9fc
+      internalID: -2064006327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtaqueChapa_37
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 114
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94473ba148262e44ab299f20a908ea40
+      internalID: 654489345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtaqueChapa_38
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 94
+        width: 55
+        height: 48
+      alignment: 9
+      pivot: {x: 0.34643054, y: 0.52255934}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2a1eca6609686a4ba6f4074bcc2d069
+      internalID: -1963132104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtaqueChapa_39
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 113
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87754b1a6bdcee04ba664b058846f6eb
+      internalID: 412466257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtaqueChapa_40
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 94
+        width: 39
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0b6d35e485ddd14c985bff7b4711bc1
+      internalID: -1546145055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtaqueChapa_41
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 93
+        width: 39
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8933329e6b5bc5b44aa147b2b4aa9190
+      internalID: -1886361695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtaqueChapa_42
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 105
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21d17839c7a8c7d4ab113b946ecdec51
+      internalID: 1218672178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtaqueChapa_43
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 105
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bb7ce42461ea9b48a7bbd00ef4ca8aa
+      internalID: 907467020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtaqueChapa_44
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 106
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d807600ecf77b764999915e0c9d3565c
+      internalID: -703574732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtaqueChapa_45
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 106
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56c696e8abf3ec44c9c1f49a7141355d
+      internalID: -1151685648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtaqueChapa_46
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 29
+        width: 39
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92bde5c702e2eea4d9e25734666360fe
+      internalID: -913750950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtaqueChapa_47
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 30
+        width: 39
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbc75cceb1aa68a4f80183a47359a313
+      internalID: 1132406883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtaqueChapa_48
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 49
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e643717b1cfa77546819fa9c9d13c093
+      internalID: -431353136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtaqueChapa_49
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 30
+        width: 55
+        height: 48
+      alignment: 9
+      pivot: {x: 0.6456937, y: 0.52255946}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 590978985335ca543a701bd2737fa65c
+      internalID: -1955896388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtaqueChapa_50
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 50
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 275033c0b81c6094e94648b52a253731
+      internalID: 1644667413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtaqueChapa_51
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 30
+        width: 61
+        height: 48
+      alignment: 9
+      pivot: {x: 0.6775178, y: 0.5270714}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 663a1b4fa38468343ac442a0db8c69c3
+      internalID: -1129931194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtaqueChapa_52
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 49
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a17ae1ad54f3c44e957f158c82fc6b6
+      internalID: -202332228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtaqueChapa_53
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 48
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44fa8c3dfa8f9b14aba2b8e04164bce7
+      internalID: -298208139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtaqueChapa_54
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 30
+        width: 72
+        height: 48
+      alignment: 9
+      pivot: {x: 0.72860336, y: 0.50451183}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31c8c38052fc9bf44bea3bda366d34a3
+      internalID: -1743750555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtaqueChapa_55
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 49
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9b27dea05e1c0e41972b7dd352f15f5
+      internalID: -319086855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtaqueChapa_56
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 48
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42396331f5e7785499042884b6ca23ee
+      internalID: -513494667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtaqueChapa_57
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 30
+        width: 86
+        height: 48
+      alignment: 9
+      pivot: {x: 0.7770102, y: 0.50451183}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51d74824d2a004842b3edb5b9daa8fe4
+      internalID: -1003843585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtaqueChapa_58
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 30
+        width: 39
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 379c87642e11aee43babdfe580caa500
+      internalID: -2010180846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtaqueChapa_59
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 42
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1334dcd2f2ed97544a58b76994c6fdb9
+      internalID: -854366721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtaqueChapa_60
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 42
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ed3572b45d9b594cba5eeae8d3aeb87
+      internalID: -1668423110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtaqueChapa_61
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 41
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ae63cebd04e775459b7223600867443
+      internalID: -548595386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtaqueChapa_62
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 41
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99cbfd018fd3d6d4aa87f80faea6573a
+      internalID: 192964733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      AtaqueChapa_0: -644718891
+      AtaqueChapa_1: 2099916454
+      AtaqueChapa_10: 1594689224
+      AtaqueChapa_11: -1798606496
+      AtaqueChapa_12: 1127170080
+      AtaqueChapa_13: -1443624519
+      AtaqueChapa_14: 2035440018
+      AtaqueChapa_15: 1081321765
+      AtaqueChapa_16: 1524681751
+      AtaqueChapa_17: -144594147
+      AtaqueChapa_18: 630218091
+      AtaqueChapa_19: 1101666931
+      AtaqueChapa_2: -492012129
+      AtaqueChapa_20: 254354877
+      AtaqueChapa_21: -933025906
+      AtaqueChapa_22: -941641125
+      AtaqueChapa_23: -841451717
+      AtaqueChapa_24: 1758820616
+      AtaqueChapa_25: -1587623153
+      AtaqueChapa_26: -1703435721
+      AtaqueChapa_27: 2021234826
+      AtaqueChapa_28: -1892102403
+      AtaqueChapa_29: -1906068147
+      AtaqueChapa_3: 100061892
+      AtaqueChapa_30: -1593082070
+      AtaqueChapa_31: 1917731662
+      AtaqueChapa_32: -1494278873
+      AtaqueChapa_33: -1490731900
+      AtaqueChapa_34: 1689245750
+      AtaqueChapa_35: -1310741933
+      AtaqueChapa_36: -2064006327
+      AtaqueChapa_37: 654489345
+      AtaqueChapa_38: -1963132104
+      AtaqueChapa_39: 412466257
+      AtaqueChapa_4: 593176855
+      AtaqueChapa_40: -1546145055
+      AtaqueChapa_41: -1886361695
+      AtaqueChapa_42: 1218672178
+      AtaqueChapa_43: 907467020
+      AtaqueChapa_44: -703574732
+      AtaqueChapa_45: -1151685648
+      AtaqueChapa_46: -913750950
+      AtaqueChapa_47: 1132406883
+      AtaqueChapa_48: -431353136
+      AtaqueChapa_49: -1955896388
+      AtaqueChapa_5: -729012369
+      AtaqueChapa_50: 1644667413
+      AtaqueChapa_51: -1129931194
+      AtaqueChapa_52: -202332228
+      AtaqueChapa_53: -298208139
+      AtaqueChapa_54: -1743750555
+      AtaqueChapa_55: -319086855
+      AtaqueChapa_56: -513494667
+      AtaqueChapa_57: -1003843585
+      AtaqueChapa_58: -2010180846
+      AtaqueChapa_59: -854366721
+      AtaqueChapa_6: -867370833
+      AtaqueChapa_60: -1668423110
+      AtaqueChapa_61: -548595386
+      AtaqueChapa_62: 192964733
+      AtaqueChapa_7: -2034844203
+      AtaqueChapa_8: 2063784755
+      AtaqueChapa_9: 192181334
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

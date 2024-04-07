@@ -30,7 +30,7 @@ public class PlayerAttack : MonoBehaviour
 
     //Comprobación de los tipos de ataque:
     //Mejora (Cubo de Chapas)
-    bool _mejorado;
+    public bool _mejorado;
     //Cono
     public bool _cono;
     //Botella
@@ -95,8 +95,32 @@ public class PlayerAttack : MonoBehaviour
     #region Coroutines
     public IEnumerator Attack(Animator _animator)
     {
-        //Inicio de la animación de ataque
-        if (_cono == true) _animator.SetBool("AtaqueCono", true);
+        /// Compruebo qu tipo de ataque esta haciendo el personaje y dependiendo de cada uno, hace una animacion o otra. Además en el puñetazo hace el sonido
+        if (_cono) {
+            _animator.SetBool("AtaqueCono", true);
+            _animator.SetBool("Attack", false);
+            yield return new WaitForSeconds(0.2f);
+            _animator.SetBool("AtaqueCono", false);
+        }
+        else if (_mejorado)
+        {
+            _animator.SetBool("AtaqueChapa", true);
+            _animator.SetBool("Attack", false);
+            yield return new WaitForSeconds(0.2f);
+            _animator.SetBool("AtaqueChapa", false);
+
+
+        }
+        else
+        {
+            _animator.SetBool("Attack", true);
+            
+            yield return new WaitForSeconds(0.2f);
+            AudioManager.Instance.Punch();
+            _animator.SetBool("Attack", false);
+        }
+        //Inicio de la animación de ataque ************** Te dejo todo esto comentado Isma, por si en algun momento va mal lo de arriba********************
+       /* if (_cono == true) _animator.SetBool("AtaqueCono", true);
         else _animator.SetBool("Attack", true);
 
         //Retardo para permitir cuadrar el frame de golpe con la activación de la colisión 
@@ -106,7 +130,7 @@ public class PlayerAttack : MonoBehaviour
 
         //Fin de la animación de ataque
         if (_cono == true) _animator.SetBool("AtaqueCono", false);
-        else _animator.SetBool("Attack", false);
+        else _animator.SetBool("Attack", false);*/
 
         //Comprobación del tipo de ataque para preparar el lanzamiento de la botella
         //uno físico (Cono, Cubo de chapas, Básico)
@@ -118,6 +142,7 @@ public class PlayerAttack : MonoBehaviour
             //Ajuste del ataque a la distancia y dirección correcta si está el ataque mejorado (cubo de chapas)
             if (_mejorado) 
             {
+                
                 offsetx *= 2;
                 offsety *= 2;
                 Collider2D.size = new Vector2( 1f + Mathf.Abs(offsetx) / 2, 1f +  Mathf.Abs(offsety) / 2);
@@ -125,12 +150,16 @@ public class PlayerAttack : MonoBehaviour
             _spriteRenderer.enabled = true;
 
             //Bucle destinado a esperar un número de FixedUpdates para deshabilitar nuevamente el ataque
-            for (int i = duraciondeataque; i > 0; i--) yield return new WaitForFixedUpdate();
-
+            for (int i = duraciondeataque; i > 0; i--)
+            {
+                yield return new WaitForFixedUpdate();
+            }
             //Deshabilitación de las colisiones y render para
             //evitar problemas con otras colisiones o molestias visuales
             Collider2D.enabled = false;
             _spriteRenderer.enabled = false;
+            
+
         }
         else
         {
