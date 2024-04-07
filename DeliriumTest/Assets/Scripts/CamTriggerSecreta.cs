@@ -17,10 +17,10 @@ public class CamTriggerSecreta : MonoBehaviour
     
     #endregion
     #region method
-    public static void TransitionAvaible(bool trans)
-    {
-        _transicion.enabled = trans;
-    }
+    //public static void TransitionAvaible(bool trans)
+    //{
+    //    _transicion.enabled = trans;
+    //}
     #endregion
     void Start()
     {

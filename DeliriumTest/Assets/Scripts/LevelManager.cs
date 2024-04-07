@@ -43,7 +43,7 @@ public class LevelManager : MonoBehaviour
         }
         if (m_AllEnemies.Count > 0)
         {
-            CamTriggerSecreta.TransitionAvaible(false);
+            //CamTriggerSecreta.TransitionAvaible(false);
             CamTrigger.TransitionAvaible(false);
             Arrow.SetActive(false);
         }
@@ -57,7 +57,7 @@ public class LevelManager : MonoBehaviour
 
         if (m_AllEnemies.Count == 0)
         {
-            CamTriggerSecreta.TransitionAvaible(true);
+            //CamTriggerSecreta.TransitionAvaible(true);
             CamTrigger.TransitionAvaible(true);
             DropUpgrade();
             Arrow.SetActive(true);
@@ -97,7 +97,6 @@ public class LevelManager : MonoBehaviour
         yield return new WaitForSeconds(1f);
         Arrow.SetActive(true);
         CamTrigger.TransitionAvaible(true);
-        CamTriggerSecreta.TransitionAvaible(true);
     }
     void CheckUpgrades()
     {
