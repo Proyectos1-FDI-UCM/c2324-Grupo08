@@ -93,6 +93,7 @@ public class LevelManager : MonoBehaviour
         yield return new WaitForSeconds(1f);
         Arrow.SetActive(true);
         CamTrigger.TransitionAvaible(true);
+        CamTriggerSecreta.TransitionAvaible(true);
     }
     void CheckUpgrades()
     {
