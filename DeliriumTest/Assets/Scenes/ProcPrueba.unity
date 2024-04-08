@@ -1287,7 +1287,7 @@ MonoBehaviour:
   vomitSlider: {fileID: 347687345}
   lifepickupbar: {fileID: 214793671}
   Tutorial: {fileID: 7106646153860901829, guid: 03a608b7e57cd7a429d4107b7a297285, type: 3}
-  BossFight: {fileID: 0}
+  BossFight: {fileID: 2118596358983314602, guid: 26cabb6c1c2c2e541ae9867d64460414, type: 3}
   Map: []
 --- !u!4 &828475418
 Transform:

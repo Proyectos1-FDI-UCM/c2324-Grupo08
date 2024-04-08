@@ -81,6 +81,8 @@ public class GameManager : MonoBehaviour
             RoomPosition = RoomPosition + RoomOffsetVector;
             BuilderTransform.position = RoomPosition;
         }
+        Room = Instantiate(BossFight, BuilderTransform.position, Quaternion.identity);
+        Map.Add(Room);
     }
     // Update is called once per frame
     void Update()

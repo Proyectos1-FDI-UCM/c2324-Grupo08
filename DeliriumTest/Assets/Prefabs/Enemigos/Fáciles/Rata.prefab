@@ -247,9 +247,9 @@ MonoBehaviour:
   lifebar: {fileID: 0}
   _health: 0
   _maxHealth: 3
-  _damageTime: 0
-  _twitchEffect: 0
-  _hitInterval: 0
+  _damageTime: 2
+  _twitchEffect: 0.01
+  _hitInterval: 0.01
 --- !u!95 &4863645292897106561
 Animator:
   serializedVersion: 5
