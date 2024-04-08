@@ -66,12 +66,16 @@ public class HealthComponent : MonoBehaviour
         {
             _drops.Drop();
         }
+
         
     }
 
     private IEnumerator RepeatHitEffect()
     {
-        gameObject.layer = 10;
+        if(this.gameObject.GetComponent<FrankMovement>() != null)
+        {
+            gameObject.layer = 10;
+        }
         for (int i = 0; i < _damageTime; i++)
         {
             yield return StartCoroutine(FrankHit());
