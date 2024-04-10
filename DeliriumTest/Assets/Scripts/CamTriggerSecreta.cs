@@ -17,10 +17,10 @@ public class CamTriggerSecreta : MonoBehaviour
     
     #endregion
     #region method
-    //public static void TransitionAvaible(bool trans)
-    //{
-    //    _transicion.enabled = trans;
-    //}
+    public static void TransitionAvaible(bool trans)
+    {
+        _transicion.enabled = trans;
+    }
     #endregion
     void Start()
     {
@@ -29,31 +29,33 @@ public class CamTriggerSecreta : MonoBehaviour
         _camControl = Camera.main.GetComponent<CameraController>();
         _myObject = gameObject;
         _transicion = _myObject.GetComponent<BoxCollider2D>();
-        
         _transicion.enabled = false;
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.GetComponent<FrankMovement>() != null)
         {
+            
             if(_arriba == true) {
+                StartCoroutine(LevelManager.levelManager.Go2());
                 _camControl.minPos += newCampos;
                 _camControl.maxPos += newCampos;
                 other.transform.position += newPlayerPos;
                 
                 _transicion.enabled = false;
                 _arriba = false;
-                _myObject.transform.position = new Vector3(80, -5.1f, 0);
+                _myObject.transform.position = new Vector3(0, -5.1f, 0);
                 newPlayerPos = new Vector3(0, 2, 0);
                 newCampos = new Vector3(0, 10, 0);
             }
             else if (_arriba == false){
+                StartCoroutine(LevelManager.levelManager.Go());
                 _camControl.minPos += newCampos;
                 _camControl.maxPos += newCampos;
                 other.transform.position += newPlayerPos;
                 _transicion.enabled = false;
                 _arriba = true;
-                _myObject.transform.position = new Vector3(80, -4.9f, 0);
+                _myObject.transform.position = new Vector3(0, -4.9f, 0);
                 newPlayerPos = new Vector3(0, -2.9f, 0);
                 newCampos = new Vector3(0, -10, 0);
             }
