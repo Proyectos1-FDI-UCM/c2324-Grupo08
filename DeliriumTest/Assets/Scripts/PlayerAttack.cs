@@ -25,8 +25,8 @@ public class PlayerAttack : MonoBehaviour
     ///Floats que contienen las componentes del Vector Offset 
     /// que marca la dirección del ataque:
     /// </summary>
-    float offsetx;
-    float offsety;
+    private float offsetx;
+    private float offsety;
 
     //Comprobación de los tipos de ataque:
     //Mejora (Cubo de Chapas)

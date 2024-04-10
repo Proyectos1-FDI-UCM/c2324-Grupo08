@@ -17,6 +17,7 @@ public class TrashMovement : MonoBehaviour, EnemiesControler
     [SerializeField] private float _speed = 2.0f;
     private float _moveTime, _stopTime;
     private int x, y;
+    [SerializeField] private float _stopped, _moving;
     #endregion
 
     // Start is called before the first frame update
@@ -56,8 +57,8 @@ public class TrashMovement : MonoBehaviour, EnemiesControler
                 if (_stopTime <= 0) //Acabado el tiempo de parada, declara la nueva direccion
                 {
                     
-                    _moveTime = 0.5f;
-                    _stopTime = 0.5f;
+                    _moveTime = _moving;
+                    _stopTime = _stopped;
                     _direction = (_target.position - _myTransform.position).normalized;
                     StartCoroutine(_shootComponent.Disparo(_direction));
                 }
@@ -78,6 +79,7 @@ public class TrashMovement : MonoBehaviour, EnemiesControler
 
     public IEnumerator StopAttack()
     {
+        
         throw new System.NotImplementedException();
     }
 }
