@@ -16,6 +16,7 @@ public class RecogerObjeto : MonoBehaviour
     [SerializeField] private float healing;
     [SerializeField] private LifeBarComponenet _lifeBarComponent;
     [SerializeField] private VomitComponent _vomitCuantity;
+    [SerializeField] private UIManager _uiManager;
     private float cambioVomito = 0.5f;
     /* 
     * 1 = Bolsa de Patatas
@@ -35,7 +36,7 @@ public class RecogerObjeto : MonoBehaviour
     public void Recogida(int ObjID, GameObject pickedObj)
     {
 
-        if(ObjID == 1) 
+        if (ObjID == 1) 
         { 
             vomitBar.value = vomitBar.value - ReduceVomit;
             AudioManager.Instance.AguaPickup();
@@ -57,14 +58,17 @@ public class RecogerObjeto : MonoBehaviour
             _lifeBarComponent.HealthUP();
             _vomitCuantity._vomitcuantity = cambioVomito;
             Destroy(pickedObj);
+            _uiManager.PonerMejora(3);
         }
         else if(ObjID == 5)
         {
             _inputManager.DisableCooldown();
             _playerAttack.Chapas();
             Destroy(pickedObj);
+            _uiManager.PonerMejora(5);
         }
     }
+   
 
 
 

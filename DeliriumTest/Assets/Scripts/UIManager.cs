@@ -9,6 +9,14 @@ public class UIManager : MonoBehaviour
     Image imgCono;
     [SerializeField] 
     Image imgBotella;
+
+    [SerializeField]
+    Image imgChapitas;
+    [SerializeField]
+    Image imgKebab;
+    [SerializeField]
+    Image imgEnergetica;
+
     static UIManager uiManager;
     public static UIManager UiManager { get { return uiManager; } }
     private void Awake()
@@ -20,6 +28,7 @@ public class UIManager : MonoBehaviour
     {
         if (value == 0) imgBotella.enabled = true;
         else if (value == 1) imgCono.enabled = true;
+
     }
     public void QuitarSpriteBotella()
     {
@@ -30,9 +39,20 @@ public class UIManager : MonoBehaviour
         imgCono.enabled = false;
     }
 
+    
+    public void PonerMejora(int mejora)
+    {
+        if (mejora == 3) imgKebab.enabled = true;
+        if(mejora == 4) imgChapitas.enabled = true;
+        if(mejora == 6) imgEnergetica.enabled = true;
+    }
+
     private void Start()
     {
         imgBotella.enabled = false;
         imgCono.enabled = false;
+        imgChapitas.enabled = false;
+        imgKebab.enabled = false;
+        imgEnergetica.enabled = false;
     }
 }
