@@ -7,6 +7,8 @@ public class ShootComponent : MonoBehaviour
     #region references
     [SerializeField] private GameObject _bulletPrefab;
     #endregion
+    #region parameters
+    #endregion
     public IEnumerator Disparo(Vector3 _shotDirection)
     {
         yield return new WaitForSeconds(0.2f);
