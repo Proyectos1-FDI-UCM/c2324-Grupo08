@@ -18,6 +18,7 @@ public class RecogerObjeto : MonoBehaviour
     [SerializeField] private VomitComponent _vomitCuantity;
     [SerializeField] private UIManager _uiManager;
     private float cambioVomito = 0.5f;
+    [SerializeField] private Animator _popUpAnimator;
     /* 
     * 1 = Bolsa de Patatas
     * 2 = Botella de Agua
@@ -35,9 +36,9 @@ public class RecogerObjeto : MonoBehaviour
 
     public void Recogida(int ObjID, GameObject pickedObj)
     {
-
         if (ObjID == 1) 
-        { 
+        {
+            _popUpAnimator.SetInteger("PopUpn", 1);
             vomitBar.value = vomitBar.value - ReduceVomit;
             AudioManager.Instance.AguaPickup();
             Destroy(pickedObj);
@@ -47,10 +48,13 @@ public class RecogerObjeto : MonoBehaviour
         {
             if (_healthComponent.Health != _healthComponent.MaxHealth)
             {
+                
                 _healthComponent.Healing(healing);
                 lifebar.DrawHearts();
                 AudioManager.Instance.PatataPickup();
                 Destroy(pickedObj);
+                _popUpAnimator.SetInteger("PopUpn", 2);
+                StartCoroutine(PopUpEnd());
             }           
         }
         else if( ObjID == 3)
@@ -67,9 +71,14 @@ public class RecogerObjeto : MonoBehaviour
             Destroy(pickedObj);
             _uiManager.PonerMejora(5);
         }
+
     }
    
-
+    public IEnumerator PopUpEnd()
+    {   
+        yield return new WaitForSeconds(1f);
+        _popUpAnimator.SetInteger("PopUpn", 0);
+    }
 
 
     // Update is called once per frame
