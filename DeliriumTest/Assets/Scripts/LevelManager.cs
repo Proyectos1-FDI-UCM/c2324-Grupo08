@@ -24,6 +24,7 @@ public class LevelManager : MonoBehaviour
     GameObject kebab;
     [SerializeField]
     GameObject energetica;
+    public float _timer;
     #endregion
 
     #region methods
@@ -43,7 +44,7 @@ public class LevelManager : MonoBehaviour
         }
         if (m_AllEnemies.Count > 0)
         {
-            //CamTriggerSecreta.TransitionAvaible(false);
+            CamTriggerSecreta.TransitionAvaible(false);
             CamTrigger.TransitionAvaible(false);
             Arrow.SetActive(false);
         }
@@ -57,7 +58,7 @@ public class LevelManager : MonoBehaviour
 
         if (m_AllEnemies.Count == 0)
         {
-            //CamTriggerSecreta.TransitionAvaible(true);
+            CamTriggerSecreta.TransitionAvaible(true);
             CamTrigger.TransitionAvaible(true);
             DropUpgrade();
             Arrow.SetActive(true);
@@ -91,12 +92,19 @@ public class LevelManager : MonoBehaviour
         StartCoroutine(Go());
     }
 
-    IEnumerator Go()
+    public IEnumerator Go()
     {
         Arrow.SetActive(false);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(_timer);
         Arrow.SetActive(true);
         CamTrigger.TransitionAvaible(true);
+        CamTriggerSecreta.TransitionAvaible(true);
+    }
+    public IEnumerator Go2()
+    {
+        Arrow.SetActive(false);
+        yield return new WaitForSeconds(_timer);
+        CamTriggerSecreta.TransitionAvaible(true);
     }
     void CheckUpgrades()
     {

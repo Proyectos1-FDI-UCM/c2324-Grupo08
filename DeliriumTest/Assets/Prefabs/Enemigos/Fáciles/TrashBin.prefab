@@ -167,6 +167,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 2
+  _stopped: 1
+  _moving: 1
 --- !u!61 &7035256312746497410
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -240,6 +242,9 @@ MonoBehaviour:
   lifebar: {fileID: 0}
   _health: 0
   _maxHealth: 2
+  _damageTime: 0
+  _twitchEffect: 0
+  _hitInterval: 0
 --- !u!95 &-6090581488647443294
 Animator:
   serializedVersion: 5
