@@ -89,7 +89,6 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
-        _timer = 1.2f;
         StartCoroutine(Go());
     }
 
