@@ -199,13 +199,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedValue: 5
-  _firstInertia: 1.3
-  _secondInertia: 1.3
-  _maxImpulse: 3
   _vomitComponent: {fileID: 0}
-  _lastMovementVector: {x: 0, y: 0, z: 0}
-  _vomitShootVector: {x: 0, y: 0, z: 0}
+  MaxTropiezoDist: 3
   atraccion: {x: 0, y: 0}
+  _lastMovementVector: {x: 0, y: 0, z: 0}
 --- !u!114 &8338194921720802218
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,24 +1,10 @@
-using System.Collections;
-using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class FrankMovement : MonoBehaviour
 {
     #region parameters
-    [SerializeField] private float _speedValue = 5f; 
-    [SerializeField] private float _firstInertia;
-    public float FirstInertia
-    { get { return _firstInertia; } }
-    [SerializeField] private float _secondInertia;
-    public float SecondInertia
-    {
-        get { return _secondInertia; }
-    }
-    [SerializeField] private float _maxImpulse;
-    private float _inertia;
-    public float Inertia { get { return _inertia; } set { _inertia = value; } }
-    
+    [SerializeField] private float _speedValue = 5f;
+    [SerializeField] private int MaxTropiezoDist;
     #endregion
     #region references
     private InputManager _frankInput;
@@ -27,27 +13,17 @@ public class FrankMovement : MonoBehaviour
     private static GameObject player;
     private Animator _animator;
     [SerializeField] private VomitComponent _vomitComponent;
-
     public static GameObject Player { get { return player; } }
     #endregion
     #region propiedades
     private float _xvalue;
     private float _yvalue;
+    private Vector2 atraccion;
     private Vector3 _directionVector;
-    private Vector3 _atractionDirection;
     public Vector3 Direction { get { return _directionVector; } }
-    private Vector3 _movementVector;
     public Vector3 _lastMovementVector;
-    public Vector3 _vomitShootVector;
+
     #endregion
-    // Start is called before the first frame update
-
-    /// <param name="attractionToAdd"> speed to be add when collision </param>
-    public void AddSpeed(Vector3 speedToAdd)
-    {
-        _atractionDirection = _speedValue * (_atractionDirection + speedToAdd).normalized;
-
-    }
     public Animator GetAnimator()
     {
         _animator = GetComponent<Animator>();
@@ -60,6 +36,18 @@ public class FrankMovement : MonoBehaviour
     public void Dash()
     {
         _dash.Dash(_directionVector, _lastMovementVector);
+    }
+    public void Tropiezo()
+    {
+        Vector3 _cameraPosition = Camera.main.transform.position;
+        float x = Random.Range(-45, 45);
+        int tropiezo = Random.Range(0, MaxTropiezoDist + 1);
+        Vector3 _tropiezoVect = (Quaternion.Euler(0f, 0f, x) * (_directionVector)).normalized * tropiezo;
+        _tropiezoVect += transform.position;
+        if (_tropiezoVect.x > (_cameraPosition - Vector3.right * 8).x && _tropiezoVect.x < (_cameraPosition + Vector3.right * 8).x && _tropiezoVect.y > (_cameraPosition - Vector3.up * 5).y && _tropiezoVect.y < (_cameraPosition + Vector3.up * 3).y)
+        {
+            transform.position = _tropiezoVect;
+        }
     }
     public void RegisterX(float x)
     {
@@ -85,22 +73,10 @@ public class FrankMovement : MonoBehaviour
         _dash = GetComponent<DashCompnent>();
         _lastMovementVector = Vector3.right;
     }
-    public Vector2 atraccion;
     void FixedUpdate()
     {
         _directionVector = new Vector3(_xvalue, _yvalue);
-        _movementVector = _directionVector.normalized * _speedValue + new Vector3(atraccion.x, atraccion.y); ;
-
-        /*if (_frankInput.AddsInertia)
-        {          
-            _rigidBody.AddForce(_directionVector * _inertia);
-            Vector2.ClampMagnitude(Vector2.zero, _maxImpulse);
-
-        }*/
-        //else
-        //{
-            _rigidBody.velocity = _movementVector;
-        //}
+        _rigidBody.velocity = _directionVector.normalized * _speedValue + new Vector3(atraccion.x, atraccion.y);
         if (_directionVector != Vector3.zero)
         {
             _lastMovementVector = _directionVector;
@@ -111,6 +87,7 @@ public class FrankMovement : MonoBehaviour
         }
         else
         {
+            
             _animator.SetBool("Andando", false);
             _animator.SetBool("Rascadita", true);
         }

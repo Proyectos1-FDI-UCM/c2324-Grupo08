@@ -3534,6 +3534,10 @@ PrefabInstance:
       value: Paco
       objectReference: {fileID: 0}
     - target: {fileID: 4623649835832064220, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
+      propertyPath: MaxTropiezoDist
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4623649835832064220, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
       propertyPath: _vomitComponent
       value: 
       objectReference: {fileID: 347687344}

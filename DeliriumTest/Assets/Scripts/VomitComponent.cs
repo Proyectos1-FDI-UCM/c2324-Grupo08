@@ -71,23 +71,9 @@ public class VomitComponent : MonoBehaviour
             _frankInput.enabled = false;
             _frankMovement.enabled = false;
             _frankInput.AddsInertia = false;
-            _frankMovement.Inertia = 0f;
             StartCoroutine(AnimVomit());
             StartCoroutine(_shootComponent.Disparo(_frankMovement._lastMovementVector));
             StartCoroutine(StopPlayer());
-        }
-        if(_vomitBar.value >= _maxvomit/3)
-        {
-            _frankInput.AddsInertia = true;
-            _frankMovement.Inertia = _frankMovement.FirstInertia;
-        }
-        else if (_vomitBar.value >= _maxvomit/2)
-        {
-            _frankMovement.Inertia = _frankMovement.SecondInertia;
-        }
-        else
-        {
-            _frankInput.AddsInertia = false;
         }
     }
     IEnumerator AnimVomit()
@@ -95,11 +81,9 @@ public class VomitComponent : MonoBehaviour
         _animator.SetBool("Vomito", true);
         yield return new WaitForSeconds(2f);
         _animator.SetBool("Vomito", false);
-
     }
     IEnumerator StopPlayer()
-    {
-       
+    {       
         _vomitBar.value = 0;
         _stops = true;
         _targetRigidBody.constraints = RigidbodyConstraints2D.FreezeAll;

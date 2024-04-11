@@ -163,6 +163,8 @@ public class InputManager : MonoBehaviour
         }
         _frankMovement.RegisterX(Input.GetAxisRaw("Horizontal"));
         _frankMovement.RegisterY(Input.GetAxisRaw("Vertical"));
+        if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.D))
+            _frankMovement.Tropiezo();
     }
 
 }
