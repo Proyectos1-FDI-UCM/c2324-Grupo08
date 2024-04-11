@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EscapingState : State
-{
+{//Estado en el que huye del jugador si se acerca
     private FrankMovement frankDirection;
     private void OnTriggerStay2D(Collider2D collision)
     {

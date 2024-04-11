@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Recogible : MonoBehaviour
@@ -11,24 +9,20 @@ public class Recogible : MonoBehaviour
      * 3 = Kebab
      * 4 = Bebida Energética
      * 5 = Cubo de Chapas
+     * 6 = ArmaBoss;
      */
-     
-     
-    void Start()
-    {
-        
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         RecogerObjeto recogida = collision.GetComponent<RecogerObjeto>();
-        if (recogida != null)
+        if (recogida != null && _objectID != 6)
         {
             recogida.Recogida(_objectID, this.gameObject);
         }
-    }
-    void Update()
-    {
-        
+        else if (collision.GetComponent<BossController>() != null && _objectID == 6)
+        {
+            Destroy(this.gameObject);
+            //Pasar a siguiente estado?
+        }
     }
 }

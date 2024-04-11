@@ -12,6 +12,7 @@ public abstract class State : MonoBehaviour
     protected float currentSpeed;
     protected Rigidbody2D rb;
     protected Collider2D trigger;
+    protected Vector3 positionBottle;
 
     public float time => Time.time - startTime;
     

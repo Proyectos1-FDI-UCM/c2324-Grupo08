@@ -127,8 +127,8 @@ public class LevelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(m_AllEnemies.Count);
-        Debug.Log("Active Room " + GameManager.ActiveRoom);
+        //Debug.Log(m_AllEnemies.Count);
+        //Debug.Log("Active Room " + GameManager.ActiveRoom);
     }
 
 }

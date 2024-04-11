@@ -46,7 +46,7 @@ public class OnScreenCheck : MonoBehaviour
     }
     private void Update()
     {
-        Debug.Log(_currentenemy.Count);
+        //Debug.Log(_currentenemy.Count);
         for (int i = 0; i < _enemytransform.Count; i++)
         {
             if (_enemytransform[i] != null) EnemyCheck(_currentenemy[i], _enemytransform[i]);

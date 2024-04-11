@@ -45,7 +45,6 @@ public class Arma_Recogible : MonoBehaviour
     public void RegisterPaco(Recolector_de_Armas recogerObjetos)
     {
         recogerObjetosP = recogerObjetos;
-        Debug.Log("Información del prefab recogido");
     }
     private void Start()
     {
@@ -59,7 +58,6 @@ public class Arma_Recogible : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.E) && picked && recogerObjetosP.canBePicked)
         {
             ObjetoRecogido();
-            Debug.Log("Objeto Recogido");
         }
     }
 }
