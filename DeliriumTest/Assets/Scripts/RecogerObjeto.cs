@@ -70,7 +70,6 @@ public class RecogerObjeto : MonoBehaviour
             Destroy(pickedObj);
             _uiManager.PonerMejora(ObjID);
         }
-        
         else if(ObjID == 5)
         {
             _inputManager.DisableCooldown();
