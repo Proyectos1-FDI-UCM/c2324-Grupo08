@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2567792202628115324}
   - component: {fileID: 3360857945130674749}
   - component: {fileID: 3221926814558702747}
-  - component: {fileID: 6675901927580249527}
+  - component: {fileID: 6462136091575757513}
   m_Layer: 0
   m_Name: Energetic
   m_TagString: Untagged
@@ -122,7 +122,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.34, y: 0.34}
+    oldSize: {x: 1.0625, y: 1.0625}
     newSize: {x: 1, y: 0.8828125}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -131,7 +131,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.8828125}
   m_EdgeRadius: 0
---- !u!114 &6675901927580249527
+--- !u!114 &6462136091575757513
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -140,6 +140,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7288655054274534137}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9a107fada98d55438a1a86537cd370b, type: 3}
+  m_Script: {fileID: 11500000, guid: 3b0bc92d47d743640a68caf921e19723, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _objectID: 4

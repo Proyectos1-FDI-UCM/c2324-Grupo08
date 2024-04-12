@@ -43,8 +43,8 @@ public class UIManager : MonoBehaviour
     public void PonerMejora(int mejora)
     {
         if (mejora == 3) imgKebab.enabled = true;
-        if(mejora == 4) imgChapitas.enabled = true;
-        if(mejora == 5) imgEnergetica.enabled = true;
+        if(mejora == 5) imgChapitas.enabled = true;
+        if(mejora == 4) imgEnergetica.enabled = true;
     }
 
     private void Start()

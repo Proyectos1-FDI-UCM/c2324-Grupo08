@@ -62,14 +62,21 @@ public class RecogerObjeto : MonoBehaviour
             _lifeBarComponent.HealthUP();
             _vomitCuantity._vomitcuantity = cambioVomito;
             Destroy(pickedObj);
-            _uiManager.PonerMejora(3);
+            _uiManager.PonerMejora(ObjID);
         }
+        else if (ObjID == 4)
+        {
+            FrankMovement.Player.GetComponent<FrankMovement>().DashUpgrade();
+            Destroy(pickedObj);
+            _uiManager.PonerMejora(ObjID);
+        }
+        
         else if(ObjID == 5)
         {
             _inputManager.DisableCooldown();
             _playerAttack.Chapas();
             Destroy(pickedObj);
-            _uiManager.PonerMejora(5);
+            _uiManager.PonerMejora(ObjID);
         }
 
     }

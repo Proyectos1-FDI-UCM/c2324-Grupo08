@@ -246,7 +246,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifebar: {fileID: 0}
   _health: 0
-  _maxHealth: 2
+  _maxHealth: 6
   _damageTime: 0
   _twitchEffect: 0
   _hitInterval: 0

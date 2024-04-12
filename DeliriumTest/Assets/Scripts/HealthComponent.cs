@@ -42,18 +42,18 @@ public class HealthComponent : MonoBehaviour
     #endregion
     private void Awake()
     {
+        _spriteRenderer = GetComponent<SpriteRenderer>();
         _health = _maxHealth;
         _damageTime = 10;
         _twitchEffect = 0.1f;
         _hitInterval = 0.1f;
         _hitColor = new Color(56,56,56,0);
-        _hitreturnColor = new Color(166, 166, 166, 233);
+        _hitreturnColor = _spriteRenderer.color * new Color(1, 1, 1, 233);
     }
 
     void Start()
     {
         _drops = GetComponent<Drops>();
-        _spriteRenderer = GetComponent<SpriteRenderer>();
         _initialColor = _spriteRenderer.color;
         _originalLayer = gameObject.layer;
     }
