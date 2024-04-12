@@ -18,7 +18,7 @@ public class FrankMovement : MonoBehaviour
     #region propiedades
     private float _xvalue;
     private float _yvalue;
-    private Vector2 atraccion;
+    public Vector2 atraccion;
     private Vector3 _directionVector;
     public Vector3 Direction { get { return _directionVector; } }
     public Vector3 _lastMovementVector;
