@@ -1,4 +1,5 @@
 using System.Collections;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
@@ -129,13 +130,24 @@ public class PlayerAttack : MonoBehaviour
     #region Coroutines
     public IEnumerator Attack(Animator _animator)
     {
-        ///Compruebo que tipo de ataque esta haciendo el personaje y dependiendo de cada uno, hace una animacion o otra. Además en el puñetazo hace el sonido
+        ///Compruebo que tipo de ataque esta haciendo el personaje y dependiendo de cada uno,
+        ///hace una animacion o otra. Además en el puñetazo hace el sonido
         if (_cono) {
             _animator.SetBool("AtaqueCono", true);
             _animator.SetBool("Attack", false);
             yield return new WaitForSeconds(0.2f);
             AudioManager.Instance.Punch();
             _animator.SetBool("AtaqueCono", false);
+        }else if(_botella){
+          
+            _animator.SetFloat("AtaqueX", offsetx);
+            _animator.SetFloat("AtaqueY", offsety);
+            _animator.SetBool("Attack", true);
+            StartCoroutine(_shootComponent.Disparo(new Vector3(offsetx, offsety)));
+            yield return new WaitForSeconds(0.2f);
+            _animator.SetBool("Attack", false);
+
+
         }
         else if (_mejorado)
         {
@@ -185,11 +197,8 @@ public class PlayerAttack : MonoBehaviour
             Collider2D.enabled = false;
             _spriteRenderer.enabled = false;
             
-
-        }
-        else
-        {
-            StartCoroutine(_shootComponent.Disparo(new Vector3(offsetx, offsety)));
+        
+        
         }
 
         //Comprobación correspondiente al uso del cono o la botella

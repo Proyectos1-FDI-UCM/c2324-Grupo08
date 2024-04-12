@@ -43,11 +43,14 @@ public class InputManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!_canAttack) { _time += Time.deltaTime; }
-        if (_time >= _cooldown) { _time = 0; _canAttack = true; }
-        {
-
+        if (!_canAttack) { 
+            _time += Time.deltaTime; 
         }
+        if (_time >= _cooldown) { 
+            _time = 0; 
+            _canAttack = true; 
+        }
+        
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
