@@ -42,6 +42,8 @@ public class RecogerObjeto : MonoBehaviour
             vomitBar.value = vomitBar.value - ReduceVomit;
             AudioManager.Instance.AguaPickup();
             Destroy(pickedObj);
+            _popUpAnimator.SetInteger("PopUpn", 1);
+            StartCoroutine(PopUpEnd());
         }
 
         else if (ObjID == 2)
@@ -82,7 +84,7 @@ public class RecogerObjeto : MonoBehaviour
    
     public IEnumerator PopUpEnd()
     {   
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.6f);
         _popUpAnimator.SetInteger("PopUpn", 0);
     }
 
