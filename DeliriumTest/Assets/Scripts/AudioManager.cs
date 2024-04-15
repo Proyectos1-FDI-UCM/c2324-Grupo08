@@ -4,15 +4,29 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
+    // Singleton para garantizar acceso global
     static private AudioManager instance;
     public static AudioManager Instance
     {get { return instance;}}
-    [SerializeField] private AudioClip punch;
-    [SerializeField] private AudioClip patataPickup;
-    [SerializeField] private AudioClip botellaPickup;
+
+    //Player Sounds
+    [SerializeField] private AudioClip _punch;
+    [SerializeField] private AudioClip[] _dash;
+
+    // Object Sounds
+    [SerializeField] private AudioClip _patataPickup;
+    [SerializeField] private AudioClip _botellaPickup;
+
+    // Enemy Sounds
+    [SerializeField] private AudioClip[] _ratSounds;
+    [SerializeField] private AudioClip[] _trashSounds;
+
+    // Audio Sources
     [SerializeField] private AudioSource Music;
-    [SerializeField] private AudioSource SFX;
-    
+    [SerializeField] private AudioSource PickUpSFX;
+    [SerializeField] private AudioSource PlayerSFX;
+    [SerializeField] private AudioSource EnemySFX;
+
 
     void Start()
     {
@@ -21,7 +35,7 @@ public class AudioManager : MonoBehaviour
 
     private void Awake()
     {
-
+        //Parte del patrón Singleton
         if (instance == null)
         {
             instance = this;
@@ -32,19 +46,41 @@ public class AudioManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    // Se disponen los diferentes efectos de sonido y se emiten
     public void Punch()
     {
-        SFX.clip = punch; SFX.Play();
+        PlayerSFX.clip = _punch; 
+        PlayerSFX.Play();
     }
 
+    public void Dash()
+    {
+        int n = Random.Range(0, _dash.Length);
+        PlayerSFX.clip = _dash[n];
+        PlayerSFX.Play();
+    }
     public void PatataPickup()
     {
-        SFX.clip = patataPickup; SFX.Play();
+        PickUpSFX.clip = _patataPickup; PickUpSFX.Play();
     }
 
     public void AguaPickup()
     {
-        SFX.clip = botellaPickup; SFX.Play();
+        PickUpSFX.clip = _botellaPickup; PickUpSFX.Play();
+    }
+
+    public void RatSound()
+    {
+        int n = Random.Range(0, _ratSounds.Length);
+        EnemySFX.clip = _ratSounds[n];
+        EnemySFX.Play();
+    }
+    public void TrashSound()
+    {
+        int n = Random.Range(0, _trashSounds.Length);
+        EnemySFX.clip = _trashSounds[n];
+        EnemySFX.Play();
     }
     // Update is called once per frame
     void Update()

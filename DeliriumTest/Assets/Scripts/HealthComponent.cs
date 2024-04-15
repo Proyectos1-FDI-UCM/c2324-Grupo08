@@ -72,6 +72,14 @@ public class HealthComponent : MonoBehaviour
 
     private IEnumerator RepeatHitEffect()
     {
+        if(this.gameObject.GetComponent<RatMovement>()  != null)
+        {
+            AudioManager.Instance.RatSound();
+        }
+        else if(this.gameObject.GetComponent<TrashMovement>() != null)
+        {
+            AudioManager.Instance.TrashSound();
+        }
         if(this.gameObject.GetComponent<FrankMovement>() != null)
         {
             gameObject.layer = 10;

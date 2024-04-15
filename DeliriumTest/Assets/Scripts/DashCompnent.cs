@@ -31,6 +31,7 @@ public class DashCompnent : MonoBehaviour
     }
     public void Dash(Vector3 _directionVector, Vector3 _lastMovementVector)
     {
+        
         if (_elapsedTime >= _DashCooldown)
         {
             if (_directionVector != Vector3.zero)
@@ -53,6 +54,8 @@ public class DashCompnent : MonoBehaviour
     }
     IEnumerator DashCoolDown()
     {
+        // Se reproduce el efecto de sonido
+        AudioManager.Instance.Dash();
         _animator.SetBool("Dash", true);
         _rigiRigidbody.velocity = Vector3.zero;
         _frankInput.enabled = false;
