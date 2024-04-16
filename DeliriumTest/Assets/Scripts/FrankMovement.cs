@@ -57,6 +57,20 @@ public class FrankMovement : MonoBehaviour
     {
         _yvalue = y;
     }
+    [SerializeField]
+    LayerMask interactuarLayer;
+    public void interact()
+    {
+        Debug.Log("Pulso interacción");
+        var interactposition = transform.position;
+
+        var collider = Physics2D.OverlapCircle(interactposition, 1f, interactuarLayer);
+        if (collider != null)
+        {
+            collider.GetComponent<interactables>()?.interact();
+
+        }
+    }
     private void Awake()
     {
         if (player == null)
