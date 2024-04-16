@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EscapingState : State
 {//Estado en el que huye del jugador si se acerca
-    private FrankMovement frankDirection;
     private void OnTriggerStay2D(Collider2D collision)
     {
         FrankMovement player =collision.GetComponent<FrankMovement>();
@@ -24,11 +23,11 @@ public class EscapingState : State
     }
     public override void Enter()
     {
-        frankDirection = FrankMovement.Player.GetComponent<FrankMovement>();
         currentSpeed = 0;
     }
     public override void Do()
     {
         rb.velocity = directionMovement * currentSpeed;
+        isComplete = true;
     }
 }
