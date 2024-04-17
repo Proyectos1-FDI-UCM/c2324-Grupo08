@@ -20,7 +20,7 @@ public class BossController : MonoBehaviour
 
     #region properties
     [SerializeField] private Rigidbody2D rb;
-    [SerializeField] private Collider2D trigger;
+    [SerializeField] private CircleCollider2D trigger;
     #endregion
 
     #region referneces
@@ -50,8 +50,7 @@ public class BossController : MonoBehaviour
     }
     private void Start()
     {   
-        rb = GetComponent<Rigidbody2D>();
-        trigger = GetComponent<Collider2D>();       
+        rb = GetComponent<Rigidbody2D>();    
         state = escapingState;
         state.Enter();
     }

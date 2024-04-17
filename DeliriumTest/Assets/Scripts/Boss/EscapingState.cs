@@ -12,6 +12,7 @@ public class EscapingState : State
         {
             bossMovement.currentSpeed = escapingValue;
             bossMovement.directionMovement = frankDirection.Direction.normalized;
+            Debug.Log("Ha entrado");
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -20,6 +21,7 @@ public class EscapingState : State
         if (player != null)
         {
             bossMovement.currentSpeed = 0;
+            Debug.Log("Ha salido");
         }
     }
     public override void Enter()
