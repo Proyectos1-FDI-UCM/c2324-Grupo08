@@ -6,7 +6,7 @@ public class LevelManager : MonoBehaviour
 {
     #region references
     [SerializeField]
-    static GameObject Arrow;
+    GoArrowController Arrow;
     static GameManager gameManager;
     private static LevelManager instance;
     public static LevelManager levelManager { get { return instance; } set { instance = value; } }
@@ -28,9 +28,9 @@ public class LevelManager : MonoBehaviour
     #endregion
 
     #region methods
-    public static void RegisterArroy(GameObject arrow)
+    public void RegisterArroy(GoArrowController arrow)
     {
-        if(Arrow == null) Arrow = arrow;
+        Arrow = arrow;
     }
     public void RegisterEnemy(GameObject enemy)
     {
@@ -44,8 +44,8 @@ public class LevelManager : MonoBehaviour
         }
         if (m_AllEnemies.Count > 0)
         {
-            CamTriggerSecreta.TransitionAvaible(false);
-            CamTrigger.TransitionAvaible(false);
+            CamTriggerSecreta.Instance.GetComponent<CamTriggerSecreta>().TransitionAvaible(false);
+            CamTrigger.Instance.GetComponent<CamTrigger>().TransitionAvaible(false);
             Arrow.SetActive(false);
         }
     }
@@ -58,8 +58,8 @@ public class LevelManager : MonoBehaviour
 
         if (m_AllEnemies.Count == 0)
         {
-            CamTriggerSecreta.TransitionAvaible(true);
-            CamTrigger.TransitionAvaible(true);
+            CamTriggerSecreta.Instance.GetComponent<CamTriggerSecreta>().TransitionAvaible(true);
+            CamTrigger.Instance.GetComponent<CamTrigger>().TransitionAvaible(true);
             DropUpgrade();
             Arrow.SetActive(true);
         }
@@ -71,7 +71,6 @@ public class LevelManager : MonoBehaviour
         if(instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(this);
         }
         else
         {
@@ -96,14 +95,14 @@ public class LevelManager : MonoBehaviour
         Arrow.SetActive(false);
         yield return new WaitForSeconds(_timer);
         Arrow.SetActive(true);
-        CamTrigger.TransitionAvaible(true);
-        CamTriggerSecreta.TransitionAvaible(true);
+        CamTrigger.Instance.GetComponent<CamTrigger>().TransitionAvaible(true);
+        CamTriggerSecreta.Instance.GetComponent<CamTriggerSecreta>().TransitionAvaible(true);
     }
     public IEnumerator Go2()
     {
         Arrow.SetActive(false);
         yield return new WaitForSeconds(_timer);
-        CamTriggerSecreta.TransitionAvaible(true);
+        CamTriggerSecreta.Instance.GetComponent<CamTriggerSecreta>().TransitionAvaible(true);
     }
     void CheckUpgrades()
     {

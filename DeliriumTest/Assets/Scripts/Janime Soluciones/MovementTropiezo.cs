@@ -47,7 +47,6 @@ public class MovementTropiezo : FrankMovement
         if (player == null)
         {
             player = gameObject;
-            DontDestroyOnLoad(gameObject);
         }
         else Destroy(gameObject);
     }

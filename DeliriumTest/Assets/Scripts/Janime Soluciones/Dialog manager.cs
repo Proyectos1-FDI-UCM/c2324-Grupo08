@@ -18,14 +18,18 @@ public class Dialogmanager : MonoBehaviour
     {
         Instance = this;
         cajadedialogo.SetActive(false);
+        endText = true;
     }
 
     CartelManager dialog;
     int currentLine=0;
     bool isWriting;
+    [HideInInspector]
+    public bool endText;
     public IEnumerator ShowDialog(CartelManager dialog)
     {
         yield return new WaitForEndOfFrame();
+        endText = false;
         currentLine = 0;
         dialogo.color = Color.green;
         OnShowDialog?.Invoke();
@@ -44,6 +48,7 @@ public class Dialogmanager : MonoBehaviour
             }
             else 
             {
+                endText = true;
                 currentLine = 0;
                 cajadedialogo.SetActive(false);
                 OnHideDialog?.Invoke();

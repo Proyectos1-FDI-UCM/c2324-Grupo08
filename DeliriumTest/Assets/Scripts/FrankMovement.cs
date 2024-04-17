@@ -83,7 +83,6 @@ public class FrankMovement : MonoBehaviour
         if (player == null)
         {
             player = gameObject;
-            DontDestroyOnLoad(gameObject);
         }
         else Destroy(gameObject);
     }

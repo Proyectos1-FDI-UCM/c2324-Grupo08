@@ -14,10 +14,11 @@ public class CamTriggerSecreta : MonoBehaviour
     public static BoxCollider2D _transicion;
     public static bool _estadotrans;
     private bool _arriba = true;
-    
+    private static GameObject instance;
+    public static GameObject Instance { get { return instance; } }
     #endregion
     #region method
-    public static void TransitionAvaible(bool trans)
+    public void TransitionAvaible(bool trans)
     {
         if (_transicion != null)
         {
@@ -25,6 +26,18 @@ public class CamTriggerSecreta : MonoBehaviour
         }
     }
     #endregion
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = gameObject;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     void Start()
     {
         newPlayerPos = new Vector3 (0, -2f,0);
@@ -33,7 +46,6 @@ public class CamTriggerSecreta : MonoBehaviour
         _myObject = gameObject;
         _transicion = _myObject.GetComponent<BoxCollider2D>();
         _transicion.enabled = false;
-        DontDestroyOnLoad(this);
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
