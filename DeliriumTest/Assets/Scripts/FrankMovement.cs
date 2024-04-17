@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class FrankMovement : MonoBehaviour
@@ -22,7 +23,9 @@ public class FrankMovement : MonoBehaviour
     private Vector3 _directionVector;
     public Vector3 Direction { get { return _directionVector; } }
     public Vector3 _lastMovementVector;
-
+    [SerializeField]
+    float timeForFalling = 0.2f;
+    public float walkingTime;
     #endregion
     public Animator GetAnimator()
     {
@@ -37,17 +40,30 @@ public class FrankMovement : MonoBehaviour
     {
         _dash.Dash(_directionVector, _lastMovementVector);
     }
-    public void Tropiezo()
+    public IEnumerator Tropiezo()
     {
-        Vector3 _cameraPosition = Camera.main.transform.position;
+        _rigidBody.velocity = Vector3.zero;
         float x = Random.Range(-45, 45);
-        int tropiezo = Random.Range(0, MaxTropiezoDist + 1);
-        Vector3 _tropiezoVect = (Quaternion.Euler(0f, 0f, x) * (_directionVector)).normalized * tropiezo;
-        _tropiezoVect += transform.position;
-        if (_tropiezoVect.x > (_cameraPosition - Vector3.right * 8).x && _tropiezoVect.x < (_cameraPosition + Vector3.right * 8).x && _tropiezoVect.y > (_cameraPosition - Vector3.up * 5).y && _tropiezoVect.y < (_cameraPosition + Vector3.up * 3).y)
+        float minForceTropiezo = 0;
+        if (_frankInput.falling) 
         {
-            transform.position = _tropiezoVect;
+            minForceTropiezo = 1f;
         }
+        if (MaxTropiezoDist < minForceTropiezo)
+        {
+            Debug.LogError("Distancia demasiado baja");
+        }
+        if (walkingTime >= timeForFalling) 
+        {
+            _frankInput.enabled = false;
+            walkingTime = 0;
+        }
+        float tropiezo = Random.Range(minForceTropiezo, MaxTropiezoDist);
+        _rigidBody.velocity = (Quaternion.Euler(0f, 0f, x) * _directionVector).normalized;
+        yield return new WaitForSeconds(tropiezo); 
+        _frankInput.enabled = true;
+        _rigidBody.velocity = Vector2.zero;
+        _frankInput.falling = false;
     }
     public void RegisterX(float x)
     {
@@ -61,7 +77,6 @@ public class FrankMovement : MonoBehaviour
     LayerMask interactuarLayer;
     public void interact()
     {
-        Debug.Log("Pulso interacción");
         var interactposition = transform.position;
 
         var collider = Physics2D.OverlapCircle(interactposition, 1f, interactuarLayer);
@@ -89,10 +104,25 @@ public class FrankMovement : MonoBehaviour
     }
     void FixedUpdate()
     {
+        if(walkingTime > timeForFalling)
+        {
+            _frankInput.falling = true;
+        }
+
         _directionVector = new Vector3(_xvalue, _yvalue);
-        _rigidBody.velocity = _directionVector.normalized * _speedValue + new Vector3(atraccion.x, atraccion.y);
+
+        if (!_frankInput.falling)
+        {
+            _rigidBody.velocity = _directionVector.normalized * _speedValue + new Vector3(atraccion.x, atraccion.y);
+        }
+
         if (_directionVector != Vector3.zero)
         {
+            if (!_frankInput.falling)
+            {
+                walkingTime += Time.deltaTime;
+            }
+            
             _lastMovementVector = _directionVector;
             _animator.SetFloat("MovimientoX", _xvalue);
             _animator.SetFloat("MovimientoY", _yvalue);
@@ -101,9 +131,10 @@ public class FrankMovement : MonoBehaviour
         }
         else
         {
-            
+            walkingTime = 0;
             _animator.SetBool("Andando", false);
             _animator.SetBool("Rascadita", true);
         }
+       
     }
 }

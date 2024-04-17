@@ -30,7 +30,15 @@ public class LevelManager : MonoBehaviour
     #region methods
     public static void RegisterArroy(GameObject arrow)
     {
-        if(Arrow == null) Arrow = arrow;
+        if (Arrow == null) 
+        {
+            Arrow = arrow;
+        } 
+        else
+        {
+            Destroy(arrow);
+        }
+           
     }
     public void RegisterEnemy(GameObject enemy)
     {
@@ -51,7 +59,7 @@ public class LevelManager : MonoBehaviour
     }
     public void EnemyDefeated(EnemiesControler enemy)
     {
-        if (m_AllEnemies.Contains(enemy))
+        if (m_AllEnemies.Contains(enemy) && enemy != null)
         {
             m_AllEnemies.Remove(enemy);
         }
@@ -71,6 +79,7 @@ public class LevelManager : MonoBehaviour
         if(instance == null)
         {
             instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -89,7 +98,7 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(Go());
+        Arrow.SetActive(false);
     }
 
     public IEnumerator Go()
@@ -108,9 +117,24 @@ public class LevelManager : MonoBehaviour
     }
     void CheckUpgrades()
     {
-        bool Chapas = FrankMovement.Player.GetComponentInChildren<PlayerAttack>()._mejorado;
-        bool Kebab = Mathf.Approximately(FrankMovement.Player.GetComponent<HealthComponent>().MaxHealth, 8f);
-        bool Energetica = FrankMovement.Player.GetComponent<DashCompnent>().dashMejorado;
+        bool Chapas = false;
+        bool Kebab = false;
+        bool Energetica = false;
+
+        if (FrankMovement.Player.GetComponentInChildren<PlayerAttack>() != null)
+        {
+            Chapas = FrankMovement.Player.GetComponentInChildren<PlayerAttack>()._mejorado;
+        }
+        if (FrankMovement.Player.GetComponent<HealthComponent>() != null)
+        {
+            Kebab = Mathf.Approximately(FrankMovement.Player.GetComponent<HealthComponent>().MaxHealth, 8f);
+        }
+        if (FrankMovement.Player.GetComponent<DashCompnent>() != null)
+        {
+            Energetica = FrankMovement.Player.GetComponent<DashCompnent>().dashMejorado;
+        }
+       
+        
         if (Chapas) { _mejoras.Remove(chapas); }
         if (Kebab) { _mejoras.Remove(kebab); }
         if (Energetica) { _mejoras.Remove(energetica); }
@@ -119,7 +143,7 @@ public class LevelManager : MonoBehaviour
     {
         int room = GameManager.ActiveRoom;
         CheckUpgrades();
-        if (room % 2 == 0)
+        if (room % 2 == 0 && room > 0)
         {
             Instantiate(_mejoras[Random.Range(0, _mejoras.Count)], gameManager.Map[room - 1].transform.position, Quaternion.identity);
         }
