@@ -271,7 +271,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 80, y: -4.9, z: 0}
-  m_LocalScale: {x: 15.8, y: 0.1, z: 1}
+  m_LocalScale: {x: 14.8, y: 0.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -2649,7 +2649,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newCampos: {x: 16, y: 0, z: 0}
-  newPlayerPos: {x: 1.5, y: 0, z: 0}
+  newPlayerPos: {x: 0.5, y: 0, z: 0}
   _rightBound: {fileID: 2076203259}
 --- !u!61 &1302031219
 BoxCollider2D:
