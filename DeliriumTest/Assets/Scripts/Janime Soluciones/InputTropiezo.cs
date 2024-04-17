@@ -1,52 +1,27 @@
 using UnityEngine;
 
-public class InputManager : MonoBehaviour
+public class InputTropiezo : InputManager
 {
     // Start is called before the first frame update
     #region references
-    protected FrankMovement _frankMovement;
-    protected PlayerAttack _playerAttack;
-    protected Animator _animator;
-    protected AnimationManager _animationManager;
-
-    #endregion
-    #region properties
-    [SerializeField]
-    protected float offsetx = 0.7f;
-    [SerializeField]
-    protected float offsety = 0.7f;
-    protected float finaloffset;
-    [SerializeField]
-    protected float _cooldown = 0.24f;
-    protected float _time;
-    protected bool _canAttack;
-    public bool AddsInertia = false;
+    MovementTropiezo Movement;
+    public bool falling = false;
     #endregion
 
     void Start()
     {
         _animator = GetComponent<Animator>();
-        _frankMovement = GetComponent<FrankMovement>();
+        Movement = GetComponent<MovementTropiezo>();
         _playerAttack = GetComponentInChildren<PlayerAttack>();
         if (_playerAttack == null) Debug.LogError("Frank no tiene un ataque puesto. Revisa la escena de Janime para ver un ejemplo de implementación.");
     }
 
-    public void DisableCooldown()
-    {
-        _cooldown = 0.5f;
-    }
-    public void EnableCooldown()
-    {
-        _cooldown = 1f;
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E)) 
         {
             Dialogmanager.Instance.StopAllCoroutines();
-            _frankMovement.interact();
+            Movement.interact();
         }
            
         if (!_canAttack) { 
@@ -61,7 +36,7 @@ public class InputManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
         
-            _frankMovement.Dash();
+            Movement.Dash();
         }
         else if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow))
         {
@@ -170,10 +145,15 @@ public class InputManager : MonoBehaviour
                 _canAttack = false;
             }
         }
-        _frankMovement.RegisterX(Input.GetAxisRaw("Horizontal"));
-        _frankMovement.RegisterY(Input.GetAxisRaw("Vertical"));
-        if (_frankMovement.Direction.Equals(Vector3.zero))
-            _frankMovement.Tropiezo();
+        Movement.RegisterX(Input.GetAxisRaw("Horizontal"));
+        Movement.RegisterY(Input.GetAxisRaw("Vertical"));
+
+        if ((Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.D)))
+        {
+            StartCoroutine(Movement.Tropiezo());
+            falling = true;
+        }
+
     }
 
 }
