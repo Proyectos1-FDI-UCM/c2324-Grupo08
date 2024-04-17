@@ -21,7 +21,6 @@ public class InputManager : MonoBehaviour
     float _time;
     bool _canAttack;
     public bool AddsInertia = false;
-    public bool falling = false;
     #endregion
 
     void Start()
@@ -173,13 +172,8 @@ public class InputManager : MonoBehaviour
         }
         _frankMovement.RegisterX(Input.GetAxisRaw("Horizontal"));
         _frankMovement.RegisterY(Input.GetAxisRaw("Vertical"));
-
-        if (falling || !(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.D))) 
-        {
-            falling = true;
-            StartCoroutine(_frankMovement.Tropiezo());
-        }
-        
+        if (_frankMovement.Direction.Equals(Vector3.zero))
+            _frankMovement.Tropiezo();
     }
 
 }

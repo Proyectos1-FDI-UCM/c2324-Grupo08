@@ -87,7 +87,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (FrankMovement.Player.GetComponent<HealthComponent>().Health <= 0) 
+        if (FrankMovement.Player.gameObject.GetComponent<HealthComponent>().Health <= 0) 
             MenuManager.Menu.Dead();
     }
 }

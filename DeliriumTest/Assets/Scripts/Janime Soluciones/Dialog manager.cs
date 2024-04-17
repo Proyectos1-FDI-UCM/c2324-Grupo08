@@ -57,7 +57,7 @@ public class Dialogmanager : MonoBehaviour
         {
             dialogo.text += letter;
             yield return new WaitForSeconds(1f / lettersPerSecond);
-            dialogo.color = Color.Lerp(Color.green, Color.yellow, Mathf.PingPong(Time.time,1) * Time.deltaTime);
+            dialogo.color = Color.Lerp(Color.green, Color.yellow, Mathf.PingPong(Time.time,1));
         }
         isWriting = false;
         yield return new WaitForSeconds(1f);

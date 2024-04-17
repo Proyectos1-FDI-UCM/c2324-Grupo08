@@ -19,10 +19,7 @@ public class CamTriggerSecreta : MonoBehaviour
     #region method
     public static void TransitionAvaible(bool trans)
     {
-        if (_transicion != null) 
-        { 
-            _transicion.enabled = trans; 
-        }
+        _transicion.enabled = trans;
     }
     #endregion
     void Start()
@@ -33,7 +30,6 @@ public class CamTriggerSecreta : MonoBehaviour
         _myObject = gameObject;
         _transicion = _myObject.GetComponent<BoxCollider2D>();
         _transicion.enabled = false;
-        DontDestroyOnLoad(gameObject);
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
