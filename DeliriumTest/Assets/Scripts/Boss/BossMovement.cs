@@ -3,25 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BossController : MonoBehaviour
-{    
+{
     private bool isFacingRIght = true;
-    private int stateCounter;
-    [SerializeField] private float timeState;
+    public Vector3 directionMovement;
+    public Vector3 positionBottle;
+    public float currentSpeed;
+    [SerializeField] private float timer;
 
     #region states
-    private ShootingState shootingState;   
-    private PickingUpState pickingUpState;   
-    private IdleState idleState;   
-    private EscapingState escpaingState;
-    private State state;
+    [SerializeField] private ShootingState shootingState;
+    [SerializeField] private PickingUpState pickingUpState;
+    [SerializeField] private IdleState idleState;
+    [SerializeField] private EscapingState escapingState;
+    State state;
     #endregion
 
     #region properties
     private Rigidbody2D rb;
     private Collider2D trigger;
-    private GameObject botella;//prefab de la botella que lanza
-    private GameObject pickUp; //prefab del pickup de la botella
-    private GameObject _bullet; //Referencia a la botella lanzada
     #endregion
 
     #region referneces
@@ -29,66 +28,38 @@ public class BossController : MonoBehaviour
     [SerializeField] private FrankMovement frankDirection;
     [SerializeField] private Transform player;
     #endregion
-    private void SelectState()
-    {
-        if(state.isComplete)
-        {
-            if (stateCounter == 0)
-            {
-                state = escpaingState;
-            }
-            else if (stateCounter == 1)
-            {
-                state = shootingState;
-            }
-            else if (stateCounter == 2)
-            {
-                state = pickingUpState;
-            }
-            else if (stateCounter == 3)
-            {
-                state = idleState;
-            }
-        }
-        state.Enter();
-    }
-    private IEnumerator StateDoer()
-    {
-        if (stateCounter == 3)
-        {
-            stateCounter = 0;
-        }
-        SelectState();
-        state.Do();
-        yield return new WaitForSeconds(timeState);
-        stateCounter++;
-
-    }
     //Esto hace que el enemigo mire en la dirección en la que está el jugador
     private void Flip(bool isPlayerRight)
     {
         //Comprueba el lado al que mira y si el jugador se mueve a la izda. se gira a esa dirección
-        if(isFacingRIght && !isPlayerRight|| !isFacingRIght && isPlayerRight) 
+        if (isFacingRIght && !isPlayerRight || !isFacingRIght && isPlayerRight)
         {
             isFacingRIght = !isFacingRIght;
-            Vector3 scale =transform.localScale;
+            Vector3 scale = transform.localScale;
             scale.x *= -1;
-            transform.localScale =scale; 
+            transform.localScale = scale;
         }
     }
-    private void Start()
+
+    private void Awake()
     {
-        shootingState.SetUP(rb, trigger, botella, _bullet, pickUp, bulletComp, frankDirection);
-        pickingUpState.SetUP(rb, trigger, botella, _bullet, pickUp, bulletComp, frankDirection);
-        idleState.SetUP(rb, trigger, botella, _bullet, pickUp, bulletComp, frankDirection);
-        escpaingState.SetUP(rb, trigger, botella, _bullet, pickUp, bulletComp, frankDirection);
-        
-        stateCounter = 0;
+        shootingState.SetUP(rb, trigger, bulletComp, frankDirection, this);
+        pickingUpState.SetUP(rb, trigger, bulletComp, frankDirection, this);
+        idleState.SetUP(rb, trigger, bulletComp, frankDirection, this);
+        escapingState.SetUP(rb, trigger, bulletComp, frankDirection, this);
+    }
+    private void Start()
+    {   
+        rb = GetComponent<Rigidbody2D>();
+        trigger = GetComponent<Collider2D>();       
+        state = shootingState;
+        state.Enter();
     }
     private void Update()
     {
         bool isPlayerRight = transform.position.x < player.transform.position.x;
         Flip(isPlayerRight);
-        StateDoer();
+        
+        state.Do();
     }
 }

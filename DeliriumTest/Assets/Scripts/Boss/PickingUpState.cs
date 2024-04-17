@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class PickingUpState : State
 {//Estado en el que recoge la botella ya lanzada
+    [SerializeField] private float speedValue;
     public override void Do()
     {
-        directionMovement = (positionBottle - transform.position).normalized;
-        rb.velocity = directionMovement * speedValue;
+        bossMovement.directionMovement = (bossMovement.positionBottle - transform.position).normalized;
+        rb.velocity = bossMovement.directionMovement * speedValue;
         isComplete = true;
     }
 }
