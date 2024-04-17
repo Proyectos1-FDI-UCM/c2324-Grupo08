@@ -22,6 +22,7 @@ public class FrankMovement : MonoBehaviour
     private Vector3 _directionVector;
     public Vector3 Direction { get { return _directionVector; } }
     public Vector3 _lastMovementVector;
+    [SerializeField] LayerMask interactuarLayer;
 
     #endregion
     public Animator GetAnimator()
@@ -39,14 +40,20 @@ public class FrankMovement : MonoBehaviour
     }
     public void Tropiezo()
     {
-        Vector3 _cameraPosition = Camera.main.transform.position;
-        float x = Random.Range(-45, 45);
-        int tropiezo = Random.Range(0, MaxTropiezoDist + 1);
-        Vector3 _tropiezoVect = (Quaternion.Euler(0f, 0f, x) * (_directionVector)).normalized * tropiezo;
-        _tropiezoVect += transform.position;
-        if (_tropiezoVect.x > (_cameraPosition - Vector3.right * 8).x && _tropiezoVect.x < (_cameraPosition + Vector3.right * 8).x && _tropiezoVect.y > (_cameraPosition - Vector3.up * 5).y && _tropiezoVect.y < (_cameraPosition + Vector3.up * 3).y)
+
+        if ((new Vector3(_xvalue, _yvalue, 0)).Equals(Vector3.zero))
         {
-            transform.position = _tropiezoVect;
+            Vector3 _cameraPosition = Camera.main.transform.position;
+            float x = Random.Range(-45, 45);
+            int tropiezo = Random.Range(0, MaxTropiezoDist + 1);
+            Vector3 _tropiezoVect = (Quaternion.Euler(0f, 0f, x) * (_directionVector)).normalized * tropiezo;
+            _tropiezoVect += transform.position;
+            if (_tropiezoVect.x > (_cameraPosition - Vector3.right * 8).x && _tropiezoVect.x < (_cameraPosition + Vector3.right * 8).x && _tropiezoVect.y > (_cameraPosition - Vector3.up * 5).y && _tropiezoVect.y < (_cameraPosition + Vector3.up * 3).y)
+            {
+                transform.position = _tropiezoVect;
+                //if (tropiezo != 0) animación
+                //Si quieres meterle un yieldreturn de tiempo hazlo corrutina, deberia funcionar igual, aunque lo mismo hay que desactivar Input.
+            }
         }
     }
     public void RegisterX(float x)
@@ -57,8 +64,6 @@ public class FrankMovement : MonoBehaviour
     {
         _yvalue = y;
     }
-    [SerializeField]
-    LayerMask interactuarLayer;
     public void interact()
     {
         Debug.Log("Pulso interacción");
@@ -101,7 +106,7 @@ public class FrankMovement : MonoBehaviour
         }
         else
         {
-            
+
             _animator.SetBool("Andando", false);
             _animator.SetBool("Rascadita", true);
         }

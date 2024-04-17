@@ -7,7 +7,6 @@ public class Damage : MonoBehaviour
     #region properties
     [SerializeField]
     private int _Attack = 1;
-    [SerializeField] private LayerMask PacoLayer;
     public int Attack { get { return _Attack; } set { _Attack = value; } }
     #endregion
     private void OnCollisionEnter2D(Collision2D collision)

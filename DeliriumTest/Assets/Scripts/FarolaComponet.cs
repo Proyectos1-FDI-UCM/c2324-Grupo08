@@ -41,7 +41,7 @@ public class FarolaComponet : MonoBehaviour
         _shootComponent = GetComponent<ShootComponent>();
         _myTransform = transform;
         _PacoColision = false;
-        fireTime = 1f / fireRate;
+        fireTime = fireRate;
     }
 
     // Update is called once per frame
@@ -55,7 +55,7 @@ public class FarolaComponet : MonoBehaviour
             {
                 _direction = (target.position - _myTransform.position).normalized;
                 StartCoroutine(_shootComponent.Disparo(_direction));
-                fireTime = 1f / fireRate;
+                fireTime = fireRate;
             }
 
         }

@@ -20,7 +20,6 @@ public class InputManager : MonoBehaviour
     float _cooldown = 0.24f;
     float _time;
     bool _canAttack;
-    public bool AddsInertia = false;
     #endregion
 
     void Start()
@@ -43,24 +42,26 @@ public class InputManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E)) 
+        if (Input.GetKeyDown(KeyCode.E))
         {
             Dialogmanager.Instance.StopAllCoroutines();
             _frankMovement.interact();
         }
-           
-        if (!_canAttack) { 
-            _time += Time.deltaTime; 
+
+        if (!_canAttack)
+        {
+            _time += Time.deltaTime;
         }
-        if (_time >= _cooldown) { 
-            _time = 0; 
-            _canAttack = true; 
+        if (_time >= _cooldown)
+        {
+            _time = 0;
+            _canAttack = true;
         }
-        
+
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-        
+
             _frankMovement.Dash();
         }
         else if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow))
@@ -74,9 +75,10 @@ public class InputManager : MonoBehaviour
                 {
                     _animator.SetFloat("ConoX", 0);
                     _animator.SetFloat("ConoY", -1);
-                }else if (_playerAttack._mejorado)
+                }
+                else if (_playerAttack._mejorado)
                 {
-                    
+
                     _animator.SetFloat("AtaqueChapaX", 0);
                     _animator.SetFloat("AtaqueChapaY", -1);
                 }
@@ -162,7 +164,7 @@ public class InputManager : MonoBehaviour
 
             }
             _playerAttack.Setoffsetx(finaloffset);
-            
+
             if (_canAttack)
             {
                 _animator.SetBool("Rascadita", false);
@@ -172,8 +174,10 @@ public class InputManager : MonoBehaviour
         }
         _frankMovement.RegisterX(Input.GetAxisRaw("Horizontal"));
         _frankMovement.RegisterY(Input.GetAxisRaw("Vertical"));
-        if (_frankMovement.Direction.Equals(Vector3.zero))
+        if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.D))
+        {
             _frankMovement.Tropiezo();
+        }
     }
 
 }
