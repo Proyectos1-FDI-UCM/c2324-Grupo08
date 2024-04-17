@@ -47,6 +47,9 @@ public class AudioManager : MonoBehaviour
     }
 
     // Se disponen los diferentes efectos de sonido y se emiten
+    /// <summary>
+    /// 
+    /// </summary>
     public void Punch()
     {
         PlayerSFX.clip = _punch; 
@@ -80,10 +83,5 @@ public class AudioManager : MonoBehaviour
         int n = Random.Range(0, _trashSounds.Length);
         EnemySFX.clip = _trashSounds[n];
         EnemySFX.Play();
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
