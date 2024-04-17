@@ -502,7 +502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 596adc64476611541b97de893f3a5c10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedValue: 10
+  speedValue: 5
 --- !u!1 &247432221
 GameObject:
   m_ObjectHideFlags: 0
@@ -684,11 +684,11 @@ PrefabInstance:
       objectReference: {fileID: 991467690}
     - target: {fileID: 5726116090277671307, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.1
       objectReference: {fileID: 0}
     - target: {fileID: 5726116090277671307, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1.8
       objectReference: {fileID: 0}
     - target: {fileID: 5726116090277671307, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2121,7 +2121,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!58 &1304592886
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2134,7 +2134,7 @@ CircleCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -2200,7 +2200,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.4, y: 1.3255428}
+  m_Size: {x: 1.85, y: 0.73}
   m_EdgeRadius: 0
 --- !u!1 &1372076738
 GameObject:
@@ -2318,7 +2318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 593b554072acc284c98b9e935a5606f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distance: 10
+  distance: 5
   botella: {fileID: 3033464737570340217, guid: b44ab7480b0b42a4ebdc8e1ab027b8c1, type: 3}
   pickUp: {fileID: 9070939954684309588, guid: 78f96c9c7b7baaa4e9a3e906402296cb, type: 3}
   _bullet: {fileID: 9070939954684309588, guid: 78f96c9c7b7baaa4e9a3e906402296cb, type: 3}
@@ -2754,7 +2754,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 393672777b76b3344841b80954946fc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  escapingValue: 10
+  escapingValue: 3
+  umbral: 3
 --- !u!4 &2041767701
 Transform:
   m_ObjectHideFlags: 0

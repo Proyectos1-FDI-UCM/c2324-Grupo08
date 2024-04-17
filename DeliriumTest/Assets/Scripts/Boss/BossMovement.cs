@@ -51,7 +51,7 @@ public class BossController : MonoBehaviour
     private void Start()
     {   
         rb = GetComponent<Rigidbody2D>();    
-        state = escapingState;
+        state = shootingState;
         state.Enter();
     }
     private void Update()

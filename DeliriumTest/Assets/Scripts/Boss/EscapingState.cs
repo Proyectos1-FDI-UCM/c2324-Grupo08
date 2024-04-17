@@ -1,12 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EscapingState : State
-{//Estado en el que huye del jugador si se acerca
+//Estado en el que huye del jugador si se acerca
+{
     [SerializeField] private float escapingValue;
-    private void OnTriggerStay2D(Collider2D collision)
+    [SerializeField] private float umbral;
+    private Transform _myTransform;
+    /*void OnTriggerStay2D(Collider2D collision)
     {
+        Debug.Log("Boss detection");
         FrankMovement player = collision.GetComponent<FrankMovement>();
         if (player != null)
         {
@@ -15,7 +17,7 @@ public class EscapingState : State
             Debug.Log("Ha entrado");
         }
     }
-    private void OnTriggerExit2D(Collider2D collision)
+    void OnTriggerExit2D(Collider2D collision)
     {
         FrankMovement player = collision.GetComponent<FrankMovement>();
         if (player != null)
@@ -23,14 +25,20 @@ public class EscapingState : State
             bossMovement.currentSpeed = 0;
             Debug.Log("Ha salido");
         }
-    }
+    }*/
     public override void Enter()
     {
         bossMovement.currentSpeed = 0;
+        _myTransform = transform;
     }
     public override void Do()
     {
-        rb.velocity = bossMovement.directionMovement * bossMovement.currentSpeed;
+        Vector3 distance = _myTransform.position - FrankMovement.Player.transform.position;
+        if (distance.magnitude < umbral)
+        {
+            rb.velocity = distance * escapingValue;
+        }
+        else rb.velocity = Vector3.zero;
         isComplete = true;
     }
 }
