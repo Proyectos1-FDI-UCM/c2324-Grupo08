@@ -4060,6 +4060,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 974244237}
     - target: {fileID: 4400946979536132396, guid: 7f9fb38224566d14988edcbc656e0941, type: 3}
+      propertyPath: _gameMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 9ab02b733c93d9a42816475b4cb81826, type: 3}
+    - target: {fileID: 4400946979536132396, guid: 7f9fb38224566d14988edcbc656e0941, type: 3}
+      propertyPath: _menuMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 44ca2b39d88eee749953b09c2eee2800, type: 3}
+    - target: {fileID: 4400946979536132396, guid: 7f9fb38224566d14988edcbc656e0941, type: 3}
       propertyPath: _trashSounds
       value: 
       objectReference: {fileID: 8300000, guid: 57df6c7ec9202cf429867df3198c7455, type: 3}

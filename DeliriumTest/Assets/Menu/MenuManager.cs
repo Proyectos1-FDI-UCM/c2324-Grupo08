@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -27,6 +28,14 @@ public class MenuManager : MonoBehaviour
     }
     private void Awake()
     {
-            menu = this;
+        if (SceneManager.GetSceneByBuildIndex(0).Equals(SceneManager.GetActiveScene()))
+        {
+            AudioManager.Instance.MenuMusic();
+        }
+        else if (SceneManager.GetSceneByBuildIndex(1).Equals(SceneManager.GetActiveScene()))
+        {
+            AudioManager.Instance.LevelMusic();
+        }
+         menu = this;
     }
 }
