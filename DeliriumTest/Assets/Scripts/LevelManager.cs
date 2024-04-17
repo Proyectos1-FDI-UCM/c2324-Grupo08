@@ -107,12 +107,15 @@ public class LevelManager : MonoBehaviour
     }
     void CheckUpgrades()
     {
-        bool Chapas = FrankMovement.Player.GetComponentInChildren<PlayerAttack>()._mejorado;
-        bool Kebab = Mathf.Approximately(FrankMovement.Player.GetComponent<HealthComponent>().MaxHealth, 8f);
-        bool Energetica = FrankMovement.Player.GetComponent<DashCompnent>().dashMejorado;
-        if (Chapas) { _mejoras.Remove(chapas); }
-        if (Kebab) { _mejoras.Remove(kebab); }
-        if (Energetica) { _mejoras.Remove(energetica); }
+        if (FrankMovement.Player != null) // Verifica si el jugador aún existe
+        {
+            bool Chapas = FrankMovement.Player.GetComponentInChildren<PlayerAttack>()._mejorado;
+            bool Kebab = Mathf.Approximately(FrankMovement.Player.GetComponent<HealthComponent>().MaxHealth, 8f);
+            bool Energetica = FrankMovement.Player.GetComponent<DashCompnent>().dashMejorado;
+            if (Chapas) { _mejoras.Remove(chapas); }
+            if (Kebab) { _mejoras.Remove(kebab); }
+            if (Energetica) { _mejoras.Remove(energetica); }
+        }
     }
     void DropUpgrade()
     {

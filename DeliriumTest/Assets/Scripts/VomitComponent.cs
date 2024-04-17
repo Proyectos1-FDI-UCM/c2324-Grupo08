@@ -29,9 +29,7 @@ public class VomitComponent : MonoBehaviour
     void Start()
     {
         _animator = _frankMovement.GetAnimator();
-        if (_animator == null ) {
-            Debug.Log("_animator roro");
-        }
+        
         _vomitBar = GetComponent<Slider>();
         _vomitBar.value = 0;
     }
@@ -77,6 +75,8 @@ public class VomitComponent : MonoBehaviour
     }
     IEnumerator AnimVomit()
     {
+        _animator.SetBool("Rascadita", false);
+        _animator.SetBool("Tropiezo", false) ;
         _animator.SetBool("Vomito", true);
         yield return new WaitForSeconds(2f);
         _animator.SetBool("Vomito", false);

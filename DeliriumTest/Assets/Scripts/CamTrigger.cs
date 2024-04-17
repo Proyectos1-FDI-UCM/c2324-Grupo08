@@ -16,7 +16,11 @@ public class CamTrigger : MonoBehaviour
     #region method
     public static void TransitionAvaible(bool trans)
     {
-        _transicion.enabled = trans;
+        if (_transicion != null)
+        {
+            _transicion.enabled = trans;
+        }
+
     }
     #endregion
     void Start()
