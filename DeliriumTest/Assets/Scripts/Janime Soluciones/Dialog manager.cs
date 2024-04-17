@@ -26,6 +26,7 @@ public class Dialogmanager : MonoBehaviour
     public IEnumerator ShowDialog(CartelManager dialog)
     {
         yield return new WaitForEndOfFrame();
+        currentLine = 0;
         dialogo.color = Color.green;
         OnShowDialog?.Invoke();
         this.dialog = dialog;

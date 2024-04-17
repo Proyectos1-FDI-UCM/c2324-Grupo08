@@ -1,25 +1,28 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class FrankMovement : MonoBehaviour
 {
     #region parameters
-    [SerializeField] private float _speedValue = 5f;
-    [SerializeField] private int MaxTropiezoDist;
+    [SerializeField] protected float _speedValue = 5f;
+    [SerializeField] protected int MaxTropiezoDist;
     #endregion
     #region references
-    private InputManager _frankInput;
-    private DashCompnent _dash;
-    private Rigidbody2D _rigidBody;
-    private static GameObject player;
-    private Animator _animator;
-    [SerializeField] private VomitComponent _vomitComponent;
+    protected InputManager _frankInput;
+    protected DashCompnent _dash;
+    protected Rigidbody2D _rigidBody;
+    protected static GameObject player;
+    protected Animator _animator;
+    protected BoxCollider2D _collider;
+    [SerializeField] 
+    private VomitComponent _vomitComponent;
     public static GameObject Player { get { return player; } }
     #endregion
     #region propiedades
-    private float _xvalue;
-    private float _yvalue;
+    protected float _xvalue;
+    protected float _yvalue;
     public Vector2 atraccion;
-    private Vector3 _directionVector;
+    protected Vector3 _directionVector;
     public Vector3 Direction { get { return _directionVector; } }
     public Vector3 _lastMovementVector;
 
@@ -62,9 +65,8 @@ public class FrankMovement : MonoBehaviour
     public void interact()
     {
         Debug.Log("Pulso interacción");
-        var interactposition = transform.position;
-
-        var collider = Physics2D.OverlapCircle(interactposition, 1f, interactuarLayer);
+        var interactposition = transform.position + _lastMovementVector;
+        var collider = Physics2D.OverlapCircle(interactposition, 0.2f, interactuarLayer);
         if (collider != null)
         {
             collider.GetComponent<interactables>()?.interact();
@@ -76,6 +78,7 @@ public class FrankMovement : MonoBehaviour
         if (player == null)
         {
             player = gameObject;
+            DontDestroyOnLoad(gameObject);
         }
         else Destroy(gameObject);
     }
@@ -85,6 +88,8 @@ public class FrankMovement : MonoBehaviour
         _frankInput = GetComponent<InputManager>();
         _rigidBody = GetComponent<Rigidbody2D>();
         _dash = GetComponent<DashCompnent>();
+        _collider = GetComponent<BoxCollider2D>();
+        if (_collider == null ) { Debug.Log("no hay collider"); }
         _lastMovementVector = Vector3.right;
     }
     void FixedUpdate()

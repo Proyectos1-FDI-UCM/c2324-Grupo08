@@ -71,6 +71,7 @@ public class LevelManager : MonoBehaviour
         if(instance == null)
         {
             instance = this;
+            DontDestroyOnLoad(this);
         }
         else
         {
@@ -86,12 +87,10 @@ public class LevelManager : MonoBehaviour
         };
         gameManager = GetComponent<GameManager>();
     }
-
-    void Start()
+    private void Start()
     {
-        StartCoroutine(Go());
+        Arrow.SetActive(false);
     }
-
     public IEnumerator Go()
     {
         Arrow.SetActive(false);
@@ -119,7 +118,7 @@ public class LevelManager : MonoBehaviour
     {
         int room = GameManager.ActiveRoom;
         CheckUpgrades();
-        if (room % 2 == 0)
+        if (room % 2 == 0 && room > 0)
         {
             Instantiate(_mejoras[Random.Range(0, _mejoras.Count)], gameManager.Map[room - 1].transform.position, Quaternion.identity);
         }

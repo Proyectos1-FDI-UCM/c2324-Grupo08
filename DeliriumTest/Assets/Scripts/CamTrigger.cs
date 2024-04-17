@@ -25,6 +25,7 @@ public class CamTrigger : MonoBehaviour
         _myObject = gameObject;
         _transicion = _myObject.GetComponent<BoxCollider2D>();
         _transicion.enabled = false;
+        DontDestroyOnLoad(this);
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
