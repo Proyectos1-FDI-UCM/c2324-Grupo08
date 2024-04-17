@@ -8,11 +8,7 @@ public class BulletComponent : MonoBehaviour
     [SerializeField] private float _bulletSpeed = 10f;
     private Rigidbody2D _rigidBody;
     private Vector3 _speed;
-    #endregion
-    #region references
-
-    #endregion
-    #region propiedades
+    [SerializeField] private LayerMask _boundaries;
     #endregion
     // Start is called before the first frame update
     void Start()
@@ -27,7 +23,8 @@ public class BulletComponent : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.GetComponent<FrankMovement>() != null || collision.gameObject.GetComponent<EnemiesControler>() != null || collision.gameObject.layer == 7) Destroy(gameObject);
+        if (collision.gameObject.GetComponent<FrankMovement>() != null || collision.gameObject.GetComponent<EnemiesControler>() != null || collision.gameObject.layer == _boundaries)
+            Destroy(gameObject);
         
     }
     private void OnCollisionStay2D(Collision2D collision)
@@ -43,7 +40,7 @@ public class BulletComponent : MonoBehaviour
     void FixedUpdate()
     {
         
-        _rigidBody.velocity = _speed * 10f *_bulletSpeed * Time.fixedDeltaTime;
+        _rigidBody.velocity = _speed * 10f * _bulletSpeed * Time.fixedDeltaTime;
         
     }
 }

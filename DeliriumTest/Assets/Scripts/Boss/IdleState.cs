@@ -8,8 +8,4 @@ public class IdleState : State
     {
         trigger.enabled = false;
     }
-    public override void Exit ()
-    {
-        trigger.enabled = true;
-    }
 }

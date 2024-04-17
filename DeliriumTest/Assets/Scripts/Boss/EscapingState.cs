@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class EscapingState : State
 {//Estado en el que huye del jugador si se acerca
+    [SerializeField] private float escapingValue;
     private void OnTriggerStay2D(Collider2D collision)
     {
-        FrankMovement player =collision.GetComponent<FrankMovement>();
-        if(player != null)
+        FrankMovement player = collision.GetComponent<FrankMovement>();
+        if (player != null)
         {
-            currentSpeed = speedValue;
-            directionMovement = frankDirection.Direction.normalized;
+            bossMovement.currentSpeed = escapingValue;
+            bossMovement.directionMovement = frankDirection.Direction.normalized;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -18,16 +19,16 @@ public class EscapingState : State
         FrankMovement player = collision.GetComponent<FrankMovement>();
         if (player != null)
         {
-            currentSpeed = 0;
+            bossMovement.currentSpeed = 0;
         }
     }
     public override void Enter()
     {
-        currentSpeed = 0;
+        bossMovement.currentSpeed = 0;
     }
     public override void Do()
     {
-        rb.velocity = directionMovement * currentSpeed;
+        rb.velocity = bossMovement.directionMovement * bossMovement.currentSpeed;
         isComplete = true;
     }
 }

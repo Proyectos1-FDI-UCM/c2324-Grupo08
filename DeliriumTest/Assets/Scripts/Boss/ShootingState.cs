@@ -6,6 +6,9 @@ using UnityEngine;
 public class ShootingState : State
 {//Estado en el que lanza la botella cierta distancia hacia el jugador
     [SerializeField] private float distance;
+    public GameObject botella;//prefab de la botella que lanza
+    public GameObject pickUp; //prefab del pickup de la botella
+    public GameObject _bullet; //Referencia a la botella lanzada
     public override void Enter()
     {
         _bullet = Instantiate(botella, transform.position, Quaternion.identity);
@@ -17,9 +20,9 @@ public class ShootingState : State
         if (vectorDist.magnitude >= distance)
         {
             Instantiate(pickUp, _bullet.transform.position, Quaternion.identity);
-            positionBottle = _bullet.transform.position;
+            bossMovement.positionBottle = _bullet.transform.position;
             Destroy(_bullet);
-            isComplete = true;     
+            isComplete = true;
         }
     }
 }

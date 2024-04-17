@@ -5,6 +5,7 @@ public class DashCompnent : MonoBehaviour
 {
     #region references
     private Rigidbody2D _rigiRigidbody;
+    private FrankMovement _frankMovement;
     private InputManager _frankInput;
     [SerializeField] private VomitComponent _vomitComponent;
     [SerializeField] private GameObject _dashIndicator;
@@ -27,7 +28,6 @@ public class DashCompnent : MonoBehaviour
     {
         _DashCooldown = _NewDashCooldown;
         dashMejorado = true;
-
     }
     public void Dash(Vector3 _directionVector, Vector3 _lastMovementVector)
     {
@@ -58,10 +58,12 @@ public class DashCompnent : MonoBehaviour
         AudioManager.Instance.Dash();
         _animator.SetBool("Dash", true);
         _rigiRigidbody.velocity = Vector3.zero;
+        _frankMovement.enabled = false;
         _frankInput.enabled = false;
         yield return new WaitForSeconds(_DashStun);
         _animator.SetBool("Dash", false);
         _frankInput.enabled = true;
+        _frankMovement.enabled = true;
     }
     private void OnDisable()
     {
@@ -79,6 +81,7 @@ public class DashCompnent : MonoBehaviour
         _elapsedTime = _DashCooldown;
         _rigiRigidbody = GetComponent<Rigidbody2D>();
         _frankInput = GetComponent<InputManager>();
+        _frankMovement = GetComponent<FrankMovement>();
     }
 
     // Update is called once per frame
