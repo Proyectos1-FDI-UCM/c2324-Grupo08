@@ -32,6 +32,7 @@ public class RecogerObjeto : MonoBehaviour
         _playerAttack = GetComponentInChildren<PlayerAttack>();
         _damage = GetComponentInChildren<Damage>();
         _inputManager = GetComponent<InputManager>();
+        _popUpAnimator.SetInteger("PopUpn", 0);
     }
 
     public void Recogida(int ObjID, GameObject pickedObj)

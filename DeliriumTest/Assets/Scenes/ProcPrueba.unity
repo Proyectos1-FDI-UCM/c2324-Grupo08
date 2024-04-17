@@ -4155,6 +4155,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Paco
       objectReference: {fileID: 0}
+    - target: {fileID: 1995194324755221355, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1995194324755221355, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3700768047936432884, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
+      propertyPath: m_Name
+      value: PopUps
+      objectReference: {fileID: 0}
     - target: {fileID: 4623649835832064220, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
       propertyPath: MaxTropiezoDist
       value: 1
