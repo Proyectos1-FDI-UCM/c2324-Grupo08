@@ -103,7 +103,7 @@ MonoBehaviour:
   _bulletSpeed: 20
   _boundaries:
     serializedVersion: 2
-    m_Bits: 640
+    m_Bits: 512
 --- !u!114 &4325701660186148460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,7 +125,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1228673912973597404}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
