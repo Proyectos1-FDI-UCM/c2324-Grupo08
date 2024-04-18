@@ -206,6 +206,9 @@ MonoBehaviour:
   interactuarLayer:
     serializedVersion: 2
     m_Bits: 2048
+  _timeForFalling: 0.2
+  walkingTime: 0
+  _drunkAngle: 20
 --- !u!114 &8338194921720802218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -240,6 +243,8 @@ MonoBehaviour:
   offsetx: 1
   offsety: 1
   _cooldown: 1
+  AddsInertia: 0
+  falling: 0
 --- !u!114 &3038442859292797404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -376,9 +381,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _Attack: 2
-  PacoLayer:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!61 &7605351779883268846
 BoxCollider2D:
   m_ObjectHideFlags: 0
