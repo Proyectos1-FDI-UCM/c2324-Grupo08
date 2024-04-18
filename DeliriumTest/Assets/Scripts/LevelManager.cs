@@ -125,11 +125,4 @@ public class LevelManager : MonoBehaviour
             Instantiate(_mejoras[Random.Range(0, _mejoras.Count)], gameManager.Map[room - 1].transform.position, Quaternion.identity);
         }
     }
-    // Update is called once per frame
-    void Update()
-    {
-        //Debug.Log(m_AllEnemies.Count);
-        //Debug.Log("Active Room " + GameManager.ActiveRoom);
-    }
-
 }

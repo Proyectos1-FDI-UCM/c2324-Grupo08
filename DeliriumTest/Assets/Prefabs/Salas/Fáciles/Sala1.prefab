@@ -2541,17 +2541,13 @@ PrefabInstance:
       propertyPath: m_SortingLayer
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 473136722475441607, guid: eff18b208e4a53c4fbdfa0f3a6a7eb5a, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -468863205
-      objectReference: {fileID: 0}
     - target: {fileID: 4394224196082881596, guid: eff18b208e4a53c4fbdfa0f3a6a7eb5a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.6525922
+      value: 0.69
       objectReference: {fileID: 0}
     - target: {fileID: 4394224196082881596, guid: eff18b208e4a53c4fbdfa0f3a6a7eb5a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.34928727
+      value: -0.88
       objectReference: {fileID: 0}
     - target: {fileID: 4394224196082881596, guid: eff18b208e4a53c4fbdfa0f3a6a7eb5a, type: 3}
       propertyPath: m_LocalPosition.z

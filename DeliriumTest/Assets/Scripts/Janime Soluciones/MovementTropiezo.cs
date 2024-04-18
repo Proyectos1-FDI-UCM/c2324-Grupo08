@@ -35,7 +35,7 @@ public class MovementTropiezo : FrankMovement
             _animator.SetBool("Rascadita", true);
             _animator.SetBool("Tropiezo", true);
             _Input.enabled = false;
-            yield return new WaitForSecondsRealtime(1f);
+            yield return new WaitForSecondsRealtime(0.5f);
             _Input.enabled = true;
             _Input.falling = false;
             _animator.SetBool("Tropiezo", false);
