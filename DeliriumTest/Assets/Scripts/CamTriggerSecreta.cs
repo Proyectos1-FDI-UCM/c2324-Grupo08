@@ -59,7 +59,7 @@ public class CamTriggerSecreta : MonoBehaviour
                 
                 _transicion.enabled = false;
                 _arriba = false;
-                _myObject.transform.position = new Vector3(80, -5.1f, 0);
+                _myObject.transform.position = new Vector3(64, -5.1f, 0);
                 newPlayerPos = new Vector3(0, 2, 0);
                 newCampos = new Vector3(0, 10, 0);
             }
@@ -70,7 +70,7 @@ public class CamTriggerSecreta : MonoBehaviour
                 other.transform.position += newPlayerPos;
                 _transicion.enabled = false;
                 _arriba = true;
-                _myObject.transform.position = new Vector3(80, -4.9f, 0);
+                _myObject.transform.position = new Vector3(64, -4.9f, 0);
                 newPlayerPos = new Vector3(0, -2.9f, 0);
                 newCampos = new Vector3(0, -10, 0);
             }
