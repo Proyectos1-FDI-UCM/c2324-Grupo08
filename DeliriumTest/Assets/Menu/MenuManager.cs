@@ -13,6 +13,7 @@ public class MenuManager : MonoBehaviour
     public void Enter()
     {
         SceneManager.LoadScene("ProcPrueba");
+        AudioManager.Instance.LevelMusic();
     }
     public void Dead()
     {
@@ -21,12 +22,17 @@ public class MenuManager : MonoBehaviour
     public void Restart()
     {
         SceneManager.LoadScene("MainMenu");
+        AudioManager.Instance.MenuMusic();
     }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape)) Exit();
     }
     private void Awake()
+    {
+         menu = this;
+    }
+    private void Start()
     {
         if (SceneManager.GetSceneByBuildIndex(0).Equals(SceneManager.GetActiveScene()))
         {
@@ -36,6 +42,5 @@ public class MenuManager : MonoBehaviour
         {
             AudioManager.Instance.LevelMusic();
         }
-         menu = this;
     }
 }
