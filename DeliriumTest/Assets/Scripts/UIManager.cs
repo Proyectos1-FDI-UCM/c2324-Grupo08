@@ -21,8 +21,11 @@ public class UIManager : MonoBehaviour
     public static UIManager UiManager { get { return uiManager; } }
     private void Awake()
     {
-        if(uiManager == null) { uiManager = this; }
-        else { Destroy(this.gameObject); }
+        if (uiManager == null) 
+        { 
+            uiManager = this;
+        }
+        else { Destroy(gameObject); }
     }
     public void PonerSprite(int value)
     {

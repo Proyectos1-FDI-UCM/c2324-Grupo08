@@ -18,7 +18,7 @@ public class InputTropiezo : InputManager
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E)) 
+        if (Input.GetKeyDown(KeyCode.E) && Dialogmanager.Instance.endText) 
         {
             Dialogmanager.Instance.StopAllCoroutines();
             Movement.interact();

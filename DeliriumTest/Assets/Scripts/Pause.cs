@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class Pause : MonoBehaviour
 {
-    static bool pause;
+    bool pause;
     Image pauseMenu;
     [SerializeField]List<GameObject> pauseelements = new List<GameObject>();
     [SerializeField] float pauseTime = 2;
@@ -61,9 +61,17 @@ public class Pause : MonoBehaviour
         pauseMenu.fillAmount = Mathf.Lerp(1, 0, elapsedTime / pauseTime);
 
     }
+    IEnumerator RestartCoroutine()
+    {
+        StartCoroutine(PauseGame());
+        yield return new WaitForEndOfFrame();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+    
     public void Restart()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        StartCoroutine(RestartCoroutine());
+        
     }
     public void Quit()
     {

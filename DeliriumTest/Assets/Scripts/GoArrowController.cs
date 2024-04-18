@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class GoArrowController : MonoBehaviour
 {
-    private void Awake()
+    void Awake()
     {
-        LevelManager.RegisterArroy(gameObject);
+        LevelManager.levelManager.RegisterArroy(this);
+    }
+    public void SetActive(bool state)
+    {
+        gameObject.SetActive(state);
     }
 }

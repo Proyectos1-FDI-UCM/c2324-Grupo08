@@ -12,6 +12,7 @@ public class ShootingState : State
     public override void Enter()
     {
         _bullet = Instantiate(botella, transform.position, Quaternion.identity);
+        bulletComp = _bullet.GetComponent<BulletComponent>();
         bulletComp.RegisterVector(FrankMovement.Player.transform.position - transform.position);
     }
     public override void Do()

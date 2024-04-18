@@ -56,6 +56,24 @@ PrefabInstance:
       propertyPath: activeSign
       value: 
       objectReference: {fileID: 21300000, guid: 75e466a2877b62347902eb5a9b9e2820, type: 3}
+    - target: {fileID: 2307012710079221488, guid: e107198161b82dd44a2eee1c6e12b0bb, type: 3}
+      propertyPath: lines.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2307012710079221488, guid: e107198161b82dd44a2eee1c6e12b0bb, type: 3}
+      propertyPath: lines.Array.data[0]
+      value: "Ese est\xF3mago es tu medidor de n\xE1usea, que aumenta lentamente
+        por tu borrachera. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 2307012710079221488, guid: e107198161b82dd44a2eee1c6e12b0bb, type: 3}
+      propertyPath: lines.Array.data[1]
+      value: "\xA1Cuidado! si se llena vomitar\xE1s y no podr\xE1s moverte."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2307012710079221488, guid: e107198161b82dd44a2eee1c6e12b0bb, type: 3}
+      propertyPath: lines.Array.data[2]
+      value: "Si pulsas el espacio dasheando tambien te marearas y vomitaras m\xE1s
+        r\xE1pido"
+      objectReference: {fileID: 0}
     - target: {fileID: 2848363110249671151, guid: e107198161b82dd44a2eee1c6e12b0bb, type: 3}
       propertyPath: m_Name
       value: Cartel Variant

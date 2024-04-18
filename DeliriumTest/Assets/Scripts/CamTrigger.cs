@@ -8,24 +8,39 @@ public class CamTrigger : MonoBehaviour
     public Vector3 newCampos;
     public Vector3 newPlayerPos;
     private CameraController _camControl;
-    private GameObject _myObject;
     public static BoxCollider2D _transicion;
     public static bool _estadotrans;
     public Transform _rightBound;
+    private static GameObject instance;
+    public static GameObject Instance { get { return instance; } }
     #endregion
     #region method
-    public static void TransitionAvaible(bool trans)
+    public void TransitionAvaible(bool trans)
     {
-        _transicion.enabled = trans;
+        if (_transicion != null)
+        {
+            _transicion.enabled = trans;
+        }
+
     }
     #endregion
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = gameObject;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     void Start()
     {
         _camControl = Camera.main.GetComponent<CameraController>();
-        _myObject = gameObject;
-        _transicion = _myObject.GetComponent<BoxCollider2D>();
+        _transicion = GetComponent<BoxCollider2D>();
         _transicion.enabled = false;
-        DontDestroyOnLoad(this);
     }
     private void OnTriggerEnter2D(Collider2D other)
     {

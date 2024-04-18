@@ -19,8 +19,8 @@ public class BossController : MonoBehaviour
     #endregion
 
     #region properties
-    private Rigidbody2D rb;
-    private Collider2D trigger;
+    [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private CircleCollider2D trigger;
     #endregion
 
     #region referneces
@@ -50,16 +50,14 @@ public class BossController : MonoBehaviour
     }
     private void Start()
     {   
-        rb = GetComponent<Rigidbody2D>();
-        trigger = GetComponent<Collider2D>();       
+        rb = GetComponent<Rigidbody2D>();    
         state = shootingState;
         state.Enter();
     }
     private void Update()
     {
         bool isPlayerRight = transform.position.x < player.transform.position.x;
-        Flip(isPlayerRight);
-        
+        Flip(isPlayerRight);       
         state.Do();
     }
 }
