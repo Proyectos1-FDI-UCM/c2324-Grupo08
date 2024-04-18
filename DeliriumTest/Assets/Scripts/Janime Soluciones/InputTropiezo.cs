@@ -148,7 +148,7 @@ public class InputTropiezo : InputManager
         Movement.RegisterX(Input.GetAxisRaw("Horizontal"));
         Movement.RegisterY(Input.GetAxisRaw("Vertical"));
 
-        if ((Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.D)))
+        if ((Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.D)) && !(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.D)))
         {
             StartCoroutine(Movement.Tropiezo());
             falling = true;

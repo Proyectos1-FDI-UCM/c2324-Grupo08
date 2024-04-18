@@ -25,12 +25,12 @@ public class MovementTropiezo : FrankMovement
         float minForceTropiezo = 0;
         if (_Input.falling)
         {
-            minForceTropiezo = MaxTropiezoDist / 5;
+            minForceTropiezo = MaxTropiezoDist / 8;
         }
         walkingTime = 0;
         float tropiezo = Random.Range(minForceTropiezo, MaxTropiezoDist);
         _rigidBody.velocity = (Quaternion.Euler(0f, 0f, x) * _lastMovementVector).normalized;
-        if (tropiezo > MaxTropiezoDist/1.2)
+        if (tropiezo > MaxTropiezoDist / 1.5f)
         {
             _animator.SetBool("Rascadita", true);
             _animator.SetBool("Tropiezo", true);
