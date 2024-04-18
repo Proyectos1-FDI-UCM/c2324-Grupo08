@@ -29,7 +29,6 @@ public class CamTrigger : MonoBehaviour
         if (instance == null)
         {
             instance = gameObject;
-            DontDestroyOnLoad(gameObject);
         }
         else
         {

@@ -31,7 +31,6 @@ public class CamTriggerSecreta : MonoBehaviour
         if (instance == null)
         {
             instance = gameObject;
-            DontDestroyOnLoad(gameObject);
         }
         else
         {
