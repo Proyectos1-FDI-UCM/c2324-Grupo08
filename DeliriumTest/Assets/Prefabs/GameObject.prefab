@@ -122,7 +122,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 1
-  m_Offset: {x: 0.04021144, y: -0.43698683}
+  m_Offset: {x: 0, y: -0.43698683}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -133,7 +133,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.159577, y: 0.7133046}
+  m_Size: {x: 2.31, y: 0.76}
   m_EdgeRadius: 0
 --- !u!114 &2307012710079221488
 MonoBehaviour:
@@ -151,6 +151,8 @@ MonoBehaviour:
   - Picha loca, prueba el dash pulsando el espacio.
   - Luego dale calor a las flechas pulsandolas para partirle la cara a lo que te
     encuentres.
+  sign: {fileID: 0}
+  activeSign: {fileID: 0}
 --- !u!61 &1346284741060112584
 BoxCollider2D:
   m_ObjectHideFlags: 0
