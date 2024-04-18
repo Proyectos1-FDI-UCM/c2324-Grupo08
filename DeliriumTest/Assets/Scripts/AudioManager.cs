@@ -132,7 +132,7 @@ public class AudioManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Se reproduce la canción del Menú
+    /// Se reproduce la canción del Menú de Inicio
     /// </summary>
     public void MenuMusic()
     {
