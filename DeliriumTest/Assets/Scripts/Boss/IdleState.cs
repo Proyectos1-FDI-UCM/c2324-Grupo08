@@ -6,6 +6,11 @@ public class IdleState : State
 {
     public override void Enter()
     {
+        isComplete = false;
+    }
+    public override void Do()
+    {
         trigger.enabled = false;
+        isComplete = true;
     }
 }

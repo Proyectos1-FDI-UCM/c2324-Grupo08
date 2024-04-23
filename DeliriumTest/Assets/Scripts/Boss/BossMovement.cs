@@ -9,6 +9,7 @@ public class BossController : MonoBehaviour
     public Vector3 positionBottle;
     public float currentSpeed;
     [SerializeField] private float timer;
+    private float startTimer;
 
     #region states
     [SerializeField] private ShootingState shootingState;
@@ -20,7 +21,7 @@ public class BossController : MonoBehaviour
 
     #region properties
     [SerializeField] private Rigidbody2D rb;
-    [SerializeField] private CircleCollider2D trigger;
+    private Transform transform;
     #endregion
 
     #region referneces
@@ -28,6 +29,22 @@ public class BossController : MonoBehaviour
     [SerializeField] private FrankMovement frankDirection;
     [SerializeField] private Transform player;
     #endregion
+    private IEnumerator SuccesionState()
+    {
+        state = escapingState;
+        yield return new WaitForSeconds(1f);
+        state = shootingState;
+        yield return new WaitForSeconds(1f);
+        state = pickingUpState;
+        yield return new WaitForSeconds(1f);
+        state = idleState;
+        timer = startTimer;
+    }
+    private void SelectState()
+    {
+        StartCoroutine(SuccesionState());
+        state.Enter();
+    }
     //Esto hace que el enemigo mire en la dirección en la que está el jugador
     private void Flip(bool isPlayerRight)
     {
@@ -43,21 +60,22 @@ public class BossController : MonoBehaviour
 
     private void Awake()
     {
-        shootingState.SetUP(rb, trigger, bulletComp, frankDirection, this);
-        pickingUpState.SetUP(rb, trigger, bulletComp, frankDirection, this);
-        idleState.SetUP(rb, trigger, bulletComp, frankDirection, this);
-        escapingState.SetUP(rb, trigger, bulletComp, frankDirection, this);
+        shootingState.SetUP(rb, bulletComp, frankDirection, this,transform);
+        pickingUpState.SetUP(rb, bulletComp, frankDirection, this,transform);
+        idleState.SetUP(rb, bulletComp, frankDirection, this,transform);
+        escapingState.SetUP(rb, bulletComp, frankDirection, this, transform);
     }
     private void Start()
     {   
-        rb = GetComponent<Rigidbody2D>();    
-        state = shootingState;
-        state.Enter();
+        rb = GetComponent<Rigidbody2D>();
+        transform = GetComponent<Transform>();
+        state = escapingState;
+        startTimer = timer;
     }
     private void Update()
     {
         bool isPlayerRight = transform.position.x < player.transform.position.x;
-        Flip(isPlayerRight);       
+        Flip(isPlayerRight);
         state.Do();
     }
 }

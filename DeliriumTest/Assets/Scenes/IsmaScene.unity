@@ -2085,13 +2085,12 @@ MonoBehaviour:
   directionMovement: {x: 0, y: 0, z: 0}
   positionBottle: {x: 0, y: 0, z: 0}
   currentSpeed: 0
-  timer: 0
+  timer: 10
   shootingState: {fileID: 1587592192}
   pickingUpState: {fileID: 227008465}
   idleState: {fileID: 367672407}
   escapingState: {fileID: 2041767700}
   rb: {fileID: 1304592885}
-  trigger: {fileID: 1304592886}
   bulletComp: {fileID: 5525471383715175981, guid: b44ab7480b0b42a4ebdc8e1ab027b8c1, type: 3}
   frankDirection: {fileID: 1871717610}
   player: {fileID: 1871717619}
@@ -2754,8 +2753,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 393672777b76b3344841b80954946fc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  escapingValue: 3
-  umbral: 3
+  escapingValue: 10
+  umbral: 10
 --- !u!4 &2041767701
 Transform:
   m_ObjectHideFlags: 0

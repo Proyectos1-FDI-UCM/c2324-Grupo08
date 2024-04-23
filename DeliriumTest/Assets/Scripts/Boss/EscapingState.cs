@@ -5,7 +5,6 @@ public class EscapingState : State
 {
     [SerializeField] private float escapingValue;
     [SerializeField] private float umbral;
-    private Transform _myTransform;
     /*void OnTriggerStay2D(Collider2D collision)
     {
         Debug.Log("Boss detection");
@@ -30,6 +29,7 @@ public class EscapingState : State
     {
         bossMovement.currentSpeed = 0;
         _myTransform = transform;
+        isComplete = false;
     }
     public override void Do()
     {

@@ -15,19 +15,20 @@ public abstract class State : MonoBehaviour
     protected FrankMovement frankDirection;
 
     protected BossController bossMovement;
+    
+    protected Transform _myTransform;
 
     public virtual void Enter() { }
     public virtual void Do() { }
     public virtual void FixedEnter() { }
     public virtual void Exit() { }
 
-    public void SetUP(Rigidbody2D _rb, CircleCollider2D _trigger, BulletComponent _bulletComp, FrankMovement _frankDirection,
-        BossController _bossMovement)
+    public void SetUP(Rigidbody2D _rb, BulletComponent _bulletComp, FrankMovement _frankDirection, BossController _bossMovement, Transform myTransform)
     {
         rb = _rb;
-        trigger = _trigger;
         frankDirection = _frankDirection;
         bossMovement = _bossMovement;
+        _myTransform = myTransform;
     }
 
 }
