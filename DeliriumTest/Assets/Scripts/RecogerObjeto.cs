@@ -66,12 +66,14 @@ public class RecogerObjeto : MonoBehaviour
             _vomitCuantity._vomitcuantity = cambioVomito;
             Destroy(pickedObj);
             _uiManager.PonerMejora(ObjID);
+            _uiManager.PonerIndMejora(ObjID);
         }
         else if (ObjID == 4)
         {
             FrankMovement.Player.GetComponent<FrankMovement>().DashUpgrade();
             Destroy(pickedObj);
             _uiManager.PonerMejora(ObjID);
+            _uiManager.PonerIndMejora(ObjID);
         }
         else if(ObjID == 5)
         {
@@ -79,6 +81,7 @@ public class RecogerObjeto : MonoBehaviour
             _playerAttack.Chapas();
             Destroy(pickedObj);
             _uiManager.PonerMejora(ObjID);
+            _uiManager.PonerIndMejora(ObjID);
         }
 
     }
