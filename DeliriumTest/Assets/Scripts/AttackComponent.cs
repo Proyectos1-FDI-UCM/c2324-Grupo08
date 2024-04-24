@@ -9,6 +9,11 @@ public class Damage : MonoBehaviour
     private int _Attack = 1;
     public int Attack { get { return _Attack; } set { _Attack = value; } }
     #endregion
+    /// <summary>
+    /// Al colisionar, si el objeto afectado tiene vida, le resta la cantidad Attack. 
+    /// Si el objeto es una rata que ataca a Paco, inicia un cooldown de ataque
+    /// </summary>
+    /// <param name="collision"></param>
     private void OnCollisionEnter2D(Collision2D collision)
     {
         HealthComponent target = collision.gameObject.GetComponent<HealthComponent>();
