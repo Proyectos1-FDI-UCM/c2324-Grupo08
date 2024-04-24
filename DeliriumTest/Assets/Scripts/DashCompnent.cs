@@ -24,14 +24,25 @@ public class DashCompnent : MonoBehaviour
     private Vector3 _dashPosition;
     private Vector3 _cameraPosition;
     #endregion
+    /// <summary>
+    /// Al llamar a este método por adquirir la mejora, se cambia el cooldown a uno más bajo. 
+    /// dashMejorado se pone a true para mostrar el icono en la UI
+    /// </summary>
     public void DashUpgrade()
     {
         _DashCooldown = _NewDashCooldown;
         dashMejorado = true;
     }
+    /// <summary>
+    /// Calcula la posicón del dash tomando en cuenta la última o actual dirección. 
+    /// Si no se sale de los bordes de la cámara, cambia la posición del jugador a la nueva. 
+    /// Ejecuta la corrutina de stun, y aumenta el medidor del vómito. 
+    /// Vuelve a iniciar el contador del cooldown y desactiva el indicador de dash.
+    /// </summary>
+    /// <param name="_directionVector"></param>
+    /// <param name="_lastMovementVector"></param>
     public void Dash(Vector3 _directionVector, Vector3 _lastMovementVector)
     {
-        
         if (_elapsedTime >= _DashCooldown)
         {
             if (_directionVector != Vector3.zero)
@@ -52,6 +63,9 @@ public class DashCompnent : MonoBehaviour
             }
         }
     }
+    /// <summary>
+    /// Ejecuta el audio y animación de Dash, y desactiva el movimiento del jugador con un stun
+    /// </summary>
     IEnumerator DashCoolDown()
     {
         // Se reproduce el efecto de sonido
@@ -65,10 +79,16 @@ public class DashCompnent : MonoBehaviour
         _frankInput.enabled = true;
         _frankMovement.enabled = true;
     }
+    /// <summary>
+    /// Cuando se desactive el componente, se desactiva el icono
+    /// </summary>
     private void OnDisable()
     {
         if (_dashIndicator != null) _dashIndicator.SetActive(false);
     }
+    /// <summary>
+    /// Cuando se activa el componente, se activa el icono
+    /// </summary>
     private void OnEnable()
     {
         if (_dashIndicator != null) _dashIndicator.SetActive(true);
@@ -85,6 +105,10 @@ public class DashCompnent : MonoBehaviour
     }
 
     // Update is called once per frame
+    /// <summary>
+    /// Actualiza _cameraPosition con la posición de la cámara, aumenta el contador de cooldown
+    /// Si el contador supera el cooldown activa el indicador.
+    /// </summary>
     void Update()
     {
         _cameraPosition = Camera.main.transform.position;
