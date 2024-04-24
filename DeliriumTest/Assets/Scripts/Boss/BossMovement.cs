@@ -17,11 +17,16 @@ public class BossController : MonoBehaviour
     [SerializeField] private IdleState idleState;
     [SerializeField] private EscapingState escapingState;
     State state;
+    State firstState;
     #endregion
 
     #region properties
     [SerializeField] private Rigidbody2D rb;
     private Transform transform;
+    [SerializeField] private float escapingLenght = 10;
+    [SerializeField] private float shootingLenght = 1;
+    [SerializeField] private float pickingLenght = 1;
+    [SerializeField] private float idleLenght = 1;
     #endregion
 
     #region referneces
@@ -31,19 +36,24 @@ public class BossController : MonoBehaviour
     #endregion
     private IEnumerator SuccesionState()
     {
+        Debug.Log("Ciclo");
         state = escapingState;
-        yield return new WaitForSeconds(1f);
-        state = shootingState;
-        yield return new WaitForSeconds(1f);
-        state = pickingUpState;
-        yield return new WaitForSeconds(1f);
-        state = idleState;
-        timer = startTimer;
-    }
-    private void SelectState()
-    {
-        StartCoroutine(SuccesionState());
         state.Enter();
+        yield return new WaitForSeconds(escapingLenght);
+        state = shootingState;
+        state.Enter();
+        yield return new WaitForSeconds(shootingLenght);
+        state = pickingUpState;
+        yield return new WaitForSeconds(pickingLenght);
+        state.Enter();
+        state = idleState;
+        yield return new WaitForSeconds(idleLenght);
+        state.Enter();
+        state = firstState;
+        yield return new WaitForSeconds(escapingLenght);
+        state.Enter();
+        StartCoroutine(SuccesionState());
+        
     }
     //Esto hace que el enemigo mire en la dirección en la que está el jugador
     private void Flip(bool isPlayerRight)
@@ -60,6 +70,8 @@ public class BossController : MonoBehaviour
 
     private void Awake()
     {
+
+        transform = GetComponent<Transform>(); 
         shootingState.SetUP(rb, bulletComp, frankDirection, this,transform);
         pickingUpState.SetUP(rb, bulletComp, frankDirection, this,transform);
         idleState.SetUP(rb, bulletComp, frankDirection, this,transform);
@@ -68,9 +80,10 @@ public class BossController : MonoBehaviour
     private void Start()
     {   
         rb = GetComponent<Rigidbody2D>();
-        transform = GetComponent<Transform>();
         state = escapingState;
+        firstState = state;
         startTimer = timer;
+        StartCoroutine(SuccesionState());
     }
     private void Update()
     {

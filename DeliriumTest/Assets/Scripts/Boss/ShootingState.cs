@@ -14,16 +14,15 @@ public class ShootingState : State
         _bullet = Instantiate(botella, transform.position, Quaternion.identity);
         bulletComp = _bullet.GetComponent<BulletComponent>();
         bulletComp.RegisterVector(FrankMovement.Player.transform.position - transform.position);
-        isComplete = false;
     }
     public override void Do()
     {
         Vector3 vectorDist = _bullet.transform.position - transform.position;
         if (vectorDist.magnitude >= distance)
         {
-            Instantiate(pickUp, _bullet.transform.position, Quaternion.identity);
+            GameObject bulletInstance = Instantiate(pickUp, _bullet.transform.position, Quaternion.identity);
             bossMovement.positionBottle = _bullet.transform.position;
-            Destroy(_bullet);
+            Destroy(bulletInstance);
             isComplete = true;
         }
     }

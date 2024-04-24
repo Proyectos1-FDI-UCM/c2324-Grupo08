@@ -2753,8 +2753,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 393672777b76b3344841b80954946fc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  escapingValue: 10
-  umbral: 10
+  escapingValue: 5
+  umbral: 5
 --- !u!4 &2041767701
 Transform:
   m_ObjectHideFlags: 0

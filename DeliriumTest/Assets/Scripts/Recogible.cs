@@ -19,10 +19,11 @@ public class Recogible : MonoBehaviour
         {
             recogida.Recogida(_objectID, this.gameObject);
         }
-        else if (collision.GetComponent<BossController>() != null && _objectID == 6)
+        /* else if (collision.GetComponent<BossController>() != null && _objectID == 6)
         {
-            Destroy(this.gameObject);
+            //Destroy(this.gameObject);
             //Pasar a siguiente estado?
         }
+        */
     }
 }

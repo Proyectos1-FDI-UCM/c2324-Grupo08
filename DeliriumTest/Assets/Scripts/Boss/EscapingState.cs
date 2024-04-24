@@ -21,15 +21,18 @@ public class EscapingState : State
         FrankMovement player = collision.GetComponent<FrankMovement>();
         if (player != null)
         {
-            bossMovement.currentSpeed = 0;
+            bossMovement.currentSpe
+    
+    
+    
+    ed = 0;
             Debug.Log("Ha salido");
         }
     }*/
     public override void Enter()
     {
         bossMovement.currentSpeed = 0;
-        _myTransform = transform;
-        isComplete = false;
+        _myTransform = GetComponentInParent<Transform>();
     }
     public override void Do()
     {

@@ -5,10 +5,6 @@ using UnityEngine;
 public class PickingUpState : State
 {//Estado en el que recoge la botella ya lanzada
     [SerializeField] private float speedValue;
-    public override void Enter()
-    {
-        isComplete = false;
-    }
     public override void Do()
     {
         bossMovement.directionMovement = (bossMovement.positionBottle - transform.position).normalized;
