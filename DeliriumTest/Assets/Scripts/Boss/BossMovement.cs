@@ -22,7 +22,8 @@ public class BossController : MonoBehaviour
 
     #region properties
     [SerializeField] private Rigidbody2D rb;
-    private Transform transform;
+    private Transform bossTransform;
+    private BoxCollider2D boxCollider;
     [SerializeField] private float escapingLenght = 10;
     [SerializeField] private float shootingLenght = 1;
     [SerializeField] private float pickingLenght = 1;
@@ -32,7 +33,7 @@ public class BossController : MonoBehaviour
     #region referneces
     [SerializeField] private BulletComponent bulletComp; //Compnente de bala (movimiento) de la botella
     [SerializeField] private FrankMovement frankDirection;
-    [SerializeField] private Transform player;
+    [SerializeField] private Transform player;  
     #endregion
     private IEnumerator SuccesionState()
     {
@@ -42,10 +43,13 @@ public class BossController : MonoBehaviour
         yield return new WaitForSeconds(escapingLenght);
         state = shootingState;
         state.Enter();
-        yield return new WaitForSeconds(shootingLenght);
-        state = pickingUpState;
-        yield return new WaitForSeconds(pickingLenght);
-        state.Enter();
+        if(shootingState._bullet != null)
+        {
+            yield return new WaitForSeconds(shootingLenght);
+            state = pickingUpState;
+            state.Enter();
+            yield return new WaitForSeconds(pickingLenght);      
+        }        
         state = idleState;
         yield return new WaitForSeconds(idleLenght);
         state.Enter();
@@ -71,11 +75,11 @@ public class BossController : MonoBehaviour
     private void Awake()
     {
 
-        transform = GetComponent<Transform>(); 
-        shootingState.SetUP(rb, bulletComp, frankDirection, this,transform);
-        pickingUpState.SetUP(rb, bulletComp, frankDirection, this,transform);
-        idleState.SetUP(rb, bulletComp, frankDirection, this,transform);
-        escapingState.SetUP(rb, bulletComp, frankDirection, this, transform);
+        bossTransform = GetComponent<Transform>(); 
+        shootingState.SetUP(rb, bulletComp, frankDirection,boxCollider, this,transform);
+        pickingUpState.SetUP(rb, bulletComp, frankDirection,boxCollider, this,transform);
+        idleState.SetUP(rb, bulletComp, frankDirection, boxCollider, this,transform);
+        escapingState.SetUP(rb, bulletComp, frankDirection,boxCollider, this, transform);
     }
     private void Start()
     {   

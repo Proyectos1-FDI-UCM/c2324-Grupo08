@@ -8,7 +8,7 @@ public abstract class State : MonoBehaviour
 
     protected Rigidbody2D rb;
 
-    protected CircleCollider2D trigger;
+    protected BoxCollider2D boxCollider;
 
     protected BulletComponent bulletComp; //Componente de bala (movimiento) de la botella
 
@@ -23,12 +23,14 @@ public abstract class State : MonoBehaviour
     public virtual void FixedEnter() { }
     public virtual void Exit() { }
 
-    public void SetUP(Rigidbody2D _rb, BulletComponent _bulletComp, FrankMovement _frankDirection, BossController _bossMovement, Transform myTransform)
+    public void SetUP(Rigidbody2D _rb, BulletComponent _bulletComp, FrankMovement _frankDirection, BoxCollider2D _boxCollider,
+        BossController _bossMovement, Transform myTransform)
     {
         rb = _rb;
         frankDirection = _frankDirection;
         bossMovement = _bossMovement;
         _myTransform = myTransform;
+        boxCollider = _boxCollider;
     }
 
 }

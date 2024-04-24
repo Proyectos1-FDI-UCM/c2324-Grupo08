@@ -5,6 +5,8 @@ public class EscapingState : State
 {
     [SerializeField] private float escapingValue;
     [SerializeField] private float umbral;
+    [SerializeField] private LayerMask layerPared;
+    [SerializeField] private LayerMask layerBounds;
     /*void OnTriggerStay2D(Collider2D collision)
     {
         Debug.Log("Boss detection");
@@ -40,6 +42,12 @@ public class EscapingState : State
         if (distance.magnitude < umbral)
         {
             rb.velocity = distance * escapingValue;
+        }
+        if (Physics2D.OverlapBox(transform.position,1.1f * boxCollider.size, layerBounds) != null ||
+            Physics2D.OverlapBox(transform.position,1.1f * boxCollider.size, layerPared) != null)
+        {
+            rb.velocity = Vector3.zero;
+
         }
         else rb.velocity = Vector3.zero;
         isComplete = true;

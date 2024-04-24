@@ -22,8 +22,8 @@ public class ShootingState : State
         {
             GameObject bulletInstance = Instantiate(pickUp, _bullet.transform.position, Quaternion.identity);
             bossMovement.positionBottle = _bullet.transform.position;
-            Destroy(bulletInstance);
             isComplete = true;
         }
     }
+
 }
