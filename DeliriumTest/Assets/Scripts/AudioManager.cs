@@ -20,6 +20,7 @@ public class AudioManager : MonoBehaviour
     /// </summary>
     [SerializeField] private AudioClip _punch;
     [SerializeField] private AudioClip[] _dash;
+    [SerializeField] private AudioClip _vomit;
 
 
     /// <summary>
@@ -132,6 +133,14 @@ public class AudioManager : MonoBehaviour
     }
 
     /// <summary>
+    /// Se reproduce el efecto de sonido del vómito
+    /// </summary>
+    public void VomitSound()
+    {
+        PlayerSFX.clip = _vomit;
+        PlayerSFX.Play();
+    }
+    /// <summary>
     /// Se reproduce la canción del Menú de Inicio
     /// </summary>
     public void MenuMusic()
@@ -148,4 +157,6 @@ public class AudioManager : MonoBehaviour
         Music.clip = _gameMusic;
         Music.Play();
     }
+
+
 }

@@ -75,6 +75,7 @@ public class VomitComponent : MonoBehaviour
     }
     IEnumerator AnimVomit()
     {
+        AudioManager.Instance.VomitSound();
         _animator.SetBool("Rascadita", false);
         _animator.SetBool("Tropiezo", false) ;
         _animator.SetBool("Vomito", true);

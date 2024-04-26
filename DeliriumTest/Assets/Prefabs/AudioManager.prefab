@@ -452,6 +452,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 89359779821f96949b21c30166da9ba6, type: 3}
   - {fileID: 8300000, guid: 0b530ef6e477f2c4fbdd085aeb10c1f3, type: 3}
   - {fileID: 8300000, guid: 7f13c6c9525660a45837e798f7de7a31, type: 3}
+  _vomit: {fileID: 0}
   _patataPickup: {fileID: 8300000, guid: c8eb52cfb8e4b494488b49a8452b546b, type: 3}
   _botellaPickup: {fileID: 8300000, guid: cea67bf7680e07041809a3d17290cc91, type: 3}
   _ratSounds:
@@ -513,7 +514,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
