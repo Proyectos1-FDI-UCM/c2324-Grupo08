@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     public static List<int> _availableHardRooms;
     [SerializeField] private GameObject Tutorial;
     [SerializeField] private GameObject BossFight;
+    [SerializeField] private GameObject Intermedia;
 
     int _currentRoom;
 
@@ -71,6 +72,13 @@ public class GameManager : MonoBehaviour
             BuilderTransform.position = RoomPosition;
 
         }
+
+        RoomOffsetVector = new Vector3(RoomOffset, 0, 0);
+
+        Room = Instantiate(Intermedia, new Vector3(63, 2, 0), Quaternion.identity);
+        RoomPosition = RoomPosition + RoomOffsetVector;
+        BuilderTransform.position = RoomPosition;
+
         for (int i = 0; i < HardRooms.Length; i++)
         {
             randomRoom = Random.Range(0, _availableHardRooms.Count);
