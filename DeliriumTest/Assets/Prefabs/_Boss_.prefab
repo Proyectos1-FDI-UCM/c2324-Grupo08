@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedValue: 5
+  shootingState: {fileID: 0}
 --- !u!1 &1844480796917089171
 GameObject:
   m_ObjectHideFlags: 0
@@ -170,6 +171,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   escapingValue: 5
   umbral: 5
+  layerPared:
+    serializedVersion: 2
+    m_Bits: 0
+  layerBoundries:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &6781071643022767815
 GameObject:
   m_ObjectHideFlags: 0
@@ -185,8 +192,8 @@ GameObject:
   - component: {fileID: 9032803776507561107}
   - component: {fileID: 7708791464630962805}
   - component: {fileID: 5969435086702852302}
-  - component: {fileID: 7310440805883258049}
   - component: {fileID: 7110222944340324191}
+  - component: {fileID: 3832657489138389693}
   m_Layer: 12
   m_Name: _Boss_
   m_TagString: Untagged
@@ -251,8 +258,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: dc62b0fe91737e44bbe30cca59a6802b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: -1687746836, guid: 98c86fafdad065a448efd649407653c5, type: 3}
+  m_Color: {r: 0.04062834, g: 0.048890974, b: 0.103773594, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -361,41 +368,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!58 &7310440805883258049
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6781071643022767815}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 8
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 2.05
 --- !u!61 &7110222944340324191
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -432,7 +404,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.4, y: 2.5}
+    oldSize: {x: 1.125, y: 1.5}
     newSize: {x: 1, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -441,6 +413,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.85, y: 0.73}
   m_EdgeRadius: 0
+--- !u!95 &3832657489138389693
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6781071643022767815}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bb70a44cefb53764fb275138333fb4b3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8084453400882555657
 GameObject:
   m_ObjectHideFlags: 0
@@ -485,7 +478,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 593b554072acc284c98b9e935a5606f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distance: 5
   botella: {fileID: 3033464737570340217, guid: b44ab7480b0b42a4ebdc8e1ab027b8c1, type: 3}
   pickUp: {fileID: 9070939954684309588, guid: 78f96c9c7b7baaa4e9a3e906402296cb, type: 3}
   _bullet: {fileID: 9070939954684309588, guid: 78f96c9c7b7baaa4e9a3e906402296cb, type: 3}
+  _bulletHit: 0

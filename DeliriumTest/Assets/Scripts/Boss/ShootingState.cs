@@ -11,6 +11,10 @@ public class ShootingState : State
     public bool _bulletHit;
     public override void Enter()
     {
+        _animation.SetBool("AttackState", true);
+        _animation.SetBool("EscapingState", false);
+        _animation.SetBool("IdleState", false);
+        _animation.SetBool("DashState", false);     
         _bulletHit = false;
         isComplete = false;
         _bullet = Instantiate(botella, transform.position, Quaternion.identity);

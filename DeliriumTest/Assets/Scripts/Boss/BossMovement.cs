@@ -9,7 +9,6 @@ public class BossController : MonoBehaviour, EnemiesControler
     public Vector3 positionBottle;
     public float currentSpeed;
     [SerializeField] private float timer;
-    private float startTimer;
 
     #region states
     [SerializeField] private ShootingState shootingState;
@@ -17,7 +16,6 @@ public class BossController : MonoBehaviour, EnemiesControler
     [SerializeField] private IdleState idleState;
     [SerializeField] private EscapingState escapingState;
     State state;
-    State firstState;
     #endregion
 
     #region properties
@@ -33,11 +31,11 @@ public class BossController : MonoBehaviour, EnemiesControler
     #region referneces
     [SerializeField] private BulletComponent bulletComp; //Compnente de bala (movimiento) de la botella
     [SerializeField] private FrankMovement frankDirection;
-    [SerializeField] private Transform player;  
+    [SerializeField] private Transform player;
+    private Animator animator;
     #endregion
     private IEnumerator SuccesionState()
     {
-        Debug.Log("Ciclo");
         state = escapingState;
         state.Enter();
         yield return new WaitForSeconds(escapingLenght);
@@ -53,23 +51,9 @@ public class BossController : MonoBehaviour, EnemiesControler
         state = idleState;
         yield return new WaitForSeconds(idleLenght);
         state.Enter();
-        state = firstState;
-        yield return new WaitForSeconds(escapingLenght);
-        state.Enter();
+        yield return new WaitForSeconds(1f);
         StartCoroutine(SuccesionState());
         
-    }
-    //Esto hace que el enemigo mire en la dirección en la que está el jugador
-    private void Flip(bool isPlayerRight)
-    {
-        //Comprueba el lado al que mira y si el jugador se mueve a la izda. se gira a esa dirección
-        if (isFacingRIght && !isPlayerRight || !isFacingRIght && isPlayerRight)
-        {
-            isFacingRIght = !isFacingRIght;
-            Vector3 scale = transform.localScale;
-            scale.x *= -1;
-            transform.localScale = scale;
-        }
     }
     public IEnumerator StopAttack()
     {
@@ -82,22 +66,21 @@ public class BossController : MonoBehaviour, EnemiesControler
         bossTransform = GetComponent<Transform>();
         boxCollider = GetComponent<BoxCollider2D>();
         rb = GetComponent<Rigidbody2D>();
-        shootingState.SetUP(rb, bulletComp, frankDirection,boxCollider, this,transform);
-        pickingUpState.SetUP(rb, bulletComp, frankDirection,boxCollider, this,transform);
-        idleState.SetUP(rb, bulletComp, frankDirection, boxCollider, this,transform);
-        escapingState.SetUP(rb, bulletComp, frankDirection,boxCollider, this, transform);
+        animator = GetComponent<Animator>();
+        shootingState.SetUP(rb, bulletComp, frankDirection,boxCollider, this,transform,animator);
+        pickingUpState.SetUP(rb, bulletComp, frankDirection,boxCollider, this,transform, animator);
+        idleState.SetUP(rb, bulletComp, frankDirection, boxCollider, this,transform, animator);
+        escapingState.SetUP(rb, bulletComp, frankDirection,boxCollider, this, transform, animator);
     }
     private void Start()
     {   
         state = escapingState;
-        firstState = state;
-        startTimer = timer;
         StartCoroutine(SuccesionState());
+        animator.SetBool("EscapingState", true);
     }
     private void Update()
     {
         bool isPlayerRight = transform.position.x < player.transform.position.x;
-        //Flip(isPlayerRight);
         state.Do();
     }
 }
