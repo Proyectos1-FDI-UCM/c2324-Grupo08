@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossController : MonoBehaviour
+public class BossController : MonoBehaviour, EnemiesControler
 {
     private bool isFacingRIght = true;
     public Vector3 directionMovement;
@@ -71,11 +71,17 @@ public class BossController : MonoBehaviour
             transform.localScale = scale;
         }
     }
+    public IEnumerator StopAttack()
+    {
+        yield return null;
+    }
 
     private void Awake()
     {
 
-        bossTransform = GetComponent<Transform>(); 
+        bossTransform = GetComponent<Transform>();
+        boxCollider = GetComponent<BoxCollider2D>();
+        rb = GetComponent<Rigidbody2D>();
         shootingState.SetUP(rb, bulletComp, frankDirection,boxCollider, this,transform);
         pickingUpState.SetUP(rb, bulletComp, frankDirection,boxCollider, this,transform);
         idleState.SetUP(rb, bulletComp, frankDirection, boxCollider, this,transform);
@@ -83,7 +89,6 @@ public class BossController : MonoBehaviour
     }
     private void Start()
     {   
-        rb = GetComponent<Rigidbody2D>();
         state = escapingState;
         firstState = state;
         startTimer = timer;
@@ -92,7 +97,7 @@ public class BossController : MonoBehaviour
     private void Update()
     {
         bool isPlayerRight = transform.position.x < player.transform.position.x;
-        Flip(isPlayerRight);
+        //Flip(isPlayerRight);
         state.Do();
     }
 }

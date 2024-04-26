@@ -57,10 +57,13 @@ public class GameManager : MonoBehaviour
 
         RoomOffsetVector = new Vector3(RoomOffset, 0, 0);
 
+        //Tutorial
         Room = Instantiate(Tutorial, new Vector3(-1,2,0), Quaternion.identity);
         RoomPosition = RoomPosition + RoomOffsetVector;
         BuilderTransform.position = RoomPosition;
+        Map.Add(Room);
 
+        //Faciles
         for (int i = 0; i < EasyRooms.Length; i++)
         {
             randomRoom = Random.Range(0, _availableEasyRooms.Count);
@@ -72,6 +75,7 @@ public class GameManager : MonoBehaviour
             BuilderTransform.position = RoomPosition;
 
         }
+<<<<<<< Updated upstream
 
         RoomOffsetVector = new Vector3(RoomOffset, 0, 0);
 
@@ -79,6 +83,9 @@ public class GameManager : MonoBehaviour
         RoomPosition = RoomPosition + RoomOffsetVector;
         BuilderTransform.position = RoomPosition;
 
+=======
+        //Dificiles
+>>>>>>> Stashed changes
         for (int i = 0; i < HardRooms.Length; i++)
         {
             randomRoom = Random.Range(0, _availableHardRooms.Count);
@@ -89,6 +96,7 @@ public class GameManager : MonoBehaviour
             RoomPosition = RoomPosition + RoomOffsetVector;
             BuilderTransform.position = RoomPosition;
         }
+        //Boss
         Room = Instantiate(BossFight, BuilderTransform.position, Quaternion.identity);
         Map.Add(Room);
     }

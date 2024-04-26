@@ -5,25 +5,21 @@ using UnityEngine;
 
 public class ShootingState : State
 {//Estado en el que lanza la botella cierta distancia hacia el jugador
-    [SerializeField] private float distance;
     public GameObject botella;//prefab de la botella que lanza
     public GameObject pickUp; //prefab del pickup de la botella
     public GameObject _bullet; //Referencia a la botella lanzada
+    public bool _bulletHit;
     public override void Enter()
     {
+        _bulletHit = false;
+        isComplete = false;
         _bullet = Instantiate(botella, transform.position, Quaternion.identity);
+        _bullet.GetComponent<BossBullet>().shootingState = this;
         bulletComp = _bullet.GetComponent<BulletComponent>();
         bulletComp.RegisterVector(FrankMovement.Player.transform.position - transform.position);
     }
     public override void Do()
     {
-        Vector3 vectorDist = _bullet.transform.position - transform.position;
-        if (vectorDist.magnitude >= distance)
-        {
-            GameObject bulletInstance = Instantiate(pickUp, _bullet.transform.position, Quaternion.identity);
-            bossMovement.positionBottle = _bullet.transform.position;
-            isComplete = true;
-        }
+        isComplete = true;
     }
-
 }
