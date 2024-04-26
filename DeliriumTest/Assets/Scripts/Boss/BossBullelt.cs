@@ -9,7 +9,7 @@ public class BossBullet : MonoBehaviour
     [SerializeField] private LayerMask layerPared;
     [SerializeField] private LayerMask layerBounds;
     [SerializeField] private GameObject botella;
-    private ShootingState shootingState; 
+    public ShootingState shootingState; 
     // Start is called before the first frame update
     void Start()
     {
@@ -24,8 +24,22 @@ public class BossBullet : MonoBehaviour
             Physics2D.OverlapCircle(transform.position, circleCollider.radius * 1.1f, layerPared) != null) 
         {
             rb.velocity = Vector3.zero;
-            shootingState._bullet = Instantiate(botella, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
+    }
+    private void OnDestroy()
+    {
+        GameObject Bullet = Instantiate(botella, transform.position, Quaternion.identity);
+        if(Bullet == null)
+        {
+            Debug.Log("No hay instance");
+        }
+        else
+        {
+            shootingState._bulletHit = true;
+            shootingState._bullet = Bullet;
+            
+        }
+        
     }
 }

@@ -1,14 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PickingUpState : State
 {//Estado en el que recoge la botella ya lanzada
     [SerializeField] private float speedValue;
+    [SerializeField] ShootingState shootingState;
     public override void Do()
     {
-        bossMovement.directionMovement = (bossMovement.positionBottle - transform.position).normalized;
-        rb.velocity = bossMovement.directionMovement * speedValue;
+
+        if (shootingState._bulletHit)
+        {
+            _myTransform.position = shootingState._bullet.transform.position;
+        }
+        else
+        {
+            rb.velocity = Vector2.zero;
+        }
+
         isComplete = true;
     }
 }
