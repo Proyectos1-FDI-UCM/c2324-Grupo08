@@ -75,7 +75,6 @@ public class GameManager : MonoBehaviour
             BuilderTransform.position = RoomPosition;
 
         }
-<<<<<<< Updated upstream
 
         RoomOffsetVector = new Vector3(RoomOffset, 0, 0);
 
@@ -83,9 +82,7 @@ public class GameManager : MonoBehaviour
         RoomPosition = RoomPosition + RoomOffsetVector;
         BuilderTransform.position = RoomPosition;
 
-=======
         //Dificiles
->>>>>>> Stashed changes
         for (int i = 0; i < HardRooms.Length; i++)
         {
             randomRoom = Random.Range(0, _availableHardRooms.Count);
