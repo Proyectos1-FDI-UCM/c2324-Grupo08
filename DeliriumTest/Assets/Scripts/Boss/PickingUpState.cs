@@ -9,8 +9,7 @@ public class PickingUpState : State
 
         if (shootingState._bulletHit)
         {
-            bossMovement.directionMovement = (shootingState._bullet.transform.position - transform.position).normalized;
-            rb.velocity = bossMovement.directionMovement * speedValue;
+            _myTransform.position = shootingState._bullet.transform.position;
         }
         else
         {
