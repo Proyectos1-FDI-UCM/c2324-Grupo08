@@ -65,8 +65,6 @@ public class BossController : MonoBehaviour, EnemiesControler
 
     private void Awake()
     {
-
-        bossTransform = GetComponent<Transform>();
         boxCollider = GetComponent<BoxCollider2D>();
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
