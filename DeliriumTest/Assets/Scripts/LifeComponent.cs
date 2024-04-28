@@ -7,13 +7,14 @@ public class LifeComponent : MonoBehaviour
 {
     #region references
     public Sprite fullHeart, halfHeart, noHeart;
-    #endregion
     Image heartImage;
+    #endregion
 
     private void Awake()
     {
         heartImage = GetComponent<Image>();
     }
+    //En función de la vida en ese momento, la vida del jugadro cambia entre estos tipos de vida : lleno, medio y vacio
     public void SetHeartImage(HeartStatus status)
     {
         switch (status)

@@ -9,12 +9,13 @@ public class ShootingState : State
     public GameObject pickUp; //prefab del pickup de la botella
     public GameObject _bullet; //Referencia a la botella lanzada
     public bool _bulletHit;
+    //Se instancia un abotellla que va en dirección al jugador
     public override void Enter()
     {
         _animation.SetBool("AttackState", true);
         _animation.SetBool("EscapingState", false);
         _animation.SetBool("IdleState", false);
-        _animation.SetBool("DashState", false);     
+        _animation.SetBool("DashState", false);
         _bulletHit = false;
         isComplete = false;
         _bullet = Instantiate(botella, transform.position, Quaternion.identity);

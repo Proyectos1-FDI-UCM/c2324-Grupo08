@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Recogible : MonoBehaviour
 {
+    // En función del objeto que ha recgido el jugador y el ID que tiene se destruirá/"desaparecerá" el que ha recogido y hará la lógica correspondiente
+    
     [SerializeField] private int _objectID;
     /* 
      * 1 = Bolsa de Patatas
@@ -19,7 +21,7 @@ public class Recogible : MonoBehaviour
         {
             recogida.Recogida(_objectID, this.gameObject);
         }
-        else if (collision.GetComponent<BossController>() != null && _objectID == 6)
+        else if (collision.GetComponent<BossController>() != null && _objectID == 6) // Lógica delboss para hacer desaparecer el arma recogible del boss
         {
             Destroy(this.gameObject);
             collision.GetComponentInChildren<ShootingState>()._bulletHit = false; 

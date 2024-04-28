@@ -389,7 +389,7 @@ PrefabInstance:
     - target: {fileID: 5437001834342468782, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
       propertyPath: lifebar
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1548192340}
     - target: {fileID: 5726116090277671307, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.1
@@ -1560,6 +1560,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: '"Boss"'
       objectReference: {fileID: 0}
+    - target: {fileID: 7110222944340324191, guid: 6f8d6f22ae678764091b7d4b489e37ac, type: 3}
+      propertyPath: m_Size.x
+      value: 1.3646636
+      objectReference: {fileID: 0}
+    - target: {fileID: 7110222944340324191, guid: 6f8d6f22ae678764091b7d4b489e37ac, type: 3}
+      propertyPath: m_Size.y
+      value: 1.7545998
+      objectReference: {fileID: 0}
+    - target: {fileID: 7110222944340324191, guid: 6f8d6f22ae678764091b7d4b489e37ac, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.00000011920929
+      objectReference: {fileID: 0}
+    - target: {fileID: 7110222944340324191, guid: 6f8d6f22ae678764091b7d4b489e37ac, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.033964038
+      objectReference: {fileID: 0}
     - target: {fileID: 7310440805883258049, guid: 6f8d6f22ae678764091b7d4b489e37ac, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -1574,11 +1590,11 @@ PrefabInstance:
       objectReference: {fileID: 1871717619}
     - target: {fileID: 7708791464630962805, guid: 6f8d6f22ae678764091b7d4b489e37ac, type: 3}
       propertyPath: idleLenght
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7708791464630962805, guid: 6f8d6f22ae678764091b7d4b489e37ac, type: 3}
       propertyPath: pickingLenght
-      value: 0.1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7708791464630962805, guid: 6f8d6f22ae678764091b7d4b489e37ac, type: 3}
       propertyPath: escapingLenght
@@ -1588,6 +1604,10 @@ PrefabInstance:
       propertyPath: frankDirection
       value: 
       objectReference: {fileID: 1871717610}
+    - target: {fileID: 7708791464630962805, guid: 6f8d6f22ae678764091b7d4b489e37ac, type: 3}
+      propertyPath: shootingLenght
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

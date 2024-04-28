@@ -10,15 +10,17 @@ public class EscapingState : State
     [SerializeField] private float umbral;
     [SerializeField] private LayerMask layerPared;
     [SerializeField] private LayerMask layerBoundries;
-
+    // Inicia la ani8mación respectiva e inicia la velocidad a 0
     public override void Enter()
     {
-        bossMovement.currentSpeed = 0;
-        _animation.SetBool("EscapingState",true);
+        _animation.SetBool("EscapingState", true);
         _animation.SetBool("IdleState", false);
         _animation.SetBool("AttackState", false);
         _animation.SetBool("DashState", false);
+        bossMovement.currentSpeed = 0;       
     }
+   // El jefe irá recogiendo la posición del jugador para poder escapar , y si se encuentra con un muro lo recorrerá ara asi evitar quedar atascado en una esquina
+   // al mismo tiempoinidcará la posición que se encuetnra para poder hacer la animación
     public override void Do()
     {
         Vector3 distance = transform.position - FrankMovement.Player.transform.position;

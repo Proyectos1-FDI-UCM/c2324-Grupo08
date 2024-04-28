@@ -4,12 +4,6 @@ using UnityEngine;
 
 public class BossController : MonoBehaviour, EnemiesControler
 {
-    private bool isFacingRIght = true;
-    public Vector3 directionMovement;
-    public Vector3 positionBottle;
-    public float currentSpeed;
-    [SerializeField] private float timer;
-
     #region states
     [SerializeField] private ShootingState shootingState;
     [SerializeField] private PickingUpState pickingUpState;
@@ -20,12 +14,19 @@ public class BossController : MonoBehaviour, EnemiesControler
 
     #region properties
     [SerializeField] private Rigidbody2D rb;
-    private Transform bossTransform;
     private BoxCollider2D boxCollider;
+    #endregion
+    
+    #region prameters
+    // Tiempo de espera entre estados
     [SerializeField] private float escapingLenght = 10;
     [SerializeField] private float shootingLenght = 1;
     [SerializeField] private float pickingLenght = 1;
     [SerializeField] private float idleLenght = 1;
+
+    public Vector3 directionMovement;
+    public Vector3 positionBottle;
+    public float currentSpeed;
     #endregion
 
     #region referneces
@@ -34,19 +35,20 @@ public class BossController : MonoBehaviour, EnemiesControler
     [SerializeField] private Transform player;
     private Animator animator;
     #endregion
+    // Esta corrutina se llamará en el start y permite que pase d eun estado a otro además de que es recurisvo al estarse llamando así mismo todo el rato
     private IEnumerator SuccesionState()
     {
         state = escapingState;
         state.Enter();
         yield return new WaitForSeconds(escapingLenght);
         state = shootingState;
+        yield return new WaitForSeconds(shootingLenght);
         state.Enter();
-        if(shootingState._bullet != null)
+        if (shootingState._bullet != null)
         {
-            yield return new WaitForSeconds(shootingLenght);
             state = pickingUpState;
+            yield return new WaitUntil(() => shootingState._bulletHit == true);
             state.Enter();
-            yield return new WaitForSeconds(pickingLenght);      
         }        
         state = idleState;
         yield return new WaitForSeconds(idleLenght);
@@ -55,6 +57,7 @@ public class BossController : MonoBehaviour, EnemiesControler
         StartCoroutine(SuccesionState());
         
     }
+    //Permite diferenciar al boss como enemigo
     public IEnumerator StopAttack()
     {
         yield return null;

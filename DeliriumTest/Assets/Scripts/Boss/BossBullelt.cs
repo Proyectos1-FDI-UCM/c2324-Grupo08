@@ -6,6 +6,7 @@ public class BossBullet : MonoBehaviour
 {
     private CircleCollider2D circleCollider;
     private Rigidbody2D rb;
+    //Reoconocer cuales son los límites del nivel (bounds)
     [SerializeField] private LayerMask layerPared;
     [SerializeField] private LayerMask layerBounds;
     [SerializeField] private GameObject botella;
@@ -17,7 +18,7 @@ public class BossBullet : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
+    //Aqui se comprueba si el collider de la botella a colisionado con algun tipo d ebound para evitar que se vaya de la vista del jugador
     void FixedUpdate()
     {
         if(Physics2D.OverlapCircle(transform.position, circleCollider.radius * 1.1f,layerBounds) != null || 
@@ -27,6 +28,7 @@ public class BossBullet : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    // Aqui comprueba si ha impactado la bottella y además cambia el proyectil por el arma recogibel del boss
     private void OnDestroy()
     {
         GameObject Bullet = Instantiate(botella, transform.position, Quaternion.identity);

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class BossHealth : MonoBehaviour
 {
+    //Clase para pode rconvertir los parámetros de vida y que los recoja el slider para hacer esa barra de vida
     private HealthComponent _bossHealth;
     private float bossHealth;
     private float bossMaxHealth;
