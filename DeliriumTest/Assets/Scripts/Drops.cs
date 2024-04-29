@@ -14,7 +14,7 @@ public class Drops : MonoBehaviour
         if (healthComponent.Health <= 0)
         {
             dropNumber = Random.Range(1, 21);
-            if (dropNumber <= 3)
+            if (dropNumber <= 3 && dropNumber > 0)
             {
                 Instantiate(drops[1], transform.position, Quaternion.identity);
             }

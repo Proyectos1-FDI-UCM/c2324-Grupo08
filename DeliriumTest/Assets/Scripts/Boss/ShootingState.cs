@@ -18,13 +18,16 @@ public class ShootingState : State
         _animation.SetBool("DashState", false);
         _bulletHit = false;
         isComplete = false;
+        rb.velocity = Vector3.zero;
         _bullet = Instantiate(botella, transform.position, Quaternion.identity);
         _bullet.GetComponent<BossBullet>().shootingState = this;
         bulletComp = _bullet.GetComponent<BulletComponent>();
         bulletComp.RegisterVector(FrankMovement.Player.transform.position - transform.position);
+        _myTransform.gameObject.layer = 10;
     }
     public override void Do()
     {
+        rb.velocity = Vector3.zero;
         isComplete = true;
     }
 }

@@ -70,6 +70,10 @@ public class HealthComponent : MonoBehaviour
             _drops.Drop();
         }  
     }
+    private void OnDestroy()
+    {
+        _health = 0;
+    }
 
     private IEnumerator RepeatHitEffect()
     {
@@ -81,7 +85,7 @@ public class HealthComponent : MonoBehaviour
         {
             AudioManager.Instance.TrashSound();
         }
-        if(this.gameObject.GetComponent<FrankMovement>() != null)
+        if(this.gameObject.GetComponent<FrankMovement>() != null || gameObject.GetComponent<BossController>() != null)
         {
             gameObject.layer = 10;
         }
