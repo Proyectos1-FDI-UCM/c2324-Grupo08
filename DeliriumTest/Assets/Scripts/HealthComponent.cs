@@ -65,10 +65,10 @@ public class HealthComponent : MonoBehaviour
         _health -= amount;
         StartCoroutine(RepeatHitEffect());
         OnPlayerDamaged?.Invoke();
-        if (gameObject.GetComponent<EnemiesControler>() != null)
+        if (_drops != null)
         {
             _drops.Drop();
-        }  
+        }
     }
     private void OnDestroy()
     {

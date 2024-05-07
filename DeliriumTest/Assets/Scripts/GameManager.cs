@@ -7,8 +7,6 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    private HealthComponent healthComponent;
-
     public GameObject[] EasyRooms;
     public GameObject[] HardRooms;
     private Vector3 RoomPosition;
@@ -17,14 +15,28 @@ public class GameManager : MonoBehaviour
     private GameObject Room;
     public Transform BuilderTransform;
     private Vector3 RoomOffsetVector;
-    public Slider vomitSlider;
-    public LifeBarComponenet lifepickupbar;
+    /// <summary>
+    /// Lista que guarda las salas fáciles que todavia no se han generado
+    /// </summary>
     public static List<int> _availableEasyRooms;
+    /// <summary>
+    /// Lista que guarda las salas dificiles que todavia no se han generado
+    /// </summary>
     public static List<int> _availableHardRooms;
+    /// <summary>
+    /// Primera sala del mapa y correspondiente al Tutorial
+    /// </summary>
     [SerializeField] private GameObject Tutorial;
+    /// <summary>
+    /// Sala donde espera y habita el Boss
+    /// </summary>
     [SerializeField] private GameObject BossFight;
+    /// <summary>
+    /// Sala entre las difíciles y las fáciles
+    /// </summary>
     [SerializeField] private GameObject Intermedia;
 
+    //Entero que guarda el indice de la ultima sala generada
     int _currentRoom;
 
     //Sala en la que se encuentra el jugador
@@ -35,7 +47,7 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-        //Emepzamos en la sala 0 (Tutorial)
+        //Empezamos en la sala 0 (Tutorial)
         ActiveRoom = 0;
 
         //Inicialización de las listas  
@@ -76,9 +88,10 @@ public class GameManager : MonoBehaviour
 
         }
 
+        //Intermedia
         RoomOffsetVector = new Vector3(RoomOffset, 0, 0);
-
         Room = Instantiate(Intermedia, new Vector3(63, 2, 0), Quaternion.identity);
+        Map.Add(Room);
         RoomPosition = RoomPosition + RoomOffsetVector;
         BuilderTransform.position = RoomPosition;
 

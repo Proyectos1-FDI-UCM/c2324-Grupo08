@@ -11,6 +11,10 @@ public class BossHealth : MonoBehaviour
     private float bossHealth;
     private float bossMaxHealth;
     public Slider _healthBar;
+    private void Awake()
+    {
+        _healthBar.GetComponentInParent<Canvas>().enabled = false;
+    }
     private void Start()
     {              
         _bossHealth = GetComponent<HealthComponent>();
@@ -20,6 +24,7 @@ public class BossHealth : MonoBehaviour
     {
         bossHealth = _bossHealth.Health;
         _healthBar.value = bossHealth;
+        _healthBar.GetComponentInParent<Canvas>().enabled = GetComponent<BossController>().enabled;
     }
     private void RegisterLife()
     {

@@ -16,6 +16,9 @@ public class CamTriggerSecreta : MonoBehaviour
     private bool _arriba = true;
     private static GameObject instance;
     public static GameObject Instance { get { return instance; } }
+    [SerializeField]
+    GameObject SecretRoom;
+    bool UpgradeDrop;
     #endregion
     #region method
     public void TransitionAvaible(bool trans)
@@ -39,12 +42,14 @@ public class CamTriggerSecreta : MonoBehaviour
     }
     void Start()
     {
+        UpgradeDrop = false;
         newPlayerPos = new Vector3 (0, -2f,0);
         newCampos = new Vector3(0, -10, 0);
         _camControl = Camera.main.GetComponent<CameraController>();
         _myObject = gameObject;
         _transicion = _myObject.GetComponent<BoxCollider2D>();
         _transicion.enabled = false;
+        SecretRoom.transform.position = new Vector3(64f, -0.1f, 0f);
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -62,6 +67,11 @@ public class CamTriggerSecreta : MonoBehaviour
                 _myObject.transform.position = new Vector3(64, -5.1f, 0);
                 newPlayerPos = new Vector3(0, 2, 0);
                 newCampos = new Vector3(0, 10, 0);
+                if (!UpgradeDrop)
+                {
+                    LevelManager.levelManager.DropUpgrade(SecretRoom);
+                    UpgradeDrop = true;
+                }
             }
             else if (_arriba == false){
                 StartCoroutine(LevelManager.levelManager.Go());

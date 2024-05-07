@@ -71,7 +71,7 @@ public class FrankMovement : MonoBehaviour
     {
         Debug.Log("Pulso interacción");
         var interactposition = transform.position + _lastMovementVector;
-        var collider = Physics2D.OverlapCircle(interactposition, 0.2f, interactuarLayer);
+        var collider = Physics2D.OverlapCircle(interactposition, 1f, interactuarLayer);
         if (collider != null)
         {
             collider.GetComponent<interactables>()?.interact();

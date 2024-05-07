@@ -72,7 +72,7 @@ public class EscapingState : State
             }
         }
         
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, walldirection, Mathf.Infinity, layerPared);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, walldirection, Mathf.Infinity, layerPared + layerBoundries);
 
         if (hit.collider) Debug.DrawRay(transform.position, walldirection, Color.yellow);
         else Debug.DrawRay(transform.position, walldirection, Color.gray);

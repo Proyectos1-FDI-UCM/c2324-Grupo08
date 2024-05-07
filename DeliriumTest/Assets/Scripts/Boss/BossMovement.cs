@@ -19,8 +19,6 @@ public class BossController : MonoBehaviour, EnemiesControler
     #region prameters
     // Tiempo de espera entre estados
     [SerializeField] private float escapingLenght = 10;
-    [SerializeField] private float shootingLenght = 1;
-    [SerializeField] private float pickingLenght = 1;
     [SerializeField] private float idleLenght = 1;
 
     public Vector3 directionMovement;
@@ -30,8 +28,7 @@ public class BossController : MonoBehaviour, EnemiesControler
 
     #region referneces
     [SerializeField] private BulletComponent bulletComp; //Compnente de bala (movimiento) de la botella
-    [SerializeField] private FrankMovement frankDirection;
-    [SerializeField] private Transform player;
+
     private Animator animator;
     #endregion
     // Esta corrutina se llamará en el start y permite que pase d eun estado a otro además de que es recurisvo al estarse llamando así mismo todo el rato
@@ -60,23 +57,26 @@ public class BossController : MonoBehaviour, EnemiesControler
 
     private void Awake()
     {
+       enabled = false;
+    }
+    private void Start()
+    {
         boxCollider = GetComponent<BoxCollider2D>();
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        MovementTropiezo frankDirection = FrankMovement.Player.GetComponent<MovementTropiezo>();
+        enabled = gameObject.activeSelf;
         shootingState.SetUP(rb, bulletComp, frankDirection, boxCollider, this, transform, animator);
         pickingUpState.SetUP(rb, bulletComp, frankDirection, boxCollider, this, transform, animator);
         idleState.SetUP(rb, bulletComp, frankDirection, boxCollider, this, transform, animator);
         escapingState.SetUP(rb, bulletComp, frankDirection, boxCollider, this, transform, animator);
-    }
-    private void Start()
-    {
         state = escapingState;
         StartCoroutine(SuccesionState());
         animator.SetBool("EscapingState", true);
     }
+
     private void Update()
     {
-        bool isPlayerRight = transform.position.x < player.transform.position.x;
         state.Do();
     }
 }

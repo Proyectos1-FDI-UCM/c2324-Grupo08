@@ -70,4 +70,8 @@ public class LifeBarComponenet : MonoBehaviour
         playerHealth = FrankMovement.Player.GetComponent<HealthComponent>();
         if (playerHealth == null) Debug.LogError("No se encontró un componente de vida en el Jugador");
     }
+    private void Update()
+    {
+        DrawHearts();
+    }
 }

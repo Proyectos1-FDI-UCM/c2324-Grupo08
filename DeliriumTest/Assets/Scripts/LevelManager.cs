@@ -58,9 +58,14 @@ public class LevelManager : MonoBehaviour
 
         if (m_AllEnemies.Count == 0)
         {
+            int room = GameManager.ActiveRoom;
             CamTriggerSecreta.Instance.GetComponent<CamTriggerSecreta>().TransitionAvaible(true);
             CamTrigger.Instance.GetComponent<CamTrigger>().TransitionAvaible(true);
-            DropUpgrade();
+            //Se instancia en mitad de las salas faciles y en mitad de las dificiles
+            if ((room == 1 + gameManager.EasyRooms.Length / 2 || room == gameManager.Map.Count - (1 + gameManager.HardRooms.Length / 2)) && room > 0)
+            {
+                DropUpgrade(gameManager.Map[room]);
+            }
             Arrow.SetActive(true);
         }
     }
@@ -116,13 +121,9 @@ public class LevelManager : MonoBehaviour
             if (Energetica) { _mejoras.Remove(energetica); }
         }
     }
-    void DropUpgrade()
+    public void DropUpgrade(GameObject room)
     {
-        int room = GameManager.ActiveRoom;
         CheckUpgrades();
-        if (room % 2 == 0 && room > 0)
-        {
-            Instantiate(_mejoras[Random.Range(0, _mejoras.Count)], gameManager.Map[room - 1].transform.position, Quaternion.identity);
-        }
+        Instantiate(_mejoras[Random.Range(0, _mejoras.Count)], room.transform.position, Quaternion.identity);
     }
 }
