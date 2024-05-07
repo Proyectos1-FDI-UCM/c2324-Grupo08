@@ -23,6 +23,7 @@ public class BossHealth : MonoBehaviour
     private void Update()
     {
         bossHealth = _bossHealth.Health;
+        GetComponent<BossController>().enabled = gameObject.activeSelf;
         _healthBar.value = bossHealth;
         _healthBar.GetComponentInParent<Canvas>().enabled = GetComponent<BossController>().enabled;
     }

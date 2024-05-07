@@ -77,7 +77,6 @@ public class BossController : MonoBehaviour, EnemiesControler
 
     private void Update()
     {
-        enabled = gameObject.activeSelf;
         state.Do();
     }
 }
