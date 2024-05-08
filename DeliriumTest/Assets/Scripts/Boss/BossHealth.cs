@@ -11,6 +11,10 @@ public class BossHealth : MonoBehaviour
     private float bossHealth;
     private float bossMaxHealth;
     public Slider _healthBar;
+    private void OnDestroy()
+    {
+        LevelManager.levelManager.EnemyDefeated(GetComponent<BossController>());
+    }
     private void Awake()
     {
         _healthBar.GetComponentInParent<Canvas>().enabled = false;
@@ -26,6 +30,10 @@ public class BossHealth : MonoBehaviour
         GetComponent<BossController>().enabled = gameObject.activeSelf;
         _healthBar.value = bossHealth;
         _healthBar.GetComponentInParent<Canvas>().enabled = GetComponent<BossController>().enabled;
+        if(_bossHealth.Health <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
     private void RegisterLife()
     {

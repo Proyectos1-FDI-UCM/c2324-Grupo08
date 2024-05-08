@@ -24,6 +24,11 @@ public class MenuManager : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
         AudioManager.Instance.MenuMusic();
     }
+    public static  void Credits()
+    {
+        SceneManager.LoadScene("Credits");
+        AudioManager.Instance.MenuMusic();
+    }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape)) Exit();

@@ -126,4 +126,15 @@ public class LevelManager : MonoBehaviour
         CheckUpgrades();
         Instantiate(_mejoras[Random.Range(0, _mejoras.Count)], room.transform.position, Quaternion.identity);
     }
+
+    public void CheckEndGame() 
+    {
+        Debug.Log(GameManager.ActiveRoom);
+        Debug.Log(gameManager.Map.Count);
+        if(GameManager.ActiveRoom == gameManager.Map.Count)
+        {
+            MenuManager.Credits();
+            Debug.Log("Ha entrado en los créditos");
+        }
+    }
 }
