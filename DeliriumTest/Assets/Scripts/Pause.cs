@@ -65,7 +65,7 @@ public class Pause : MonoBehaviour
     {
         StartCoroutine(PauseGame());
         yield return new WaitForEndOfFrame();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene("MainMenu");
     }
     
     public void Restart()

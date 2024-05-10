@@ -14,6 +14,7 @@ public class BossHealth : MonoBehaviour
     private void OnDestroy()
     {
         LevelManager.levelManager.EnemyDefeated(GetComponent<BossController>());
+        _healthBar.GetComponentInParent<Canvas>().enabled = false;
     }
     private void Awake()
     {

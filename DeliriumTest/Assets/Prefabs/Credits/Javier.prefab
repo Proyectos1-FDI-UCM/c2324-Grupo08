@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -1504903604874485684}
   - component: {fileID: 7856934082289586390}
   - component: {fileID: -3909877444659219882}
-  m_Layer: 6
+  m_Layer: 14
   m_Name: Javier
   m_TagString: Untagged
   m_Icon: {fileID: 0}

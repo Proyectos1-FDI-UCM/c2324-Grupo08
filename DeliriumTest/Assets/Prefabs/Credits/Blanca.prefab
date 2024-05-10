@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -5191333092183413704}
   - component: {fileID: 6095389616651161944}
   - component: {fileID: -2467560362917827811}
-  m_Layer: 6
+  m_Layer: 14
   m_Name: Blanca
   m_TagString: Untagged
   m_Icon: {fileID: 0}
