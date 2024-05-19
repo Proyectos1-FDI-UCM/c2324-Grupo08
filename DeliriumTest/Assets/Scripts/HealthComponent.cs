@@ -43,6 +43,10 @@ public class HealthComponent : MonoBehaviour
     public void Healing(float healing)
     {
         _health += healing;
+        if (_health > MaxHealth)
+        {
+            _health = MaxHealth;
+        }
         lifebar.DrawHearts();
     }
     #endregion

@@ -4110,6 +4110,10 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2951310309232272005, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3700768047936432884, guid: d824d6f60a064d94794c85e7087de4f1, type: 3}
       propertyPath: m_Name
       value: PopUps

@@ -58,7 +58,7 @@ public class RecogerObjeto : MonoBehaviour
 
         else if (ObjID == 2) //Lógica correspondiente a la curación
         {
-            if (_healthComponent.Health != _healthComponent.MaxHealth)
+            if (_healthComponent.Health < _healthComponent.MaxHealth)
             {
                 
                 _healthComponent.Healing(healing);
