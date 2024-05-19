@@ -12,9 +12,7 @@ GameObject:
   - component: {fileID: 4834769281236388865}
   - component: {fileID: 3242492013868320426}
   - component: {fileID: 2307012710079221488}
-  - component: {fileID: 1346284741060112584}
   - component: {fileID: 5535209973214945664}
-  - component: {fileID: 4021825815068307335}
   m_Layer: 11
   m_Name: GameObject
   m_TagString: Untagged
@@ -122,7 +120,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 1
-  m_Offset: {x: 0, y: -0.43698683}
+  m_Offset: {x: 0, y: -0.6030356}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -133,7 +131,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.31, y: 0.76}
+  m_Size: {x: 2.31, y: 1.0920974}
   m_EdgeRadius: 0
 --- !u!114 &2307012710079221488
 MonoBehaviour:
@@ -153,51 +151,6 @@ MonoBehaviour:
     encuentres.
   sign: {fileID: 0}
   activeSign: {fileID: 0}
---- !u!61 &1346284741060112584
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2848363110249671151}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 1
-  m_Offset: {x: -0.000000029802322, y: -1.0589032}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.24, y: 2.24}
-    newSize: {x: 2.24, y: 2.24}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.63154, y: 0.6047326}
-  m_EdgeRadius: 0
 --- !u!50 &5535209973214945664
 Rigidbody2D:
   serializedVersion: 4
@@ -225,77 +178,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!66 &4021825815068307335
-CompositeCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2848363110249671151}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_GeometryType: 0
-  m_GenerationType: 0
-  m_EdgeRadius: 0
-  m_ColliderPaths:
-  - m_Collider: {fileID: 3242492013868320426}
-    m_ColliderPaths:
-    - - X: 8399999
-        Y: -602509
-      - X: -7796827
-        Y: -602509
-      - X: -7796827
-        Y: -5952293
-      - X: 8399999
-        Y: -5952293
-  - m_Collider: {fileID: 1346284741060112584}
-    m_ColliderPaths:
-    - - X: 2368274
-        Y: -5674027
-      - X: -2368275
-        Y: -5674027
-      - X: -2368275
-        Y: -10209521
-      - X: 2368274
-        Y: -10209521
-  m_CompositePaths:
-    m_Paths:
-    - - {x: 0.23679811, y: -1.0209521}
-      - {x: 0.2368568, y: -0.5952293}
-      - {x: 0.8399999, y: -0.5952}
-      - {x: 0.8399706, y: -0.0602509}
-      - {x: -0.7796827, y: -0.0602802}
-      - {x: -0.77965343, y: -0.5952293}
-      - {x: -0.23682751, y: -0.5952587}
-      - {x: -0.2367982, y: -1.0209521}
-  m_VertexDistance: 0.0005
-  m_OffsetDistance: 0.00005
-  m_UseDelaunayMesh: 0
-  m_CompositeGameObject: {fileID: 2848363110249671151}
 --- !u!1 &3117424652084606226
 GameObject:
   m_ObjectHideFlags: 0
