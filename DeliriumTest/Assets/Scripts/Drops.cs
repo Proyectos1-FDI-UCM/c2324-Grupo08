@@ -4,41 +4,39 @@ using UnityEngine;
 
 public class Drops : MonoBehaviour
 {
-    [SerializeField] private GameObject[] drops;
+    #region Properties
+    /// <summary>
+    /// Lista que contiene todos los posibles drops.
+    /// </summary>
+    [SerializeField] private List<GameObject> drops;
+
+    /// <summary>
+    /// Número que guarda un número aleatorio del 0 al 99.
+    /// </summary>
     private int dropNumber;
-    private HealthComponent healthComponent;
+    #endregion
 
-
+    #region Methods
+    /// <summary>
+    /// Generará un número aleatorio entre el 0 al 99
+    /// Si el número se encuentra por debajo de 30 
+    /// instancia un objeto aleatorio dentro de los drops.
+    /// </summary>
     public void Drop()
-    {
-        if (healthComponent.Health <= 0)
-        {
-            dropNumber = Random.Range(1, 21);
-            if (dropNumber <= 3 && dropNumber > 0)
+    { 
+            //Genera un número aleatorio entre 0-99
+            dropNumber = Random.Range(0, 100);
+            
+            //Si es menor a treinta y la lista no esta vacia instancia un drop aleatorio.
+            //Esto hace que se genere un drop en un 30% de los enemigos.
+            if (dropNumber <= 30 && drops.Count > 0)
             {
-                Instantiate(drops[1], transform.position, Quaternion.identity);
+                
+                Instantiate(drops[Random.Range(0, drops.Count - 1)], transform.position, Quaternion.identity);
             }
-            else if (dropNumber <= 6)
-            {
-                Instantiate(drops[0], transform.position, Quaternion.identity);
-            }
+
+            //Destruye al enemigo que dropeo algo.
             Destroy(this.gameObject);
-        }
-
-        
     }
-
-
-
-
-    void Start()
-    {
-        healthComponent = GetComponent<HealthComponent>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+    #endregion
 }

@@ -4,12 +4,33 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 public class ShootingState : State
-{//Estado en el que lanza la botella cierta distancia hacia el jugador
-    public GameObject botella;//prefab de la botella que lanza
-    public GameObject pickUp; //prefab del pickup de la botella
-    public GameObject _bullet; //Referencia a la botella lanzada
+{
+    //Estado en el que lanza la botella cierta distancia hacia el jugador
+
+    /// <summary>
+    /// prefab de la botella que lanza
+    /// </summary>
+    public GameObject botella;
+
+    /// <summary>
+    /// prefab del pickup de la botella
+    /// </summary>
+    public GameObject pickUp;
+
+    /// <summary>
+    /// Referencia a la botella lanzada
+    /// </summary>
+    public GameObject _bullet;
+
+    /// <summary>
+    /// Indicador para saber cuando golpea la bala algun objeto
+    /// </summary>
     public bool _bulletHit;
-    //Se instancia un abotellla que va en dirección al jugador
+
+    /// <summary>
+    /// Se instancia una botellla que va en dirección al jugador.
+    /// Mientras la botella del boss no golpee nada el boss será invencible y estara quieto.
+    /// </summary>
     public override void Enter()
     {
         _animation.SetBool("AttackState", true);

@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class BossBullet : MonoBehaviour
 {
+    //Componentes fisicos propios
     private CircleCollider2D circleCollider;
     private Rigidbody2D rb;
-    //Reoconocer cuales son los límites del nivel (bounds)
+
+    //Reconocer cuales son los límites del nivel (bounds)
     [SerializeField] private LayerMask layerPared;
     [SerializeField] private LayerMask layerBounds;
     [SerializeField] private GameObject botella;
+
+    //Shooting del cual a sido invocado
     public ShootingState shootingState; 
-    // Start is called before the first frame update
+
     void Start()
     {
         circleCollider = GetComponent<CircleCollider2D>(); 
@@ -28,7 +32,7 @@ public class BossBullet : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    // Aqui comprueba si ha impactado la bottella y además cambia el proyectil por el arma recogibel del boss
+    // Aqui comprueba si ha impactado la bottella y además cambia el proyectil por el arma recogible del boss
     private void OnDestroy()
     {
         GameObject Bullet = Instantiate(botella, transform.position, Quaternion.identity);

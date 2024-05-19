@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8340981515157883128}
   - component: {fileID: -2292127890324348238}
   - component: {fileID: 6867523836070494457}
+  - component: {fileID: 8316204057155453226}
   m_Layer: 14
   m_Name: "Iv\xE1n"
   m_TagString: Untagged
@@ -27,7 +28,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7810416272035026225}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -162,3 +163,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 261.5, y: 21.75}
   m_EdgeRadius: 0
+--- !u!114 &8316204057155453226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7810416272035026225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 681113ba01dbb914c9129344abc5105e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drops:
+  - {fileID: 9070939954684309588, guid: 7e613e63deb92da4ca84ecc5989e3a85, type: 3}
+  - {fileID: 4601169436654983355, guid: 8ead7f76a9d45f44493dba858c02dd86, type: 3}

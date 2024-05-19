@@ -2,16 +2,21 @@ using System;
 using System.Collections;
 using UnityEngine;
 
+// AVISO: Clase generica para cualquier objeto que pueda
+// ser dañado, curado o requiera de calculos relacionados
+// a una salud.
 public class HealthComponent : MonoBehaviour
-{    // Clase reutilizada tanto como el jugador como los distntos enemigos del juego
-    #region references
+{
+    #region References
     private Drops _drops;
     private SpriteRenderer _spriteRenderer;
     #endregion
-    #region events
+
+    #region Events
     public static event Action OnPlayerDamaged;
     #endregion
-    #region parameters
+
+    #region Properties
     [SerializeField] private LifeBarComponenet lifebar;
     [SerializeField] private float _health;
     public float Health { get { return _health; } set { _health = value; } }
@@ -34,7 +39,7 @@ public class HealthComponent : MonoBehaviour
     private LayerMask _originalLayer;
     #endregion
     #region methods
-    // Método usado par acurar al jugadro con la "Bolsa de patatas"
+    // Método usado para curar al jugador con la "Bolsa de patatas"
     public void Healing(float healing)
     {
         _health += healing;
@@ -65,10 +70,14 @@ public class HealthComponent : MonoBehaviour
         _health -= amount;
         StartCoroutine(RepeatHitEffect());
         OnPlayerDamaged?.Invoke();
-        if (_drops != null)
+        if (Health <= 0) 
         {
-            _drops.Drop();
+            if (_drops != null)
+            {
+                _drops.Drop();
+            }
         }
+            
     }
     private void OnDestroy()
     {

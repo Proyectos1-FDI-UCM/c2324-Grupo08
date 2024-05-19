@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -5191333092183413704}
   - component: {fileID: 6095389616651161944}
   - component: {fileID: -2467560362917827811}
+  - component: {fileID: 2957002116804395449}
   m_Layer: 14
   m_Name: Blanca
   m_TagString: Untagged
@@ -162,3 +163,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 273.75, y: 19}
   m_EdgeRadius: 0
+--- !u!114 &2957002116804395449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3351203125106137899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 681113ba01dbb914c9129344abc5105e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drops:
+  - {fileID: 4601169436654983355, guid: 8ead7f76a9d45f44493dba858c02dd86, type: 3}
+  - {fileID: 9070939954684309588, guid: f9c24f95463147942933b8642bafad18, type: 3}

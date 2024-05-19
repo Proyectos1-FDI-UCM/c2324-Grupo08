@@ -1,9 +1,11 @@
 using UnityEngine;
 
+//Estado en el que recoge la botella ya lanzada
 public class PickingUpState : State
 {
-    //Estado en el que recoge la botella ya lanzada
-    [SerializeField] private float speedValue;
+    /// <summary>
+    /// State anterior del comportamiento.
+    /// </summary>
     [SerializeField] ShootingState shootingState;
 
     public override void Enter()
@@ -14,7 +16,10 @@ public class PickingUpState : State
         _animation.SetBool("EscapingState", false);
     }
 
-    //Se recoge la posición de la botella y si ha llegado a imapctar, cuando hace la comprobacón la posición del jefe pasa a ser el de la botella
+    /// <summary>
+    /// Se recoge la posición de la botella y la posición del jefe pasa a ser el de la botella.
+    /// Ademas el boss vuelve a ser vulnerable a los taques de Paco.
+    /// </summary>
     public override void Do()
     {
         _myTransform.position = shootingState._bullet.transform.position;

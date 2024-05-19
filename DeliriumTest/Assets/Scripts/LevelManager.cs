@@ -4,34 +4,82 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
-    #region references
+    #region References
+    /// <summary>
+    /// Referencia a la flecha indicativa del paso de sala.
+    /// </summary>
     [SerializeField]
     GoArrowController Arrow;
+
+    /// <summary>
+    /// Referencia al GameManager.
+    /// </summary>
     static GameManager gameManager;
+    
+    /// <summary>
+    /// Referencia a la mejora de las chapas.
+    /// </summary>
+    [SerializeField]
+    GameObject chapas;
+
+    /// <summary>
+    /// Referencia a la mejora del kebab.
+    /// </summary>
+    [SerializeField]
+    GameObject kebab;
+
+    /// <summary>
+    /// Referencia a la mejora de la energetica.
+    /// </summary>
+    [SerializeField]
+    GameObject energetica;
+
+    /// <summary>
+    /// Instancia del levelManager.
+    /// </summary>
     private static LevelManager instance;
-    public static LevelManager levelManager { get { return instance; } set { instance = value; } }
+    /// <summary>
+    /// Accesor a la instancia del LevelManager.
+    /// </summary>
+    public static LevelManager levelManager { get { return instance; } private set { instance = value; } }
     #endregion
 
-    #region parameters
+    #region Parameters
+    /// <summary>
+    /// Lista de TODOS los enemigos en el mapa.
+    /// </summary>
     static List<EnemiesControler> m_AllEnemies;
+
+    /// <summary>
+    /// Lista con TODAS las mejoras para Paco.
+    /// </summary>
     static List<GameObject> _mejoras;
     #endregion
     
-    #region properties
-    [SerializeField]
-    GameObject chapas;
-    [SerializeField]
-    GameObject kebab;
-    [SerializeField]
-    GameObject energetica;
+    #region Properties
+    /// <summary>
+    /// Tiempo de espera hasta la Activacíon del Arrow una vez 
+    /// iniciadas las correspondientes corutinas.
+    /// </summary>
     public float _timer;
     #endregion
 
-    #region methods
+    #region Methods
+    /// <summary>
+    /// Asigna un valor a Arrow
+    /// </summary>
+    /// <param name="arrow">Flecha que usaremos para indicar que ya se puede avanzar</param>
     public void RegisterArroy(GoArrowController arrow)
     {
         Arrow = arrow;
     }
+
+    /// <summary>
+    /// Registra en m_AllEnemies al objeto si es un enemigo que no estuviera registrado.
+    /// Con esto se lleva la cuenta de cuantos enemigos hay en sala.
+    /// Una vez detecte que hay enemigos bloquea el paso de salas y desactiva Arrow.
+    /// </summary>
+    /// <param name="enemy">Enemigo a registrar dentro de m_AllEnemies</param>
     public void RegisterEnemy(GameObject enemy)
     {
         EnemiesControler enemiesControler = enemy.GetComponent<EnemiesControler>();
@@ -49,6 +97,15 @@ public class LevelManager : MonoBehaviour
             Arrow.SetActive(false);
         }
     }
+
+    /// <summary>
+    /// Elimina al enemigo que estaba registrado en la sala de 
+    /// la lista m_AllEnemies para mantener la cuenta de los enemigos.
+    /// En caso de dectectar que con la eliminación de un enemigo no quedan ninguno
+    /// activara el Arrow y la transición de salas. Ademas si nos encontramos en la mitad del
+    /// recorrido de las salas faciles o dificiles soltara una mejora.
+    /// </summary>
+    /// <param name="enemy">Enemigo que ha sido derrotado</param>
     public void EnemyDefeated(EnemiesControler enemy)
     {
         if (m_AllEnemies.Contains(enemy))
@@ -70,9 +127,77 @@ public class LevelManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Comprueba que mejoras tiene el jugador.
+    /// </summary>
+    void CheckUpgrades()
+    {
+        if (FrankMovement.Player != null) // Verifica si el jugador aún existe
+        {
+            //Comprueba si el Jugador ya alguna mejora
+            bool Chapas = FrankMovement.Player.GetComponentInChildren<PlayerAttack>()._mejorado;
+            bool Kebab = Mathf.Approximately(FrankMovement.Player.GetComponent<HealthComponent>().MaxHealth, 8f);
+            bool Energetica = FrankMovement.Player.GetComponent<DashCompnent>().dashMejorado;
+
+            //Si la tenia la elimina de la lista de posibles mejoras
+            if (Chapas) { _mejoras.Remove(chapas); }
+            if (Kebab) { _mejoras.Remove(kebab); }
+            if (Energetica) { _mejoras.Remove(energetica); }
+        }
+    }
+
+    /// <summary>
+    /// Instancia una mejora aleatoria que el jugador no tenga en el centro de la Sala (room) 
+    /// </summary>
+    /// <param name="room"></param> Sala en la que se instanciará la mejora
+    public void DropUpgrade(GameObject room)
+    {
+        CheckUpgrades();
+        Instantiate(_mejoras[Random.Range(0, _mejoras.Count)], room.transform.position, Quaternion.identity);
+    }
+
+    /// <summary>
+    ///Comprueba si estamos en la última sala y si lo estamos al nos envia a los créditos
+    /// </summary>
+    public void CheckEndGame()
+    {
+        if (GameManager.ActiveRoom >= gameManager.Map.Count)
+        {
+            MenuManager.Credits();
+        }
+    }
     #endregion
+
+    #region Coroutines
+
+    /// <summary>
+    /// Activa el paso a la siguiente sala.
+    /// </summary>
+    /// <returns>Espera _timer segundos para permitir el acceso a la siguiente sala</returns>
+    public IEnumerator Go()
+    {
+        Arrow.SetActive(false);
+        yield return new WaitForSeconds(_timer);
+        Arrow.SetActive(true);
+        CamTrigger.Instance.GetComponent<CamTrigger>().TransitionAvaible(true);
+        CamTriggerSecreta.Instance.GetComponent<CamTriggerSecreta>().TransitionAvaible(true);
+    }
+
+    /// <summary>
+    /// Sirve para regresar de la secreta.
+    /// </summary>
+    /// <returns>Espera _timer segundos a habilitar el paso a la sala intermedia</returns>
+    public IEnumerator Go2()
+    {
+        Arrow.SetActive(false);
+        yield return new WaitForSeconds(_timer);
+        CamTriggerSecreta.Instance.GetComponent<CamTriggerSecreta>().TransitionAvaible(true);
+    }
+    #endregion
+
     private void Awake()
     {
+        //Sigleton del LevelManager.
         if(instance == null)
         {
             instance = this;
@@ -82,59 +207,22 @@ public class LevelManager : MonoBehaviour
             Destroy(gameObject);
         }
 
+        //Inicialización de variables
         m_AllEnemies = new List<EnemiesControler>();
+        
+        //Insertamos las mejoras en la lista
         _mejoras = new List<GameObject>
         {
             chapas,
             kebab,
             energetica
         };
+
         gameManager = GetComponent<GameManager>();
     }
     private void Start()
     {
         Arrow.SetActive(false);
     }
-    public IEnumerator Go()
-    {
-        Arrow.SetActive(false);
-        yield return new WaitForSeconds(_timer);
-        Arrow.SetActive(true);
-        CamTrigger.Instance.GetComponent<CamTrigger>().TransitionAvaible(true);
-        CamTriggerSecreta.Instance.GetComponent<CamTriggerSecreta>().TransitionAvaible(true);
-    }
-    public IEnumerator Go2()
-    {
-        Arrow.SetActive(false);
-        yield return new WaitForSeconds(_timer);
-        CamTriggerSecreta.Instance.GetComponent<CamTriggerSecreta>().TransitionAvaible(true);
-    }
-    void CheckUpgrades()
-    {
-        if (FrankMovement.Player != null) // Verifica si el jugador aún existe
-        {
-            bool Chapas = FrankMovement.Player.GetComponentInChildren<PlayerAttack>()._mejorado;
-            bool Kebab = Mathf.Approximately(FrankMovement.Player.GetComponent<HealthComponent>().MaxHealth, 8f);
-            bool Energetica = FrankMovement.Player.GetComponent<DashCompnent>().dashMejorado;
-            if (Chapas) { _mejoras.Remove(chapas); }
-            if (Kebab) { _mejoras.Remove(kebab); }
-            if (Energetica) { _mejoras.Remove(energetica); }
-        }
-    }
-    public void DropUpgrade(GameObject room)
-    {
-        CheckUpgrades();
-        Instantiate(_mejoras[Random.Range(0, _mejoras.Count)], room.transform.position, Quaternion.identity);
-    }
 
-    public void CheckEndGame() 
-    {
-        Debug.Log(GameManager.ActiveRoom);
-        Debug.Log(gameManager.Map.Count);
-        if(GameManager.ActiveRoom == gameManager.Map.Count)
-        {
-            MenuManager.Credits();
-            Debug.Log("Ha entrado en los créditos");
-        }
-    }
 }
