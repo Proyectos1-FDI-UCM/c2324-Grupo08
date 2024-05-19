@@ -1,8 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.UIElements.Experimental;
 
 public class RecogerObjeto : MonoBehaviour
 {
@@ -29,15 +27,17 @@ public class RecogerObjeto : MonoBehaviour
     #endregion
 
     /* 
-    * 1 = Bolsa de Patatas
-    * 2 = Botella de Agua
-    * 3 = Kebab
-    * 4 = Bebida Energética
-    * 5 = Cubo de Chapas
-    */
+     * !!IMPORTANTE!!
+     * ORDEN DE LOS PICK-UPS:
+     * 1 = Bolsa de Patatas
+     * 2 = Botella de Agua
+     * 3 = Kebab
+     * 4 = Bebida Energética
+     * 5 = Cubo de Chapas
+     */
     void Start()
     {
-        _healthComponent = GetComponent<HealthComponent>(); 
+        _healthComponent = GetComponent<HealthComponent>();
         _playerAttack = GetComponentInChildren<PlayerAttack>();
         _damage = GetComponentInChildren<Damage>();
         _inputManager = GetComponent<InputManager>();
@@ -60,16 +60,16 @@ public class RecogerObjeto : MonoBehaviour
         {
             if (_healthComponent.Health < _healthComponent.MaxHealth)
             {
-                
+
                 _healthComponent.Healing(healing);
                 lifebar.DrawHearts();
                 AudioManager.Instance.PatataPickup();
                 Destroy(pickedObj);
                 _popUpAnimator.SetInteger("PopUpn", 2);
                 StartCoroutine(PopUpEnd());
-            }           
+            }
         }
-        else if( ObjID == 3) //Lógica correspondiente a la mejora del "Kebab"
+        else if (ObjID == 3) //Lógica correspondiente a la mejora del "Kebab"
         {
             _lifeBarComponent.HealthUP();
             _vomitCuantity._vomitcuantity = cambioVomito;
@@ -84,7 +84,7 @@ public class RecogerObjeto : MonoBehaviour
             _uiManager.PonerMejora(ObjID);
             _uiManager.PonerIndMejora(ObjID);
         }
-        else if(ObjID == 5) //Lógica correspondiente a la mejora del "Cubo de Chapas"
+        else if (ObjID == 5) //Lógica correspondiente a la mejora del "Cubo de Chapas"
         {
             _inputManager.DisableCooldown();
             _playerAttack.Chapas();
@@ -96,7 +96,7 @@ public class RecogerObjeto : MonoBehaviour
     }
     //Salta un icono de recogida de pickup
     public IEnumerator PopUpEnd()
-    {   
+    {
         yield return new WaitForSeconds(0.6f);
         _popUpAnimator.SetInteger("PopUpn", 0);
     }

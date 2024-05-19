@@ -49,7 +49,7 @@ public class CamTriggerSecreta : MonoBehaviour
         _myObject = gameObject;
         _transicion = _myObject.GetComponent<BoxCollider2D>();
         _transicion.enabled = false;
-        SecretRoom.transform.position = new Vector3(64f, -0.1f, 0f);
+        SecretRoom.transform.position = new Vector3(64f, 0f, 0f);
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
