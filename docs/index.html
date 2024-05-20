@@ -15,9 +15,9 @@
     <link href="./css/videogame.css" rel="stylesheet">
   </head>
   <body>
-
-
-    
+    <div id="preloader">
+      <div class="loader"></div>
+    </div>  
     <main role="main">
       <!-- HEADER SECTION 
         Change image path in src="..."
@@ -55,7 +55,7 @@
             </ul>
            
            <!-- Paste URL between "" in href="" -->
-           <a href="" class="btn btn-primary" role="button" aria-pressed="true">Download now</a> 
+           <a href="https://github.com/Proyectos1-FDI-UCM/c2324-Grupo08/tree/main/DeliriumTest" download class="btn btn-primary" role="button" aria-pressed="true">Download now</a> 
 
           </div>
           
@@ -90,11 +90,36 @@
       <!-- FOOTER -->
       <footer class="container">
         <hr class="footer-divider">
-        <p> <audio src="./img/Menu.mp3" controls autoplay loop pause = "false"></audio></p>
+        <audio id="background-audio" src="./img/Menu.mp3" loop></audio>
         <p class="float-right"> <a href="#">Back to top</a></p>
         <p>Proyectos 1. Curso 2017-2018</p>
         <p>Grado en Desarrollo de Videojuegos &middot; <a target="_blank" href="http://informatica.ucm.es">Facultad de Informática</a> &middot; <a target="_blank" href="http://www.ucm.es">UCM</a></p>
       </footer>
     </main>
+    <script>
+     document.addEventListener('DOMContentLoaded', function() {
+        var audio = document.getElementById('background-audio');
+        var playPromise = audio.play();
+        
+        if (playPromise !== undefined) {
+          playPromise.then(function() {
+            
+          }).catch(function(error) {
+            console.log('Autoplay was prevented:', error);
+            let playButton = document.createElement('button');
+            playButton.innerText = 'Musica';
+            playButton.style.position = 'fixed';
+            playButton.style.top = '10px';
+            playButton.style.right = '10px';
+            document.body.appendChild(playButton);
+
+            playButton.addEventListener('click', function() {
+              audio.play();
+              playButton.remove(); 
+            });
+          });
+        }
+      });
+    </script>
   </body>
 </html>
