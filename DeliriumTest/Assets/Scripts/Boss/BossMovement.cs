@@ -61,6 +61,7 @@ public class BossController : MonoBehaviour, EnemiesControler
     }
     private void Start()
     {
+        AudioManager.Instance.BossMusic();
         boxCollider = GetComponent<BoxCollider2D>();
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();

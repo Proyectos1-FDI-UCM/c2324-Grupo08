@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -37,7 +34,12 @@ public class BossHealth : MonoBehaviour
     {
         //Desactiva la barra de vida e indica que el boss a sido derrotado
         LevelManager.levelManager.EnemyDefeated(GetComponent<BossController>());
-        _healthBar.GetComponentInParent<Canvas>().enabled = false;
+        Canvas Health = _healthBar.GetComponentInParent<Canvas>();
+        if (Health != null)
+        {
+            Health.enabled = false;
+        }
+
     }
     private void Awake()
     {
@@ -59,9 +61,9 @@ public class BossHealth : MonoBehaviour
         bossHealth = _bossHealth.Health;
         _healthBar.value = bossHealth;
         _healthBar.GetComponentInParent<Canvas>().enabled = GetComponent<BossController>().enabled;
-        
+
         //Si el boss muere lo destruye
-        if(_bossHealth.Health <= 0)
+        if (_bossHealth.Health <= 0)
         {
             Destroy(gameObject);
         }
@@ -72,7 +74,7 @@ public class BossHealth : MonoBehaviour
     /// </summary>
     private void RegisterLife()
     {
-        bossMaxHealth = _bossHealth.MaxHealth;       
+        bossMaxHealth = _bossHealth.MaxHealth;
         _healthBar.maxValue = bossMaxHealth;
     }
 }

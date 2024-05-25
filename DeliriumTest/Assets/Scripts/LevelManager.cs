@@ -15,7 +15,7 @@ public class LevelManager : MonoBehaviour
     /// Referencia al GameManager.
     /// </summary>
     static GameManager gameManager;
-    
+
     /// <summary>
     /// Referencia a la mejora de las chapas.
     /// </summary>
@@ -35,6 +35,14 @@ public class LevelManager : MonoBehaviour
     GameObject energetica;
 
     /// <summary>
+    /// Referencia a la clase que gestiona el trigger 
+    /// de paso normal entre salas.
+    /// </summary>
+    CamTrigger _trigger;
+
+    CamTriggerSecreta _triggerSecreta;
+
+    /// <summary>
     /// Instancia del levelManager.
     /// </summary>
     private static LevelManager instance;
@@ -42,6 +50,7 @@ public class LevelManager : MonoBehaviour
     /// Accesor a la instancia del LevelManager.
     /// </summary>
     public static LevelManager levelManager { get { return instance; } private set { instance = value; } }
+
     #endregion
 
     #region Parameters
@@ -55,7 +64,7 @@ public class LevelManager : MonoBehaviour
     /// </summary>
     static List<GameObject> _mejoras;
     #endregion
-    
+
     #region Properties
     /// <summary>
     /// Tiempo de espera hasta la Activacíon del Arrow una vez 
@@ -92,8 +101,8 @@ public class LevelManager : MonoBehaviour
         }
         if (m_AllEnemies.Count > 0)
         {
-            CamTriggerSecreta.Instance.GetComponent<CamTriggerSecreta>().TransitionAvaible(false);
-            CamTrigger.Instance.GetComponent<CamTrigger>().TransitionAvaible(false);
+            _trigger.TransitionAvaible(false);
+            _triggerSecreta.TransitionAvaible(false);
             Arrow.SetActive(false);
         }
     }
@@ -113,17 +122,21 @@ public class LevelManager : MonoBehaviour
             m_AllEnemies.Remove(enemy);
         }
 
-        if (m_AllEnemies.Count == 0)
+        if (m_AllEnemies.Count <= 0)
         {
             int room = GameManager.ActiveRoom;
-            CamTriggerSecreta.Instance.GetComponent<CamTriggerSecreta>().TransitionAvaible(true);
-            CamTrigger.Instance.GetComponent<CamTrigger>().TransitionAvaible(true);
-            //Se instancia en mitad de las salas faciles y en mitad de las dificiles
+            _trigger.TransitionAvaible(true);
+            _triggerSecreta.TransitionAvaible(true);
+
+            //Se instancia una mejora en la sala que coincida con la intermedia dentro de las salas faciles o las dificiles
             if ((room == 1 + gameManager.EasyRooms.Length / 2 || room == gameManager.Map.Count - (1 + gameManager.HardRooms.Length / 2)) && room > 0)
             {
                 DropUpgrade(gameManager.Map[room]);
             }
-            Arrow.SetActive(true);
+            if (Arrow != null) 
+            { 
+                Arrow.SetActive(true); 
+            }
         }
     }
 
@@ -171,7 +184,7 @@ public class LevelManager : MonoBehaviour
     #region Coroutines
 
     /// <summary>
-    /// Activa el paso a la siguiente sala.
+    /// Gestiona la salida de la secreta.
     /// </summary>
     /// <returns>Espera _timer segundos para permitir el acceso a la siguiente sala</returns>
     public IEnumerator Go()
@@ -179,37 +192,38 @@ public class LevelManager : MonoBehaviour
         Arrow.SetActive(false);
         yield return new WaitForSeconds(_timer);
         Arrow.SetActive(true);
-        CamTrigger.Instance.GetComponent<CamTrigger>().TransitionAvaible(true);
-        CamTriggerSecreta.Instance.GetComponent<CamTriggerSecreta>().TransitionAvaible(true);
+        _trigger.TransitionAvaible(true);
+        _triggerSecreta.TransitionAvaible(true);
     }
 
     /// <summary>
-    /// Sirve para regresar de la secreta.
+    /// Gestiona la entrada a la sala secreta.
     /// </summary>
     /// <returns>Espera _timer segundos a habilitar el paso a la sala intermedia</returns>
     public IEnumerator Go2()
     {
         Arrow.SetActive(false);
+        _trigger.TransitionAvaible(false);
         yield return new WaitForSeconds(_timer);
-        CamTriggerSecreta.Instance.GetComponent<CamTriggerSecreta>().TransitionAvaible(true);
+        _triggerSecreta.TransitionAvaible(true);
     }
     #endregion
 
     private void Awake()
     {
         //Sigleton del LevelManager.
-        if(instance == null)
+        if (instance == null)
         {
             instance = this;
         }
         else
         {
-            Destroy(gameObject);
+            Destroy(this);
         }
 
         //Inicialización de variables
         m_AllEnemies = new List<EnemiesControler>();
-        
+
         //Insertamos las mejoras en la lista
         _mejoras = new List<GameObject>
         {
@@ -222,7 +236,10 @@ public class LevelManager : MonoBehaviour
     }
     private void Start()
     {
+        Arrow = GoArrowController.GoArrowReference;
         Arrow.SetActive(false);
+        _triggerSecreta = CamTriggerSecreta.Instance;
+        _trigger = CamTrigger.Instance;
     }
 
 }

@@ -14,6 +14,7 @@ public class AudioManager : MonoBehaviour
     /// </summary>
     [SerializeField] private AudioClip _menuMusic;
     [SerializeField] private AudioClip _gameMusic;
+    [SerializeField] private AudioClip _bossMusic;
 
     /// <summary>
     /// Efectos de Sonido del Jugador
@@ -158,5 +159,13 @@ public class AudioManager : MonoBehaviour
         Music.Play();
     }
 
+    /// <summary>
+    /// Se reproduce la canción del nivel
+    /// </summary>
+    public void BossMusic()
+    {
+        Music.clip = _bossMusic;
+        Music.Play();
+    }
 
 }

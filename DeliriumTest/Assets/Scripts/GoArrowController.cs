@@ -4,14 +4,30 @@ using UnityEngine;
 
 public class GoArrowController : MonoBehaviour
 {
-    void Awake()
+    static GoArrowController instance;
+    public static GoArrowController GoArrowReference
     {
-        //Se registra este componente en el levelManager
-        LevelManager.levelManager.RegisterArroy(this);
+        get { return instance; }
+
+        private set { instance = value; }
+    }
+    private void Awake()
+    {
+        //Sigleton de la Flecha.
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this);
+            Debug.Log("Un componente duplicado ha sido borrado => Tipo: \"GoArrowController\".");
+        }
+
     }
     public void SetActive(bool state)
     {
         //Para activar o desactivar el objeto desde otros componentes
-        gameObject.SetActive(state);
+        instance.gameObject.SetActive(state);
     }
 }
