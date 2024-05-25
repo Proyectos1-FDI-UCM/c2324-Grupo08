@@ -35,6 +35,10 @@ public class RecogerObjeto : MonoBehaviour
      * 4 = Bebida Energética
      * 5 = Cubo de Chapas
      */
+    /// <summary>
+    /// Se obtienen las referencias a los distintos componentes
+    /// </summary>
+
     void Start()
     {
         _healthComponent = GetComponent<HealthComponent>();
@@ -44,8 +48,14 @@ public class RecogerObjeto : MonoBehaviour
         _popUpAnimator.SetInteger("PopUpn", 0);
     }
 
+    /// <summary>
+    /// El jugador recibe un efecto dependiendo del objeto
+    /// </summary>
     public void Recogida(int ObjID, GameObject pickedObj)
     {
+        /// <summary>
+        /// Al recoger la botella de agua, el vómito del jugador se reduce
+        /// </summary>
         if (ObjID == 1) //Lógica correspondiente a la reducción de vómito
         {
             _popUpAnimator.SetInteger("PopUpn", 1);
@@ -55,7 +65,9 @@ public class RecogerObjeto : MonoBehaviour
             _popUpAnimator.SetInteger("PopUpn", 1);
             StartCoroutine(PopUpEnd());
         }
-
+        /// <summary>
+        /// Al recoger la bolsa de patatas, el jugador se cura una cantidad determinada
+        /// </summary>
         else if (ObjID == 2) //Lógica correspondiente a la curación
         {
             if (_healthComponent.Health < _healthComponent.MaxHealth)
@@ -69,6 +81,9 @@ public class RecogerObjeto : MonoBehaviour
                 StartCoroutine(PopUpEnd());
             }
         }
+        /// <summary>
+        /// Al recoger el Kebab, el jugador adquiere un "corazón" más
+        /// </summary>
         else if (ObjID == 3) //Lógica correspondiente a la mejora del "Kebab"
         {
             _lifeBarComponent.HealthUP();
@@ -77,6 +92,9 @@ public class RecogerObjeto : MonoBehaviour
             _uiManager.PonerMejora(ObjID);
             _uiManager.PonerIndMejora(ObjID);
         }
+        /// <summary>
+        /// Al recoger la bebida energética, se podrán hacer dos dash seguidos sin penalización
+        /// </summary>
         else if (ObjID == 4) //Lógica correspondiente a la mejora de "La Bebida Energética"
         {
             FrankMovement.Player.GetComponent<FrankMovement>().DashUpgrade();
@@ -84,6 +102,9 @@ public class RecogerObjeto : MonoBehaviour
             _uiManager.PonerMejora(ObjID);
             _uiManager.PonerIndMejora(ObjID);
         }
+        /// <summary>
+        /// Al recoger el cubo de chapas, el jugador tendrá un ataque más fuerte y con mayor alcance
+        /// </summary>
         else if (ObjID == 5) //Lógica correspondiente a la mejora del "Cubo de Chapas"
         {
             _inputManager.DisableCooldown();
@@ -94,7 +115,10 @@ public class RecogerObjeto : MonoBehaviour
         }
 
     }
-    //Salta un icono de recogida de pickup
+
+    /// <summary>
+    /// Tras una cantidad de tiempo determinada, se deja de mostrar el PopUp de cada efecto
+    /// </summary>
     public IEnumerator PopUpEnd()
     {
         yield return new WaitForSeconds(0.6f);

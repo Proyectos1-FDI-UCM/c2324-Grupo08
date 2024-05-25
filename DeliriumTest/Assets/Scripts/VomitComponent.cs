@@ -26,6 +26,11 @@ public class VomitComponent : MonoBehaviour
     #endregion
 
     // Start is called before the first frame update
+
+    /// <summary>
+    /// Se obtienen las referencias al "Animator" y al "Slider" que muestra la cantidad de vómito
+    /// Se inicia la cantidad de vómito a 0
+    /// </summary>
     void Start()
     {
         _animator = _frankMovement.GetAnimator();
@@ -34,6 +39,10 @@ public class VomitComponent : MonoBehaviour
         _vomitBar.value = 0;
     }
 
+    /// <summary>
+    /// Se añade una cantidad determinada de vómito al medidor 
+    /// Si el personaje se encuentra quieto, se sumará el doble de la cantidad predeterminada
+    /// </summary>
     private void Addvomit()
     {
         if(_frankMovement.Direction.magnitude == 0)
@@ -45,17 +54,18 @@ public class VomitComponent : MonoBehaviour
             _vomitBar.value = _vomitBar.value + _vomitcuantity;
         }     
     }
-
-    private void ReduceVomit()
-    {
-        _vomitBar.value = _vomitBar.value - vomitReduce;
-    }
+    /// <summary>
+    /// Si el jugador realiza un Dash, el vómito aumenta notoriamente mediante la suma de una cantidad específica
+    /// </summary>
     public void VomitDash()
     {
         _vomitBar.value = _vomitBar.value + _vomitDash;
     }
 
-    // Update is called once per frame
+    /// <summary>
+    /// Cada cierto tiempo se le suma una cantidad de vómito
+    /// Si el medidor llega al máximo, se deshabilita el Input y el Movimiento del jugador y se ejecuta la animación de vomitar y el disparo del proyectil de vómito
+    /// </summary>
     void Update()
     {
         timer += Time.deltaTime;
@@ -73,6 +83,9 @@ public class VomitComponent : MonoBehaviour
             StartCoroutine(StopPlayer());
         }
     }
+    /// <summary>
+    /// Se cancelan las demás animaciones y se ejecuta la animación de vomitar
+    /// </summary>
     IEnumerator AnimVomit()
     {
         AudioManager.Instance.VomitSound();
@@ -82,6 +95,9 @@ public class VomitComponent : MonoBehaviour
         yield return new WaitForSeconds(2f);
         _animator.SetBool("Vomito", false);
     }
+    /// <summary>
+    /// El jugador se detiene durante unos segundos antes de poder seguir moviéndose
+    /// </summary>
     IEnumerator StopPlayer()
     {       
         _vomitBar.value = 0;
