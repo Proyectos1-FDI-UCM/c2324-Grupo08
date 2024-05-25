@@ -14,8 +14,8 @@ public class CamTriggerSecreta : MonoBehaviour
     public static BoxCollider2D _transicion;
     public static bool _estadotrans;
     private bool _arriba = true;
-    private static GameObject instance;
-    public static GameObject Instance { get { return instance; } }
+    private static CamTriggerSecreta instance;
+    public static CamTriggerSecreta Instance { get { return instance; } }
     [SerializeField]
     GameObject SecretRoom;
     bool UpgradeDrop;
@@ -33,11 +33,11 @@ public class CamTriggerSecreta : MonoBehaviour
     {
         if (instance == null)
         {
-            instance = gameObject;
+            instance = this;
         }
         else
         {
-            Destroy(gameObject);
+            Destroy(this);
         }
     }
     void Start()

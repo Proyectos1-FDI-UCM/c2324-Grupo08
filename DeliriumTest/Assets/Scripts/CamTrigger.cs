@@ -11,8 +11,8 @@ public class CamTrigger : MonoBehaviour
     public static BoxCollider2D _transicion;
     public static bool _estadotrans;
     public Transform _rightBound;
-    private static GameObject instance;
-    public static GameObject Instance { get { return instance; } }
+    private static CamTrigger instance;
+    public static CamTrigger Instance { get { return instance; } }
     #endregion
     #region method
     public void TransitionAvaible(bool trans)
@@ -28,11 +28,11 @@ public class CamTrigger : MonoBehaviour
     {
         if (instance == null)
         {
-            instance = gameObject;
+            instance = this;
         }
         else
         {
-            Destroy(gameObject);
+            Destroy(this);
         }
     }
     void Start()

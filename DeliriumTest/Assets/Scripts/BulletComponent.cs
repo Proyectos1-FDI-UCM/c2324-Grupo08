@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BulletComponent : MonoBehaviour
@@ -12,16 +10,23 @@ public class BulletComponent : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _rigidBody = GetComponent<Rigidbody2D>();   
+        _rigidBody = GetComponent<Rigidbody2D>();
     }
     /// <summary>
-    /// Se llama al instanciarse la bala. Setea su dirección con el vector direction.
+    /// Se llama al instanciarse la bala. 
+    /// Establece su dirección con el vector direction.
+    /// Rota desde su izquierda hacia la dirección en la que es propulsado en el eje z.
     /// </summary>
     /// <param name="direction"></param>
     public void RegisterVector(Vector3 direction)
     {
-        _speed = direction;
         
+        transform.rotation = Quaternion.FromToRotation(Vector3.right,direction);
+        //Por si hay alguna rotación en los ejes x o y lo eliminamos para evitar que se
+        //aplanen los proyectiles.
+        transform.rotation = new Quaternion(0f,0f,transform.rotation.z,transform.rotation.w);
+        _speed = direction;
+
     }
     /// <summary>
     /// El objeto al colisionar con el personaje, los enemigos o los bordes, se destruye
@@ -50,8 +55,8 @@ public class BulletComponent : MonoBehaviour
     /// </summary>
     void FixedUpdate()
     {
-        
+
         _rigidBody.velocity = _speed * 10f * _bulletSpeed * Time.fixedDeltaTime;
-        
+
     }
 }
