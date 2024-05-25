@@ -20,11 +20,11 @@ public class BulletComponent : MonoBehaviour
     /// <param name="direction"></param>
     public void RegisterVector(Vector3 direction)
     {
-        
-        transform.rotation = Quaternion.FromToRotation(Vector3.right,direction);
+
+        transform.rotation = Quaternion.FromToRotation(Vector3.right, direction);
         //Por si hay alguna rotación en los ejes x o y lo eliminamos para evitar que se
         //aplanen los proyectiles.
-        transform.rotation = new Quaternion(0f,0f,transform.rotation.z,transform.rotation.w);
+        transform.rotation = new Quaternion(0f, 0f, transform.rotation.z, transform.rotation.w);
         _speed = direction;
 
     }
@@ -43,10 +43,7 @@ public class BulletComponent : MonoBehaviour
     /// <param name="collision"></param>
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (_rigidBody.velocity.Equals((Vector3.zero)))
-        {
-            Destroy(gameObject);
-        }
+        Destroy(gameObject);
     }
 
     // Update is called once per frame

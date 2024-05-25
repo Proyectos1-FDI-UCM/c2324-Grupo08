@@ -101,7 +101,6 @@ public class EscapingState : State
             runningtime += Time.fixedDeltaTime;
             if (runningtime >= 2.0f)
             {
-                Debug.Log("Fin carrera");
                 runningtime = 0f;
                 if (runningangle != 90)
                 {
