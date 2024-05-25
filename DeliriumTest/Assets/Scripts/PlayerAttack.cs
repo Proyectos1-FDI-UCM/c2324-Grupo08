@@ -256,11 +256,12 @@ public class PlayerAttack : MonoBehaviour
         //Setting del ataque basico al inicio
         Basico();
     }
-
+    /// <summary>
+    /// Movemos el objeto a la posici�n de su padre para evitar que se quede en posiciones extra�as
+    /// Le a�adimos el offset pertinente seg�n la direcci�n elegida (Calculado en el InputManager/FrankInput)
+    /// </summary>
     void LateUpdate()
     {
-        //Movemos el objeto a la posici�n de su padre para evitar que se quede en posiciones extra�as
-        //Le a�adimos el offset pertinente seg�n la direcci�n elegida (Calculado en el InputManager/FrankInput)
         transform.position = FrankMovement.Player.transform.position + new Vector3(offsetx, offsety);
     }
 

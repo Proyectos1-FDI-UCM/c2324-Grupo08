@@ -20,7 +20,10 @@ public class TrashMovement : MonoBehaviour, EnemiesControler
     [SerializeField] private float _stopped, _moving;
     #endregion
 
-    // Start is called before the first frame update
+    /// <summary>
+    /// Detecta cuando el personaje entre en su rango para iniciar su estado de movimiento
+    /// </summary>
+    /// <param name="other"></param>
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.GetComponent<FrankMovement>() != null)
@@ -29,6 +32,10 @@ public class TrashMovement : MonoBehaviour, EnemiesControler
             _target = other.gameObject.transform;
         }
     }
+    /// <summary>
+    /// Si el persoanje sale de su rango, la papelera detiene su movimiento
+    /// </summary>
+    /// <param name="other"></param>
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.GetComponent<FrankMovement>() != null)
@@ -47,7 +54,9 @@ public class TrashMovement : MonoBehaviour, EnemiesControler
         _stopTime = 0;
     }
 
-    // Update is called once per frame
+    /// <summary>
+    /// Si el personaje esta cerca, avanza en su dirección cierta distancia y ataca
+    /// </summary>
     void Update()
     {
         if (_characterClose)
@@ -72,6 +81,9 @@ public class TrashMovement : MonoBehaviour, EnemiesControler
             _moveTime -= Time.deltaTime;
         }
     }
+    /// <summary>
+    /// Avisa al levelmanager de que esta instancia de la papelera ha sido derrotada
+    /// </summary>
     private void OnDestroy()
     {
         LevelManager.levelManager.EnemyDefeated(this);

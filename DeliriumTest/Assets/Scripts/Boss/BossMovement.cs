@@ -31,7 +31,10 @@ public class BossController : MonoBehaviour, EnemiesControler
 
     private Animator animator;
     #endregion
-    // Esta corrutina se llamará en el start y permite que pase d eun estado a otro además de que es recurisvo al estarse llamando así mismo todo el rato
+    /// <summary>
+    /// Esta corrutina se llamará en el start y permite que pase de un estado a otro además de que es recurisvo al estarse llamando así mismo todo el rato
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator SuccesionState()
     {
         state = escapingState;
@@ -49,7 +52,10 @@ public class BossController : MonoBehaviour, EnemiesControler
         StartCoroutine(SuccesionState());
 
     }
-    //Permite diferenciar al boss como enemigo
+    /// <summary>
+    /// Permite diferenciar al boss como enemigo
+    /// </summary>
+    /// <returns></returns>
     public IEnumerator StopAttack()
     {
         yield return null;

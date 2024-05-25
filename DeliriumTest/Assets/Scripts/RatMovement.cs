@@ -11,9 +11,9 @@ public class RatMovement : MonoBehaviour, EnemiesControler
     #endregion
     #region properties
     private bool _characterClose; //compruba si el jugador esta cerca para cambiar su movimiento
-    
+
     bool hit;
-    
+
     [SerializeField]
     float SecondsToWaitAfterHit;
 
@@ -25,15 +25,21 @@ public class RatMovement : MonoBehaviour, EnemiesControler
     private int x, y;
     #endregion
 
-    // Start is called before the first frame update
+    /// <summary>
+    /// Comprueba si ha colisionado con el personaje y cambia el valor de hit a true
+    /// </summary>
+    /// <param name="collision"></param>
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.GetComponent<FrankMovement>() != null || collision.gameObject.GetComponent<PlayerAttack>() != null) 
+        if (collision.gameObject.GetComponent<FrankMovement>() != null || collision.gameObject.GetComponent<PlayerAttack>() != null)
         {
-            hit = true; 
+            hit = true;
         }
     }
-   
+    /// <summary>
+    /// Si detecta al personaje en cierta area, cambia _characterClose a true para que empiece a perseguirlo
+    /// </summary>
+    /// <param name="other"></param>
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.GetComponent<FrankMovement>() != null)
@@ -42,6 +48,10 @@ public class RatMovement : MonoBehaviour, EnemiesControler
             _target = other.gameObject.transform;
         }
     }
+    /// <summary>
+    /// reinicia su rutina cuando Paco sale de su rango de detección
+    /// </summary>
+    /// <param name="other"></param>
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.GetComponent<FrankMovement>() != null)
@@ -60,8 +70,10 @@ public class RatMovement : MonoBehaviour, EnemiesControler
         _moveTime = 0;
         _stopTime = 0;
     }
-
-    // Update is called once per frame
+    /// <summary>
+    /// Si se ha golpeado al personaje, se inicia una corrutina de cooldown
+    /// Si no se inicia la corrutina de movimiento
+    /// </summary>
     void FixedUpdate()
     {
         if (hit)
@@ -73,9 +85,14 @@ public class RatMovement : MonoBehaviour, EnemiesControler
             StartCoroutine(Move());
         }
     }
+    /// <summary>
+    /// Si el personaje está cerca se mueve en su dirección
+    /// Si no, se mueve aleatoriamente
+    /// </summary>
+    /// <returns></returns>
     IEnumerator Move()
     {
-        
+
         if (_characterClose)
         {
             _direction = (_target.position - _myTransform.position).normalized;
@@ -83,8 +100,8 @@ public class RatMovement : MonoBehaviour, EnemiesControler
         }
         else
         {
-            
-           if(_moveTime <= 0) 
+
+            if (_moveTime <= 0)
             {
                 _direction = Vector3.zero;
                 _stopTime -= Time.fixedDeltaTime;
@@ -108,6 +125,9 @@ public class RatMovement : MonoBehaviour, EnemiesControler
             yield return new WaitForEndOfFrame();
         }
     }
+    /// <summary>
+    /// Avisa al level manager de que esta instancia de la rata ha sido derrotada
+    /// </summary>
     private void OnDestroy()
     {
         LevelManager.levelManager.EnemyDefeated(this);
@@ -120,8 +140,8 @@ public class RatMovement : MonoBehaviour, EnemiesControler
         _rigidbody2d.velocity = (-1.5f * _speed * _direction * Time.fixedDeltaTime);
         yield return new WaitForSeconds(SecondsToWaitAfterHit);
         _rigidbody2d.velocity = Vector2.zero;
-        hit = false;       
+        hit = false;
     }
 
-    
+
 }

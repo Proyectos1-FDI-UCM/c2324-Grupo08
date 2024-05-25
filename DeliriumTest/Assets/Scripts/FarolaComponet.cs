@@ -16,7 +16,10 @@ public class FarolaComponet : MonoBehaviour
     [SerializeField] private float fireRate;
     private float fireTime;
     #endregion
-
+    /// <summary>
+    /// Detecta si el ersonaje está en rango para poder atacar
+    /// </summary>
+    /// <param name="other"></param>
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.GetComponent<FrankMovement>() != null)
@@ -26,7 +29,10 @@ public class FarolaComponet : MonoBehaviour
         }
 
     }
-
+    /// <summary>
+    /// Detecta la salida del personaje de rango
+    /// </summary>
+    /// <param name="other"></param>
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.GetComponent<FrankMovement>() != null)
@@ -44,7 +50,9 @@ public class FarolaComponet : MonoBehaviour
         fireTime = fireRate;
     }
 
-    // Update is called once per frame
+    /// <summary>
+    /// Si está en rango, se dispara un proyectil hacia Paco cada cierto tiempo
+    /// </summary>
     void Update()
     {
         if (_PacoColision)

@@ -13,7 +13,9 @@ public class LifeBarComponenet : MonoBehaviour
     #region properties
     List<LifeComponent> hearts = new List<LifeComponent> ();
     #endregion
-    // Crea el total de vida que tiene el jugador en ese momento por medio de una llamada a un evento de Unity
+    /// <summary>
+    /// Crea el total de vida que tiene el jugador en ese momento por medio de una llamada a un evento de Unity
+    /// </summary>
     private void OnEnable()
     {
          HealthComponent.OnPlayerDamaged += DrawHearts;
@@ -23,7 +25,9 @@ public class LifeBarComponenet : MonoBehaviour
     {
         HealthComponent.OnPlayerDamaged -= DrawHearts;      
     }
-    // Inicialmente creará cuantos corazones hay y en función del parámetro de vida del HealthComponenet pondrá la vida llena,media o vacía
+    /// <summary>
+    /// Inicialmente creará cuantos corazones hay y en función del parámetro de vida del HealthComponenet pondrá la vida llena,media o vacía
+    /// </summary>
     public void DrawHearts()
     {
         ClearHearts();
@@ -39,7 +43,9 @@ public class LifeBarComponenet : MonoBehaviour
             hearts[i].SetHeartImage((HeartStatus)heartStatusRemainder);
         }
     }
-    // Este método crea un corazón vació y recoge la información del prefab de vida el cual puede cambiar entre lleno,medio o vacio
+    /// <summary>
+    /// Este método crea un corazón vació y recoge la información del prefab de vida el cual puede cambiar entre lleno,medio o vacio
+    /// </summary>
     public void CreateEmptyHeart()
     {
         GameObject newheart = Instantiate(healthPrefab);
@@ -56,7 +62,9 @@ public class LifeBarComponenet : MonoBehaviour
         }
         hearts= new List<LifeComponent>();
     }
-    // Método que permite aumentar la vida total
+    /// <summary>
+    /// Método que permite aumentar la vida total
+    /// </summary>
     public void HealthUP()
     {
         playerHealth.Health += 2;
