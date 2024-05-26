@@ -20,11 +20,19 @@ public class BulletComponent : MonoBehaviour
     /// <param name="direction"></param>
     public void RegisterVector(Vector3 direction)
     {
-
-        transform.rotation = Quaternion.FromToRotation(Vector3.right, direction);
-        //Por si hay alguna rotación en los ejes x o y lo eliminamos para evitar que se
-        //aplanen los proyectiles.
-        transform.rotation = new Quaternion(0f, 0f, transform.rotation.z, transform.rotation.w);
+        if(Mathf.Abs(Vector3.Angle(Vector3.left,direction)) > 10f)
+        {
+            transform.rotation = Quaternion.FromToRotation(Vector3.right, direction);
+            //Por si hay alguna rotación en los ejes x o y lo eliminamos para evitar que se
+            //aplanen los proyectiles.
+            transform.rotation = new Quaternion(0f, 0f, transform.rotation.z, transform.rotation.w);
+        }
+        else
+        {
+            //Para la rotar el vomito a la izquierda, si iba en esa dirección.
+            transform.rotation = new Quaternion(0f, 0f, 180f, transform.rotation.w);
+        }
+        //Se establece la dirección
         _speed = direction;
 
     }
