@@ -16,7 +16,6 @@ public class CamTriggerSecreta : MonoBehaviour
     private bool _arriba = true;
     private static CamTriggerSecreta instance;
     public static CamTriggerSecreta Instance { get { return instance; } }
-    [SerializeField]
     GameObject SecretRoom;
     bool UpgradeDrop;
     #endregion
@@ -43,13 +42,14 @@ public class CamTriggerSecreta : MonoBehaviour
     void Start()
     {
         UpgradeDrop = false;
+        transform.position += new Vector3(0f, 0.45f, 0f);
         newPlayerPos = new Vector3 (0, -2f,0);
         newCampos = new Vector3(0, -10, 0);
         _camControl = Camera.main.GetComponent<CameraController>();
         _myObject = gameObject;
         _transicion = _myObject.GetComponent<BoxCollider2D>();
         _transicion.enabled = false;
-        SecretRoom.transform.position = new Vector3(64f, 0f, 0f);
+        SecretRoom = GetComponentInParent<Transform>().gameObject;
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -64,12 +64,12 @@ public class CamTriggerSecreta : MonoBehaviour
                 
                 _transicion.enabled = false;
                 _arriba = false;
-                _myObject.transform.position = new Vector3(64, -5.1f, 0);
+                _myObject.transform.position += new Vector3(0, -0.55f, 0);
                 newPlayerPos = new Vector3(0, 2, 0);
                 newCampos = new Vector3(0, 10, 0);
                 if (!UpgradeDrop)
                 {
-                    LevelManager.levelManager.DropUpgrade(SecretRoom);
+                    LevelManager.levelManager.DropUpgrade(SecretRoom.transform.position + new Vector3(0f, -4.5f, 0f));
                     UpgradeDrop = true;
                 }
             }
@@ -80,7 +80,7 @@ public class CamTriggerSecreta : MonoBehaviour
                 other.transform.position += newPlayerPos;
                 _transicion.enabled = false;
                 _arriba = true;
-                _myObject.transform.position = new Vector3(64, -4.9f, 0);
+                _myObject.transform.position += new Vector3(0, 0.45f, 0);
                 newPlayerPos = new Vector3(0, -2.9f, 0);
                 newCampos = new Vector3(0, -10, 0);
             }

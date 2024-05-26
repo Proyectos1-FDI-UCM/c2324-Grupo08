@@ -131,7 +131,7 @@ public class LevelManager : MonoBehaviour
             //Se instancia una mejora en la sala que coincida con la intermedia dentro de las salas faciles o las dificiles
             if ((room == 1 + gameManager.EasyRooms.Length / 2 || room == gameManager.Map.Count - (2 + gameManager.HardRooms.Length / 2)) && room > 0)
             {
-                DropUpgrade(gameManager.Map[room]);
+                DropUpgrade(gameManager.Map[room].transform.position);
             }
             if (Arrow != null) 
             { 
@@ -163,10 +163,10 @@ public class LevelManager : MonoBehaviour
     /// Instancia una mejora aleatoria que el jugador no tenga en el centro de la Sala (room) 
     /// </summary>
     /// <param name="room"></param> Sala en la que se instanciará la mejora
-    public void DropUpgrade(GameObject room)
+    public void DropUpgrade(Vector3 room)
     {
         CheckUpgrades();
-        Instantiate(_mejoras[Random.Range(0, _mejoras.Count)], room.transform.position, Quaternion.identity);
+        Instantiate(_mejoras[Random.Range(0, _mejoras.Count)], room, Quaternion.identity);
     }
 
     /// <summary>

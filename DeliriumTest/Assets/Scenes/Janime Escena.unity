@@ -365,6 +365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87978c76981697e4189b6412d45b56fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Arrow: {fileID: 0}
   chapas: {fileID: 4601169436654983355, guid: 8ead7f76a9d45f44493dba858c02dd86, type: 3}
   kebab: {fileID: 8854965878747412021, guid: 3a76e24bb65194d43b47a4c3898939cd, type: 3}
   energetica: {fileID: 7288655054274534137, guid: ff1a6705f4a31054b8d1f12067e0deaf, type: 3}
@@ -391,10 +392,10 @@ MonoBehaviour:
   - {fileID: 2118596358983314602, guid: 1f84326b43efa534abc3276aa2a64421, type: 3}
   RoomOffset: 16
   BuilderTransform: {fileID: 1161825624}
-  vomitSlider: {fileID: 2113954331}
-  lifepickupbar: {fileID: 2113954330}
   Tutorial: {fileID: 7106646153860901829, guid: 03a608b7e57cd7a429d4107b7a297285, type: 3}
   BossFight: {fileID: 2118596358983314602, guid: 26cabb6c1c2c2e541ae9867d64460414, type: 3}
+  Intermedia: {fileID: 7106646153860901829, guid: a72273a05569c19468deb21546151936, type: 3}
+  Secreta: {fileID: 6976446162861396148, guid: 1283ffad7c1690c4082e0e5cafd69bff, type: 3}
   Map: []
 --- !u!4 &585113205
 Transform:
@@ -1142,98 +1143,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5691351885569557622, guid: c80aee6341d6bb44686830b5dbef00e4, type: 3}
   m_PrefabInstance: {fileID: 2113954327}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1335761414
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1335761417}
-  - component: {fileID: 1335761416}
-  - component: {fileID: 1335761415}
-  m_Layer: 0
-  m_Name: Transicion Secreta
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1335761415
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1335761414}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b497d1427e622cf43925689a48242212, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  newCampos: {x: 0, y: 0, z: 0}
-  newPlayerPos: {x: 0, y: 0, z: 0}
---- !u!61 &1335761416
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1335761414}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
---- !u!4 &1335761417
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1335761414}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 80, y: -4.9, z: 0}
-  m_LocalScale: {x: 16, y: 0.1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1337492467 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8153220513915888599, guid: 7b12e2b04b2d6b94b8f601d7415d87de, type: 3}
@@ -1694,4 +1603,3 @@ SceneRoots:
   - {fileID: 2008468101}
   - {fileID: 585113205}
   - {fileID: 3446508}
-  - {fileID: 1335761417}

@@ -62,6 +62,11 @@ public class GameManager : MonoBehaviour
     /// Sala entre las difíciles y las fáciles
     /// </summary>
     [SerializeField] private GameObject Intermedia;
+    
+    /// <summary>
+    /// Sala entre las difíciles y las fáciles
+    /// </summary>
+    [SerializeField] private GameObject Secreta;
 
     /// <summary>
     /// Entero que guarda el indice de la ultima sala generada
@@ -173,6 +178,10 @@ public class GameManager : MonoBehaviour
         Map.Add(Room);
         RoomPosition = RoomPosition + RoomOffsetVector;
         BuilderTransform.position = RoomPosition;
+
+        //Secreta
+        RoomOffsetVector = new Vector3(RoomOffset, 0, 0);
+        Room = Instantiate(Secreta, new Vector3(BuilderTransform.position.x - RoomOffset, BuilderTransform.position.y, BuilderTransform.position.z), Quaternion.identity);
 
         //Dificiles
         for (int i = 0; i < HardRooms.Length; i++)
