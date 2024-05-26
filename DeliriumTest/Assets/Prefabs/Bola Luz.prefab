@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4325701660186148460}
   - component: {fileID: 7610907809468790293}
   - component: {fileID: 6699193576658480562}
-  m_Layer: 6
+  m_Layer: 16
   m_Name: Bola Luz
   m_TagString: Untagged
   m_Icon: {fileID: 0}
