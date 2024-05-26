@@ -129,7 +129,7 @@ public class LevelManager : MonoBehaviour
             _triggerSecreta.TransitionAvaible(true);
 
             //Se instancia una mejora en la sala que coincida con la intermedia dentro de las salas faciles o las dificiles
-            if ((room == 1 + gameManager.EasyRooms.Length / 2 || room == gameManager.Map.Count - (1 + gameManager.HardRooms.Length / 2)) && room > 0)
+            if ((room == 1 + gameManager.EasyRooms.Length / 2 || room == gameManager.Map.Count - (2 + gameManager.HardRooms.Length / 2)) && room > 0)
             {
                 DropUpgrade(gameManager.Map[room]);
             }
