@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,9 +7,9 @@ public class UIManager : MonoBehaviour
     /// <summary>
     /// Se adquieren las referencias a las imágenes de la UI
     /// </summary>
-    [SerializeField] 
+    [SerializeField]
     Image imgCono;
-    [SerializeField] 
+    [SerializeField]
     Image imgBotella;
 
     [SerializeField]
@@ -39,11 +38,15 @@ public class UIManager : MonoBehaviour
     /// </summary>
     private void Awake()
     {
-        if (uiManager == null) 
-        { 
+        if (uiManager == null)
+        {
             uiManager = this;
         }
-        else { Destroy(gameObject); }
+        else 
+        { 
+            Destroy(gameObject);
+            Debug.Log("Un componente duplicado ha sido borrado => Tipo: \""+ name + "\".");
+        }
     }
     /// <summary>
     /// Se muestra el icono de los objetos
@@ -91,24 +94,139 @@ public class UIManager : MonoBehaviour
 
         else if (mejora == 5) imgIndChap.enabled = true;
 
-        else if (mejora == 4)imgIndEng.enabled = true;
+        else if (mejora == 4) imgIndEng.enabled = true;
 
         StartCoroutine(DeactivateMejora(mejora));
-        
+
     }
     /// <summary>
     /// Se deshabilitan todos los sprites al inicio
     /// </summary>
+    GameObject Faltante;
     private void Start()
     {
+        if (imgBotella == null)
+        {
+            Debug.Log("Falta la asignación de la imagen de la botella");
+            if (Faltante == null)
+            {
+                Faltante = new GameObject();
+                Faltante.name = "ImagenesFaltantesDelUIManager";
+                imgBotella = Faltante.AddComponent<Image>();
+            }
+            else
+            {
+                imgBotella = Faltante.GetComponent<Image>();
+            }
+
+        }
+        if (imgCono == null)
+        {
+            Debug.Log("Falta la asignación de la imagen del Cono");
+            if (Faltante == null)
+            {
+                Faltante = new GameObject();
+                Faltante.name = "ImagenesFaltantesDelUIManager";
+                imgCono = Faltante.AddComponent<Image>();
+            }
+            else
+            {
+                imgCono = Faltante.GetComponent<Image>();
+            }
+        }
+        if (imgChapitas == null)
+        {
+            Debug.Log("Falta la asignación de la imagen de mejora \"Chapas\"");
+            if (Faltante == null)
+            {
+                Faltante = new GameObject();
+                Faltante.name = "ImagenesFaltantesDelUIManager";
+                imgChapitas = Faltante.AddComponent<Image>();
+            }
+            else
+            {
+                imgChapitas = Faltante.GetComponent<Image>();
+            }
+        }
+        if (imgEnergetica == null)
+        {
+            Debug.Log("Falta la asignación de la imagen de mejora \"Energetica\"");
+            if (Faltante == null)
+            {
+                Faltante = new GameObject();
+                Faltante.name = "ImagenesFaltantesDelUIManager";
+                imgEnergetica = Faltante.AddComponent<Image>();
+            }
+            else
+            {
+                imgEnergetica = Faltante.GetComponent<Image>();
+            }
+            
+        }
+        if (imgKebab == null)
+        {
+            Debug.Log("Falta la asignación de la imagen de mejora \"Kebab\"");
+            if (Faltante == null)
+            {
+                Faltante = new GameObject();
+                Faltante.name = "ImagenesFaltantesDelUIManager";
+                imgKebab = Faltante.AddComponent<Image>();
+            }
+            else
+            {
+                imgKebab = Faltante.GetComponent<Image>();
+            }
+        }
+        if (imgIndKeb == null)
+        {
+            Debug.Log("Falta la asignación de la imagen indicadora de mejora \"Kebab\"");
+            if (Faltante == null)
+            {
+                Faltante = new GameObject();
+                Faltante.name = "ImagenesFaltantesDelUIManager";
+                imgIndKeb = Faltante.AddComponent<Image>();
+            }
+            else
+            {
+                imgIndKeb = Faltante.GetComponent<Image>();
+            }
+        }
+        if (imgIndChap == null)
+        {
+            Debug.Log("Falta la asignación de la imagen indicadora de mejora \"Chapas\"");
+            if (Faltante == null)
+            {
+                Faltante = new GameObject();
+                Faltante.name = "ImagenesFaltantesDelUIManager";
+                imgIndChap = Faltante.AddComponent<Image>();
+            }
+            else
+            {
+                imgIndChap = Faltante.GetComponent<Image>();
+            }
+        }
+        if (imgIndEng == null)
+        {
+            Debug.Log("Falta la asignación de la imagen indicadora de mejora \"Energetica\"");
+            if (Faltante == null)
+            {
+                Faltante = new GameObject();
+                Faltante.name = "ImagenesFaltantesDelUIManager";
+                imgIndEng = Faltante.AddComponent<Image>();
+            }
+            else
+            {
+                imgIndEng = Faltante.GetComponent<Image>();
+            }
+        }
         imgBotella.enabled = false;
         imgCono.enabled = false;
         imgChapitas.enabled = false;
         imgKebab.enabled = false;
         imgEnergetica.enabled = false;
-        imgIndChap.enabled=false;
-        imgIndEng.enabled=false;
-        imgIndKeb.enabled=false;
+        imgIndChap.enabled = false;
+        imgIndEng.enabled = false;
+        imgIndKeb.enabled = false;
     }
 
     /// <summary>
@@ -125,5 +243,5 @@ public class UIManager : MonoBehaviour
 
         StopCoroutine(DeactivateMejora(mejora));
     }
-    
+
 }

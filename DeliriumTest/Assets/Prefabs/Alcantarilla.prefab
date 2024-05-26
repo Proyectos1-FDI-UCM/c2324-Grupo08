@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8524016511790903527}
   - component: {fileID: 7805443130927687746}
   - component: {fileID: 5528367130878085014}
-  m_Layer: 6
+  m_Layer: 15
   m_Name: Alcantarilla
   m_TagString: Enemy
   m_Icon: {fileID: 0}

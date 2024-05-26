@@ -33,6 +33,17 @@ public class Recolector_de_Armas : MonoBehaviour
     {
         canBePicked = true;
         _playerAttack = GetComponentInChildren<PlayerAttack>();
+        if(_uiManager == null)
+        {
+            Debug.Log(name + ": Falta la referencia al Componente \"UIManager\"");
+            _uiManager = UIManager.UiManager;
+            if (_uiManager == null)
+            {
+                GameObject Faltante = new GameObject();
+                Faltante.name = "UIManager";
+                _uiManager = Faltante.AddComponent<UIManager>();
+            }
+        }
     }
     public void RegisterObject(Arma_Recogible arma)
     {

@@ -56,13 +56,20 @@ public class DashCompnent : MonoBehaviour
             if (_dashPosition.x > (_cameraPosition - Vector3.right * 8).x && _dashPosition.x < (_cameraPosition + Vector3.right * 8).x && _dashPosition.y > (_cameraPosition - Vector3.up * 5).y && _dashPosition.y < (_cameraPosition + Vector3.up * 3).y)
             {
                 transform.position = _dashPosition;
-                _vomitComponent.VomitDash();
+                if (_vomitComponent != null)
+                {
+                    _vomitComponent.VomitDash();
+                }
                 StartCoroutine(DashCoolDown());
                 _elapsedTime = 0;
-                _dashIndicator.SetActive(false);
+                if (_dashIndicator != null) 
+                { 
+                    _dashIndicator.SetActive(false); 
+                }
             }
         }
     }
+
     /// <summary>
     /// Ejecuta el audio y animación de Dash, y desactiva el movimiento del jugador con un stun
     /// </summary>
@@ -102,6 +109,14 @@ public class DashCompnent : MonoBehaviour
         _rigiRigidbody = GetComponent<Rigidbody2D>();
         _frankInput = GetComponent<InputManager>();
         _frankMovement = GetComponent<FrankMovement>();
+        if(_dashIndicator == null)
+        {
+            Debug.Log("Falta la asignacion del Indicador del Dash.");
+        }
+        if (_vomitComponent == null)
+        {
+            Debug.Log("Falta la asignacion del Componente \"VomitComponent\".");
+        }
     }
 
     // Update is called once per frame
@@ -113,6 +128,6 @@ public class DashCompnent : MonoBehaviour
     {
         _cameraPosition = Camera.main.transform.position;
         _elapsedTime += Time.deltaTime;
-        if (_elapsedTime >= _DashCooldown) _dashIndicator.SetActive(true);
+        if (_elapsedTime >= _DashCooldown && _dashIndicator != null) _dashIndicator.SetActive(true);
     }
 }

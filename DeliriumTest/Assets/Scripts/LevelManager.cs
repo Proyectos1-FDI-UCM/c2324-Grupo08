@@ -218,7 +218,7 @@ public class LevelManager : MonoBehaviour
         }
         else
         {
-            Destroy(this);
+            Destroy(gameObject);
         }
 
         //Inicialización de variables

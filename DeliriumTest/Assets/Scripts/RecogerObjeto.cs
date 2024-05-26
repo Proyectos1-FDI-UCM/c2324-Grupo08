@@ -15,7 +15,7 @@ public class RecogerObjeto : MonoBehaviour
     [SerializeField] private float ReduceVomit;
     #endregion
 
-    #region referneces
+    #region references
     [SerializeField] private LifeBarComponenet _lifeBarComponent;
     [SerializeField] private LifeBarComponenet lifebar;
     [SerializeField] private VomitComponent _vomitCuantity;
@@ -46,6 +46,17 @@ public class RecogerObjeto : MonoBehaviour
         _damage = GetComponentInChildren<Damage>();
         _inputManager = GetComponent<InputManager>();
         _popUpAnimator.SetInteger("PopUpn", 0);
+        if (_uiManager == null)
+        {
+            Debug.Log(name + ": Falta la referencia al Componente \"UIManager\"");
+            _uiManager = UIManager.UiManager;
+            if (_uiManager == null)
+            {
+                GameObject Faltante = new GameObject();
+                Faltante.name = "UIManagerFaltante";
+                _uiManager = Faltante.AddComponent<UIManager>();
+            }
+        }
     }
 
     /// <summary>

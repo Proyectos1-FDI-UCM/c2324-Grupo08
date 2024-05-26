@@ -75,6 +75,7 @@ public class AudioManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
+            Debug.Log("Un componente duplicado ha sido borrado => Tipo: \"" + name + "\".");
         }
     }
 

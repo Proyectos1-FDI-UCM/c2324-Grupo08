@@ -39,11 +39,15 @@ public class InputTropiezo : InputManager
     {
         //Si tenemos un Objeto Interactuable detemos el texto que se estaba
         //escribiendo una vez se alla completado y comenzamos a escribir el nuevo dialogo.
-        if (Input.GetKeyDown(KeyCode.E) && Dialogmanager.Instance.endText) 
+        if(Dialogmanager.Instance != null)
         {
-            Dialogmanager.Instance.StopAllCoroutines();
-            Movement.interact();
+            if (Input.GetKeyDown(KeyCode.E) && Dialogmanager.Instance.endText)
+            {
+                Dialogmanager.Instance.StopAllCoroutines();
+                Movement.interact();
+            }
         }
+       
         
         //Calculamos el cooldown del ataque
         if (!_canAttack) { 

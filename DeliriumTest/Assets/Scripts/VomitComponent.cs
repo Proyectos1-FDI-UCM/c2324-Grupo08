@@ -36,7 +36,15 @@ public class VomitComponent : MonoBehaviour
         _animator = _frankMovement.GetAnimator();
         
         _vomitBar = GetComponent<Slider>();
-        _vomitBar.value = 0;
+        if (_vomitBar != null ) 
+        {
+            _vomitBar.value = 0;
+        }
+        else
+        {
+            Debug.Log("Falta la asignacion del Slider del Vomito");
+            _vomitBar = new GameObject().AddComponent<Slider>();
+        }
     }
 
     /// <summary>

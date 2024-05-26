@@ -37,13 +37,25 @@ public class BulletComponent : MonoBehaviour
         if (collision.gameObject.GetComponent<FrankMovement>() != null || collision.gameObject.GetComponent<EnemiesControler>() != null || collision.gameObject.layer == 7 || collision.gameObject.layer == 9)
             Destroy(gameObject);
     }
+
     /// <summary>
-    /// Al colisionar con algún objeto no previsto, si su velocidad es cero, se destruye
+    /// Variable que guarda cunato tiempo esta colisionando con algún elemento.
+    /// Sirve para controlar el metodo OnCollisionStay2D.
+    /// </summary>
+    float timeForDestroy;
+
+    /// <summary>
+    /// Al colisionar con algún objeto no previsto, si su velocidad es cero, se destruye.
+    /// Tambien si esta colisionando con algún objeto por más de 2.5 seg desaparece
     /// </summary>
     /// <param name="collision"></param>
     private void OnCollisionStay2D(Collision2D collision)
     {
-        Destroy(gameObject);
+        timeForDestroy += Time.deltaTime;
+        if (_rigidBody.velocity.Equals((Vector3.zero)) || timeForDestroy >= 2.5f)
+        {
+            Destroy(gameObject);
+        }
     }
 
     // Update is called once per frame

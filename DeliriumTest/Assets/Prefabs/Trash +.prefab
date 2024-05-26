@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 9032581069415743657}
   - component: {fileID: -2124529941013632029}
   - component: {fileID: 3752610750892054695}
-  m_Layer: 6
+  m_Layer: 16
   m_Name: Trash +
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,9 +101,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _Attack: 2
-  PacoLayer:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!114 &9032581069415743657
 MonoBehaviour:
   m_ObjectHideFlags: 0

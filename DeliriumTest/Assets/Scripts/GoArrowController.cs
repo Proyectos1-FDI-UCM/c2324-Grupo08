@@ -20,8 +20,8 @@ public class GoArrowController : MonoBehaviour
         }
         else
         {
-            Destroy(this);
-            Debug.Log("Un componente duplicado ha sido borrado => Tipo: \"GoArrowController\".");
+            Destroy(gameObject);
+            Debug.Log("Un componente duplicado ha sido borrado => Tipo: \"" + name + "\".");
         }
 
     }

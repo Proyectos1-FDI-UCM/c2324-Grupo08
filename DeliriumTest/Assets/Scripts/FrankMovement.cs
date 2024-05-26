@@ -35,11 +35,17 @@ public class FrankMovement : MonoBehaviour
     }
     public void DashUpgrade()
     {
-        _dash.DashUpgrade();
+        if (_dash != null)
+        {
+            _dash.DashUpgrade();
+        }
     }
     public void Dash()
     {
-        _dash.Dash(_directionVector, _lastMovementVector);
+        if (_dash != null)
+        {
+            _dash.Dash(_directionVector, _lastMovementVector);
+        }
     }
     public void Tropiezo()
     {
@@ -83,7 +89,11 @@ public class FrankMovement : MonoBehaviour
         {
             player = gameObject;
         }
-        else Destroy(gameObject);
+        else
+        {
+            Destroy(gameObject);
+            Debug.Log("Un componente duplicado ha sido borrado => Tipo: \"" + name + "\".");
+        }
     }
     void Start()
     {
@@ -91,6 +101,7 @@ public class FrankMovement : MonoBehaviour
         _frankInput = GetComponent<InputManager>();
         _rigidBody = GetComponent<Rigidbody2D>();
         _dash = GetComponent<DashCompnent>();
+        if (_dash) { Debug.Log("Falta la asignacion del Componente \"Dash\"."); }
         _collider = GetComponent<BoxCollider2D>();
         if (_collider == null ) { Debug.Log("no hay collider"); }
         _lastMovementVector = Vector3.right;
