@@ -55,8 +55,8 @@ public class CamTriggerSecreta : MonoBehaviour
     {
         if (other.gameObject.GetComponent<FrankMovement>() != null)
         {
-            
-            if(_arriba == true) {
+            CamTrigger.Instance.enabled = false;
+            if (_arriba == true) {
                 StartCoroutine(LevelManager.levelManager.Go2());
                 _camControl.minPos += newCampos;
                 _camControl.maxPos += newCampos;

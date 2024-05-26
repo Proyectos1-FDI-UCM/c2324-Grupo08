@@ -45,6 +45,7 @@ public class CamTrigger : MonoBehaviour
     {
         if (other.gameObject.GetComponent<FrankMovement>() != null)
         {
+            CamTriggerSecreta.Instance.enabled = false;
             _camControl.minPos += newCampos;
             _camControl.maxPos += newCampos;
             other.transform.position += newPlayerPos;
