@@ -50,7 +50,16 @@ public class MenuManager : MonoBehaviour
     }
     private void Awake()
     {
-         menu = this;
+        if (menu == null) 
+        {
+            menu = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+            Debug.Log("Un componente duplicado ha sido borrado => Tipo: \"" + name + "\".");
+        }
+         
     }
     /// <summary>
     /// Si la escena corresponde al Menú principal sonará la canción de este mismo
