@@ -66,5 +66,9 @@ public class MenuManager : MonoBehaviour
         {
             AudioManager.Instance.LevelMusic();
         }
+        else if(SceneManager.GetSceneByBuildIndex(2).Equals(SceneManager.GetActiveScene()))
+        {
+            AudioManager.Instance.VomitSound();
+        }
     }
 }

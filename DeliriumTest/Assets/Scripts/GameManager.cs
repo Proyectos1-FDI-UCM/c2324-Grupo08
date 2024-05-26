@@ -201,7 +201,7 @@ public class GameManager : MonoBehaviour
             HealthComponent playerHealth = FrankMovement.Player.gameObject.GetComponent<HealthComponent>();
 
             if (playerHealth != null && playerHealth.Health <= 0)
-            {
+            {             
                 MenuManager.Menu.Dead();
             }
         }
